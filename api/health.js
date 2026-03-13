@@ -1,5 +1,4 @@
-const db = require('../../backend/database');
-
+// No database import needed for health check
 module.exports = async (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,10 +18,13 @@ module.exports = async (req, res) => {
       status: 'OK',
       message: 'SAT Practice API is running',
       timestamp: new Date().toISOString(),
-      database: 'connected',
       environment: process.env.VERCEL ? 'production' : 'development'
     });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    console.error('Health check error:', error);
+    return res.status(500).json({ 
+      error: error.message,
+      stack: error.stack 
+    });
   }
 };
