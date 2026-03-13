@@ -1,49 +1,43 @@
-const fs = require('fs');
+const { kv } = require('@vercel/kv');
 
-const DB_FILE = '/tmp/sat-tests-db.json';
-let inMemoryDB = { tests: {} };
-
-function readDatabase() {
-    try {
-        if (fs.existsSync(DB_FILE)) {
-            const data = fs.readFileSync(DB_FILE, 'utf8');
-            return JSON.parse(data);
+async function getTutorTests(tutorId, days = 15) {
+  try {
+    const tutorKey = `tutor:${tutorId}`;
+    const testIds = await kv.smembers(tutorKey);
+    
+    if (!testIds || testIds.length === 0) {
+      return [];
+    }
+    
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - days);
+    
+    const tests = [];
+    for (const testId of testIds) {
+      const test = await kv.get(testId);
+      if (test) {
+        const testDate = new Date(test.created_at);
+        if (testDate >= cutoffDate) {
+          tests.push({
+            id: test.id,
+            studentCode: test.student_code,
+            studentName: test.student_name,
+            testType: test.test_type,
+            totalScore: test.total_score,
+            readingScore: test.reading_score,
+            mathScore: test.math_score,
+            testData: test.test_data,
+            createdAt: test.created_at
+          });
         }
-    } catch (error) {
-        console.log('Reading from memory');
+      }
     }
-    return inMemoryDB;
-}
-
-function getTutorTests(tutorId, days = 15) {
-    try {
-        const db = readDatabase();
-        const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - days);
-        
-        const tests = Object.values(db.tests)
-            .filter(test => {
-                const testDate = new Date(test.created_at);
-                return test.tutor_id === tutorId && testDate >= cutoffDate;
-            })
-            .map(test => ({
-                id: test.id,
-                studentCode: test.student_code,
-                studentName: test.student_name,
-                testType: test.test_type,
-                totalScore: test.total_score,
-                readingScore: test.reading_score,
-                mathScore: test.math_score,
-                testData: test.test_data,
-                createdAt: test.created_at
-            }))
-            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        
-        return tests;
-    } catch (error) {
-        console.error('Error getting tests:', error);
-        return [];
-    }
+    
+    return tests.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  } catch (error) {
+    console.error('❌ KV get error:', error);
+    return [];
+  }
 }
 
 module.exports = async (req, res) => {
@@ -65,9 +59,9 @@ module.exports = async (req, res) => {
     
     console.log(`🔍 Getting tests for tutor: ${tutorId}`);
     
-    const tests = getTutorTests(tutorId, days);
+    const tests = await getTutorTests(tutorId, days);
     
-    console.log(`✅ Found ${tests.length} tests`);
+    console.log(`✅ Found ${tests.length} tests in KV`);
     
     return res.status(200).json({
       success: true,
@@ -78,8 +72,7 @@ module.exports = async (req, res) => {
     console.error('❌ Error:', error);
     return res.status(500).json({ 
       success: false, 
-      error: error.message,
-      stack: error.stack
+      error: error.message
     });
   }
 };
