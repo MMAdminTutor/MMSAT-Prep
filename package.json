@@ -1,14 +1,6 @@
 {
   "name": "sat-practice-app",
   "version": "1.0.0",
-  "description": "MathMeg SAT Practice Platform",
-  "private": true,
-  "scripts": {
-    "start": "node backend/server.js"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  }
   "dependencies": {
     "@vercel/kv": "^1.0.0"
   }
