@@ -1,48 +1,21 @@
 {
   "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "backend/server.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/health",
-      "dest": "backend/server.js"
+      "source": "/api/health",
+      "destination": "/api/health.js"
     },
     {
-      "src": "/api/tests/save",
-      "dest": "backend/server.js",
-      "methods": ["POST", "OPTIONS"]
+      "source": "/api/tests/save",
+      "destination": "/api/tests/save.js"
     },
     {
-      "src": "/api/tests/student/([^/]+)",
-      "dest": "backend/server.js?studentCode=$1"
+      "source": "/api/tests/student/:studentCode",
+      "destination": "/api/tests/student/[studentCode].js"
     },
     {
-      "src": "/api/tests/tutor/([^/]+)",
-      "dest": "backend/server.js?tutorId=$1"
-    },
-    {
-      "src": "/jspdf.umd.min.js",
-      "dest": "frontend/jspdf.umd.min.js"
-    },
-    {
-      "src": "/access-codes.json",
-      "dest": "frontend/access-codes.json"
-    },
-    {
-      "src": "/questions-adaptive.json",
-      "dest": "frontend/questions-adaptive.json"
-    },
-    {
-      "src": "/(.*\\.html)",
-      "dest": "frontend/$1"
-    },
-    {
-      "src": "/",
-      "dest": "frontend/login.html"
+      "source": "/api/tests/tutor/:tutorId",
+      "destination": "/api/tests/tutor/[tutorId].js"
     }
   ]
 }
