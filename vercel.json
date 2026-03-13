@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/health",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/api/tests/save",
+      "dest": "backend/server.js",
+      "methods": ["POST", "OPTIONS"]
+    },
+    {
+      "src": "/api/tests/student/([^/]+)",
+      "dest": "backend/server.js?studentCode=$1"
+    },
+    {
+      "src": "/api/tests/tutor/([^/]+)",
+      "dest": "backend/server.js?tutorId=$1"
+    },
+    {
+      "src": "/jspdf.umd.min.js",
+      "dest": "frontend/jspdf.umd.min.js"
+    },
+    {
+      "src": "/access-codes.json",
+      "dest": "frontend/access-codes.json"
+    },
+    {
+      "src": "/questions-adaptive.json",
+      "dest": "frontend/questions-adaptive.json"
+    },
+    {
+      "src": "/(.*\\.html)",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/",
+      "dest": "frontend/login.html"
+    }
+  ]
+}

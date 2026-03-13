@@ -1,0 +1,1895 @@
+{
+  "standalone_reading": {
+    "easy": [
+      {
+        "id": "r_easy_1",
+        "category": "Information and Ideas",
+        "skill": "Central Ideas and Details",
+        "text": "To dye wool, Navajo (Din\u00e9) weaver Lillie Taylor uses plants and vegetables from Arizona, where she lives. For example, she achieved the deep reds and browns featured in her 2003 rug In the Path of the Four Seasons by using Arizona dock roots, drying and grinding them before mixing the powder with water to create a dye bath. To intensify the appearance of certain colors, Taylor also sometimes mixes in clay obtained from nearby soil.\n\nWhich choice best states the main idea of the text?",
+        "choices": [
+          "Reds and browns are not commonly featured in most of Taylor's rugs.",
+          "In the Path of the Four Seasons is widely acclaimed for its many colors and innovative weaving techniques.",
+          "Taylor draws on local resources in the approach she uses to dye wool.",
+          "Taylor finds it difficult to locate Arizona dock root in the desert."
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_easy_2",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "In recommending Bao Phi's collection S\u00f4ng I Sing, a librarian noted that pieces by the spoken-word poet don't lose their ______ nature when printed: the language has the same pleasant musical quality on the page as it does when performed by Phi.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "jarring",
+          "scholarly",
+          "melodic",
+          "personal"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_easy_3",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The work of molecular biophysicist Enrique M. De La Cruz is known for ______ traditional boundaries between academic disciplines. The university laboratory that De La Cruz runs includes engineers, biologists, chemists, and physicists, and the research the lab produces makes use of insights and techniques from all those fields.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "reinforcing",
+          "anticipating",
+          "epitomizing",
+          "transcending"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "r_easy_4",
+        "category": "Information and Ideas",
+        "skill": "Central Ideas",
+        "text": "Scientists have discovered that certain plants can absorb heavy metals from contaminated soil. This process, called phytoremediation, offers a natural and cost-effective way to clean polluted areas. Researchers are now working to identify which plant species are most effective at removing specific toxins.\n\nWhat is the main purpose of the text?",
+        "choices": [
+          "To explain how plants become contaminated with heavy metals",
+          "To describe a natural method of cleaning polluted soil",
+          "To argue that phytoremediation is more expensive than other methods",
+          "To list all plants capable of absorbing toxins"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_5",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The archaeologist's discovery of ancient pottery fragments was particularly ______ because the pieces revealed previously unknown trading patterns between distant civilizations.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "insignificant",
+          "revealing",
+          "confusing",
+          "typical"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_6",
+        "category": "Information and Ideas",
+        "skill": "Central Ideas",
+        "text": "The invention of the printing press in the 15th century revolutionized the spread of information. Before this technology, books had to be copied by hand, making them expensive and rare. With the printing press, books could be produced quickly and affordably, allowing knowledge to reach a much wider audience.\n\nWhich choice best describes the main idea of the text?",
+        "choices": [
+          "Books were always expensive before the 15th century.",
+          "The printing press made books more accessible to people.",
+          "Hand-copied books were more beautiful than printed books.",
+          "Knowledge was secret before the printing press was invented."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_7",
+        "category": "Expression of Ideas",
+        "skill": "Transitions",
+        "text": "Solar panels convert sunlight into electricity. ______, wind turbines generate power from moving air. Both technologies provide renewable energy sources that don't produce greenhouse gases.\n\nWhich choice completes the text with the most logical transition?",
+        "choices": [
+          "However",
+          "Similarly",
+          "Therefore",
+          "Nevertheless"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_8",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "The committee ______ every Tuesday to discuss community issues and plan upcoming events.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "meet",
+          "meets",
+          "meeting",
+          "have met"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_9",
+        "category": "Standard English Conventions",
+        "skill": "Boundaries",
+        "text": "Maria studied diligently for her exams ______ she wanted to maintain her scholarship.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "because",
+          "; because",
+          ", because",
+          "because,"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_easy_10",
+        "category": "Information and Ideas",
+        "skill": "Inferences",
+        "text": "Local farmers have reported increased crop yields this year. Weather conditions have been ideal, with adequate rainfall and moderate temperatures throughout the growing season. Additionally, many farmers have adopted new irrigation techniques.\n\nBased on the text, which inference is most supported?",
+        "choices": [
+          "Farmers will always have good yields in the future.",
+          "Weather and farming methods both contributed to higher yields.",
+          "New irrigation techniques are unnecessary when rainfall is adequate.",
+          "All farmers in every location had increased yields."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_11",
+        "category": "Information and Ideas",
+        "skill": "Central Ideas",
+        "text": "Bees play a crucial role in agriculture by pollinating crops. Without bees, many fruits, vegetables, and nuts would not be able to reproduce. Scientists estimate that one-third of the food we eat depends on pollination by bees and other insects.\n\nWhat is the main point of the text?",
+        "choices": [
+          "Bees are the only insects that pollinate crops.",
+          "Bees are essential for producing much of our food supply.",
+          "One-third of all food comes from bee products like honey.",
+          "Scientists study bees more than any other insect."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_12",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The chef's ______ attention to detail ensured that every dish was perfectly prepared and beautifully presented.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "careless",
+          "meticulous",
+          "random",
+          "occasional"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_13",
+        "category": "Expression of Ideas",
+        "skill": "Transitions",
+        "text": "Exercise provides many health benefits. It strengthens the heart and muscles. ______, regular physical activity can improve mental health by reducing stress and anxiety.\n\nWhich choice completes the text with the most logical transition?",
+        "choices": [
+          "However",
+          "Instead",
+          "Additionally",
+          "Otherwise"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_easy_14",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "Neither the students nor the teacher ______ aware of the schedule change until this morning.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "was",
+          "were",
+          "is",
+          "are"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_easy_15",
+        "category": "Information and Ideas",
+        "skill": "Central Ideas",
+        "text": "Recycling programs help reduce waste sent to landfills. Materials like paper, plastic, glass, and metal can be processed and made into new products. This not only conserves natural resources but also saves energy compared to manufacturing items from raw materials.\n\nWhich choice best states the main idea of the text?",
+        "choices": [
+          "Recycling is difficult and expensive to implement.",
+          "Recycling provides environmental and resource benefits.",
+          "Only paper and plastic can be recycled effectively.",
+          "Landfills are the best place to dispose of waste."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_16",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The documentary filmmaker's work was praised for its ______ portrayal of life in remote villages, capturing authentic moments without staging or manipulation.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "fictional",
+          "candid",
+          "exaggerated",
+          "rehearsed"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_17",
+        "category": "Standard English Conventions",
+        "skill": "Boundaries",
+        "text": "The museum features ancient artifacts from Egypt ______ it also has exhibits on Greek and Roman civilizations.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          ", and",
+          "and",
+          "; and",
+          "and;"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_easy_18",
+        "category": "Information and Ideas",
+        "skill": "Central Ideas",
+        "text": "Vaccines work by training the immune system to recognize and fight specific diseases. They contain weakened or inactive parts of a particular organism that triggers an immune response. This prepares the body to fight the actual disease if exposed in the future.\n\nWhat is the main idea of the text?",
+        "choices": [
+          "Vaccines contain live organisms that cause disease.",
+          "The immune system cannot fight diseases without vaccines.",
+          "Vaccines prepare the body to defend against specific diseases.",
+          "All vaccines work in exactly the same way."
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_easy_19",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The negotiator's ______ approach helped both parties reach a compromise without either side feeling they had lost too much ground.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "aggressive",
+          "diplomatic",
+          "reluctant",
+          "biased"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_20",
+        "category": "Expression of Ideas",
+        "skill": "Transitions",
+        "text": "Regular maintenance extends the life of a car. ______, neglecting basic care like oil changes can lead to expensive repairs.\n\nWhich choice completes the text with the most logical transition?",
+        "choices": [
+          "Similarly",
+          "Conversely",
+          "Additionally",
+          "Therefore"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_easy_21",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "Each of the contestants ______ required to submit an application by Friday.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "are",
+          "is",
+          "were",
+          "have been"
+        ],
+        "correct": 1
+      }
+    ],
+    "medium": [
+      {
+        "id": "r_med_1",
+        "category": "Information and Ideas",
+        "skill": "Command of Evidence",
+        "text": "Jan Gimsa, Robert Sleigh, and Ulrike Gimsa have hypothesized that the sail-like structure running down the back of the dinosaur Spinosaurus aegyptiacus improved the animal's success in underwater pursuits of prey species capable of making quick, evasive movements. To evaluate their hypothesis, a second team of researchers constructed two battery-powered mechanical models of S. aegyptiacus, one with a sail and one without, and subjected the models to a series of identical tests in a water-filled tank.\n\nWhich finding from the model tests, if true, would most strongly support Gimsa and colleagues' hypothesis?",
+        "choices": [
+          "The model with a sail took significantly longer to travel a specified distance while submerged than the model without a sail did.",
+          "The model with a sail displaced significantly more water while submerged than the model without a sail did.",
+          "The model with a sail had significantly less battery power remaining after completing the tests than the model without a sail did.",
+          "The model with a sail took significantly less time to complete a sharp turn while submerged than the model without a sail did."
+        ],
+        "correct": 3
+      },
+      {
+        "id": "r_med_2",
+        "category": "Information and Ideas",
+        "skill": "Command of Evidence",
+        "text": "\"Ghosts of the Old Year\" is an early 1900s poem by James Weldon Johnson. In the poem, the speaker describes experiencing an ongoing cycle of anticipation followed by regretful reflection.\n\nWhich quotation from \"Ghosts of the Old Year\" most effectively illustrates the claim?",
+        "choices": [
+          "\"The snow has ceased its fluttering flight, / The wind sunk to a whisper light, / An ominous stillness fills the night, / A pause\u2014a hush.\"",
+          "\"And so the years go swiftly by, / Each, coming, brings ambitions high, / And each, departing, leaves a sigh / Linked to the past.\"",
+          "\"What does this brazen tongue declare, / That falling on the midnight air / Brings to my heart a sense of care / Akin to fright?\"",
+          "\"It tells of many a squandered day, / Of slighted gems and treasured clay, / Of precious stores not laid away, / Of fields unreaped.\""
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_3",
+        "category": "Information and Ideas",
+        "skill": "Inferences",
+        "text": "Many animals, including humans, must sleep, and sleep is known to have a role in everything from healing injuries to encoding information in long-term memory. But some scientists claim that, from an evolutionary standpoint, deep sleep for hours at a time leaves an animal so vulnerable that the known benefits of sleeping seem insufficient to explain why it became so widespread in the animal kingdom. These scientists therefore imply that ______\n\nWhich choice most logically completes the text?",
+        "choices": [
+          "it is more important to understand how widespread prolonged deep sleep is than to understand its function.",
+          "prolonged deep sleep is likely advantageous in ways that have yet to be discovered.",
+          "many traits that provide significant benefits for an animal also likely pose risks to that animal.",
+          "most traits perform functions that are hard to understand from an evolutionary standpoint."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_4",
+        "category": "Craft and Structure",
+        "skill": "Cross-Text Connections",
+        "text": "Text 1: Historians have traditionally attributed the decline of the Roman Empire primarily to military defeats and economic problems.\n\nText 2: Recent archaeological findings suggest that environmental factors, including climate change and disease outbreaks, played a more significant role in Rome's decline than previously thought. Evidence shows widespread crop failures and population decline due to plague.\n\nBased on the texts, how would the author of Text 2 most likely respond to Text 1?",
+        "choices": [
+          "By agreeing that military and economic factors were the only causes",
+          "By suggesting that environmental factors should also be considered",
+          "By arguing that historians have completely misunderstood Rome's decline",
+          "By dismissing the importance of archaeological evidence"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_5",
+        "category": "Expression of Ideas",
+        "skill": "Rhetorical Synthesis",
+        "text": "While researching ocean conservation, a student found the following information:\n\n\u2022 Coral reefs cover less than 1% of the ocean floor\n\u2022 They provide habitat for approximately 25% of all marine species\n\u2022 Coral reefs protect coastlines from storm damage and erosion\n\u2022 They support fishing industries that feed millions of people\n\nThe student wants to emphasize the disproportionate importance of coral reefs. Which choice most effectively uses information from the notes to accomplish this goal?",
+        "choices": [
+          "Coral reefs protect coastlines and support fishing industries around the world.",
+          "Although coral reefs cover less than 1% of the ocean floor, they provide habitat for about 25% of marine species.",
+          "Coral reefs support fishing industries that provide food for millions of people globally.",
+          "Approximately 25% of all marine species live in coral reef habitats."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_6",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "Researchers studying animal behavior have observed ______ some species demonstrate remarkably complex problem-solving abilities.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "that:",
+          "that",
+          "that;",
+          "that,"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_7",
+        "category": "Craft and Structure",
+        "skill": "Text Structure",
+        "text": "The invention of the microscope in the early 17th century opened up an entirely new world of scientific discovery. For the first time, scientists could observe cells, bacteria, and other microscopic organisms. This breakthrough led to advances in medicine, biology, and our understanding of disease.\n\nWhich choice best describes the function of the underlined sentence in the text?",
+        "choices": [
+          "It contradicts the claim made in the previous sentence.",
+          "It provides specific examples of what scientists could now observe.",
+          "It explains why the microscope was difficult to invent.",
+          "It introduces a new topic unrelated to the invention of the microscope."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_8",
+        "category": "Expression of Ideas",
+        "skill": "Transitions",
+        "text": "The Amazon rainforest produces approximately 20% of Earth's oxygen. ______, it is often called \"the lungs of the planet.\"\n\nWhich choice completes the text with the most logical transition?",
+        "choices": [
+          "However",
+          "For this reason",
+          "In contrast",
+          "Nevertheless"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_9",
+        "category": "Information and Ideas",
+        "skill": "Command of Evidence (Quantitative)",
+        "text": "A study examined reading habits across different age groups:\n\nAge Group | Books Read Per Year\n18-29: 12\n30-49: 15\n50-64: 18\n65+: 23\n\nWhich choice most effectively uses data from the table to support the claim that older adults read more books than younger adults?",
+        "choices": [
+          "People aged 18-29 read an average of 12 books per year.",
+          "Adults aged 65 and older read 23 books per year, nearly twice as many as those aged 18-29.",
+          "The 30-49 age group reads 15 books annually.",
+          "Reading habits vary across different age groups."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_10",
+        "category": "Standard English Conventions",
+        "skill": "Boundaries",
+        "text": "The ancient city of Petra, located in modern-day Jordan, ______ an architectural marvel featuring elaborate buildings carved directly into rock faces.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "is",
+          "are",
+          "being",
+          "were"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_med_11",
+        "category": "Information and Ideas",
+        "skill": "Inferences",
+        "text": "Studies have shown that bilingual individuals often perform better on tasks requiring multitasking and attention control. Researchers believe this advantage comes from constantly managing two language systems, which exercises the brain's executive functions.\n\nWhich conclusion is most strongly supported by the text?",
+        "choices": [
+          "Learning a second language guarantees improved cognitive performance.",
+          "Managing multiple languages may strengthen certain mental abilities.",
+          "Bilingual people are always better at multitasking than monolingual people.",
+          "Executive functions can only be improved through language learning."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_12",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The architect's design was ______ traditional styles while incorporating modern materials and sustainability features.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "reminiscent of",
+          "hostile to",
+          "identical to",
+          "ignorant of"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_med_13",
+        "category": "Expression of Ideas",
+        "skill": "Rhetorical Synthesis",
+        "text": "While researching renewable energy, a student noted:\n\n\u2022 Wind turbines can generate electricity for 25+ years\n\u2022 Solar panels typically last 20-30 years\n\u2022 Both technologies require minimal maintenance\n\u2022 Initial installation costs have decreased significantly\n\nThe student wants to emphasize the long-term viability of renewable energy. Which choice most effectively accomplishes this goal?",
+        "choices": [
+          "Solar panels and wind turbines both require minimal maintenance after installation.",
+          "Installation costs for renewable energy technologies have decreased in recent years.",
+          "Renewable energy technologies like solar panels and wind turbines can generate power for decades with minimal maintenance.",
+          "Wind turbines generate electricity for over 25 years."
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_med_14",
+        "category": "Information and Ideas",
+        "skill": "Command of Evidence",
+        "text": "A team of researchers studied the impact of urban green spaces on community health. Their findings suggested that neighborhoods with more parks and gardens had lower rates of certain health issues.\n\nWhich finding, if true, would most strongly support this conclusion?",
+        "choices": [
+          "Residents in neighborhoods with parks walk more frequently than those without parks.",
+          "Urban planning departments have increased funding for green spaces.",
+          "Parks require regular maintenance and upkeep.",
+          "Some neighborhoods have both parks and hospitals."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_med_15",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "The symphony, ______ first performed in 1808, remains one of Beethoven's most celebrated compositions.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "that was",
+          "which was",
+          "it was",
+          "being"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_16",
+        "category": "Craft and Structure",
+        "skill": "Text Structure",
+        "text": "Photosynthesis is the process by which plants convert sunlight into chemical energy. Chlorophyll, the green pigment in plant cells, captures light energy. This energy is then used to transform carbon dioxide and water into glucose and oxygen.\n\nWhat is the primary function of the second sentence?",
+        "choices": [
+          "To contradict the definition given in the first sentence",
+          "To explain a key component of the process described",
+          "To introduce an unrelated scientific concept",
+          "To argue against the importance of photosynthesis"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_med_17",
+        "category": "Expression of Ideas",
+        "skill": "Transitions",
+        "text": "Many cities have implemented bike-sharing programs to reduce traffic congestion. ______, these programs have also contributed to improved air quality and public health.\n\nWhich choice completes the text with the most logical transition?",
+        "choices": [
+          "Conversely",
+          "Furthermore",
+          "Nevertheless",
+          "Instead"
+        ],
+        "correct": 1
+      }
+    ],
+    "hard": [
+      {
+        "id": "r_hard_1",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The following text is from F. Scott Fitzgerald's 1925 novel The Great Gatsby.\n\n[Jay Gatsby] was balancing himself on the dashboard of his car with that resourcefulness of movement that is so peculiarly American\u2014that comes, I suppose, with the absence of lifting work in youth and, even more, with the formless grace of our nervous, sporadic games. This quality was continually breaking through his punctilious manner in the shape of restlessness.\n\nAs used in the text, what does the word \"quality\" most nearly mean?",
+        "choices": [
+          "Characteristic",
+          "Standard",
+          "Prestige",
+          "Accomplishment"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_hard_2",
+        "category": "Craft and Structure",
+        "skill": "Text Structure and Purpose",
+        "text": "Some studies have suggested that posture can influence cognition, but we should not overstate this phenomenon. A case in point: In a 2014 study, Megan O'Brien and Alaa Ahmed had subjects stand or sit while making risky simulated economic decisions. Standing is more physically unstable and cognitively demanding than sitting; accordingly, O'Brien and Ahmed hypothesized that standing subjects would display more risk aversion during the decision-making tasks than sitting subjects did, since they would want to avoid further feelings of discomfort and complicated risk evaluations. But O'Brien and Ahmed actually found no difference in the groups' performance.\n\nWhich choice best states the main purpose of the text?",
+        "choices": [
+          "It presents the study by O'Brien and Ahmed to critique the methods and results reported in previous studies of the effects of posture on cognition.",
+          "It argues that research findings about the effects of posture on cognition are often misunderstood, as in the case of O'Brien and Ahmed's study.",
+          "It explains a significant problem in the emerging understanding of posture's effects on cognition and how O'Brien and Ahmed tried to solve that problem.",
+          "It discusses the study by O'Brien and Ahmed to illustrate why caution is needed when making claims about the effects of posture on cognition."
+        ],
+        "correct": 3
+      },
+      {
+        "id": "r_hard_3",
+        "category": "Craft and Structure",
+        "skill": "Text Structure and Purpose",
+        "text": "The following text is from Herman Melville's 1854 short story \"The Lightning-Rod Man.\"\n\nThe stranger still stood in the exact middle of the cottage, where he had first planted himself. His singularity impelled a closer scrutiny. A lean, gloomy figure. Hair dark and lank, mattedly streaked over his brow. His sunken pitfalls of eyes were ringed by indigo halos, and played with an innocuous sort of lightning: the gleam without the bolt. The whole man was dripping. He stood in a puddle on the bare oak floor: his strange walking-stick vertically resting at his side.\n\nWhich choice best states the function of the underlined sentence (\"His singularity impelled a closer scrutiny.\") in the text as a whole?",
+        "choices": [
+          "It sets up the character description presented in the sentences that follow.",
+          "It establishes a contrast with the description in the previous sentence.",
+          "It elaborates on the previous sentence's description of the character.",
+          "It introduces the setting that is described in the sentences that follow."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_hard_4",
+        "category": "Craft and Structure",
+        "skill": "Cross-Text Connections",
+        "text": "Text 1: What factors influence the abundance of species in a given ecological community? Some theorists have argued that historical diversity is a major driver of how diverse an ecological community eventually becomes: differences in community diversity across otherwise similar habitats, in this view, are strongly affected by the number of species living in those habitats at earlier times.\n\nText 2: In 2010, a group of researchers including biologist Carla C\u00e1ceres created artificial pools in a New York forest. They stocked some pools with a diverse mix of zooplankton species and others with a single zooplankton species and allowed the pool communities to develop naturally thereafter. Over the course of four years, C\u00e1ceres and colleagues periodically measured the species diversity of the pools, finding\u2014contrary to their expectations\u2014that by the end of the study there was little to no difference in the pools' species diversity.\n\nBased on the texts, how would C\u00e1ceres and colleagues (Text 2) most likely describe the view of the theorists presented in Text 1?",
+        "choices": [
+          "It is largely correct, but it requires a minor refinement in light of the research team's results.",
+          "It is not compelling as a theory regardless of any experimental data collected by the research team.",
+          "It may seem plausible, but it is not supported by the research team's findings.",
+          "It probably holds true only in conditions like those in the research team's study."
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_hard_5",
+        "category": "Expression of Ideas",
+        "skill": "Rhetorical Synthesis",
+        "text": "While researching a topic, a student has taken the following notes:\n\n\u2022 Maika'i Tubbs is a Native Hawaiian sculptor and installation artist.\n\u2022 His work has been shown in the United States, Canada, Japan, and Germany, among other places.\n\u2022 Many of his sculptures feature discarded objects.\n\u2022 His work Erasure (2008) includes discarded audiocassette tapes and magnets.\n\u2022 His work Home Grown (2009) includes discarded pushpins, plastic plates and forks, and wood.\n\nThe student wants to emphasize a similarity between the two works. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "choices": [
+          "Erasure (2008) uses discarded objects such as audiocassette tapes and magnets; Home Grown (2009), however, includes pushpins, plastic plates and forks, and wood.",
+          "Like many of Tubbs's sculptures, both Erasure and Home Grown include discarded objects: Erasure uses audiocassette tapes, and Home Grown uses plastic forks.",
+          "Tubbs's work, which often features discarded objects, has been shown both within the United States and abroad.",
+          "Tubbs completed Erasure in 2008 and Home Grown in 2009."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_hard_6",
+        "category": "Expression of Ideas",
+        "skill": "Transitions",
+        "text": "Iraqi artist Nazik Al-Malaika, celebrated as the first Arabic poet to write in free verse, didn't reject traditional forms entirely; her poem \"Elegy for a Woman of No Importance\" consists of two ten-line stanzas and a standard number of syllables. Even in this superficially traditional work, ______ Al-Malaika was breaking new ground by memorializing an anonymous woman rather than a famous man.\n\nWhich choice completes the text with the most logical transition?",
+        "choices": [
+          "in fact,",
+          "though,",
+          "therefore,",
+          "moreover,"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_hard_7",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "Rabinal Ach\u00ed is a precolonial Maya dance drama performed annually in Rabinal, a town in the Guatemalan highlands. Based on events that occurred when Rabinal was a city-state ruled by a king, ______ had once been an ally of the king but was later captured while leading an invading force against him.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "Rabinal Ach\u00ed tells the story of K'iche' Ach\u00ed, a military leader who",
+          "K'iche' Ach\u00ed, the military leader in the story of Rabinal Ach\u00ed,",
+          "there was a military leader, K'iche' Ach\u00ed, who in Rabinal Ach\u00ed",
+          "the military leader whose story is told in Rabinal Ach\u00ed, K'iche' Ach\u00ed,"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_hard_8",
+        "category": "Standard English Conventions",
+        "skill": "Boundaries",
+        "text": "According to Naomi Nakayama of the University of Edinburgh, the reason seeds from a dying dandelion appear to float in the air while ______ is that their porous plumes enhance drag, allowing the seeds to stay airborne long enough for the wind to disperse them throughout the surrounding area.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "falling,",
+          "falling:",
+          "falling;",
+          "falling"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "r_hard_9",
+        "category": "Information and Ideas",
+        "skill": "Command of Evidence (Quantitative)",
+        "text": "Participants' Evaluation of the Likelihood That Robots Can Work Effectively in Different Occupations\n\nOccupation | Somewhat or very unlikely (%) | Neutral (%) | Somewhat or very likely (%)\ntelevision news anchor | 24 | 9 | 67\nteacher | 37 | 16 | 47\nfirefighter | 62 | 9 | 30\nsurgeon | 74 | 9 | 16\ntour guide | 10 | 8 | 82\n\nGeorgia Tech roboticists De'Aira Bryant and Ayanna Howard, along with ethicist Jason Borenstein, were interested in people's perceptions of robots' competence. They recruited participants and asked them how likely they think it is that a robot could do the work required in various occupations. Participants' evaluations varied widely depending on which occupation was being considered; for example, ______\n\nWhich choice most effectively uses data from the table to complete the example?",
+        "choices": [
+          "82% of participants believe that it is somewhat or very likely that a robot could work effectively as a tour guide, but only 16% believe that it is somewhat or very likely that a robot could work as a surgeon.",
+          "47% of participants believe that it is somewhat or very likely that a robot could work effectively as a teacher, but 37% of respondents believe that it is somewhat or very unlikely that a robot could do so.",
+          "9% of participants were neutral about whether a robot could work effectively as a television news anchor, which is the same percent of participants who were neutral when asked about a robot working as a surgeon.",
+          "62% of participants believe that it is somewhat or very unlikely that a robot could work effectively as a firefighter."
+        ],
+        "correct": 0
+      },
+      {
+        "id": "r_hard_10",
+        "category": "Information and Ideas",
+        "skill": "Inferences",
+        "text": "Recent studies have shown that urban gardens provide multiple benefits beyond food production. They reduce local temperatures through shade and evapotranspiration, improve air quality by filtering pollutants, support biodiversity by creating habitat for insects and birds, and strengthen community bonds by providing shared spaces for residents to interact.\n\nBased on the text, which conclusion about urban gardens is most strongly supported?",
+        "choices": [
+          "Urban gardens are primarily valuable for food production.",
+          "The temperature reduction effect is the most important benefit of urban gardens.",
+          "Urban gardens provide environmental and social benefits simultaneously.",
+          "Community interaction is impossible without urban gardens."
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_hard_11",
+        "category": "Craft and Structure",
+        "skill": "Cross-Text Connections",
+        "text": "Text 1: Early theories of language acquisition proposed that children learn language primarily through imitation and reinforcement, gradually building vocabulary and grammar rules through repeated exposure and correction.\n\nText 2: Linguist Noam Chomsky challenged this view, arguing that the speed and consistency with which children acquire language across cultures suggests an innate biological capacity. Children, he noted, can generate sentences they've never heard before and understand complex grammatical structures with minimal explicit instruction.\n\nBased on the texts, how would Chomsky (Text 2) most likely respond to the theory presented in Text 1?",
+        "choices": [
+          "By arguing that imitation and reinforcement are the primary mechanisms of language learning",
+          "By suggesting that innate biological factors play a more significant role than the theory acknowledges",
+          "By agreeing that gradual exposure is the only way children learn language",
+          "By dismissing the importance of vocabulary and grammar in language acquisition"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_hard_12",
+        "category": "Craft and Structure",
+        "skill": "Words in Context",
+        "text": "The scientist's research methodology was characterized by extraordinary rigor and precision. Every experiment was meticulously documented, variables were carefully controlled, and results were ______ analyzed before any conclusions were drawn.\n\nWhich choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "hastily",
+          "superficially",
+          "exhaustively",
+          "arbitrarily"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_hard_13",
+        "category": "Information and Ideas",
+        "skill": "Command of Evidence",
+        "text": "Historians have debated whether the Industrial Revolution improved or worsened living conditions for working-class families in 19th-century Britain.\n\nWhich quotation from a historical source would most effectively support the claim that living conditions worsened?",
+        "choices": [
+          "\"Factory owners invested heavily in new machinery and production techniques.\"",
+          "\"Urban populations grew rapidly as workers migrated from rural areas seeking employment.\"",
+          "\"Overcrowded tenements lacked adequate sanitation, and infectious diseases spread quickly among factory workers and their families.\"",
+          "\"Some skilled workers formed unions to negotiate for better wages.\""
+        ],
+        "correct": 2
+      },
+      {
+        "id": "r_hard_14",
+        "category": "Expression of Ideas",
+        "skill": "Rhetorical Synthesis",
+        "text": "A student researched the painter Frida Kahlo and took these notes:\n\n\u2022 Kahlo was a Mexican artist who lived from 1907 to 1954\n\u2022 She created 143 paintings, 55 of which were self-portraits\n\u2022 Her work often incorporated Mexican folk art traditions and indigenous symbolism\n\u2022 Kahlo's paintings explored themes of identity, postcolonialism, gender, and class\n\u2022 She had a complex relationship with fellow artist Diego Rivera\n\nThe student wants to emphasize Kahlo's focus on personal introspection in her art. Which choice most effectively accomplishes this goal?",
+        "choices": [
+          "Frida Kahlo, who lived from 1907 to 1954, created 143 paintings incorporating Mexican traditions.",
+          "More than one-third of Frida Kahlo's 143 paintings were self-portraits, reflecting her intense focus on personal identity and self-examination.",
+          "Kahlo's work explored themes of identity, postcolonialism, gender, and class in Mexican society.",
+          "Mexican artist Frida Kahlo had a complex relationship with Diego Rivera and incorporated indigenous symbolism in her work."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_hard_15",
+        "category": "Standard English Conventions",
+        "skill": "Form and Structure",
+        "text": "The neuroscientist's findings, ______ challenged conventional understanding of memory formation, prompted a reevaluation of long-held theories in the field.\n\nWhich choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "that",
+          "which",
+          "and they",
+          "they"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_hard_16",
+        "category": "Information and Ideas",
+        "skill": "Inferences",
+        "text": "Archaeological evidence from ancient Mesopotamia shows that early urban centers developed sophisticated irrigation systems, centralized grain storage facilities, and specialized craftworkers. These findings suggest a level of social organization that required coordination, planning, and division of labor.\n\nWhich inference is most strongly supported by the text?",
+        "choices": [
+          "All ancient civilizations developed at the same rate and in the same manner.",
+          "Early Mesopotamian cities had developed complex administrative structures to manage their resources.",
+          "Irrigation was the only factor contributing to urban development in Mesopotamia.",
+          "Specialized craftworkers worked independently without any coordination."
+        ],
+        "correct": 1
+      },
+      {
+        "id": "r_hard_17",
+        "category": "Craft and Structure",
+        "skill": "Text Structure and Purpose",
+        "text": "Marine biologists have long recognized that coral reefs serve as crucial habitats for countless species. However, recent research reveals an additional role: coral reefs act as natural breakwaters, reducing wave energy by up to 97% and protecting coastal communities from storm damage. This protective function has enormous economic value, preventing billions of dollars in coastal erosion and property damage annually.\n\nWhat is the primary purpose of this text?",
+        "choices": [
+          "To explain why coral reefs are difficult to study",
+          "To present a newly recognized function of coral reefs beyond their known ecological role",
+          "To argue that economic value is more important than ecological value",
+          "To describe how waves damage coastal communities"
+        ],
+        "correct": 1
+      }
+    ]
+  },
+  "math": {
+    "easy": [
+      {
+        "id": "m_easy_1",
+        "category": "Algebra",
+        "skill": "Linear functions",
+        "text": "If f(x) = x + 7 and g(x) = 7x, what is the value of 4f(2) \u2212 g(2)?",
+        "choices": [
+          "\u22125",
+          "1",
+          "22",
+          "28"
+        ],
+        "correct": 2,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_2",
+        "category": "Algebra",
+        "skill": "Linear equations in two variables",
+        "text": "The y-intercept of the graph of y = \u22126x \u2212 32 in the xy-plane is (0, y). What is the value of y?",
+        "questionType": "grid-in",
+        "correctAnswer": "-32",
+        "calculator": false
+      },
+      {
+        "id": "m_easy_3",
+        "category": "Algebra",
+        "skill": "Linear inequalities",
+        "text": "y < \u22124x + 4\n\nWhich point (x, y) is a solution to the given inequality in the xy-plane?",
+        "choices": [
+          "(2, \u22121)",
+          "(2, 1)",
+          "(0, 5)",
+          "(\u22124, 0)"
+        ],
+        "correct": 3,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_4",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Percentages",
+        "text": "In a group, 40% of the items are red. Of all the red items in the group, 30% also have stripes. What percentage of the items in the group are red and have stripes?",
+        "choices": [
+          "10%",
+          "12%",
+          "70%",
+          "75%"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_easy_5",
+        "category": "Algebra",
+        "skill": "Linear equations",
+        "text": "If 2x + 5 = 13, what is the value of x?",
+        "choices": [
+          "2",
+          "4",
+          "6",
+          "8"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_6",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Ratios",
+        "text": "A recipe calls for 3 cups of flour for every 2 cups of sugar. If you use 9 cups of flour, how many cups of sugar should you use?",
+        "questionType": "grid-in",
+        "correctAnswer": "6",
+        "calculator": true
+      },
+      {
+        "id": "m_easy_7",
+        "category": "Algebra",
+        "skill": "Linear functions",
+        "text": "What is the slope of the line passing through the points (2, 5) and (4, 11)?",
+        "choices": [
+          "2",
+          "3",
+          "4",
+          "6"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_8",
+        "category": "Geometry and Trigonometry",
+        "skill": "Area",
+        "text": "A rectangle has a length of 8 inches and a width of 5 inches. What is the area of the rectangle in square inches?",
+        "questionType": "grid-in",
+        "correctAnswer": "40",
+        "calculator": true
+      },
+      {
+        "id": "m_easy_9",
+        "category": "Algebra",
+        "skill": "Evaluating expressions",
+        "text": "If a = 3 and b = 5, what is the value of 2a + 3b?",
+        "choices": [
+          "16",
+          "21",
+          "24",
+          "30"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_easy_10",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Percentages",
+        "text": "What is 25% of 80?",
+        "choices": [
+          "15",
+          "20",
+          "25",
+          "30"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_easy_11",
+        "category": "Algebra",
+        "skill": "Linear equations",
+        "text": "If 3x \u2212 4 = 14, what is the value of x?",
+        "questionType": "grid-in",
+        "correctAnswer": "6",
+        "calculator": false
+      },
+      {
+        "id": "m_easy_12",
+        "category": "Geometry and Trigonometry",
+        "skill": "Perimeter",
+        "text": "A square has sides of length 7 cm. What is the perimeter of the square in centimeters?",
+        "choices": [
+          "14",
+          "21",
+          "28",
+          "49"
+        ],
+        "correct": 2,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_13",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Ratios",
+        "text": "If 5 notebooks cost $15, how much do 8 notebooks cost?",
+        "questionType": "grid-in",
+        "correctAnswer": "24",
+        "calculator": true
+      },
+      {
+        "id": "m_easy_14",
+        "category": "Algebra",
+        "skill": "Linear functions",
+        "text": "If f(x) = 3x \u2212 2, what is f(4)?",
+        "choices": [
+          "8",
+          "10",
+          "12",
+          "14"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_15",
+        "category": "Geometry and Trigonometry",
+        "skill": "Angles",
+        "text": "Two angles are supplementary. If one angle measures 65\u00b0, what is the measure of the other angle in degrees?",
+        "questionType": "grid-in",
+        "correctAnswer": "115",
+        "calculator": false
+      },
+      {
+        "id": "m_easy_16",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Mean",
+        "text": "The average of four numbers is 20. If three of the numbers are 15, 18, and 22, what is the fourth number?",
+        "choices": [
+          "20",
+          "23",
+          "25",
+          "27"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_easy_17",
+        "category": "Algebra",
+        "skill": "Solving equations",
+        "text": "If x/4 = 7, what is the value of x?",
+        "questionType": "grid-in",
+        "correctAnswer": "28",
+        "calculator": false
+      },
+      {
+        "id": "m_easy_18",
+        "category": "Geometry and Trigonometry",
+        "skill": "Volume",
+        "text": "A cube has edges of length 3 cm. What is the volume of the cube in cubic centimeters?",
+        "choices": [
+          "6",
+          "9",
+          "18",
+          "27"
+        ],
+        "correct": 3,
+        "calculator": true
+      },
+      {
+        "id": "m_easy_19",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Percentages",
+        "text": "A shirt originally priced at $40 is on sale for 20% off. What is the sale price in dollars?",
+        "questionType": "grid-in",
+        "correctAnswer": "32",
+        "calculator": true
+      },
+      {
+        "id": "m_easy_20",
+        "category": "Algebra",
+        "skill": "Linear equations",
+        "text": "If 5(x + 2) = 35, what is the value of x?",
+        "choices": [
+          "3",
+          "5",
+          "7",
+          "9"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_easy_21",
+        "category": "Geometry and Trigonometry",
+        "skill": "Circles",
+        "text": "A circle has a diameter of 12 inches. What is the radius in inches?",
+        "questionType": "grid-in",
+        "correctAnswer": "6",
+        "calculator": false
+      },
+      {
+        "id": "m_easy_22",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Proportions",
+        "text": "If 3 sandwiches cost $12, how much would 7 sandwiches cost?",
+        "choices": [
+          "$21",
+          "$24",
+          "$28",
+          "$30"
+        ],
+        "correct": 2,
+        "calculator": true
+      }
+    ],
+    "medium": [
+      {
+        "id": "m_med_1",
+        "category": "Algebra",
+        "skill": "Linear equations in two variables",
+        "text": "Figure A and figure B are both regular polygons. The sum of the perimeter of figure A and the perimeter of figure B is 63 inches. The equation 3x + 6y = 63 represents this situation, where x is the number of sides of figure A and y is the number of sides of figure B. Which statement is the best interpretation of 6 in this context?",
+        "choices": [
+          "Each side of figure B has a length of 6 inches.",
+          "The number of sides of figure B is 6.",
+          "Each side of figure A has a length of 6 inches.",
+          "The number of sides of figure A is 6."
+        ],
+        "correct": 0,
+        "calculator": false
+      },
+      {
+        "id": "m_med_2",
+        "category": "Algebra",
+        "skill": "Systems of equations",
+        "text": "Store A sells raspberries for $5.50 per pint and blackberries for $3.00 per pint. Store B sells raspberries for $6.50 per pint and blackberries for $8.00 per pint. A certain purchase of raspberries and blackberries would cost $37.00 at store A or $66.00 at store B. How many pints of blackberries are in this purchase?",
+        "choices": [
+          "12",
+          "8",
+          "5",
+          "4"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_med_3",
+        "category": "Advanced Math",
+        "skill": "Quadratic functions",
+        "text": "g(x) = x\u00b2 + 55\n\nWhat is the minimum value of the given function?",
+        "choices": [
+          "3,025",
+          "110",
+          "55",
+          "0"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_med_4",
+        "category": "Advanced Math",
+        "skill": "Nonlinear functions",
+        "text": "For the function f, f(0) = 86, and for each increase in x by 1, the value of f(x) decreases by 80%. What is the value of f(2)?",
+        "questionType": "grid-in",
+        "correctAnswer": "3.44",
+        "calculator": true
+      },
+      {
+        "id": "m_med_5",
+        "category": "Geometry and Trigonometry",
+        "skill": "Similar triangles",
+        "text": "Two nearby trees are perpendicular to the ground, which is flat. One of these trees is 10 feet tall and has a shadow that is 5 feet long. At the same time, the shadow of the other tree is 2 feet long. How tall, in feet, is the other tree?",
+        "choices": [
+          "3",
+          "4",
+          "8",
+          "27"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_med_6",
+        "category": "Algebra",
+        "skill": "Systems of equations",
+        "text": "If 3x + 2y = 18 and x \u2212 y = 1, what is the value of x?",
+        "choices": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "correct": 2,
+        "calculator": false
+      },
+      {
+        "id": "m_med_7",
+        "category": "Advanced Math",
+        "skill": "Quadratic equations",
+        "text": "What are the solutions to the equation x\u00b2 \u2212 7x + 12 = 0?",
+        "choices": [
+          "x = 2 and x = 6",
+          "x = 3 and x = 4",
+          "x = \u22123 and x = \u22124",
+          "x = \u22122 and x = \u22126"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_med_8",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Mean and median",
+        "text": "The average (arithmetic mean) of five numbers is 24. If one of the numbers is 30, what is the sum of the other four numbers?",
+        "questionType": "grid-in",
+        "correctAnswer": "90",
+        "calculator": true
+      },
+      {
+        "id": "m_med_9",
+        "category": "Geometry and Trigonometry",
+        "skill": "Perimeter",
+        "text": "A square has an area of 64 square centimeters. What is the perimeter of the square in centimeters?",
+        "choices": [
+          "16",
+          "24",
+          "32",
+          "40"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_med_10",
+        "category": "Algebra",
+        "skill": "Linear functions",
+        "text": "A line passes through the points (1, 3) and (5, 11). What is the equation of this line in slope-intercept form (y = mx + b)?",
+        "choices": [
+          "y = 2x + 1",
+          "y = 2x + 3",
+          "y = 3x + 1",
+          "y = 3x + 2"
+        ],
+        "correct": 0,
+        "calculator": false
+      },
+      {
+        "id": "m_med_11",
+        "category": "Advanced Math",
+        "skill": "Exponential functions",
+        "text": "A population of bacteria doubles every 3 hours. If there are initially 500 bacteria, how many bacteria will there be after 9 hours?",
+        "questionType": "grid-in",
+        "correctAnswer": "4000",
+        "calculator": true
+      },
+      {
+        "id": "m_med_12",
+        "category": "Geometry and Trigonometry",
+        "skill": "Pythagorean theorem",
+        "text": "A right triangle has legs of length 5 and 12. What is the length of the hypotenuse?",
+        "choices": [
+          "7",
+          "13",
+          "17",
+          "19"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_med_13",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Percentages",
+        "text": "A store marks up the price of an item by 40% from its cost. If the cost is $50, what is the selling price in dollars?",
+        "questionType": "grid-in",
+        "correctAnswer": "70",
+        "calculator": true
+      },
+      {
+        "id": "m_med_14",
+        "category": "Algebra",
+        "skill": "Systems of equations",
+        "text": "If 2x + y = 10 and x \u2212 y = 2, what is the value of y?",
+        "choices": [
+          "0",
+          "2",
+          "4",
+          "6"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_med_15",
+        "category": "Advanced Math",
+        "skill": "Quadratic functions",
+        "text": "The function h(x) = \u2212(x \u2212 3)\u00b2 + 16 has a maximum value. What is this maximum value?",
+        "choices": [
+          "3",
+          "13",
+          "16",
+          "19"
+        ],
+        "correct": 2,
+        "calculator": false
+      },
+      {
+        "id": "m_med_16",
+        "category": "Geometry and Trigonometry",
+        "skill": "Area of triangles",
+        "text": "A triangle has a base of 10 cm and a height of 6 cm. What is the area of the triangle in square centimeters?",
+        "questionType": "grid-in",
+        "correctAnswer": "30",
+        "calculator": true
+      },
+      {
+        "id": "m_med_17",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Median",
+        "text": "What is the median of the following set of numbers: 3, 7, 9, 12, 15?",
+        "choices": [
+          "7",
+          "9",
+          "10",
+          "12"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_med_18",
+        "category": "Algebra",
+        "skill": "Linear inequalities",
+        "text": "If 3x \u2212 7 > 11, what is the smallest integer value of x?",
+        "questionType": "grid-in",
+        "correctAnswer": "7",
+        "calculator": false
+      },
+      {
+        "id": "m_med_19",
+        "category": "Advanced Math",
+        "skill": "Polynomial operations",
+        "text": "What is the product (x + 3)(x \u2212 5)?",
+        "choices": [
+          "x\u00b2 \u2212 2x \u2212 15",
+          "x\u00b2 + 2x \u2212 15",
+          "x\u00b2 \u2212 8x \u2212 15",
+          "x\u00b2 + 8x + 15"
+        ],
+        "correct": 0,
+        "calculator": false
+      },
+      {
+        "id": "m_med_20",
+        "category": "Geometry and Trigonometry",
+        "skill": "Circles",
+        "text": "A circle has a circumference of 31.4 cm. What is the radius in centimeters? (Use \u03c0 \u2248 3.14)",
+        "questionType": "grid-in",
+        "correctAnswer": "5",
+        "calculator": true
+      },
+      {
+        "id": "m_med_21",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Probability",
+        "text": "A bag contains 3 red marbles, 4 blue marbles, and 5 green marbles. What is the probability of randomly selecting a blue marble?",
+        "choices": [
+          "1/4",
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_med_22",
+        "category": "Algebra",
+        "skill": "Absolute value",
+        "text": "If |x \u2212 5| = 8, what are the possible values of x?",
+        "choices": [
+          "x = 3 or x = 13",
+          "x = \u22123 or x = 3",
+          "x = \u22123 or x = 13",
+          "x = 5 or x = 8"
+        ],
+        "correct": 2,
+        "calculator": false
+      }
+    ],
+    "hard": [
+      {
+        "id": "m_hard_1",
+        "category": "Advanced Math",
+        "skill": "Nonlinear equations",
+        "text": "(x \u2212 1)\u00b2 = \u22124\n\nHow many distinct real solutions does the given equation have?",
+        "choices": [
+          "Exactly one",
+          "Exactly two",
+          "Infinitely many",
+          "Zero"
+        ],
+        "correct": 3,
+        "calculator": false
+      },
+      {
+        "id": "m_hard_2",
+        "category": "Advanced Math",
+        "skill": "Rational expressions",
+        "text": "Which expression is equivalent to 4/(4x \u2212 5) \u2212 1/(x + 1)?",
+        "choices": [
+          "9/((x + 1)(4x \u2212 5))",
+          "3/(3x \u2212 6)",
+          "1/((x + 1)(4x \u2212 5))",
+          "\u22121/((x + 1)(4x \u2212 5))"
+        ],
+        "correct": 0,
+        "calculator": false
+      },
+      {
+        "id": "m_hard_3",
+        "category": "Advanced Math",
+        "skill": "Systems of equations",
+        "text": "In the xy-plane, a line with equation 2y = 4.5 intersects a parabola at exactly one point. If the parabola has equation y = \u22124x\u00b2 + bx, where b is a positive constant, what is the value of b?",
+        "questionType": "grid-in",
+        "correctAnswer": "6",
+        "calculator": true
+      },
+      {
+        "id": "m_hard_4",
+        "category": "Geometry and Trigonometry",
+        "skill": "Pythagorean theorem",
+        "text": "The length of a rectangle's diagonal is 5\u221a17, and the length of the rectangle's shorter side is 5. What is the length of the rectangle's longer side?",
+        "choices": [
+          "\u221a17",
+          "20",
+          "15\u221a2",
+          "400"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_5",
+        "category": "Geometry and Trigonometry",
+        "skill": "Circles",
+        "text": "A circle has center O, and points A and B lie on the circle. The measure of arc AB is 45\u00b0 and the length of arc AB is 3 inches. What is the circumference, in inches, of the circle?",
+        "choices": [
+          "3",
+          "6",
+          "9",
+          "24"
+        ],
+        "correct": 3,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_6",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Derived units",
+        "text": "The density of a certain type of wood is 353 kilograms per cubic meter. A sample of this type of wood is in the shape of a cube and has a mass of 345 kilograms. To the nearest hundredth of a meter, what is the length of one edge of this sample?",
+        "choices": [
+          "0.98",
+          "0.99",
+          "1.01",
+          "1.02"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_7",
+        "category": "Advanced Math",
+        "skill": "Exponential functions",
+        "text": "The function h is defined by h(x) = a\u02e3 + b, where a and b are positive constants. The graph of y = h(x) in the xy-plane passes through the points (0, 10) and (\u22122, 325/36). What is the value of ab?",
+        "choices": [
+          "1/4",
+          "1/2",
+          "54",
+          "60"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_8",
+        "category": "Advanced Math",
+        "skill": "Equivalent expressions",
+        "text": "Which expression is equivalent to (x\u00b2 \u2212 9)/(x + 3) for x \u2260 \u22123?",
+        "choices": [
+          "x \u2212 3",
+          "x + 3",
+          "x\u00b2 \u2212 3",
+          "x"
+        ],
+        "correct": 0,
+        "calculator": false
+      },
+      {
+        "id": "m_hard_9",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Scatterplots",
+        "text": "A scatterplot shows the relationship between two variables, x and y. A line of best fit for the data is shown. At x = 32, the line of best fit has a y-value between 2 and 3. Which of the following is closest to the y-value predicted by the line of best fit at x = 32?",
+        "choices": [
+          "0.4",
+          "1.5",
+          "2.4",
+          "3.3"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_10",
+        "category": "Geometry and Trigonometry",
+        "skill": "Volume",
+        "text": "A cylinder has a radius of 3 centimeters and a height of 8 centimeters. What is the volume of the cylinder in cubic centimeters? (Use \u03c0 \u2248 3.14)",
+        "questionType": "grid-in",
+        "correctAnswer": "226.08",
+        "calculator": true
+      },
+      {
+        "id": "m_hard_11",
+        "category": "Advanced Math",
+        "skill": "Complex numbers",
+        "text": "If i = \u221a(\u22121), what is the value of (2 + 3i)(2 \u2212 3i)?",
+        "choices": [
+          "\u22125",
+          "4",
+          "13",
+          "17"
+        ],
+        "correct": 2,
+        "calculator": false
+      },
+      {
+        "id": "m_hard_12",
+        "category": "Algebra",
+        "skill": "Radical equations",
+        "text": "If \u221a(2x + 5) = 7, what is the value of x?",
+        "questionType": "grid-in",
+        "correctAnswer": "22",
+        "calculator": false
+      },
+      {
+        "id": "m_hard_13",
+        "category": "Advanced Math",
+        "skill": "Polynomial division",
+        "text": "When x\u00b3 \u2212 2x\u00b2 \u2212 5x + 6 is divided by (x \u2212 1), what is the remainder?",
+        "choices": [
+          "\u22122",
+          "0",
+          "2",
+          "4"
+        ],
+        "correct": 1,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_14",
+        "category": "Geometry and Trigonometry",
+        "skill": "Trigonometry",
+        "text": "In a right triangle, if sin(\u03b8) = 3/5, what is cos(\u03b8)?",
+        "questionType": "grid-in",
+        "correctAnswer": "0.8",
+        "calculator": true
+      },
+      {
+        "id": "m_hard_15",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Standard deviation",
+        "text": "Which of the following data sets has the greatest standard deviation?",
+        "choices": [
+          "10, 10, 10, 10, 10",
+          "5, 7, 10, 13, 15",
+          "1, 5, 10, 15, 19",
+          "8, 9, 10, 11, 12"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_16",
+        "category": "Advanced Math",
+        "skill": "Logarithms",
+        "text": "If log\u2082(x) = 5, what is the value of x?",
+        "questionType": "grid-in",
+        "correctAnswer": "32",
+        "calculator": true
+      },
+      {
+        "id": "m_hard_17",
+        "category": "Algebra",
+        "skill": "Function composition",
+        "text": "If f(x) = 2x + 1 and g(x) = x\u00b2, what is f(g(3))?",
+        "choices": [
+          "13",
+          "18",
+          "19",
+          "22"
+        ],
+        "correct": 2,
+        "calculator": false
+      },
+      {
+        "id": "m_hard_18",
+        "category": "Geometry and Trigonometry",
+        "skill": "3D geometry",
+        "text": "A sphere has a radius of 6 cm. What is its surface area in square centimeters? (Use \u03c0 \u2248 3.14)",
+        "questionType": "grid-in",
+        "correctAnswer": "452.16",
+        "calculator": true
+      },
+      {
+        "id": "m_hard_19",
+        "category": "Advanced Math",
+        "skill": "Sequences",
+        "text": "In an arithmetic sequence, the first term is 5 and the common difference is 3. What is the 20th term?",
+        "choices": [
+          "57",
+          "60",
+          "62",
+          "65"
+        ],
+        "correct": 2,
+        "calculator": true
+      },
+      {
+        "id": "m_hard_20",
+        "category": "Problem-Solving and Data Analysis",
+        "skill": "Conditional probability",
+        "text": "In a class of 30 students, 18 play soccer and 12 play basketball. If 8 students play both sports, what is the probability that a randomly selected student who plays soccer also plays basketball?",
+        "questionType": "grid-in",
+        "correctAnswer": "0.44",
+        "calculator": true
+      },
+      {
+        "id": "m_hard_21",
+        "category": "Advanced Math",
+        "skill": "Matrices",
+        "text": "If matrix A = [2 3; 1 4] and B = [1 0; 2 1], what is the determinant of matrix A?",
+        "choices": [
+          "2",
+          "5",
+          "8",
+          "11"
+        ],
+        "correct": 1,
+        "calculator": false
+      },
+      {
+        "id": "m_hard_22",
+        "category": "Geometry and Trigonometry",
+        "skill": "Coordinate geometry",
+        "text": "What is the distance between the points (\u22123, 4) and (2, \u22128)?",
+        "questionType": "grid-in",
+        "correctAnswer": "13",
+        "calculator": true
+      }
+    ]
+  },
+  "passages": [
+    {
+      "id": "passage_1",
+      "difficulty": "medium",
+      "category": "Literature",
+      "title": "Excerpt from 'The Awakening'",
+      "source": "Kate Chopin, The Awakening (1899)",
+      "text": "Mrs. Pontellier was not a woman given to confidences, a characteristic hitherto contrary to her nature. Even as a child she had lived her own small life all within herself. At a very early period she had apprehended instinctively the dual life\u2014that outward existence which conforms, the inward life which questions.\n\nThat summer at Grand Isle she began to loosen a little the mantle of reserve that had always enveloped her. It was not completely cast aside, but it was opened sufficiently to grant a glimpse of the warm, palpitating core beneath. Beneath the cool, composed surface, there lay passions and desires that even she herself had not fully comprehended.",
+      "questions": [
+        {
+          "id": "passage_1_q1",
+          "text": "Based on the passage, Mrs. Pontellier can best be described as:",
+          "choices": [
+            "Naturally outgoing and expressive",
+            "Reserved but beginning to reveal her inner self",
+            "Completely transformed from her former personality",
+            "Indifferent to her own emotions and desires"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_1_q2",
+          "text": "The phrase \"dual life\" most directly refers to:",
+          "choices": [
+            "Mrs. Pontellier's public behavior versus her private thoughts",
+            "Her life before and after marriage",
+            "Her childhood and adult personalities",
+            "The contrast between summer and winter"
+          ],
+          "correct": 0
+        },
+        {
+          "id": "passage_1_q3",
+          "text": "Which choice provides the best evidence for the idea that Mrs. Pontellier was changing?",
+          "choices": [
+            "\"Mrs. Pontellier was not a woman given to confidences\"",
+            "\"Even as a child she had lived her own small life all within herself\"",
+            "\"That summer at Grand Isle she began to loosen a little the mantle of reserve\"",
+            "\"Beneath the cool, composed surface, there lay passions and desires\""
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "id": "passage_2",
+      "difficulty": "hard",
+      "category": "Science",
+      "title": "CRISPR Gene Editing",
+      "source": "Adapted from a scientific journal",
+      "text": "CRISPR-Cas9, a revolutionary gene-editing technology, has transformed biological research and holds immense promise for treating genetic diseases. The system works by using a guide RNA to direct the Cas9 enzyme to a specific location in the genome, where it makes a precise cut in the DNA. This allows scientists to delete, replace, or insert genetic material with unprecedented accuracy.\n\nHowever, the technology is not without challenges. Off-target effects\u2014where the Cas9 enzyme cuts at unintended locations\u2014remain a concern. Researchers are working to improve the specificity of the system and reduce these unintended edits. Additionally, ethical questions arise regarding the use of CRISPR in human embryos, particularly concerning heritable genetic modifications.\n\nDespite these challenges, CRISPR has already demonstrated success in treating conditions such as sickle cell disease and certain forms of blindness. As the technology matures and regulatory frameworks develop, its applications in medicine are expected to expand significantly.",
+      "questions": [
+        {
+          "id": "passage_2_q1",
+          "text": "According to the passage, what is the primary function of the guide RNA in CRISPR-Cas9?",
+          "choices": [
+            "To cut the DNA at specific locations",
+            "To direct the Cas9 enzyme to the correct genome location",
+            "To replace defective genetic material",
+            "To reduce off-target effects"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_2_q2",
+          "text": "The passage suggests that a major concern with CRISPR technology is:",
+          "choices": [
+            "Its inability to treat genetic diseases",
+            "The high cost of implementation",
+            "Unintended cuts at wrong DNA locations",
+            "Lack of research into its applications"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_2_q3",
+          "text": "Based on the passage, which statement about CRISPR's future is most accurate?",
+          "choices": [
+            "It will completely replace all other medical treatments",
+            "Its medical applications are likely to grow as technology and regulations develop",
+            "Ethical concerns will prevent any future use in humans",
+            "It has already reached its maximum potential"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "passage_3",
+      "difficulty": "medium",
+      "category": "History",
+      "title": "The Silk Road",
+      "source": "Historical analysis",
+      "text": "The Silk Road was not a single road, but rather a network of trade routes connecting the East and West for over 1,500 years. Beginning in the Han Dynasty of China (206 BCE \u2013 220 CE), these routes facilitated not just the exchange of silk, spices, and precious metals, but also the transmission of ideas, technologies, and cultural practices.\n\nThe impact of the Silk Road extended far beyond commerce. Buddhism spread from India to China along these routes, while Chinese innovations like papermaking and gunpowder eventually reached Europe. The exchange was reciprocal: Islamic scholars preserved and built upon Greek mathematical and philosophical texts, which later influenced the European Renaissance.\n\nHowever, the Silk Road also served as a conduit for the spread of diseases, including the bubonic plague. The same networks that connected civilizations and fostered cultural exchange also enabled pathogens to travel across continents, with devastating consequences.",
+      "questions": [
+        {
+          "id": "passage_3_q1",
+          "text": "The main purpose of this passage is to:",
+          "choices": [
+            "Describe the geographic route of the Silk Road",
+            "Explain both positive and negative effects of the Silk Road",
+            "Argue that the Silk Road was primarily about silk trade",
+            "Focus exclusively on disease transmission"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_3_q2",
+          "text": "According to the passage, which of the following traveled along the Silk Road?",
+          "choices": [
+            "Only physical goods like silk and spices",
+            "Goods, ideas, technologies, and diseases",
+            "Primarily religious texts and beliefs",
+            "Mainly European innovations to Asia"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_3_q3",
+          "text": "The passage suggests that the exchange along the Silk Road was:",
+          "choices": [
+            "One-directional from East to West",
+            "Limited to the Han Dynasty period",
+            "Reciprocal and multidirectional",
+            "Focused only on commercial transactions"
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "id": "passage_4",
+      "difficulty": "easy",
+      "category": "Social Science",
+      "title": "Community Gardens",
+      "source": "Urban planning study",
+      "text": "Community gardens have become increasingly popular in urban areas over the past two decades. These shared spaces allow residents to grow their own fruits, vegetables, and flowers while fostering social connections with neighbors. Studies have shown that communities with active garden programs report higher levels of neighborhood satisfaction and social cohesion.\n\nThe benefits of community gardens extend beyond social connections. Participants often report increased physical activity, improved diet quality, and reduced grocery expenses. For children, community gardens provide hands-on learning experiences about nutrition, biology, and environmental stewardship.",
+      "questions": [
+        {
+          "id": "passage_4_q1",
+          "text": "According to the passage, community gardens provide:",
+          "choices": [
+            "Only opportunities to grow food",
+            "Both social and individual benefits",
+            "Expensive alternatives to grocery stores",
+            "Limited educational value"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_4_q2",
+          "text": "The passage suggests that community gardens are most valuable for:",
+          "choices": [
+            "Replacing traditional parks",
+            "Generating income for participants",
+            "Building community connections while promoting health",
+            "Eliminating the need for grocery stores"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_4_q3",
+          "text": "Based on the passage, children benefit from community gardens primarily through:",
+          "choices": [
+            "Reduced grocery costs for their families",
+            "Hands-on learning about nutrition and nature",
+            "Higher neighborhood satisfaction scores",
+            "Increased property values"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "passage_5",
+      "difficulty": "hard",
+      "category": "Science",
+      "title": "Ocean Acidification",
+      "source": "Environmental science research",
+      "text": "The world's oceans are becoming more acidic at an unprecedented rate due to increased atmospheric carbon dioxide. When CO\u2082 dissolves in seawater, it forms carbonic acid, lowering the pH of ocean water. Since the Industrial Revolution, ocean pH has dropped by approximately 0.1 units\u2014representing a 30% increase in acidity.\n\nThis acidification poses serious threats to marine ecosystems, particularly organisms that build calcium carbonate shells or skeletons, such as corals, mollusks, and certain plankton species. As acidity increases, it becomes more difficult for these organisms to form and maintain their protective structures. Some species show impaired growth, reproduction, and survival in more acidic conditions.\n\nThe implications extend beyond individual species. Coral reefs, often called the rainforests of the sea, support approximately 25% of all marine life despite covering less than 1% of the ocean floor. Their degradation could trigger cascading effects throughout marine food webs. Additionally, certain plankton species that form the base of oceanic food chains are particularly vulnerable, potentially disrupting entire ecosystems and the human communities that depend on them for food and economic resources.",
+      "questions": [
+        {
+          "id": "passage_5_q1",
+          "text": "According to the passage, ocean acidification is primarily caused by:",
+          "choices": [
+            "Pollution from industrial waste",
+            "Carbon dioxide dissolving in seawater",
+            "Overfishing and habitat destruction",
+            "Rising ocean temperatures"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_5_q2",
+          "text": "The passage indicates that organisms most vulnerable to ocean acidification are those that:",
+          "choices": [
+            "Live in deep ocean environments",
+            "Migrate long distances",
+            "Build calcium carbonate structures",
+            "Consume large amounts of plankton"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_5_q3",
+          "text": "The author mentions that coral reefs \"support approximately 25% of all marine life\" primarily to:",
+          "choices": [
+            "Explain why coral reefs are colorful",
+            "Emphasize the potential widespread impact of reef degradation",
+            "Argue that coral reefs should be protected from tourism",
+            "Describe the physical structure of coral reefs"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_5_q4",
+          "text": "Which statement best describes the relationship between the second and third paragraphs?",
+          "choices": [
+            "The third paragraph refutes claims made in the second paragraph",
+            "The third paragraph expands on the broader ecological implications introduced in the second paragraph",
+            "The third paragraph introduces an unrelated topic about human economics",
+            "The third paragraph provides historical background for the second paragraph"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "passage_6",
+      "difficulty": "medium",
+      "category": "Science",
+      "title": "Renewable Energy Storage",
+      "source": "Technology research",
+      "text": "One of the greatest challenges facing renewable energy adoption is not generation, but storage. Solar panels produce electricity only when the sun shines, and wind turbines generate power only when the wind blows. To make renewable energy reliable, we need effective ways to store excess energy generated during peak production times for use when production is low.\n\nBattery technology has advanced significantly in recent years, with lithium-ion batteries becoming more affordable and efficient. However, large-scale energy storage requires solutions beyond traditional batteries. Pumped hydroelectric storage, which uses excess electricity to pump water uphill and later releases it through turbines, currently provides about 95% of global energy storage capacity. Other promising technologies include compressed air energy storage, thermal storage using molten salts, and hydrogen fuel cells.\n\nThe development of efficient, cost-effective energy storage is crucial for the transition to renewable energy. As storage technology improves and becomes more economical, renewable energy sources will become increasingly competitive with fossil fuels, potentially accelerating the shift toward sustainable energy systems.",
+      "questions": [
+        {
+          "id": "passage_6_q1",
+          "text": "According to the passage, the main challenge with renewable energy is:",
+          "choices": [
+            "The cost of solar panels and wind turbines",
+            "Storing energy for use when production is low",
+            "Finding suitable locations for installation",
+            "Maintaining equipment in harsh weather"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_6_q2",
+          "text": "The passage indicates that pumped hydroelectric storage:",
+          "choices": [
+            "Is a new and untested technology",
+            "Currently dominates global energy storage",
+            "Only works with solar power",
+            "Is less efficient than batteries"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_6_q3",
+          "text": "The author's tone in the final paragraph can best be described as:",
+          "choices": [
+            "Pessimistic about renewable energy's future",
+            "Neutral and purely factual",
+            "Cautiously optimistic about storage technology",
+            "Critical of current energy policies"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_6_q4",
+          "text": "Which of the following storage technologies is NOT mentioned in the passage?",
+          "choices": [
+            "Lithium-ion batteries",
+            "Pumped hydroelectric storage",
+            "Nuclear fuel cells",
+            "Compressed air storage"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_6_q5",
+          "text": "The passage suggests that as storage technology improves:",
+          "choices": [
+            "Fossil fuels will become more expensive",
+            "Renewable energy will become more competitive",
+            "Solar panels will generate more electricity",
+            "Wind patterns will become more predictable"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "id": "passage_7",
+      "difficulty": "easy",
+      "category": "Social Science",
+      "title": "Benefits of Reading",
+      "source": "Educational research",
+      "text": "Reading regularly provides numerous cognitive and emotional benefits. Studies show that people who read frequently have larger vocabularies, better comprehension skills, and improved ability to understand complex ideas. Reading also exercises the brain, potentially reducing the risk of cognitive decline as we age.\n\nBeyond intellectual benefits, reading offers emotional and social advantages. Fiction readers often demonstrate greater empathy and understanding of others' perspectives, as they regularly engage with diverse characters and situations. Reading can also reduce stress, provide entertainment, and offer opportunities for learning about different cultures and experiences.",
+      "questions": [
+        {
+          "id": "passage_7_q1",
+          "text": "According to the passage, regular reading can:",
+          "choices": [
+            "Only improve vocabulary",
+            "Provide both mental and emotional benefits",
+            "Replace all other forms of education",
+            "Guarantee prevention of cognitive decline"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_7_q2",
+          "text": "The passage suggests that fiction reading specifically:",
+          "choices": [
+            "Is less valuable than non-fiction",
+            "Only provides entertainment value",
+            "May increase empathy and perspective-taking",
+            "Has no educational value"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_7_q3",
+          "text": "The main purpose of this passage is to:",
+          "choices": [
+            "Criticize people who don't read",
+            "Describe various benefits of reading",
+            "Explain how to read more effectively",
+            "Compare different genres of books"
+          ],
+          "correct": 1
+        },
+        {
+          "id": "passage_7_q4",
+          "text": "Based on the passage, which benefit is associated with reading fiction?",
+          "choices": [
+            "Larger vocabulary only",
+            "Better math skills",
+            "Greater empathy",
+            "Improved physical health"
+          ],
+          "correct": 2
+        },
+        {
+          "id": "passage_7_q5",
+          "text": "The passage implies that reading:",
+          "choices": [
+            "Is only beneficial for young people",
+            "Can have positive effects throughout life",
+            "Should replace other hobbies",
+            "Is difficult for most people"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ]
+}

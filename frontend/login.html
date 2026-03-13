@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathMeg SAT Practice - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .login-header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .login-header h1 { font-size: 28px; margin-bottom: 10px; }
+        .login-header p { opacity: 0.95; font-size: 14px; }
+        .tab-buttons {
+            display: flex;
+            background: #f7fafc;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 18px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #718096;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .tab-btn.active {
+            color: #667eea;
+            background: white;
+        }
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #667eea;
+        }
+        .tab-content {
+            display: none;
+            padding: 40px 30px;
+        }
+        .tab-content.active { display: block; }
+        .form-group { margin-bottom: 25px; }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .error-message {
+            background: #fed7d7;
+            color: #742a2a;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+        .error-message.show { display: block; }
+        .help-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #718096;
+        }
+        .demo-info {
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #4a5568;
+        }
+        .demo-info strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+        .demo-info code {
+            background: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🎓 MathMeg SAT Practice</h1>
+            <p>Adaptive SAT Practice Simulator</p>
+        </div>
+        
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab('student')">👨‍🎓 Student Login</button>
+            <button class="tab-btn" onclick="switchTab('tutor')">👨‍🏫 Tutor Login</button>
+        </div>
+        
+        <!-- Student Login Tab -->
+        <div class="tab-content active" id="student-tab">
+            <div class="error-message" id="student-error"></div>
+            <form onsubmit="studentLogin(event)">
+                <div class="form-group">
+                    <label for="student-code">Student Access Code</label>
+                    <input type="text" id="student-code" placeholder="Enter your access code" 
+                           maxlength="12" style="text-transform: uppercase;" required>
+                </div>
+                <button type="submit" class="btn">Start Practice Test →</button>
+            </form>
+            <div class="help-text">Don't have an access code? Contact your tutor.</div>
+            <div class="demo-info">
+                <strong>📝 Demo Student Code:</strong>
+                <code>S9A4QMP7</code> (Sharath)
+            </div>
+        </div>
+        
+        <!-- Tutor Login Tab -->
+        <div class="tab-content" id="tutor-tab">
+            <div class="error-message" id="tutor-error"></div>
+            <form onsubmit="tutorLogin(event)">
+                <div class="form-group">
+                    <label for="tutor-code">Tutor Access Code</label>
+                    <input type="text" id="tutor-code" placeholder="Enter your tutor code" 
+                           maxlength="12" style="text-transform: uppercase;" required>
+                </div>
+                <button type="submit" class="btn">Access Tutor Dashboard →</button>
+            </form>
+            <div class="help-text">Need help? Contact your administrator</div>
+            <div class="demo-info">
+                <strong>🔐 Demo Tutor Code:</strong>
+                <code>TUTOR-RM01</code> (Mrs. Ramya)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let accessData = null;
+
+        async function loadAccessCodes() {
+            try {
+                const response = await fetch('access-codes.json');
+                accessData = await response.json();
+                console.log('✓ Access codes loaded');
+            } catch (error) {
+                console.error('Error loading access codes:', error);
+            }
+        }
+
+        loadAccessCodes();
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tab + '-tab').classList.add('active');
+            
+            document.getElementById('student-error').classList.remove('show');
+            document.getElementById('tutor-error').classList.remove('show');
+        }
+
+        function studentLogin(event) {
+            event.preventDefault();
+            const code = document.getElementById('student-code').value.toUpperCase().trim();
+            const errorEl = document.getElementById('student-error');
+            
+            if (!accessData) {
+                errorEl.textContent = 'System loading. Please wait and try again.';
+                errorEl.classList.add('show');
+                setTimeout(loadAccessCodes, 1000);
+                return;
+            }
+            
+            if (accessData.students && accessData.students[code]) {
+                const student = accessData.students[code];
+                
+                if (!student.active) {
+                    errorEl.textContent = 'This access code has been deactivated. Contact your tutor.';
+                    errorEl.classList.add('show');
+                    return;
+                }
+                
+                // Set both localStorage and sessionStorage for compatibility
+                localStorage.setItem('userType', 'student');
+                localStorage.setItem('studentCode', code);
+                localStorage.setItem('userName', student.name);
+                localStorage.setItem('tutorId', student.tutorId);
+                
+                // Also set sessionStorage for sat-test.html compatibility
+                sessionStorage.setItem('mathmeg_session', 'active');
+                sessionStorage.setItem('mathmeg_user_name', student.name);
+                sessionStorage.setItem('mathmeg_user_code', code);
+                
+                window.location.href = 'sat-test.html';
+            } else {
+                errorEl.textContent = 'Invalid access code. Please check and try again.';
+                errorEl.classList.add('show');
+            }
+        }
+
+        function tutorLogin(event) {
+            event.preventDefault();
+            const code = document.getElementById('tutor-code').value.toUpperCase().trim();
+            const errorEl = document.getElementById('tutor-error');
+            
+            if (!accessData) {
+                errorEl.textContent = 'System loading. Please wait and try again.';
+                errorEl.classList.add('show');
+                setTimeout(loadAccessCodes, 1000);
+                return;
+            }
+            
+            if (accessData.tutors && accessData.tutors[code]) {
+                const tutor = accessData.tutors[code];
+                
+                if (!tutor.active) {
+                    errorEl.textContent = 'This tutor account has been deactivated.';
+                    errorEl.classList.add('show');
+                    return;
+                }
+                
+                localStorage.setItem('userType', 'tutor');
+                localStorage.setItem('tutorId', code);
+                localStorage.setItem('tutorName', tutor.name);
+                localStorage.setItem('tutorEmail', tutor.email);
+                localStorage.setItem('assignedStudents', JSON.stringify(tutor.assignedStudents));
+                
+                window.location.href = 'tutor-portal.html';
+            } else {
+                errorEl.textContent = 'Invalid tutor code. Please check and try again.';
+                errorEl.classList.add('show');
+            }
+        }
+
+        document.getElementById('student-code').addEventListener('input', function(e) {
+            this.value = this.value.toUpperCase();
+        });
+        
+        document.getElementById('tutor-code').addEventListener('input', function(e) {
+            this.value = this.value.toUpperCase();
+        });
+    </script>
+</body>
+</html>

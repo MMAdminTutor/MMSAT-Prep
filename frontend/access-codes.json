@@ -1,0 +1,57 @@
+{
+  "tutors": {
+    "TUTOR-RM01": {
+      "name": "Mrs. Ramya",
+      "email": "ramya@mathmeg.com",
+      "active": true,
+      "assignedStudents": ["S9A4QMP7", "DQMP947A", "N9Z2L7QM", "A5XMP9A7", "D9Q4AXMP", "HAP9Q4A7"]
+    },
+    "TUTOR-KR02": {
+      "name": "Mr. Krishnan",
+      "email": "krishnan@mathmeg.com",
+      "active": true,
+      "assignedStudents": ["H4MPQ7XA", "AKMPQ7XA", "A7X4AMPQ", "A4MP7AQ9", "J9QMP7AX"]
+    },
+    "TUTOR-PR03": {
+      "name": "Ms. Priya",
+      "email": "priya@mathmeg.com",
+      "active": true,
+      "assignedStudents": ["K9AMP7X4", "A8PEG43L", "K7MP4XQ9", "KX94AMP7", "R4M7QP9A", "S4MP9QA7"]
+    },
+    "TUTOR-VK04": {
+      "name": "Mr. Venkat",
+      "email": "venkat@mathmeg.com",
+      "active": true,
+      "assignedStudents": ["NMPX7Q9A", "RQ9X4AMP", "A7AMPQ9X", "C9MPQ4A7", "P4AMPX97", "JQMP7X9A", "PO78RSD1", "AT45QA2E", "S9AQP7M4", "JA84NWD9"]
+    }
+  },
+  "students": {
+    "S9A4QMP7": {"name": "Sharath", "tutorId": "TUTOR-RM01", "active": true, "expiresAt": null},
+    "DQMP947A": {"name": "Samy", "tutorId": "TUTOR-RM01", "active": true, "expiresAt": null},
+    "N9Z2L7QM": {"name": "Nitish", "tutorId": "TUTOR-RM01", "active": true, "expiresAt": null},
+    "A5XMP9A7": {"name": "Anushka", "tutorId": "TUTOR-RM01", "active": true, "expiresAt": null},
+    "D9Q4AXMP": {"name": "Daya", "tutorId": "TUTOR-RM01", "active": true, "expiresAt": null},
+    "HAP9Q4A7": {"name": "Harshavardhini", "tutorId": "TUTOR-RM01", "active": true, "expiresAt": null},
+    "H4MPQ7XA": {"name": "Dhanvi", "tutorId": "TUTOR-KR02", "active": true, "expiresAt": null},
+    "AKMPQ7XA": {"name": "Akshaj", "tutorId": "TUTOR-KR02", "active": true, "expiresAt": null},
+    "A7X4AMPQ": {"name": "Aaradhana", "tutorId": "TUTOR-KR02", "active": true, "expiresAt": null},
+    "A4MP7AQ9": {"name": "Karthik", "tutorId": "TUTOR-KR02", "active": true, "expiresAt": null},
+    "J9QMP7AX": {"name": "Jiya Patel", "tutorId": "TUTOR-KR02", "active": true, "expiresAt": null},
+    "K9AMP7X4": {"name": "Kanigha", "tutorId": "TUTOR-PR03", "active": true, "expiresAt": null},
+    "A8PEG43L": {"name": "Adwita", "tutorId": "TUTOR-PR03", "active": true, "expiresAt": null},
+    "K7MP4XQ9": {"name": "Karunya", "tutorId": "TUTOR-PR03", "active": true, "expiresAt": null},
+    "KX94AMP7": {"name": "Shahitha", "tutorId": "TUTOR-PR03", "active": true, "expiresAt": null},
+    "R4M7QP9A": {"name": "Ridhaan", "tutorId": "TUTOR-PR03", "active": true, "expiresAt": null},
+    "S4MP9QA7": {"name": "Jey Patel", "tutorId": "TUTOR-PR03", "active": true, "expiresAt": null},
+    "NMPX7Q9A": {"name": "Rahul Hariharan", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "RQ9X4AMP": {"name": "Elizabeth", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "A7AMPQ9X": {"name": "Neil Gowda", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "C9MPQ4A7": {"name": "Ridya", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "P4AMPX97": {"name": "Ashvath", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "JQMP7X9A": {"name": "Charwik", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "PO78RSD1": {"name": "Poorva", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "AT45QA2E": {"name": "Athrav", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "S9AQP7M4": {"name": "Sarvaa", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null},
+    "JA84NWD9": {"name": "Jayaraj", "tutorId": "TUTOR-VK04", "active": true, "expiresAt": null}
+  }
+}
