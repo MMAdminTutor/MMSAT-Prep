@@ -1,4 +1,4 @@
-const db = require('./shared-db');
+const db = require('../shared-db');
 
 async function saveTest(testData) {
   try {
@@ -63,7 +63,8 @@ module.exports = async (req, res) => {
     console.error('❌ Error:', error);
     return res.status(500).json({ 
       success: false, 
-      error: error.message
+      error: error.message,
+      stack: error.stack
     });
   }
 };
