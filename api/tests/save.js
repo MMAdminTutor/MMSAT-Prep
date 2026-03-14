@@ -1,7 +1,6 @@
-// Global in-memory database (persists across invocations in same instance)
-global.testDatabase = global.testDatabase || { tests: {}, initialized: Date.now() };
+const db = require('./shared-db');
 
-function saveTest(testData) {
+async function saveTest(testData) {
   try {
     const timestamp = Date.now();
     const testId = `test_${timestamp}_${testData.student_code}`;
@@ -19,15 +18,12 @@ function saveTest(testData) {
       created_at: new Date().toISOString()
     };
     
-    // Save to global database
-    global.testDatabase.tests[testId] = testRecord;
+    db.save(testId, testRecord);
     
-    const testCount = Object.keys(global.testDatabase.tests).length;
-    console.log(`✅ Test saved to memory: ${testId}`);
-    console.log(`📊 Total tests in memory: ${testCount}`);
-    console.log(`⏱️  Database age: ${Math.round((Date.now() - global.testDatabase.initialized) / 1000)}s`);
+    const stats = db.stats();
+    console.log(`✅ Test saved! DB Stats:`, stats);
     
-    return { success: true, id: testId };
+    return { success: true, id: testId, stats };
   } catch (error) {
     console.error('❌ Save error:', error);
     return { success: false, error: error.message };
@@ -56,7 +52,7 @@ module.exports = async (req, res) => {
       score: testData.total_score
     });
 
-    const result = saveTest(testData);
+    const result = await saveTest(testData);
     
     if (result.success) {
       return res.status(200).json(result);

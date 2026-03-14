@@ -1,15 +1,16 @@
-// Global in-memory database (shared across all functions in same instance)
-global.testDatabase = global.testDatabase || { tests: {}, initialized: Date.now() };
+const db = require('../shared-db');
 
 function getStudentTests(studentCode, days = 15) {
   try {
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - days);
     
-    const tests = Object.values(global.testDatabase.tests)
+    const allTests = db.getByStudentCode(studentCode);
+    
+    const tests = allTests
       .filter(test => {
         const testDate = new Date(test.created_at);
-        return test.student_code === studentCode && testDate >= cutoffDate;
+        return testDate >= cutoffDate;
       })
       .map(test => ({
         id: test.id,
@@ -24,9 +25,8 @@ function getStudentTests(studentCode, days = 15) {
       }))
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     
-    const totalTests = Object.keys(global.testDatabase.tests).length;
-    console.log(`📊 Total tests in memory: ${totalTests}`);
-    console.log(`✅ Found ${tests.length} tests for ${studentCode}`);
+    const stats = db.stats();
+    console.log(`✅ Found ${tests.length} tests for ${studentCode}. DB Stats:`, stats);
     
     return tests;
   } catch (error) {
@@ -52,14 +52,16 @@ module.exports = async (req, res) => {
     const { studentCode } = req.query;
     const days = parseInt(req.query.days) || 15;
     
-    console.log(`🔍 Getting tests for: ${studentCode}`);
+    console.log(`🔍 Getting tests for student: ${studentCode}`);
     
     const tests = getStudentTests(studentCode, days);
+    const stats = db.stats();
     
     return res.status(200).json({
       success: true,
       tests: tests,
-      count: tests.length
+      count: tests.length,
+      dbStats: stats
     });
   } catch (error) {
     console.error('❌ Error:', error);
