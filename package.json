@@ -2,6 +2,6 @@
   "name": "sat-practice-app",
   "version": "1.0.0",
   "dependencies": {
-    "@vercel/kv": "^1.0.0"
+    "@vercel/kv": "^1.0.1"
   }
 }

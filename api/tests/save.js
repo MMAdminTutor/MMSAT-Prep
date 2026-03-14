@@ -1,4 +1,4 @@
-const db = require('../shared-db');
+const { kv } = require('@vercel/kv');
 
 async function saveTest(testData) {
   try {
@@ -18,14 +18,21 @@ async function saveTest(testData) {
       created_at: new Date().toISOString()
     };
     
-    db.save(testId, testRecord);
+    // Save to Vercel KV
+    await kv.set(testId, testRecord);
     
-    const stats = db.stats();
-    console.log(`✅ Test saved! DB Stats:`, stats);
+    // Add to student index
+    const studentKey = `student:${testData.student_code}`;
+    await kv.sadd(studentKey, testId);
     
-    return { success: true, id: testId, stats };
+    // Add to tutor index
+    const tutorKey = `tutor:${testData.tutor_id}`;
+    await kv.sadd(tutorKey, testId);
+    
+    console.log(`✅ Test saved to KV: ${testId}`);
+    return { success: true, id: testId };
   } catch (error) {
-    console.error('❌ Save error:', error);
+    console.error('❌ KV save error:', error);
     return { success: false, error: error.message };
   }
 }
@@ -63,8 +70,7 @@ module.exports = async (req, res) => {
     console.error('❌ Error:', error);
     return res.status(500).json({ 
       success: false, 
-      error: error.message,
-      stack: error.stack
+      error: error.message
     });
   }
 };

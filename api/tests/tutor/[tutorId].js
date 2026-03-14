@@ -1,36 +1,41 @@
-const db = require('../../shared-db');
+const { kv } = require('@vercel/kv');
 
-function getTutorTests(tutorId, days = 15) {
+async function getTutorTests(tutorId, days = 15) {
   try {
+    const tutorKey = `tutor:${tutorId}`;
+    const testIds = await kv.smembers(tutorKey);
+    
+    if (!testIds || testIds.length === 0) {
+      return [];
+    }
+    
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - days);
     
-    const allTests = db.getByTutorId(tutorId);
-    
-    const tests = allTests
-      .filter(test => {
+    const tests = [];
+    for (const testId of testIds) {
+      const test = await kv.get(testId);
+      if (test) {
         const testDate = new Date(test.created_at);
-        return testDate >= cutoffDate;
-      })
-      .map(test => ({
-        id: test.id,
-        studentCode: test.student_code,
-        studentName: test.student_name,
-        testType: test.test_type,
-        totalScore: test.total_score,
-        readingScore: test.reading_score,
-        mathScore: test.math_score,
-        testData: test.test_data,
-        createdAt: test.created_at
-      }))
-      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        if (testDate >= cutoffDate) {
+          tests.push({
+            id: test.id,
+            studentCode: test.student_code,
+            studentName: test.student_name,
+            testType: test.test_type,
+            totalScore: test.total_score,
+            readingScore: test.reading_score,
+            mathScore: test.math_score,
+            testData: test.test_data,
+            createdAt: test.created_at
+          });
+        }
+      }
+    }
     
-    const stats = db.stats();
-    console.log(`✅ Found ${tests.length} tests for tutor ${tutorId}. DB Stats:`, stats);
-    
-    return tests;
+    return tests.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   } catch (error) {
-    console.error('❌ Get error:', error);
+    console.error('❌ KV get error:', error);
     return [];
   }
 }
@@ -54,21 +59,20 @@ module.exports = async (req, res) => {
     
     console.log(`🔍 Getting tests for tutor: ${tutorId}`);
     
-    const tests = getTutorTests(tutorId, days);
-    const stats = db.stats();
+    const tests = await getTutorTests(tutorId, days);
+    
+    console.log(`✅ Found ${tests.length} tests in KV`);
     
     return res.status(200).json({
       success: true,
       tests: tests,
-      count: tests.length,
-      dbStats: stats
+      count: tests.length
     });
   } catch (error) {
     console.error('❌ Error:', error);
     return res.status(500).json({ 
       success: false, 
-      error: error.message,
-      stack: error.stack
+      error: error.message
     });
   }
 };

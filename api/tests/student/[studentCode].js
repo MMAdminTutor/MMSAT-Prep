@@ -1,36 +1,41 @@
-const db = require('../../shared-db');
+const { kv } = require('@vercel/kv');
 
-function getStudentTests(studentCode, days = 15) {
+async function getStudentTests(studentCode, days = 15) {
   try {
+    const studentKey = `student:${studentCode}`;
+    const testIds = await kv.smembers(studentKey);
+    
+    if (!testIds || testIds.length === 0) {
+      return [];
+    }
+    
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - days);
     
-    const allTests = db.getByStudentCode(studentCode);
-    
-    const tests = allTests
-      .filter(test => {
+    const tests = [];
+    for (const testId of testIds) {
+      const test = await kv.get(testId);
+      if (test) {
         const testDate = new Date(test.created_at);
-        return testDate >= cutoffDate;
-      })
-      .map(test => ({
-        id: test.id,
-        studentCode: test.student_code,
-        studentName: test.student_name,
-        testType: test.test_type,
-        totalScore: test.total_score,
-        readingScore: test.reading_score,
-        mathScore: test.math_score,
-        testData: test.test_data,
-        createdAt: test.created_at
-      }))
-      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        if (testDate >= cutoffDate) {
+          tests.push({
+            id: test.id,
+            studentCode: test.student_code,
+            studentName: test.student_name,
+            testType: test.test_type,
+            totalScore: test.total_score,
+            readingScore: test.reading_score,
+            mathScore: test.math_score,
+            testData: test.test_data,
+            createdAt: test.created_at
+          });
+        }
+      }
+    }
     
-    const stats = db.stats();
-    console.log(`✅ Found ${tests.length} tests for ${studentCode}. DB Stats:`, stats);
-    
-    return tests;
+    return tests.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   } catch (error) {
-    console.error('❌ Get error:', error);
+    console.error('❌ KV get error:', error);
     return [];
   }
 }
@@ -52,23 +57,22 @@ module.exports = async (req, res) => {
     const { studentCode } = req.query;
     const days = parseInt(req.query.days) || 15;
     
-    console.log(`🔍 Getting tests for student: ${studentCode}`);
+    console.log(`🔍 Getting tests for: ${studentCode}`);
     
-    const tests = getStudentTests(studentCode, days);
-    const stats = db.stats();
+    const tests = await getStudentTests(studentCode, days);
+    
+    console.log(`✅ Found ${tests.length} tests in KV`);
     
     return res.status(200).json({
       success: true,
       tests: tests,
-      count: tests.length,
-      dbStats: stats
+      count: tests.length
     });
   } catch (error) {
     console.error('❌ Error:', error);
     return res.status(500).json({ 
       success: false, 
-      error: error.message,
-      stack: error.stack
+      error: error.message
     });
   }
 };
