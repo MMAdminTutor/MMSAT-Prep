@@ -1,6 +1,7 @@
-const { kv } = require('@vercel/kv');
+// Global in-memory database (persists across invocations in same instance)
+global.testDatabase = global.testDatabase || { tests: {}, initialized: Date.now() };
 
-async function saveTest(testData) {
+function saveTest(testData) {
   try {
     const timestamp = Date.now();
     const testId = `test_${timestamp}_${testData.student_code}`;
@@ -18,21 +19,17 @@ async function saveTest(testData) {
       created_at: new Date().toISOString()
     };
     
-    // Save to Vercel KV
-    await kv.set(testId, testRecord);
+    // Save to global database
+    global.testDatabase.tests[testId] = testRecord;
     
-    // Add to student index
-    const studentKey = `student:${testData.student_code}`;
-    await kv.sadd(studentKey, testId);
+    const testCount = Object.keys(global.testDatabase.tests).length;
+    console.log(`✅ Test saved to memory: ${testId}`);
+    console.log(`📊 Total tests in memory: ${testCount}`);
+    console.log(`⏱️  Database age: ${Math.round((Date.now() - global.testDatabase.initialized) / 1000)}s`);
     
-    // Add to tutor index
-    const tutorKey = `tutor:${testData.tutor_id}`;
-    await kv.sadd(tutorKey, testId);
-    
-    console.log(`✅ Test saved to KV: ${testId}`);
     return { success: true, id: testId };
   } catch (error) {
-    console.error('❌ KV save error:', error);
+    console.error('❌ Save error:', error);
     return { success: false, error: error.message };
   }
 }
@@ -59,7 +56,7 @@ module.exports = async (req, res) => {
       score: testData.total_score
     });
 
-    const result = await saveTest(testData);
+    const result = saveTest(testData);
     
     if (result.success) {
       return res.status(200).json(result);

@@ -1,41 +1,36 @@
-const { kv } = require('@vercel/kv');
+// Global in-memory database (shared across all functions in same instance)
+global.testDatabase = global.testDatabase || { tests: {}, initialized: Date.now() };
 
-async function getTutorTests(tutorId, days = 15) {
+function getTutorTests(tutorId, days = 15) {
   try {
-    const tutorKey = `tutor:${tutorId}`;
-    const testIds = await kv.smembers(tutorKey);
-    
-    if (!testIds || testIds.length === 0) {
-      return [];
-    }
-    
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - days);
     
-    const tests = [];
-    for (const testId of testIds) {
-      const test = await kv.get(testId);
-      if (test) {
+    const tests = Object.values(global.testDatabase.tests)
+      .filter(test => {
         const testDate = new Date(test.created_at);
-        if (testDate >= cutoffDate) {
-          tests.push({
-            id: test.id,
-            studentCode: test.student_code,
-            studentName: test.student_name,
-            testType: test.test_type,
-            totalScore: test.total_score,
-            readingScore: test.reading_score,
-            mathScore: test.math_score,
-            testData: test.test_data,
-            createdAt: test.created_at
-          });
-        }
-      }
-    }
+        return test.tutor_id === tutorId && testDate >= cutoffDate;
+      })
+      .map(test => ({
+        id: test.id,
+        studentCode: test.student_code,
+        studentName: test.student_name,
+        testType: test.test_type,
+        totalScore: test.total_score,
+        readingScore: test.reading_score,
+        mathScore: test.math_score,
+        testData: test.test_data,
+        createdAt: test.created_at
+      }))
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     
-    return tests.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    const totalTests = Object.keys(global.testDatabase.tests).length;
+    console.log(`📊 Total tests in memory: ${totalTests}`);
+    console.log(`✅ Found ${tests.length} tests for tutor ${tutorId}`);
+    
+    return tests;
   } catch (error) {
-    console.error('❌ KV get error:', error);
+    console.error('❌ Get error:', error);
     return [];
   }
 }
@@ -59,9 +54,7 @@ module.exports = async (req, res) => {
     
     console.log(`🔍 Getting tests for tutor: ${tutorId}`);
     
-    const tests = await getTutorTests(tutorId, days);
-    
-    console.log(`✅ Found ${tests.length} tests in KV`);
+    const tests = getTutorTests(tutorId, days);
     
     return res.status(200).json({
       success: true,

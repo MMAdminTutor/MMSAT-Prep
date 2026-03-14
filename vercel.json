@@ -2,28 +2,12 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/health",
-      "destination": "/api/health.js"
-    },
-    {
-      "source": "/api/tests/save",
-      "destination": "/api/tests/save.js"
-    },
-    {
-      "source": "/api/tests/student/:studentCode",
-      "destination": "/api/tests/student/[studentCode].js"
-    },
-    {
-      "source": "/api/tests/tutor/:tutorId",
-      "destination": "/api/tests/tutor/[tutorId].js"
-    },
-    {
       "source": "/",
       "destination": "/frontend/login.html"
     },
     {
-      "source": "/:path((?!api).*)",
-      "destination": "/frontend/:path"
+      "source": "/((?!api).*)",
+      "destination": "/frontend/$1"
     }
   ],
   "headers": [
