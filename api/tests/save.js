@@ -1,4 +1,6 @@
-const { kv } = require('@vercel/kv');
+const { Redis } = require('@upstash/redis');
+
+const redis = Redis.fromEnv();
 
 async function saveTest(testData) {
   try {
@@ -18,35 +20,27 @@ async function saveTest(testData) {
       created_at: new Date().toISOString()
     };
     
-    console.log('💾 Attempting to save to KV:', testId);
+    console.log('💾 Saving to Upstash:', testId);
     
-    // Save to Vercel KV
-    await kv.set(testId, testRecord);
-    console.log('✅ Saved test to KV');
+    // Save test
+    await redis.set(testId, JSON.stringify(testRecord));
+    console.log('✅ Test saved');
     
     // Add to student index
     const studentKey = `student:${testData.student_code}`;
-    await kv.sadd(studentKey, testId);
+    await redis.sadd(studentKey, testId);
     console.log('✅ Added to student index');
     
     // Add to tutor index
     const tutorKey = `tutor:${testData.tutor_id}`;
-    await kv.sadd(tutorKey, testId);
+    await redis.sadd(tutorKey, testId);
     console.log('✅ Added to tutor index');
     
-    console.log(`✅ Test saved successfully: ${testId}`);
+    console.log(`✅ Success! Test saved to Upstash: ${testId}`);
     return { success: true, id: testId };
   } catch (error) {
-    console.error('❌ KV save error:', error);
-    console.error('Error name:', error.name);
-    console.error('Error message:', error.message);
-    console.error('Error stack:', error.stack);
-    return { 
-      success: false, 
-      error: error.message,
-      errorName: error.name,
-      errorStack: error.stack
-    };
+    console.error('❌ Upstash error:', error);
+    return { success: false, error: error.message };
   }
 }
 
@@ -71,27 +65,19 @@ module.exports = async (req, res) => {
     console.log('Code:', testData.student_code);
     console.log('Score:', testData.total_score);
     
-    // Check if KV is accessible
-    console.log('Checking KV connection...');
-    console.log('KV_REST_API_URL exists:', !!process.env.KV_REST_API_URL);
-    console.log('KV_REST_API_TOKEN exists:', !!process.env.KV_REST_API_TOKEN);
-
     const result = await saveTest(testData);
     
     if (result.success) {
-      console.log('✅ Save successful, returning to client');
       return res.status(200).json(result);
     } else {
-      console.log('❌ Save failed, returning error');
       return res.status(500).json(result);
     }
   } catch (error) {
-    console.error('❌ Outer error:', error);
+    console.error('❌ Error:', error);
     return res.status(500).json({ 
       success: false, 
       error: error.message,
-      errorName: error.name,
-      errorStack: error.stack
+      stack: error.stack
     });
   }
 };
