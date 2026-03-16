@@ -3321,16 +3321,21 @@
         }
 
         function startNextModule() {
-            // Check if we're already at module 1 (section transition case)
-            if (testState.currentModule === 1) {
-                // We're transitioning to a new section, already at module 1
-                // Just need to start the module without changing currentModule
-                selectModule1Questions();
+            const module1Key = `${testState.currentSection}_module1`;
+            
+            // Section transition detection:
+            // If at math section + module 1 + module 1 NOT completed = section transition
+            // (submitModule sets up math module 1 but doesn't mark it completed)
+            if (testState.currentSection === 'math' && 
+                testState.currentModule === 1 && 
+                !testState.modules[module1Key].completed) {
+                // Section transition from reading to math
+                // Math module 1 questions already loaded in submitModule (line 3270)
+                // Just start the module without changing anything
             } else {
-                // Normal case: going from module 1 to module 2 in same section
+                // Normal progression: module 1 → module 2 within same section
                 testState.currentModule = 2;
                 
-                const module1Key = `${testState.currentSection}_module1`;
                 const performance = testState.performance[module1Key];
                 selectModule2Questions(performance);
             }
