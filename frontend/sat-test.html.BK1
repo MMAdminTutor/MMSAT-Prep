@@ -3321,19 +3321,11 @@
         }
 
         function startNextModule() {
-            // Check if we're already at module 1 (section transition case)
-            if (testState.currentModule === 1) {
-                // We're transitioning to a new section, already at module 1
-                // Just need to start the module without changing currentModule
-                selectModule1Questions();
-            } else {
-                // Normal case: going from module 1 to module 2 in same section
-                testState.currentModule = 2;
-                
-                const module1Key = `${testState.currentSection}_module1`;
-                const performance = testState.performance[module1Key];
-                selectModule2Questions(performance);
-            }
+            testState.currentModule = 2;
+            
+            const module1Key = `${testState.currentSection}_module1`;
+            const performance = testState.performance[module1Key];
+            selectModule2Questions(performance);
             
             document.getElementById('transitionScreen').classList.add('hidden');
             startModule();
@@ -4168,127 +4160,53 @@ async function saveTestToBackend(scores) {
                     
                     // List each question
                     moduleData.questions.forEach((q, idx) => {
-                        if (y > 250) {
+                        if (y > 270) {
                             doc.addPage();
                             y = 20;
                         }
                         
                         const answer = moduleData.answers[idx];
-                        const isGridIn = q.questionType === 'grid-in' || !q.choices || q.choices.length === 0;
+                        const isGridIn = q.questionType === 'grid-in';
                         const isCorrect = isGridIn ? 
                             checkGridInAnswer(answer, q.correctAnswer) : 
                             (answer === q.correct);
                         
-                        // Question number and result in a box
-                        doc.setFillColor(248, 249, 250);
-                        doc.roundedRect(15, y - 3, 180, 8, 2, 2, 'F');
-                        
-                        doc.setFontSize(10);
+                        // Question number and result
+                        doc.setFontSize(9);
                         doc.setTextColor(0, 0, 0);
                         doc.setFont('helvetica', 'bold');
-                        doc.text(`Question ${idx + 1}`, 20, y + 2);
+                        doc.text(`Q${idx + 1}:`, 20, y);
                         
                         // Result indicator
                         if (answer === null || answer === '') {
                             doc.setTextColor(150, 150, 150);
-                            doc.text('○ Skipped', 165, y + 2, { align: 'right' });
+                            doc.text('⊘ Skipped', 30, y);
                         } else if (isCorrect) {
-                            doc.setTextColor(34, 139, 34);
-                            doc.text('✓ Correct', 165, y + 2, { align: 'right' });
+                            doc.setTextColor(6, 214, 160);
+                            doc.text('✓ Correct', 30, y);
                         } else {
-                            doc.setTextColor(220, 38, 38);
-                            doc.text('✗ Incorrect', 165, y + 2, { align: 'right' });
+                            doc.setTextColor(247, 23, 53);
+                            doc.text('✗ Incorrect', 30, y);
                         }
                         
-                        y += 10;
-                        
-                        // Question text (wrapped to fit page width)
-                        doc.setFontSize(9);
+                        // Student answer and correct answer
                         doc.setFont('helvetica', 'normal');
                         doc.setTextColor(0, 0, 0);
-                        const questionText = q.text || 'Question text not available';
-                        const wrappedText = doc.splitTextToSize(questionText, 170);
-                        doc.text(wrappedText, 20, y);
-                        y += wrappedText.length * 4 + 2;
-                        
-                        if (y > 250) {
-                            doc.addPage();
-                            y = 20;
-                        }
-                        
-                        // Answer choices or grid-in
-                        if (!isGridIn && q.choices && q.choices.length > 0) {
-                            doc.setFontSize(8);
-                            q.choices.forEach((choice, choiceIdx) => {
-                                const letter = String.fromCharCode(65 + choiceIdx);
-                                const isStudentAnswer = answer === choiceIdx;
-                                const isCorrectAnswer = q.correct === choiceIdx;
-                                
-                                // Highlight student's answer and correct answer
-                                if (isStudentAnswer || isCorrectAnswer) {
-                                    if (isCorrectAnswer && isStudentAnswer) {
-                                        doc.setFillColor(198, 246, 213); // Green - correct choice student selected
-                                    } else if (isCorrectAnswer) {
-                                        doc.setFillColor(240, 255, 244); // Light green - correct answer
-                                    } else {
-                                        doc.setFillColor(254, 226, 226); // Light red - wrong answer student selected
-                                    }
-                                    doc.rect(18, y - 3, 174, 5, 'F');
-                                }
-                                
-                                doc.setFont('helvetica', 'bold');
-                                doc.setTextColor(0, 0, 0);
-                                doc.text(`${letter}.`, 20, y);
-                                
-                                doc.setFont('helvetica', 'normal');
-                                const wrappedChoice = doc.splitTextToSize(choice, 160);
-                                doc.text(wrappedChoice, 25, y);
-                                
-                                // Add indicators
-                                if (isCorrectAnswer && isStudentAnswer) {
-                                    doc.setTextColor(34, 139, 34);
-                                    doc.setFont('helvetica', 'bold');
-                                    doc.text('✓', 188, y, { align: 'right' });
-                                } else if (isCorrectAnswer) {
-                                    doc.setTextColor(34, 139, 34);
-                                    doc.setFont('helvetica', 'bold');
-                                    doc.text('✓ Correct', 188, y, { align: 'right' });
-                                } else if (isStudentAnswer) {
-                                    doc.setTextColor(220, 38, 38);
-                                    doc.setFont('helvetica', 'bold');
-                                    doc.text('✗ Selected', 188, y, { align: 'right' });
-                                }
-                                
-                                y += Math.max(wrappedChoice.length * 3.5, 5);
-                                
-                                if (y > 270) {
-                                    doc.addPage();
-                                    y = 20;
-                                }
-                            });
+                        if (isGridIn) {
+                            doc.text(`Student: ${answer || 'No answer'}`, 65, y);
+                            doc.text(`Correct: ${q.correctAnswer}`, 120, y);
                         } else {
-                            // Grid-in answer
-                            doc.setFontSize(9);
-                            doc.setFont('helvetica', 'bold');
-                            doc.setTextColor(0, 0, 0);
-                            doc.text('Grid-In Answer:', 20, y);
-                            y += 5;
-                            
-                            doc.setFont('helvetica', 'normal');
-                            doc.text(`Student's Answer: ${answer !== null && answer !== '' ? answer : 'No answer'}`, 25, y);
-                            y += 5;
-                            doc.text(`Correct Answer: ${q.correctAnswer}`, 25, y);
-                            y += 5;
+                            const studentChoice = answer !== null ? String.fromCharCode(65 + answer) : '-';
+                            const correctChoice = String.fromCharCode(65 + q.correct);
+                            doc.text(`Student: ${studentChoice}`, 65, y);
+                            doc.text(`Correct: ${correctChoice}`, 120, y);
                         }
                         
                         // Category/Skill
-                        if (q.category || q.skill) {
+                        if (q.category) {
                             doc.setFontSize(8);
                             doc.setTextColor(108, 117, 125);
-                            doc.setFont('helvetica', 'italic');
-                            const categoryText = q.category || q.skill;
-                            doc.text(`Category: ${categoryText}`, 20, y);
-                            y += 4;
+                            doc.text(q.category, 160, y);
                         }
                         
                         y += 6;
