@@ -3455,7 +3455,7 @@ async function saveTestToBackend(scores) {
         
         console.log('📤 Auto-saving test to backend...');
         
-        const response = await fetch(`${API_URL}/save`, {
+        const response = await fetch(`${API_URL}/tests/save`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(testData)
