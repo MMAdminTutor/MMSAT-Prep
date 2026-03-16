@@ -3300,12 +3300,6 @@
             document.getElementById('performanceFill').style.width = `${percentage}%`;
             document.getElementById('performanceFill').textContent = `${percentage}%`;
             
-            // Determine section name and next module
-            const sectionName = testState.currentSection === 'reading' ? 'Reading & Writing' : 'Math';
-            
-            // Update transition title to show current section and module
-            document.getElementById('transitionTitle').textContent = `${sectionName} Module 1 Complete!`;
-            
             let message = '';
             if (performance >= 0.7) {
                 message = 'Excellent performance! Module 2 will contain harder questions for higher scoring potential.';
@@ -3317,7 +3311,7 @@
             
             document.getElementById('adaptiveMessage').textContent = message;
             document.getElementById('transitionMessage').textContent = 
-                `You answered ${Math.round(performance * 100)}% correctly in Module 1. Continue to ${sectionName} Module 2.`;
+                `You answered ${Math.round(performance * 100)}% correctly in Module 1.`;
         }
 
         function startNextModule() {
@@ -3333,9 +3327,9 @@
 
         function showSectionTransition() {
             document.getElementById('transitionScreen').classList.remove('hidden');
-            document.getElementById('transitionTitle').textContent = 'Reading & Writing Section Complete!';
+            document.getElementById('transitionTitle').textContent = 'Reading & Writing Complete!';
             document.getElementById('transitionMessage').textContent = 
-                'Great job completing both Reading & Writing modules! Continue to Math Module 1.';
+                'Great job! Next up: Math Section';
             document.getElementById('performanceFill').style.width = '100%';
             document.getElementById('performanceFill').textContent = 'Section Complete';
             document.getElementById('adaptiveMessage').textContent = 
@@ -3891,20 +3885,9 @@ async function saveTestToBackend(scores) {
             const testDate = new Date().toLocaleDateString();
             const testTime = new Date().toLocaleTimeString();
             
-            // Safely get scores with null checks
-            const totalScoreEl = document.getElementById('totalScore');
-            const readingScoreEl = document.getElementById('readingScore');
-            const mathScoreEl = document.getElementById('mathScore');
-            
-            if (!totalScoreEl) {
-                console.error('Score elements not found');
-                alert('Error: Score data not available. Please try again.');
-                return;
-            }
-            
-            const totalScore = totalScoreEl.textContent;
-            const readingScore = readingScoreEl ? readingScoreEl.textContent : 'N/A';
-            const mathScore = mathScoreEl ? mathScoreEl.textContent : 'N/A';
+            const totalScore = document.getElementById('totalScore').textContent;
+            const readingScore = document.getElementById('readingScore').textContent;
+            const mathScore = document.getElementById('mathScore').textContent;
             
             // Determine test type label
             let testTypeLabel = 'Full SAT Practice Test';
@@ -3924,18 +3907,11 @@ async function saveTestToBackend(scores) {
             // Get category breakdown
             const categoryBreakdown = document.getElementById('categoryBreakdown');
             const categories = [];
-            if (categoryBreakdown) {
-                categoryBreakdown.querySelectorAll('.category-performance').forEach(cat => {
-                    const nameEl = cat.querySelector('.category-name');
-                    const scoreEl = cat.querySelector('.category-score');
-                    if (nameEl && scoreEl) {
-                        categories.push({ 
-                            name: nameEl.textContent, 
-                            score: scoreEl.textContent 
-                        });
-                    }
-                });
-            }
+            categoryBreakdown.querySelectorAll('.category-performance').forEach(cat => {
+                const name = cat.querySelector('.category-name').textContent;
+                const score = cat.querySelector('.category-score').textContent;
+                categories.push({ name, score });
+            });
             
             // Generate PDF
             try {

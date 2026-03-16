@@ -1150,98 +1150,15 @@
                 let questionText = q.text || 'Question text not available';
                 
                 html += `
-                    <div class="question-item ${statusClass}" data-filter-status="${statusClass}" style="padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 16px; background: white;">
-                        <div class="question-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                            <span class="question-number" style="font-weight: 600; color: #2d3748;">Question ${idx + 1}</span>
-                            <span class="question-status status-${statusClass}" style="padding: 4px 12px; border-radius: 12px; font-size: 14px; font-weight: 600; 
-                                ${statusClass === 'correct' ? 'background: #c6f6d5; color: #22543d;' : 
-                                  statusClass === 'incorrect' ? 'background: #fed7d7; color: #742a2a;' : 
-                                  'background: #e2e8f0; color: #4a5568;'}">
-                                ${statusLabel}
-                            </span>
+                    <div class="question-item ${statusClass}" data-filter-status="${statusClass}" style="padding: 20px;">
+                        <div class="question-header">
+                            <span class="question-number">Question ${idx + 1}</span>
+                            <span class="question-status status-${statusClass}">${statusLabel}</span>
                         </div>
-                        
-                        <!-- Question Text -->
-                        <div style="margin: 16px 0; padding: 12px; background: #f7fafc; border-radius: 6px;">
-                            <div style="font-size: 15px; line-height: 1.6; color: #2d3748;">
-                                ${questionText}
-                            </div>
+                        <div style="margin: 12px 0;">
+                            <strong>Student's Answer:</strong> ${answer !== null && answer !== '' ? (isGridIn ? answer : String.fromCharCode(65 + answer)) : 'No answer'}<br>
+                            <strong>Correct Answer:</strong> ${isGridIn ? q.correctAnswer : String.fromCharCode(65 + q.correct)}
                         </div>
-                        
-                        <!-- Answer Choices (if not grid-in) -->
-                        ${!isGridIn && q.choices && q.choices.length > 0 ? `
-                            <div style="margin: 16px 0;">
-                                <div style="font-weight: 600; margin-bottom: 8px; color: #4a5568;">Answer Choices:</div>
-                                ${q.choices.map((choice, choiceIdx) => {
-                                    const isStudentAnswer = answer === choiceIdx;
-                                    const isCorrectAnswer = q.correct === choiceIdx;
-                                    let choiceStyle = 'padding: 10px; margin: 6px 0; border-radius: 6px; border: 2px solid ';
-                                    
-                                    if (isCorrectAnswer && isStudentAnswer) {
-                                        // Student got it right
-                                        choiceStyle += '#48bb78; background: #c6f6d5;';
-                                    } else if (isCorrectAnswer) {
-                                        // Correct answer (student didn't select)
-                                        choiceStyle += '#48bb78; background: #f0fff4;';
-                                    } else if (isStudentAnswer) {
-                                        // Student's wrong answer
-                                        choiceStyle += '#f56565; background: #fff5f5;';
-                                    } else {
-                                        // Not selected
-                                        choiceStyle += '#e2e8f0; background: #f7fafc;';
-                                    }
-                                    
-                                    return `
-                                        <div style="${choiceStyle}">
-                                            <span style="font-weight: 600; margin-right: 8px;">${String.fromCharCode(65 + choiceIdx)}.</span>
-                                            <span>${choice}</span>
-                                            ${isCorrectAnswer ? '<span style="margin-left: 8px; color: #22543d; font-weight: 600;">✓ Correct</span>' : ''}
-                                            ${isStudentAnswer && !isCorrectAnswer ? '<span style="margin-left: 8px; color: #742a2a; font-weight: 600;">✗ Student Selected</span>' : ''}
-                                            ${isStudentAnswer && isCorrectAnswer ? '<span style="margin-left: 8px; color: #22543d; font-weight: 600;">✓ Student Selected (Correct)</span>' : ''}
-                                        </div>
-                                    `;
-                                }).join('')}
-                            </div>
-                        ` : ''}
-                        
-                        <!-- Grid-In Answer (if applicable) -->
-                        ${isGridIn ? `
-                            <div style="margin: 16px 0; padding: 12px; background: #f7fafc; border-radius: 6px;">
-                                <div style="font-weight: 600; margin-bottom: 8px; color: #4a5568;">Grid-In Answer:</div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                                    <div>
-                                        <div style="font-size: 13px; color: #718096; margin-bottom: 4px;">Student's Answer:</div>
-                                        <div style="font-size: 18px; font-weight: 600; color: ${isCorrect ? '#22543d' : '#742a2a'};">
-                                            ${answer !== null && answer !== '' ? answer : 'No answer'}
-                                            ${isCorrect ? ' ✓' : answer !== null && answer !== '' ? ' ✗' : ''}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div style="font-size: 13px; color: #718096; margin-bottom: 4px;">Correct Answer:</div>
-                                        <div style="font-size: 18px; font-weight: 600; color: #22543d;">
-                                            ${q.correctAnswer} ✓
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ` : `
-                            <!-- Summary for Multiple Choice -->
-                            <div style="margin-top: 16px; padding: 12px; background: #edf2f7; border-radius: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                                <div>
-                                    <div style="font-size: 13px; color: #718096; margin-bottom: 4px;">Student Selected:</div>
-                                    <div style="font-size: 16px; font-weight: 600; color: ${isCorrect ? '#22543d' : '#742a2a'};">
-                                        ${answer !== null && answer !== '' ? String.fromCharCode(65 + answer) : 'No answer'}
-                                        ${isCorrect ? ' ✓' : answer !== null && answer !== '' ? ' ✗' : ''}
-                                    </div>
-                                </div>
-                                <div>
-                                    <div style="font-size: 13px; color: #718096; margin-bottom: 4px;">Correct Answer:</div>
-                                    <div style="font-size: 16px; font-weight: 600; color: #22543d;">
-                                        ${String.fromCharCode(65 + q.correct)} ✓
-                                    </div>
-                                </div>
-                            </div>
-                        `}
                     </div>
                 `;
             });
