@@ -7,8 +7,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Adaptive SAT Practice Simulator | MathMeg</title>
-    <!-- jsPDF library - LOCAL FILE (No CDN, No Tracking Prevention Issues!) -->
-    <script src="jspdf.umd.min.js"></script>
+    <!-- jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -1584,10 +1584,7 @@
             }
         }
 
-        /* ==========================================
-           QUESTION IMAGE SUPPORT
-           ========================================== */
-        
+        /* Image Support for Questions */
         .question-image-container {
             margin: 20px 0;
             text-align: center;
@@ -1680,7 +1677,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container" tabindex="-1" role="main">
+        <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <img src="mathmeg-logo.jpg" alt="MathMeg Logo" style="height: 45px; width: auto;">
@@ -1708,7 +1705,7 @@
         </div>
     </header>
 
-    <div class="container" tabindex="-1" role="main">
+    <div class="container">
         <!-- SAT Information Page -->
         <div class="info-page" id="infoPage">
             <div class="info-container">
@@ -2038,7 +2035,7 @@
                 </div>
             </aside>
 
-            <main class="test-area" tabindex="-1">
+            <main class="test-area">
                 <div class="question-header">
                     <div class="question-info">
                         <div class="question-number" id="questionNumber">Question 1</div>
@@ -2142,7 +2139,7 @@
                 <p style="margin-top: 1rem; color: var(--text-gray);" id="adaptiveMessage"></p>
             </div>
 
-            <button class="start-btn" id="transitionButton" onclick="startNextModule()">Continue to Module 2</button>
+            <button class="start-btn" onclick="startNextModule()">Continue to Module 2</button>
         </div>
 
         <!-- Results Screen -->
@@ -2191,49 +2188,9 @@
         // ADAPTIVE SAT SIMULATOR - COMPLETE VERSION
         // ==========================================
 
-        // Auto-detect API URL based on environment
-        const API_URL = window.location.hostname === 'localhost' 
-            ? 'http://localhost:3000/api'
-            : window.location.origin + '/api';
-        
-        console.log('🌐 Environment:', window.location.hostname);
-        console.log('🔗 API_URL:', API_URL);
+        const API_URL = 'http://localhost:3000/api';
 
         // Test State Management
-
- // ==========================================
-        // FOCUS MANAGEMENT FOR ACCESSIBILITY
-        // ==========================================
-        
-        function focusOnPageTop() {
-            const targets = [
-                document.querySelector('main[role="main"]'),
-                document.querySelector('.test-area'),
-                document.querySelector('h1'),
-                document.querySelector('.container'),
-                document.body
-            ];
-            
-            const element = targets.find(el => el !== null);
-            
-            if (element) {
-                if (!element.hasAttribute('tabindex')) {
-                    element.setAttribute('tabindex', '-1');
-                }
-                
-                setTimeout(() => {
-                    element.focus({ preventScroll: false });
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 150);
-            }
-        }
-        
-        window.addEventListener('DOMContentLoaded', () => {
-            focusOnPageTop();
-            console.log('✓ Focus management initialized');
-        });
-
-
         const testState = {
             currentSection: null,
             currentModule: 1,
@@ -2562,14 +2519,6 @@
                        'Hard:', questionBank.math.hard.length);
         }
 
-        // ==========================================
-        // SCROLL TO TOP HELPER
-        // ==========================================
-        
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
         function ensureSufficientQuestions() {
             const minReadingPerDifficulty = 27;
             const minMathPerDifficulty = 22;
@@ -2740,7 +2689,6 @@
             selectModule1Questions();
             console.log('Starting module...');
             startModule();
-            focusOnPageTop();
         }
 
         function selectModule1Questions() {
@@ -2923,23 +2871,6 @@
         // ==========================================
 
         function startModule() {
-            scrollToTop();  // Scroll to top when starting module
-
-                        // VALIDATION: Ensure module is always 1 or 2
-            if (testState.currentModule < 1 || testState.currentModule > 2) {
-                console.warn(`⚠️ Invalid module ${testState.currentModule}, resetting to 1`);
-                testState.currentModule = 1;
-            }
-            
-            // VALIDATION: Math must start at Module 1 in full test
-            if (testState.testType === 'full' && 
-                testState.currentSection === 'math' && 
-                testState.currentModule === 2 &&
-                !testState.modules.math_module1.completed) {
-                console.log('🔧 Correcting: Math must start at Module 1');
-                testState.currentModule = 1;
-            }
-            
             const moduleKey = `${testState.currentSection}_module${testState.currentModule}`;
             const module = testState.modules[moduleKey];
             
@@ -2958,7 +2889,6 @@
             initializeQuestionGrid();
             displayQuestion();
             startTimer();
-             focusOnPageTop();
         }
 
         function initializeQuestionGrid() {
@@ -2978,10 +2908,7 @@
             updateQuestionGrid();
         }
 
-        // ==========================================
-        // IMAGE SUPPORT FOR QUESTIONS
-        // ==========================================
-        
+        // Image Support Functions
         function renderQuestionImage(question) {
             if (!question.image) return '';
             
@@ -2989,28 +2916,23 @@
                 <div class="question-image-container">
                     <img 
                         src="${question.image}" 
-                        alt="${question.imageAlt || 'Question diagram or figure'}"
+                        alt="${question.imageAlt || 'Question diagram'}"
                         class="question-image"
                         onclick="toggleImageFullscreen(this)"
                         onerror="handleImageError(this, '${question.image}')"
                     />
-                    ${question.imageCaption ? `
-                        <div class="image-caption">${question.imageCaption}</div>
-                    ` : ''}
-                    <div class="image-zoom-hint">💡 Click image to zoom</div>
+                    ${question.imageCaption ? `<div class="image-caption">${question.imageCaption}</div>` : ''}
+                    <div class="image-zoom-hint">💡 Click to zoom</div>
                 </div>
             `;
         }
         
         function toggleImageFullscreen(img) {
             let overlay = document.querySelector('.image-overlay');
-            
             if (!overlay) {
                 overlay = document.createElement('div');
                 overlay.className = 'image-overlay';
-                overlay.onclick = function() {
-                    closeFullscreenImage();
-                };
+                overlay.onclick = () => closeFullscreenImage();
                 document.body.appendChild(overlay);
             }
             
@@ -3024,42 +2946,27 @@
         }
         
         function closeFullscreenImage() {
-            const fullscreenImg = document.querySelector('.question-image.fullscreen');
+            const img = document.querySelector('.question-image.fullscreen');
             const overlay = document.querySelector('.image-overlay');
-            
-            if (fullscreenImg) {
-                fullscreenImg.classList.remove('fullscreen');
-            }
-            if (overlay) {
-                overlay.classList.remove('active');
-            }
+            if (img) img.classList.remove('fullscreen');
+            if (overlay) overlay.classList.remove('active');
             document.body.style.overflow = '';
         }
         
-        function handleImageError(img, imagePath) {
-            const container = img.parentElement;
-            container.innerHTML = `
+        function handleImageError(img, path) {
+            img.parentElement.innerHTML = `
                 <div class="image-error">
-                    <div style="font-size: 24px; margin-bottom: 10px;">📷</div>
-                    <div><strong>Image could not be loaded</strong></div>
-                    <div style="font-size: 12px; margin-top: 8px; opacity: 0.8;">
-                        File: ${imagePath}
-                    </div>
-                    <div style="font-size: 12px; margin-top: 8px;">
-                        Please check that the image file exists in the correct location.
-                    </div>
+                    <div style="font-size:24px;margin-bottom:10px">📷</div>
+                    <strong>Image not found</strong>
+                    <div style="font-size:12px;margin-top:8px;opacity:0.8">${path}</div>
                 </div>
             `;
         }
         
-        // Close fullscreen image with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeFullscreenImage();
-            }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeFullscreenImage();
         });
 
-        
         function displayQuestion() {
             const moduleKey = `${testState.currentSection}_module${testState.currentModule}`;
             const module = testState.modules[moduleKey];
@@ -3384,93 +3291,55 @@
             return correctCount / module.questions.length;
         }
 
-     function showTransitionScreen(performance) {
-    scrollToTop();
-    
-    document.getElementById('testInterface').classList.add('hidden');
-    document.getElementById('transitionScreen').classList.remove('hidden');
-    
-    const percentage = Math.round(performance * 100);
-    document.getElementById('performanceFill').style.width = `${percentage}%`;
-    document.getElementById('performanceFill').textContent = `${percentage}%`;
-    
-    // Determine what comes next
-    const sectionName = testState.currentSection === 'reading' ? 'Reading & Writing' : 'Math';
-    let nextAction = '';
-    let buttonText = 'Continue to Module 2';
-    
-    // Check what happens after Module 1
-    if (testState.testType === 'full' && testState.currentSection === 'reading') {
-        // Full test, just finished Reading Module 1
-        nextAction = 'module2';
-        buttonText = 'Continue to Module 2';
-    } else if (testState.testType === 'full' && testState.currentSection === 'math') {
-        // Full test, just finished Math Module 1
-        nextAction = 'module2';
-        buttonText = 'Continue to Module 2';
-    } else if (testState.testType === 'reading' || testState.testType === 'math') {
-        // Section-only test, just finished Module 1
-        nextAction = 'module2';
-        buttonText = 'Continue to Module 2';
-    }
-    
-    // Update button text
-    const transitionButton = document.querySelector('#transitionScreen button');
-    if (transitionButton) {
-        transitionButton.textContent = buttonText;
-    }
-    
-    // Update title
-    document.getElementById('transitionTitle').textContent = `${sectionName} - Module 1 Complete!`;
-    
-    let message = '';
-    if (performance >= 0.7) {
-        message = 'Excellent performance! Module 2 will contain harder questions for higher scoring potential.';
-    } else if (performance >= 0.4) {
-        message = 'Good work! Module 2 will have a balanced mix of question difficulties.';
-    } else {
-        message = 'Module 2 will focus on building your skills with appropriate difficulty questions.';
-    }
-    
-    document.getElementById('adaptiveMessage').textContent = message;
-    document.getElementById('transitionMessage').textContent = 
-        `You answered ${Math.round(performance * 100)}% correctly in Module 1.`;
-}
+        function showTransitionScreen(performance) {
+            document.getElementById('testInterface').classList.add('hidden');
+            document.getElementById('transitionScreen').classList.remove('hidden');
+            
+            const percentage = Math.round(performance * 100);
+            document.getElementById('performanceFill').style.width = `${percentage}%`;
+            document.getElementById('performanceFill').textContent = `${percentage}%`;
+            
+            let message = '';
+            if (performance >= 0.7) {
+                message = 'Excellent performance! Module 2 will contain harder questions for higher scoring potential.';
+            } else if (performance >= 0.4) {
+                message = 'Good work! Module 2 will have a balanced mix of question difficulties.';
+            } else {
+                message = 'Module 2 will focus on building your skills with appropriate difficulty questions.';
+            }
+            
+            document.getElementById('adaptiveMessage').textContent = message;
+            document.getElementById('transitionMessage').textContent = 
+                `You answered ${Math.round(performance * 100)}% correctly in Module 1.`;
+        }
 
+        function startNextModule() {
+            testState.currentModule = 2;
+            
+            const module1Key = `${testState.currentSection}_module1`;
+            const performance = testState.performance[module1Key];
+            selectModule2Questions(performance);
+            
+            document.getElementById('transitionScreen').classList.add('hidden');
+            startModule();
+        }
 
         function showSectionTransition() {
-    scrollToTop();
-    
-    // CRITICAL FIX: Reset module to 1 for Math section
-    testState.currentModule = 1;
-    
-    document.getElementById('testInterface').classList.add('hidden');
-    document.getElementById('transitionScreen').classList.remove('hidden');
-    
-    // Update button text for section transition
-    const transitionButton = document.querySelector('#transitionScreen button');
-    if (transitionButton) {
-        transitionButton.textContent = 'Continue to Math Section';
-    }
-    
-    document.getElementById('transitionTitle').textContent = 'Reading & Writing Complete!';
-    document.getElementById('transitionMessage').textContent = 
-        'Great job! Next up: Math Section - Starting with Module 1';
-    document.getElementById('performanceFill').style.width = '100%';
-    document.getElementById('performanceFill').textContent = 'Section Complete';
-    document.getElementById('adaptiveMessage').textContent = 
-        'Take a moment to rest, then continue to the Math section.';
-}
-
+            document.getElementById('transitionScreen').classList.remove('hidden');
+            document.getElementById('transitionTitle').textContent = 'Reading & Writing Complete!';
+            document.getElementById('transitionMessage').textContent = 
+                'Great job! Next up: Math Section';
+            document.getElementById('performanceFill').style.width = '100%';
+            document.getElementById('performanceFill').textContent = 'Section Complete';
+            document.getElementById('adaptiveMessage').textContent = 
+                'Take a moment to rest, then continue to the Math section.';
+        }
 
         // ==========================================
         // SCORING AND RESULTS
         // ==========================================
 
         function showResults() {
-         focusOnPageTop();
-            scrollToTop();  // Scroll to top when showing results
-            
             document.getElementById('testInterface').classList.add('hidden');
             document.getElementById('transitionScreen').classList.add('hidden');
             document.getElementById('resultsScreen').classList.remove('hidden');
@@ -3558,14 +3427,14 @@ async function saveTestToBackend(scores) {
         });
         
         const testData = {
-            student_code: studentCode,          // snake_case for backend
-            student_name: studentName,
-            tutor_id: tutorId,
-            test_type: testState.testType,
-            total_score: scores.total || 0,
-            reading_score: scores.reading || 0,
-            math_score: scores.math || 0,
-            test_data: {
+            studentCode: studentCode,
+            studentName: studentName,
+            tutorId: tutorId,
+            testType: testState.testType,
+            totalScore: scores.total || 0,
+            readingScore: scores.reading || 0,
+            mathScore: scores.math || 0,
+            testData: {
                 timestamp: new Date().toISOString(),
                 studentCode: studentCode,
                 studentName: studentName,
@@ -3584,13 +3453,8 @@ async function saveTestToBackend(scores) {
         };
         
         console.log('📤 Auto-saving test to backend...');
-        console.log('Data to save:', { 
-            student: testData.student_name, 
-            score: testData.total_score,
-            type: testData.test_type
-        });
         
-        const response = await fetch(`${API_URL}/tests/save`, {
+        const response = await fetch(`${API_URL}/tests`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(testData)
@@ -4000,473 +3864,14 @@ async function saveTestToBackend(scores) {
         // DOWNLOAD RESULTS
         // ==========================================
 
-function downloadResults() {
-    // CHECK IF jsPDF IS LOADED
-    if (typeof window.jspdf === 'undefined') {
-        alert('❌ PDF Library Loading Issue\n\n' +
-              'The PDF generator could not load due to browser settings.\n\n' +
-              'Solutions:\n' +
-              '1. Disable "Tracking Prevention" in your browser\n' +
-              '2. Try a different browser (Chrome, Firefox, Edge)\n' +
-              '3. Or take a screenshot of your results instead\n\n' +
-              'Your test results are still saved for your tutor to review.');
-        console.error('jsPDF library is not loaded');
-        return;
-    }
-    
-    const userName = sessionStorage.getItem('mathmeg_user_name') || localStorage.getItem('userName') || 'Student';
-    const testDate = new Date().toLocaleDateString();
-    const testTime = new Date().toLocaleTimeString();
-    
-    // Calculate scores directly
-    const scores = calculateFinalScores();
-    const totalScore = scores.total.toString();
-    const readingScore = scores.reading.toString();
-    const mathScore = scores.math.toString();
-    
-    // Determine test type label
-    let testTypeLabel = 'Full SAT Practice Test';
-    if (testState.testType === 'reading') {
-        testTypeLabel = 'SAT Reading & Writing Practice Test';
-    } else if (testState.testType === 'math') {
-        testTypeLabel = 'SAT Math Practice Test';
-    }
-    
-    const readingModule1Perf = testState.performance.reading_module1 
-        ? (testState.performance.reading_module1 * 100).toFixed(1) 
-        : 'N/A';
-    const mathModule1Perf = testState.performance.math_module1 
-        ? (testState.performance.math_module1 * 100).toFixed(1) 
-        : 'N/A';
-    
-    // Get category breakdown
-    const categories = [];
-    if (scores.categories) {
-        if (scores.categories.reading) {
-            Object.entries(scores.categories.reading).forEach(([name, stats]) => {
-                if (stats.total > 0) {
-                    const percentage = Math.round((stats.correct / stats.total) * 100);
-                    categories.push({ 
-                        name: name, 
-                        score: `${stats.correct}/${stats.total} (${percentage}%)`
-                    });
-                }
-            });
-        }
-        if (scores.categories.math) {
-            Object.entries(scores.categories.math).forEach(([name, stats]) => {
-                if (stats.total > 0) {
-                    const percentage = Math.round((stats.correct / stats.total) * 100);
-                    categories.push({ 
-                        name: name, 
-                        score: `${stats.correct}/${stats.total} (${percentage}%)`
-                    });
-                }
-            });
-        }
-    }
-    
-    try {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        
-        // Colors
-        const primaryColor = [255, 107, 53];
-        const secondaryColor = [0, 78, 137];
-        const grayColor = [108, 117, 125];
-        const successColor = [6, 214, 160];
-        const dangerColor = [247, 23, 53];
-        
-        let y = 20;
-        
-        // ==========================================
-        // PAGE 1: SUMMARY
-        // ==========================================
-        
-        // Header
-        doc.setFillColor(...primaryColor);
-        doc.rect(0, 0, 210, 35, 'F');
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(24);
-        doc.setFont('helvetica', 'bold');
-        doc.text('MathMeg SAT Practice', 105, 15, { align: 'center' });
-        doc.setFontSize(12);
-        doc.setFont('helvetica', 'normal');
-        doc.text(testTypeLabel, 105, 25, { align: 'center' });
-        
-        y = 50;
-        
-        // Student Info
-        doc.setDrawColor(...grayColor);
-        doc.setFillColor(248, 249, 250);
-        doc.roundedRect(15, y, 180, 25, 3, 3, 'FD');
-        doc.setTextColor(...secondaryColor);
-        doc.setFontSize(11);
-        doc.setFont('helvetica', 'bold');
-        doc.text(`Student: ${userName}`, 20, y + 8);
-        doc.text(`Date: ${testDate}`, 20, y + 16);
-        doc.text(`Time: ${testTime}`, 120, y + 16);
-        
-        y += 40;
-        
-        // Total Score
-        doc.setFillColor(...secondaryColor);
-        doc.roundedRect(15, y, 180, 45, 3, 3, 'F');
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(14);
-        doc.setFont('helvetica', 'bold');
-        
-        let scoreLabelText = 'TOTAL SAT SCORE';
-        let scoreSubtext = 'out of 1600';
-        if (testState.testType === 'reading') {
-            scoreLabelText = 'READING & WRITING SCORE';
-            scoreSubtext = 'out of 800';
-        } else if (testState.testType === 'math') {
-            scoreLabelText = 'MATH SCORE';
-            scoreSubtext = 'out of 800';
-        }
-        
-        doc.text(scoreLabelText, 105, y + 12, { align: 'center' });
-        doc.setFontSize(36);
-        doc.text(totalScore, 105, y + 30, { align: 'center' });
-        doc.setFontSize(12);
-        doc.setFont('helvetica', 'normal');
-        doc.text(scoreSubtext, 105, y + 40, { align: 'center' });
-        
-        y += 60;
-        
-        // Section Scores (for full test)
-        if (testState.testType === 'full') {
-            doc.setTextColor(...secondaryColor);
-            doc.setFontSize(14);
-            doc.setFont('helvetica', 'bold');
-            doc.text('Section Scores', 15, y);
-            y += 10;
-            
-            doc.setFillColor(248, 249, 250);
-            doc.roundedRect(15, y, 85, 30, 3, 3, 'FD');
-            doc.setTextColor(...secondaryColor);
-            doc.setFontSize(12);
-            doc.setFont('helvetica', 'bold');
-            doc.text('Reading & Writing', 57.5, y + 10, { align: 'center' });
-            doc.setFontSize(24);
-            doc.setTextColor(...primaryColor);
-            doc.text(readingScore, 57.5, y + 22, { align: 'center' });
-            
-            doc.setFillColor(248, 249, 250);
-            doc.roundedRect(110, y, 85, 30, 3, 3, 'FD');
-            doc.setTextColor(...secondaryColor);
-            doc.setFontSize(12);
-            doc.setFont('helvetica', 'bold');
-            doc.text('Math', 152.5, y + 10, { align: 'center' });
-            doc.setFontSize(24);
-            doc.setTextColor(...primaryColor);
-            doc.text(mathScore, 152.5, y + 22, { align: 'center' });
-            
-            y += 45;
-        }
-        
-        // Performance by Category
-        if (y > 230) {
-            doc.addPage();
-            y = 20;
-        }
-        
-        doc.setTextColor(...secondaryColor);
-        doc.setFontSize(14);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Performance by Category', 15, y);
-        y += 8;
-        
-        doc.setFontSize(10);
-        doc.setFont('helvetica', 'normal');
-        
-        categories.forEach(cat => {
-            if (y > 270) {
-                doc.addPage();
-                y = 20;
-            }
-            
-            doc.setFillColor(248, 249, 250);
-            doc.rect(15, y - 5, 180, 8, 'F');
-            
-            doc.setTextColor(0, 0, 0);
-            doc.text(cat.name, 20, y);
-            doc.setFont('helvetica', 'bold');
-            doc.setTextColor(...primaryColor);
-            doc.text(cat.score, 180, y, { align: 'right' });
-            doc.setFont('helvetica', 'normal');
-            
-            y += 10;
-        });
-        
-        // Footer
-        if (y > 250) {
-            doc.addPage();
-            y = 20;
-        }
-        
-        doc.setDrawColor(...grayColor);
-        doc.line(15, 280, 195, 280);
-        doc.setFontSize(9);
-        doc.setTextColor(...grayColor);
-        doc.setFont('helvetica', 'normal');
-        doc.text('MathMeg Tutoring - Adaptive SAT Practice Simulator', 105, 285, { align: 'center' });
-        doc.text('This is a practice test. Results are for educational purposes only.', 105, 290, { align: 'center' });
-        
-        // ==========================================
-        // PAGES 2+: DETAILED QUESTION ANALYSIS
-        // ==========================================
-        
-        doc.addPage();
-        y = 20;
-        
-        doc.setFillColor(...primaryColor);
-        doc.rect(0, 0, 210, 20, 'F');
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(16);
-        doc.setFont('helvetica', 'bold');
-        doc.text('Detailed Question-by-Question Analysis', 105, 13, { align: 'center' });
-        
-        y = 35;
-        
-        // Collect all modules
-        const allModules = [];
-        if (testState.testType === 'reading' || testState.testType === 'full') {
-            allModules.push(
-                { name: 'Reading & Writing - Module 1', key: 'reading_module1' },
-                { name: 'Reading & Writing - Module 2', key: 'reading_module2' }
-            );
-        }
-        if (testState.testType === 'math' || testState.testType === 'full') {
-            allModules.push(
-                { name: 'Math - Module 1', key: 'math_module1' },
-                { name: 'Math - Module 2', key: 'math_module2' }
-            );
-        }
-        
-        // Process each module
-        allModules.forEach(module => {
-            const moduleData = testState.modules[module.key];
-            if (!moduleData || !moduleData.questions) return;
-            
-            // Module header
-            if (y > 260) {
-                doc.addPage();
-                y = 20;
-            }
-            
-            doc.setFillColor(...secondaryColor);
-            doc.rect(15, y - 5, 180, 12, 'F');
-            doc.setTextColor(255, 255, 255);
-            doc.setFontSize(12);
-            doc.setFont('helvetica', 'bold');
-            doc.text(module.name, 20, y + 3);
-            
-            // Calculate module score
-            let correct = 0;
-            moduleData.questions.forEach((q, idx) => {
-                const answer = moduleData.answers[idx];
-                if (q.questionType === 'grid-in') {
-                    if (checkGridInAnswer(answer, q.correctAnswer)) correct++;
-                } else {
-                    if (answer === q.correct) correct++;
-                }
-            });
-            const moduleScore = `${correct}/${moduleData.questions.length} (${Math.round(correct/moduleData.questions.length*100)}%)`;
-            doc.text(moduleScore, 190, y + 3, { align: 'right' });
-            
-            y += 15;
-            
-            // Process each question
-            moduleData.questions.forEach((q, idx) => {
-                const answer = moduleData.answers[idx];
-                const isGridIn = q.questionType === 'grid-in';
-                const isCorrect = isGridIn ? 
-                    checkGridInAnswer(answer, q.correctAnswer) : 
-                    (answer === q.correct);
-                
-                // Check if we need a new page
-                const estimatedHeight = 45 + (q.choices ? q.choices.length * 7 : 20);
-                if (y + estimatedHeight > 280) {
-                    doc.addPage();
-                    y = 20;
-                }
-                
-                // Question box
-                doc.setDrawColor(...grayColor);
-                doc.setFillColor(248, 249, 250);
-                doc.roundedRect(15, y, 180, estimatedHeight, 3, 3, 'FD');
-                
-                // Question number and status
-                doc.setFontSize(10);
-                doc.setFont('helvetica', 'bold');
-                doc.setTextColor(0, 0, 0);
-                doc.text(`Question ${idx + 1}`, 20, y + 8);
-                
-                // Status indicator
-                if (answer === null || answer === '') {
-                    doc.setTextColor(150, 150, 150);
-                    doc.text('○ Skipped', 160, y + 8);
-                } else if (isCorrect) {
-                    doc.setTextColor(...successColor);
-                    doc.text('✓ Correct', 160, y + 8);
-                } else {
-                    doc.setTextColor(...dangerColor);
-                    doc.text('✗ Incorrect', 160, y + 8);
-                }
-                
-                // Category/Skill
-                if (q.category) {
-                    doc.setFontSize(8);
-                    doc.setTextColor(...grayColor);
-                    doc.text(`${q.category}${q.skill ? ' - ' + q.skill : ''}`, 20, y + 14);
-                }
-                
-                // Question text (wrapped)
-                doc.setFontSize(9);
-                doc.setTextColor(0, 0, 0);
-                doc.setFont('helvetica', 'normal');
-                const questionText = q.text || 'Question text not available';
-                const wrappedText = doc.splitTextToSize(questionText, 170);
-                let textY = y + (q.category ? 20 : 16);
-                wrappedText.forEach(line => {
-                    if (textY > 275) {
-                        doc.addPage();
-                        y = 20;
-                        textY = y + 10;
-                    }
-                    doc.text(line, 20, textY);
-                    textY += 5;
-                });
-                
-                let currentY = textY + 3;
-                
-                // Answer choices (for multiple choice)
-                if (!isGridIn && q.choices && q.choices.length > 0) {
-                    doc.setFontSize(8);
-                    q.choices.forEach((choice, choiceIdx) => {
-                        if (currentY > 275) {
-                            doc.addPage();
-                            currentY = 20;
-                        }
-                        
-                        const letter = String.fromCharCode(65 + choiceIdx);
-                        const isStudentChoice = answer === choiceIdx;
-                        const isCorrectChoice = q.correct === choiceIdx;
-                        
-                        // Highlight correct and student's choice
-                        if (isCorrectChoice) {
-                            doc.setTextColor(...successColor);
-                            doc.setFont('helvetica', 'bold');
-                        } else if (isStudentChoice) {
-                            doc.setTextColor(...dangerColor);
-                            doc.setFont('helvetica', 'bold');
-                        } else {
-                            doc.setTextColor(80, 80, 80);
-                            doc.setFont('helvetica', 'normal');
-                        }
-                        
-                        const choiceText = `${letter}. ${choice}`;
-                        const wrappedChoice = doc.splitTextToSize(choiceText, 165);
-                        wrappedChoice.forEach(line => {
-                            doc.text(line, 25, currentY);
-                            currentY += 4;
-                        });
-                        
-                        // Add indicators
-                        if (isStudentChoice && isCorrectChoice) {
-                            doc.setFontSize(7);
-                            doc.text('(Your answer - Correct)', 25, currentY);
-                            currentY += 4;
-                        } else if (isStudentChoice && !isCorrectChoice) {
-                            doc.setFontSize(7);
-                            doc.text('(Your answer - Incorrect)', 25, currentY);
-                            currentY += 4;
-                        } else if (isCorrectChoice) {
-                            doc.setFontSize(7);
-                            doc.text('(Correct answer)', 25, currentY);
-                            currentY += 4;
-                        }
-                        
-                        currentY += 1;
-                    });
-                } else if (isGridIn) {
-                    // Grid-in answer
-                    doc.setFontSize(9);
-                    doc.setFont('helvetica', 'bold');
-                    doc.setTextColor(0, 0, 0);
-                    doc.text('Your Answer:', 25, currentY);
-                    doc.setFont('helvetica', 'normal');
-                    if (isCorrect) {
-                        doc.setTextColor(...successColor);
-                    } else {
-                        doc.setTextColor(...dangerColor);
-                    }
-                    doc.text(answer || '(No answer)', 65, currentY);
-                    currentY += 6;
-                    
-                    doc.setFont('helvetica', 'bold');
-                    doc.setTextColor(0, 0, 0);
-                    doc.text('Correct Answer:', 25, currentY);
-                    doc.setFont('helvetica', 'normal');
-                    doc.setTextColor(...successColor);
-                    doc.text(q.correctAnswer, 65, currentY);
-                    currentY += 6;
-                }
-                
-                y = currentY + 8;
-            });
-            
-            y += 5;
-        });
-        
-        // Final footer
-        if (y > 270) {
-            doc.addPage();
-            y = 20;
-        }
-        
-        doc.setDrawColor(...grayColor);
-        doc.line(15, 280, 195, 280);
-        doc.setFontSize(9);
-        doc.setTextColor(...grayColor);
-        doc.setFont('helvetica', 'normal');
-        doc.text('MathMeg Tutoring - Adaptive SAT Practice Simulator', 105, 285, { align: 'center' });
-        doc.text('Detailed question analysis with full questions and answer choices', 105, 290, { align: 'center' });
-        
-        // Save PDF
-        const testTypeFilename = testState.testType === 'reading' ? 'Reading' : 
-                                testState.testType === 'math' ? 'Math' : 'Full';
-        const filename = `SAT_${testTypeFilename}_Detailed_Results_${userName.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`;
-        doc.save(filename);
-        
-        alert('✅ Enhanced PDF Downloaded Successfully!\n\n' +
-              'This PDF includes:\n' +
-              '• Overall scores and performance\n' +
-              '• Category breakdown\n' +
-              '• FULL question text for every question\n' +
-              '• ALL answer choices (highlighted)\n' +
-              '• Your answers vs. correct answers\n' +
-              '• Question categories and skills\n\n' +
-              'Perfect for detailed review!');
-        
-    } catch (error) {
-        console.error('PDF Generation Error:', error);
-        alert('Error generating PDF. Please try again or check console for details.');
-    }
-}
-
-            
-            const userName = sessionStorage.getItem('mathmeg_user_name') || localStorage.getItem('userName') || 'Student';
+        function downloadResults() {
+            const userName = sessionStorage.getItem('mathmeg_user_name');
             const testDate = new Date().toLocaleDateString();
             const testTime = new Date().toLocaleTimeString();
             
-            // Calculate scores directly instead of reading from DOM
-            const scores = calculateFinalScores();
-            const totalScore = scores.total.toString();
-            const readingScore = scores.reading.toString();
-            const mathScore = scores.math.toString();
+            const totalScore = document.getElementById('totalScore').textContent;
+            const readingScore = document.getElementById('readingScore').textContent;
+            const mathScore = document.getElementById('mathScore').textContent;
             
             // Determine test type label
             let testTypeLabel = 'Full SAT Practice Test';
@@ -4483,34 +3888,14 @@ function downloadResults() {
                 ? (testState.performance.math_module1 * 100).toFixed(1) 
                 : 'N/A';
             
-            // Get category breakdown from scores
+            // Get category breakdown
+            const categoryBreakdown = document.getElementById('categoryBreakdown');
             const categories = [];
-            if (scores.categories) {
-                // Reading categories
-                if (scores.categories.reading) {
-                    Object.entries(scores.categories.reading).forEach(([name, stats]) => {
-                        if (stats.total > 0) {
-                            const percentage = Math.round((stats.correct / stats.total) * 100);
-                            categories.push({ 
-                                name: name, 
-                                score: `${stats.correct}/${stats.total} (${percentage}%)`
-                            });
-                        }
-                    });
-                }
-                // Math categories
-                if (scores.categories.math) {
-                    Object.entries(scores.categories.math).forEach(([name, stats]) => {
-                        if (stats.total > 0) {
-                            const percentage = Math.round((stats.correct / stats.total) * 100);
-                            categories.push({ 
-                                name: name, 
-                                score: `${stats.correct}/${stats.total} (${percentage}%)`
-                            });
-                        }
-                    });
-                }
-            }
+            categoryBreakdown.querySelectorAll('.category-performance').forEach(cat => {
+                const name = cat.querySelector('.category-name').textContent;
+                const score = cat.querySelector('.category-score').textContent;
+                categories.push({ name, score });
+            });
             
             // Generate PDF
             try {
