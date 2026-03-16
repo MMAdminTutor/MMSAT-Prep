@@ -446,22 +446,6 @@
         "correct": 2
       },
       {
-        "id": "r_med_table_1",
-        "category": "Information and Ideas",
-        "skill": "Command of Evidence",
-        "text": "The table below shows the population change in four cities between 2010 and 2020. Based on the data, which city experienced the greatest percent increase in population?",
-        "image": "images/reading/population_table.png",
-        "imageAlt": "Table showing population data for four cities. City A: 2010: 50,000, 2020: 65,000. City B: 2010: 80,000, 2020: 96,000. City C: 2010: 120,000, 2020: 132,000. City D: 2010: 200,000, 2020: 210,000",
-        "imageCaption": "Table 1: Population changes in four cities (2010-2020)",
-        "choices": [
-          "City A",
-          "City B",
-          "City C",
-          "City D"
-        ],
-        "correct": 0
-      },
-      {
         "id": "r_med_14",
         "category": "Information and Ideas",
         "skill": "Command of Evidence",
@@ -1105,23 +1089,6 @@
         "text": "The average (arithmetic mean) of five numbers is 24. If one of the numbers is 30, what is the sum of the other four numbers?",
         "questionType": "grid-in",
         "correctAnswer": "90",
-        "calculator": true
-      },
-      {
-        "id": "m_med_graph_1",
-        "category": "Algebra",
-        "skill": "Linear Functions",
-        "text": "The graph below shows the relationship between the number of hours worked and the amount earned. Based on the graph, what is the hourly wage in dollars?",
-        "image": "images/math/linear_graph_wage.png",
-        "imageAlt": "Graph showing a linear function with points (0,0), (2,30), (4,60), and (6,90). X-axis labeled 'Hours Worked', Y-axis labeled 'Amount Earned ($)'",
-        "imageCaption": "Figure 1: Hours worked vs. Amount earned",
-        "choices": [
-          "$10",
-          "$12",
-          "$15",
-          "$18"
-        ],
-        "correct": 2,
         "calculator": true
       },
       {
