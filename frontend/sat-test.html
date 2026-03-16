@@ -3428,14 +3428,14 @@ async function saveTestToBackend(scores) {
         });
         
         const testData = {
-            studentCode: studentCode,
-            studentName: studentName,
-            tutorId: tutorId,
-            testType: testState.testType,
-            totalScore: scores.total || 0,
-            readingScore: scores.reading || 0,
-            mathScore: scores.math || 0,
-            testData: {
+            student_code: studentCode,
+            student_name: studentName,
+            tutor_id: tutorId,
+            test_type: testState.testType,
+            total_score: scores.total || 0,
+            reading_score: scores.reading || 0,
+            math_score: scores.math || 0,
+            test_data: {
                 timestamp: new Date().toISOString(),
                 studentCode: studentCode,
                 studentName: studentName,
@@ -3455,7 +3455,7 @@ async function saveTestToBackend(scores) {
         
         console.log('📤 Auto-saving test to backend...');
         
-        const response = await fetch(`${API_URL}/tests`, {
+        const response = await fetch(`${API_URL}/save`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(testData)
