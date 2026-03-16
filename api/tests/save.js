@@ -1,3 +1,6 @@
+// Vercel Serverless Function - api/save.js
+// This creates the endpoint: https://mmsat-prep.vercel.app/api/save
+
 const { Redis } = require('@upstash/redis');
 
 const redis = Redis.fromEnv();
@@ -45,16 +48,22 @@ async function saveTest(testData) {
 }
 
 module.exports = async (req, res) => {
+  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
+  // Handle preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
+  // Only allow POST
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ 
+      error: 'Method not allowed',
+      message: 'This endpoint only accepts POST requests'
+    });
   }
 
   try {
@@ -77,7 +86,7 @@ module.exports = async (req, res) => {
     return res.status(500).json({ 
       success: false, 
       error: error.message,
-      stack: error.stack
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 };
