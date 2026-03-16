@@ -2189,10 +2189,7 @@
         // ==========================================
 
         // API Configuration for Upstash Redis Backend
-        // Auto-detect environment: uses localhost for development, deployed URL for production
-        const API_URL = window.location.hostname === 'localhost'
-            ? 'http://localhost:3000/api'
-            : `${window.location.origin}/api`;
+        const API_URL = 'https://mmsat-prep.vercel.app/api';
 
         // Test State Management
         const testState = {
