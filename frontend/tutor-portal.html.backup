@@ -515,202 +515,6 @@
             font-size: 13px;
             font-weight: 600;
         }
-
-        /* Section Tabs */
-        .section-tabs {
-            display: flex;
-            gap: 0;
-            margin: 20px 0;
-            border-bottom: 2px solid #e2e8f0;
-            background: #f8fafc;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .tab-button {
-            flex: 1;
-            padding: 15px 20px;
-            background: #f8fafc;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 15px;
-            font-weight: 600;
-            color: #64748b;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-button:hover {
-            background: #f1f5f9;
-            color: #004e89;
-        }
-
-        .tab-button.active {
-            background: white;
-            color: #004e89;
-            border-bottom-color: #ff6b35;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background: white;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            background: #f1f5f9;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .filter-btn.active {
-            background: #004e89;
-            color: white;
-        }
-
-        .module-section {
-            margin-bottom: 30px;
-        }
-
-        .questions-list {
-            display: grid;
-            gap: 12px;
-        }
-
-        .question-item {
-            background: white;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #cbd5e1;
-        }
-
-        .question-item.correct {
-            border-left-color: #06d6a0;
-            background: #f0fdf9;
-        }
-
-        .question-item.incorrect {
-            border-left-color: #f71735;
-            background: #fef2f2;
-        }
-
-        .question-item.skipped {
-            border-left-color: #94a3b8;
-        }
-
-        .question-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .status-badge {
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .status-badge.correct {
-            background: #06d6a0;
-            color: white;
-        }
-
-        .status-badge.incorrect {
-            background: #f71735;
-            color: white;
-        }
-
-        .status-badge.skipped {
-            background: #94a3b8;
-            color: white;
-        }
-
-
-         /* Section Tabs for Test Results */
-        .section-tabs {
-            display: flex;
-            gap: 0;
-            margin: 20px 0;
-            border-bottom: 2px solid #e2e8f0;
-            background: #f8fafc;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .tab-button {
-            flex: 1;
-            padding: 15px 20px;
-            background: #f8fafc;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 15px;
-            font-weight: 600;
-            color: #64748b;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tab-button:hover {
-            background: #f1f5f9;
-            color: #004e89;
-        }
-
-        .tab-button.active {
-            background: white;
-            color: #004e89;
-            border-bottom-color: #ff6b35;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background: white;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .section-filter-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .section-filter-btn {
-            padding: 8px 16px;
-            background: #f1f5f9;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .section-filter-btn:hover {
-            background: #e2e8f0;
-        }
-
-        .section-filter-btn.active {
-            background: #004e89;
-            color: white;
-            border-color: #004e89;
-        }
-
     </style>
 </head>
 <body>
@@ -801,7 +605,7 @@
                         <div class="student-name">${student.name}</div>
                         <div class="test-count">${testHistory.length} tests</div>
                     </div>
-                  
+                    <div style="font-size: 13px; color: #718096; margin-bottom: 10px;">Code: ${studentCode}</div>
                     <button class="btn btn-view" onclick="toggleTests('${studentCode}')">
                         View Tests →
                     </button>
@@ -1049,150 +853,6 @@
             return rows || '<tr><td colspan="6">No question data available</td></tr>';
         }
 
-
-  // ==========================================
-        // SECTION TABS FOR TEST RESULTS
-        // ==========================================
-        
-        function switchSectionTab(section) {
-            // Update tab buttons
-            document.querySelectorAll('.tab-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-            
-            // Update tab content
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            const targetTab = document.getElementById(`${section}-tab`);
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
-        }
-
-        function generateSectionContent(sectionKey, sectionName, icon) {
-            const data = currentTestData.data || {};
-            const module1Data = data[`${sectionKey}_module1`];
-            const module2Data = data[`${sectionKey}_module2`];
-            
-            if (!module1Data && !module2Data) {
-                return '<p style="text-align: center; color: #718096; padding: 40px;">No data available for this section.</p>';
-            }
-            
-            let html = `
-                <div class="section-filter-buttons">
-                    <button class="section-filter-btn active" onclick="filterSectionQuestions('${sectionKey}', 'all')">📋 All</button>
-                    <button class="section-filter-btn" onclick="filterSectionQuestions('${sectionKey}', 'correct')">✓ Correct</button>
-                    <button class="section-filter-btn" onclick="filterSectionQuestions('${sectionKey}', 'incorrect')">✗ Incorrect</button>
-                    <button class="section-filter-btn" onclick="filterSectionQuestions('${sectionKey}', 'skipped')">○ Skipped</button>
-                </div>
-            `;
-            
-            // Module 1
-            if (module1Data && module1Data.questions && module1Data.questions.length > 0) {
-                html += generateModuleSectionContent(module1Data, `${icon} ${sectionName} - Module 1`, `${sectionKey}_mod1`);
-            }
-            
-            // Module 2
-            if (module2Data && module2Data.questions && module2Data.questions.length > 0) {
-                html += generateModuleSectionContent(module2Data, `${icon} ${sectionName} - Module 2`, `${sectionKey}_mod2`);
-            }
-            
-            return html;
-        }
-
-        function generateModuleSectionContent(moduleData, moduleName, moduleId) {
-            const questions = moduleData.questions;
-            const answers = moduleData.answers;
-            
-            let correct = 0;
-            questions.forEach((q, idx) => {
-                const answer = answers[idx];
-                if (answer !== null && answer !== '') {
-                    const isGridIn = q.questionType === 'grid-in' || !q.choices;
-                    if (isGridIn) {
-                        if (String(answer) === String(q.correctAnswer)) correct++;
-                    } else {
-                        if (answer === q.correct) correct++;
-                    }
-                }
-            });
-            
-            const percentage = questions.length > 0 ? Math.round((correct / questions.length) * 100) : 0;
-            
-            let html = `
-                <div class="module-section" style="margin-bottom: 30px;">
-                    <div class="module-header">
-                        <span class="module-header-title">${moduleName}</span>
-                        <span class="module-header-score">${correct}/${questions.length} (${percentage}%)</span>
-                    </div>
-                    <div class="questions-list">
-            `;
-            
-            questions.forEach((q, idx) => {
-                const answer = answers[idx];
-                const isGridIn = q.questionType === 'grid-in' || !q.choices || q.choices.length === 0;
-                let isCorrect = false;
-                let statusClass = 'skipped';
-                let statusLabel = '○ Skipped';
-                
-                if (answer !== null && answer !== '') {
-                    if (isGridIn) {
-                        isCorrect = String(answer) === String(q.correctAnswer);
-                    } else {
-                        isCorrect = answer === q.correct;
-                    }
-                    statusClass = isCorrect ? 'correct' : 'incorrect';
-                    statusLabel = isCorrect ? '✓ Correct' : '✗ Incorrect';
-                }
-                
-                let questionText = q.text || 'Question text not available';
-                
-                html += `
-                    <div class="question-item ${statusClass}" data-filter-status="${statusClass}" style="padding: 20px;">
-                        <div class="question-header">
-                            <span class="question-number">Question ${idx + 1}</span>
-                            <span class="question-status status-${statusClass}">${statusLabel}</span>
-                        </div>
-                        <div style="margin: 12px 0;">
-                            <strong>Student's Answer:</strong> ${answer !== null && answer !== '' ? (isGridIn ? answer : String.fromCharCode(65 + answer)) : 'No answer'}<br>
-                            <strong>Correct Answer:</strong> ${isGridIn ? q.correctAnswer : String.fromCharCode(65 + q.correct)}
-                        </div>
-                    </div>
-                `;
-            });
-            
-            html += `
-                    </div>
-                </div>
-            `;
-            
-            return html;
-        }
-
-        function filterSectionQuestions(section, filterType) {
-            // Update active button
-            event.currentTarget.parentElement.querySelectorAll('.section-filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.currentTarget.classList.add('active');
-            
-            // Filter questions in active tab
-            const activeTab = document.querySelector('.tab-content.active');
-            if (!activeTab) return;
-            
-            const questions = activeTab.querySelectorAll('.question-item');
-            questions.forEach(q => {
-                if (filterType === 'all') {
-                    q.style.display = 'block';
-                } else {
-                    const status = q.getAttribute('data-filter-status');
-                    q.style.display = (status === filterType) ? 'block' : 'none';
-                }
-            });
-        }
-
         function closeModal() {
             document.getElementById('testModal').classList.remove('active');
         }
@@ -1278,42 +938,150 @@
                 <!-- Module Breakdown & Questions -->
             `;
             
-                     // Check which sections have data
-            const hasReading = (data.reading_module1 && data.reading_module1.questions && data.reading_module1.questions.length > 0) ||
-                              (data.reading_module2 && data.reading_module2.questions && data.reading_module2.questions.length > 0);
-            const hasMath = (data.math_module1 && data.math_module1.questions && data.math_module1.questions.length > 0) ||
-                           (data.math_module2 && data.math_module2.questions && data.math_module2.questions.length > 0);
+            // Add each module
+            const modules = [
+                { key: 'reading_module1', name: '📚 Reading & Writing - Module 1', icon: '📚' },
+                { key: 'reading_module2', name: '📚 Reading & Writing - Module 2', icon: '📚' },
+                { key: 'math_module1', name: '➕ Math - Module 1', icon: '➕' },
+                { key: 'math_module2', name: '➕ Math - Module 2', icon: '➕' }
+            ];
             
-            // Add section tabs if we have multiple sections
-            if (hasReading && hasMath) {
+            modules.forEach(module => {
+                const moduleData = data[module.key];
+                if (!moduleData || !moduleData.questions || moduleData.questions.length === 0) return;
+                
+                const questions = moduleData.questions;
+                const answers = moduleData.answers;
+                
+                let correct = 0;
+                questions.forEach((q, idx) => {
+                    const answer = answers[idx];
+                    if (answer !== null && answer !== '') {
+                        const isGridIn = q.questionType === 'grid-in' || !q.choices;
+                        if (isGridIn) {
+                            if (String(answer) === String(q.correctAnswer)) correct++;
+                        } else {
+                            if (answer === q.correct) correct++;
+                        }
+                    }
+                });
+                
+                const percentage = questions.length > 0 ? Math.round((correct / questions.length) * 100) : 0;
+                
                 html += `
-                    <div class="section-tabs">
-                        <button class="tab-button active" onclick="switchSectionTab('reading')">
-                            📚 Reading & Writing
-                        </button>
-                        <button class="tab-button" onclick="switchSectionTab('math')">
-                            ➕ Math
-                        </button>
-                    </div>
+                    <div class="module-section">
+                        <div class="module-header">
+                            <span class="module-header-title">${module.name}</span>
+                            <span class="module-header-score">${correct}/${questions.length} (${percentage}%)</span>
+                        </div>
+                        
+                        <div class="questions-list">
+                `;
+                
+                questions.forEach((q, idx) => {
+                    const answer = answers[idx];
+                    const isGridIn = q.questionType === 'grid-in' || !q.choices || q.choices.length === 0;
+                    let isCorrect = false;
+                    let statusClass = 'skipped';
+                    let statusLabel = '○ Skipped';
                     
-                    <div id="reading-tab" class="tab-content active">
-                        ${generateSectionContent('reading', 'Reading & Writing', '📚')}
-                    </div>
+                    if (answer !== null && answer !== '') {
+                        if (isGridIn) {
+                            isCorrect = String(answer) === String(q.correctAnswer);
+                        } else {
+                            isCorrect = answer === q.correct;
+                        }
+                        statusClass = isCorrect ? 'correct' : 'incorrect';
+                        statusLabel = isCorrect ? '✓ Correct' : '✗ Incorrect';
+                    }
                     
-                    <div id="math-tab" class="tab-content">
-                        ${generateSectionContent('math', 'Math', '➕')}
+                    // Build question text display
+                    let questionText = q.text || 'Question text not available';
+                    
+                    // Build answer choices display
+                    let choicesHTML = '';
+                    if (isGridIn) {
+                        // Grid-in question
+                        choicesHTML = `
+                            <div style="margin: 12px 0; padding: 12px; background: #f7fafc; border-radius: 6px;">
+                                <div style="font-weight: 600; margin-bottom: 8px;">Student's Answer:</div>
+                                <div style="font-size: 18px; font-weight: 700; color: ${isCorrect ? '#48bb78' : '#f56565'};">
+                                    ${answer || '(No answer provided)'}
+                                </div>
+                                <div style="font-weight: 600; margin-top: 12px; margin-bottom: 8px;">Correct Answer:</div>
+                                <div style="font-size: 18px; font-weight: 700; color: #48bb78;">
+                                    ${q.correctAnswer}
+                                </div>
+                            </div>
+                        `;
+                    } else if (q.choices && q.choices.length > 0) {
+                        // Multiple choice question
+                        choicesHTML = '<div style="margin: 12px 0;">';
+                        q.choices.forEach((choice, choiceIdx) => {
+                            const isStudentChoice = answer === choiceIdx;
+                            const isCorrectChoice = q.correct === choiceIdx;
+                            let choiceStyle = 'padding: 10px 12px; margin: 6px 0; border-radius: 6px; border: 2px solid ';
+                            
+                            if (isStudentChoice && isCorrectChoice) {
+                                // Student chose correct answer
+                                choiceStyle += '#48bb78; background: #f0fff4;';
+                            } else if (isStudentChoice && !isCorrectChoice) {
+                                // Student chose wrong answer
+                                choiceStyle += '#f56565; background: #fff5f5;';
+                            } else if (isCorrectChoice) {
+                                // Correct answer (student didn't choose)
+                                choiceStyle += '#48bb78; background: #f0fff4;';
+                            } else {
+                                // Regular choice
+                                choiceStyle += '#e2e8f0; background: #f7fafc;';
+                            }
+                            
+                            const label = String.fromCharCode(65 + choiceIdx);
+                            let indicators = '';
+                            if (isStudentChoice) indicators += ' 👤 ';
+                            if (isCorrectChoice) indicators += ' ✓';
+                            
+                            choicesHTML += `
+                                <div style="${choiceStyle}">
+                                    <strong>${label}.</strong> ${choice}${indicators}
+                                </div>
+                            `;
+                        });
+                        choicesHTML += '</div>';
+                        
+                        // Add legend
+                        choicesHTML += `
+                            <div style="font-size: 12px; color: #718096; margin-top: 8px;">
+                                👤 = Student's answer | ✓ = Correct answer
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                        <div class="question-item ${statusClass}" style="padding: 20px;">
+                            <div class="question-header">
+                                <span class="question-number">Question ${idx + 1}</span>
+                                <span class="question-status status-${statusClass}">${statusLabel}</span>
+                            </div>
+                            
+                            <!-- Question Text -->
+                            <div style="margin: 16px 0; padding: 16px; background: white; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                <div style="font-size: 15px; line-height: 1.6; color: #2d3748; white-space: pre-wrap;">${questionText}</div>
+                            </div>
+                            
+                            <!-- Answer Choices -->
+                            ${choicesHTML}
+                            
+                            ${q.category ? `<div class="question-category" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0;">📚 Category: ${q.category}${q.skill ? ` - ${q.skill}` : ''}</div>` : ''}
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
                     </div>
                 `;
-            } else if (hasReading) {
-                // Only reading section
-                html += generateSectionContent('reading', 'Reading & Writing', '📚');
-            } else if (hasMath) {
-                // Only math section  
-                html += generateSectionContent('math', 'Math', '➕');
-            } else {
-                html += '<p style="text-align: center; color: #718096; padding: 40px;">No test data available.</p>';
-            }
-
+            });
             
             // Add action buttons
             html += `

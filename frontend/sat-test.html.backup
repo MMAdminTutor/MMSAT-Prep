@@ -1588,7 +1588,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container" tabindex="-1" role="main">
+        <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <img src="mathmeg-logo.jpg" alt="MathMeg Logo" style="height: 45px; width: auto;">
@@ -1616,7 +1616,7 @@
         </div>
     </header>
 
-    <div class="container" tabindex="-1" role="main">
+    <div class="container">
         <!-- SAT Information Page -->
         <div class="info-page" id="infoPage">
             <div class="info-container">
@@ -1946,7 +1946,7 @@
                 </div>
             </aside>
 
-            <main class="test-area" tabindex="-1">
+            <main class="test-area">
                 <div class="question-header">
                     <div class="question-info">
                         <div class="question-number" id="questionNumber">Question 1</div>
@@ -2108,40 +2108,6 @@
         console.log('🔗 API_URL:', API_URL);
 
         // Test State Management
-
- // ==========================================
-        // FOCUS MANAGEMENT FOR ACCESSIBILITY
-        // ==========================================
-        
-        function focusOnPageTop() {
-            const targets = [
-                document.querySelector('main[role="main"]'),
-                document.querySelector('.test-area'),
-                document.querySelector('h1'),
-                document.querySelector('.container'),
-                document.body
-            ];
-            
-            const element = targets.find(el => el !== null);
-            
-            if (element) {
-                if (!element.hasAttribute('tabindex')) {
-                    element.setAttribute('tabindex', '-1');
-                }
-                
-                setTimeout(() => {
-                    element.focus({ preventScroll: false });
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 150);
-            }
-        }
-        
-        window.addEventListener('DOMContentLoaded', () => {
-            focusOnPageTop();
-            console.log('✓ Focus management initialized');
-        });
-
-
         const testState = {
             currentSection: null,
             currentModule: 1,
@@ -2648,7 +2614,6 @@
             selectModule1Questions();
             console.log('Starting module...');
             startModule();
-            focusOnPageTop();
         }
 
         function selectModule1Questions() {
@@ -2832,21 +2797,6 @@
 
         function startModule() {
             scrollToTop();  // Scroll to top when starting module
-
-                        // VALIDATION: Ensure module is always 1 or 2
-            if (testState.currentModule < 1 || testState.currentModule > 2) {
-                console.warn(`⚠️ Invalid module ${testState.currentModule}, resetting to 1`);
-                testState.currentModule = 1;
-            }
-            
-            // VALIDATION: Math must start at Module 1 in full test
-            if (testState.testType === 'full' && 
-                testState.currentSection === 'math' && 
-                testState.currentModule === 2 &&
-                !testState.modules.math_module1.completed) {
-                console.log('🔧 Correcting: Math must start at Module 1');
-                testState.currentModule = 1;
-            }
             
             const moduleKey = `${testState.currentSection}_module${testState.currentModule}`;
             const module = testState.modules[moduleKey];
@@ -2866,7 +2816,6 @@
             initializeQuestionGrid();
             displayQuestion();
             startTimer();
-             focusOnPageTop();
         }
 
         function initializeQuestionGrid() {
@@ -3261,7 +3210,6 @@
         // ==========================================
 
         function showResults() {
-         focusOnPageTop();
             scrollToTop();  // Scroll to top when showing results
             
             document.getElementById('testInterface').classList.add('hidden');
