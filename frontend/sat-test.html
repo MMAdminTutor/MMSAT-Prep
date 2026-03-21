@@ -2699,50 +2699,15 @@
             let selectedQuestions = [];
             
             if (testState.currentSection === 'reading') {
-                // Module 1 Reading: Mix of passages and standalone (baseline)
-                // Use 60% passages, 40% standalone for authentic SAT feel
-                const passagesNeeded = Math.floor(questionCount * 0.6);
-                const standaloneNeeded = questionCount - passagesNeeded;
+                // Module 1 Reading: Use standalone questions (database has no passages)
+                // Balanced mix of easy and medium for baseline assessment
+                const easyCount = Math.ceil(questionCount * 0.5);
+                const mediumCount = questionCount - easyCount;
                 
-                // Get passages (easy + medium difficulty for Module 1)
-                const availablePassages = questionBank.passages.filter(p => 
-                    p.difficulty === 'easy' || p.difficulty === 'medium'
-                );
-                
-                const shuffledPassages = shuffleArray(availablePassages);
-                let questionCountFromPassages = 0;
-                const selectedPassageQuestions = [];
-                
-                // Select passages until we have enough questions
-                for (const passage of shuffledPassages) {
-                    if (questionCountFromPassages >= passagesNeeded) break;
-                    
-                    // Add all questions from this passage with passage reference
-                    passage.questions.forEach(q => {
-                        selectedPassageQuestions.push({
-                            ...q,
-                            passageId: passage.id,
-                            passageTitle: passage.title,
-                            passageText: passage.text,
-                            passageSource: passage.source
-                        });
-                    });
-                    questionCountFromPassages += passage.questions.length;
-                }
-                
-                // Trim if we have too many from passages
-                selectedPassageQuestions.splice(passagesNeeded);
-                
-                // Add standalone questions
-                const easyCount = Math.floor(standaloneNeeded * 0.5);
-                const mediumCount = standaloneNeeded - easyCount;
-                
-                const standaloneQuestions = [
+                selectedQuestions = shuffleArray([
                     ...shuffleArray(questionBank.standalone_reading.easy).slice(0, easyCount),
                     ...shuffleArray(questionBank.standalone_reading.medium).slice(0, mediumCount)
-                ];
-                
-                selectedQuestions = shuffleArray([...selectedPassageQuestions, ...standaloneQuestions]);
+                ]);
                 
             } else {
                 // Math questions (no passages)
