@@ -6,7 +6,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Adaptive SAT Practice Simulator | MathMeg</title>
+    <title>SAT Practice Simulator | MathMeg</title>
     <!-- jsPDF library for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -2307,21 +2307,21 @@
         }
 
         window.addEventListener('DOMContentLoaded', async () => {
-            console.log('Page loaded - DOMContentLoaded fired');
-            console.log('Checking authentication...');
+//            console.log('Page loaded - DOMContentLoaded fired');
+//            console.log('Checking authentication...');
             if (!checkAuthentication()) return;
-            console.log('Authentication passed');
+//            console.log('Authentication passed');
             
             // Show info page first
             document.getElementById('infoPage').classList.remove('hidden');
             document.getElementById('startScreen').classList.add('hidden');
             
             await loadQuestions();
-            console.log('Questions loaded');
+//            console.log('Questions loaded');
             loadTestHistory();
-            console.log('Test history loaded');
+//            console.log('Test history loaded');
             displayUserInfo();
-            console.log('User info displayed');
+//            console.log('User info displayed');
         });
 
         function checkAuthentication() {
@@ -2339,27 +2339,27 @@
 
         function displayUserInfo() {
             const userName = sessionStorage.getItem('mathmeg_user_name');
-            console.log(`Welcome, ${userName}!`);
-            console.log('Adaptive SAT Simulator loaded');
+//            console.log(`Welcome, ${userName}!`);
+//            console.log('Adaptive SAT Simulator loaded');
             
             const studentNameElement = document.getElementById('studentName');
-            console.log('studentName element:', studentNameElement);
+//            console.log('studentName element:', studentNameElement);
             if (studentNameElement) {
                 studentNameElement.textContent = userName || 'Student';
-                console.log('Student name set to:', userName);
+//                console.log('Student name set to:', userName);
             } else {
                 console.error('studentName element not found!');
             }
         }
 
         function logout() {
-            console.log('logout() called');
+//            console.log('logout() called');
             if (confirm('Are you sure you want to log out? Any unsaved progress will be lost.')) {
-                console.log('User confirmed logout');
+//                console.log('User confirmed logout');
                 sessionStorage.clear();
                 window.location.href = 'login.html';
             } else {
-                console.log('User cancelled logout');
+//                console.log('User cancelled logout');
             }
         }
 
@@ -2383,10 +2383,10 @@
                     const readingResponse = await fetch('questions-reading.json');
                     if (readingResponse.ok) {
                         readingData = await readingResponse.json();
-                        console.log('✓ Loaded questions-reading.json');
+//                        console.log('✓ Loaded questions-reading.json');
                     }
                 } catch (e) {
-                    console.log('questions-reading.json not found, will try combined file');
+//                    console.log('questions-reading.json not found, will try combined file');
                 }
                 
                 try {
@@ -2394,15 +2394,15 @@
                     const mathResponse = await fetch('questions-math.json');
                     if (mathResponse.ok) {
                         mathData = await mathResponse.json();
-                        console.log('✓ Loaded questions-math.json');
+//                        console.log('✓ Loaded questions-math.json');
                     }
                 } catch (e) {
-                    console.log('questions-math.json not found, will try combined file');
+//                    console.log('questions-math.json not found, will try combined file');
                 }
                 
                 // If separate files loaded successfully, use them
                 if (readingData && mathData) {
-                    console.log('Using separate question files');
+//                    console.log('Using separate question files');
                     
                     // Reading file structure
                     questionBank.passages = readingData.passages || [];
@@ -2413,7 +2413,7 @@
                     
                 } else {
                     // Fall back to combined file
-                    console.log('Attempting to load combined questions-adaptive.json');
+//                    console.log('Attempting to load combined questions-adaptive.json');
                     const response = await fetch('questions-adaptive.json');
                     if (!response.ok) throw new Error('No question files found');
                     
@@ -2421,7 +2421,7 @@
                     
                     // Check if it's an array format (from CSV upload)
                     if (Array.isArray(data)) {
-                        console.log('Detected array format (CSV upload), converting...');
+//                        console.log('Detected array format (CSV upload), converting...');
                         convertArrayToQuestionBank(data);
                     }
                     // Check if it's the new format (with passages) or old format
@@ -2438,13 +2438,13 @@
                     }
                 }
                 
-                console.log('Question bank loaded');
-                console.log('Passages:', questionBank.passages.length);
-                console.log('Standalone reading:', 
+//                console.log('Question bank loaded');
+//                console.log('Passages:', questionBank.passages.length);
+//                console.log('Standalone reading:', 
                     questionBank.standalone_reading.easy.length + 
                     questionBank.standalone_reading.medium.length + 
                     questionBank.standalone_reading.hard.length);
-                console.log('Math:', 
+//                console.log('Math:', 
                     questionBank.math.easy.length + 
                     questionBank.math.medium.length + 
                     questionBank.math.hard.length);
@@ -2470,7 +2470,7 @@
             const readingQuestions = arrayData.filter(q => q.Section === 'reading');
             const mathQuestions = arrayData.filter(q => q.Section === 'math');
             
-            console.log(`Converting ${readingQuestions.length} reading and ${mathQuestions.length} math questions`);
+//            console.log(`Converting ${readingQuestions.length} reading and ${mathQuestions.length} math questions`);
             
             // Distribute questions evenly across difficulties
             const readingPerDifficulty = Math.ceil(readingQuestions.length / 3);
@@ -2511,11 +2511,11 @@
                 });
             });
             
-            console.log('Conversion complete!');
-            console.log('Reading - Easy:', questionBank.standalone_reading.easy.length, 
+//            console.log('Conversion complete!');
+//            console.log('Reading - Easy:', questionBank.standalone_reading.easy.length, 
                        'Medium:', questionBank.standalone_reading.medium.length,
                        'Hard:', questionBank.standalone_reading.hard.length);
-            console.log('Math - Easy:', questionBank.math.easy.length,
+//            console.log('Math - Easy:', questionBank.math.easy.length,
                        'Medium:', questionBank.math.medium.length,
                        'Hard:', questionBank.math.hard.length);
         }
@@ -2539,7 +2539,7 @@
                 
                 const readingNeeded = minReadingPerDifficulty - existingCount;
                 if (readingNeeded > 0) {
-                    console.log(`Adding ${readingNeeded} placeholder reading questions (${difficulty})`);
+//                    console.log(`Adding ${readingNeeded} placeholder reading questions (${difficulty})`);
                     for (let i = 0; i < readingNeeded; i++) {
                         questionBank.standalone_reading[difficulty].push(
                             generateReadingQuestion(difficulty, existingCount + i + 1)
@@ -2550,7 +2550,7 @@
                 
                 const mathNeeded = minMathPerDifficulty - questionBank.math[difficulty].length;
                 if (mathNeeded > 0) {
-                    console.log(`Adding ${mathNeeded} placeholder math questions (${difficulty})`);
+//                    console.log(`Adding ${mathNeeded} placeholder math questions (${difficulty})`);
                     for (let i = 0; i < mathNeeded; i++) {
                         questionBank.math[difficulty].push(
                             generateMathQuestion(difficulty, questionBank.math[difficulty].length + 1)
@@ -2561,11 +2561,11 @@
             });
 
             if (placeholdersAdded.reading > 0 || placeholdersAdded.math > 0) {
-                console.log(`%c✓ Your questions loaded successfully!`, 'color: green; font-weight: bold; font-size: 14px');
-                console.log(`%cℹ️ Added ${placeholdersAdded.reading} reading and ${placeholdersAdded.math} math placeholders to reach minimum requirements`, 'color: blue; font-size: 12px');
-                console.log(`%cTo remove placeholders: Add more questions to questions-adaptive.json`, 'color: gray; font-size: 11px');
+//                console.log(`%c✓ Your questions loaded successfully!`, 'color: green; font-weight: bold; font-size: 14px');
+//                console.log(`%cℹ️ Added ${placeholdersAdded.reading} reading and ${placeholdersAdded.math} math placeholders to reach minimum requirements`, 'color: blue; font-size: 12px');
+//                console.log(`%cTo remove placeholders: Add more questions to questions-adaptive.json`, 'color: gray; font-size: 11px');
             } else {
-                console.log(`%c✓ All questions loaded! No placeholders needed.`, 'color: green; font-weight: bold; font-size: 14px');
+//                console.log(`%c✓ All questions loaded! No placeholders needed.`, 'color: green; font-weight: bold; font-size: 14px');
             }
         }
 
@@ -2627,7 +2627,7 @@
         // ==========================================
 
         function selectTestType(type) {
-            console.log('Test type selected:', type);
+//            console.log('Test type selected:', type);
             testState.testType = type;
             
             // Update UI
@@ -2664,7 +2664,7 @@
         // ==========================================
 
         function startTest() {
-            console.log('startTest() called');
+//            console.log('startTest() called');
             
             if (!testState.testType) {
                 alert('Please select a test type first!');
@@ -2686,9 +2686,9 @@
             testState.currentModule = 1;
             testState.startTime = Date.now();
             
-            console.log('Selecting Module 1 questions...');
+//            console.log('Selecting Module 1 questions...');
             selectModule1Questions();
-            console.log('Starting module...');
+//            console.log('Starting module...');
             startModule();
         }
 
@@ -3418,7 +3418,7 @@ async function saveTestToBackend(scores) {
     const tutorId = localStorage.getItem('tutorId');
     
     if (!studentCode || !studentName || !tutorId) {
-        console.log('⚠️ Missing student info');
+//        console.log('⚠️ Missing student info');
         return;
     }
     
@@ -3472,7 +3472,7 @@ async function saveTestToBackend(scores) {
             }
         };
         
-        console.log('📤 Auto-saving test to backend...');
+//        console.log('📤 Auto-saving test to backend...');
         
         const response = await fetch(`${API_URL}/tests/save`, {
             method: 'POST',
@@ -3498,7 +3498,7 @@ async function saveTestToBackend(scores) {
         const result = await response.json();
         
         if (result.success) {
-            console.log('✅ Test saved to backend!');
+//            console.log('✅ Test saved to backend!');
         } else {
             console.error('❌ Backend save failed:', result.error);
         }
@@ -3705,7 +3705,7 @@ async function saveTestToBackend(scores) {
             testState.testHistory = history;
             localStorage.setItem(historyKey, JSON.stringify(history));
             
-            console.log(`Test saved to history. Expires in 15 days (${new Date(testRecord.expiresAt).toLocaleDateString()})`);
+//            console.log(`Test saved to history. Expires in 15 days (${new Date(testRecord.expiresAt).toLocaleDateString()})`);
         }
 
             function showTestHistoryModal(history) {
@@ -4108,7 +4108,7 @@ async function saveTestToBackend(scores) {
                 doc.setFontSize(9);
                 doc.setTextColor(...grayColor);
                 doc.setFont('helvetica', 'normal');
-                doc.text('MathMeg Tutoring - Adaptive SAT Practice Simulator', 105, 285, { align: 'center' });
+                doc.text('MathMeg Tutoring - SAT Practice Simulator', 105, 285, { align: 'center' });
                 doc.text('This is a practice test. Results are for educational purposes only.', 105, 290, { align: 'center' });
                 
                 // Add new page for detailed question analysis
@@ -4313,7 +4313,7 @@ async function saveTestToBackend(scores) {
                 doc.setFontSize(9);
                 doc.setTextColor(...grayColor);
                 doc.setFont('helvetica', 'normal');
-                doc.text('MathMeg Tutoring - Adaptive SAT Practice Simulator', 105, 285, { align: 'center' });
+                doc.text('MathMeg Tutoring - SAT Practice Simulator', 105, 285, { align: 'center' });
                 doc.text('This is a practice test. Results are for educational purposes only.', 105, 290, { align: 'center' });
                 
                 // Save PDF
