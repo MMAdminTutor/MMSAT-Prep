@@ -1931,7 +1931,7 @@
                 <div class="ready-section">
                     <h2>Ready to Begin?</h2>
                     <p>Click below to start your SAT practice test. Good luck! 🍀</p>
-                    <button class="start-btn" onclick="proceedToTest()">I'm Ready - Start Test</button>
+                    <button class="start-btn" id="startTestButton">I'm Ready - Start Test</button>
                 </div>
             </div>
         </div>
@@ -4505,6 +4505,15 @@ async function saveTestToBackend(scores) {
             startBtn.style.cursor = 'not-allowed';
             startBtn.textContent = 'Select a test type to begin';
         }
+    
+        // Setup event listeners after DOM loads
+        window.addEventListener('load', function() {
+            const startBtn = document.getElementById('startTestButton');
+            if (startBtn) {
+                startBtn.onclick = proceedToTest;
+            }
+        });
+
     </script>
 </body>
 </html>
