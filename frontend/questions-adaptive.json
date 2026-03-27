@@ -74,8 +74,8 @@
         "skill": "Official SAT Question",
         "text": "Which choice best states the main purpose of the text?",
         "choices": [
-          "To reveal the shop owner’s conflicted feelings about the new picture",
-          "To convey the shop owner’s resentment of the person he got the new picture from",
+          "To reveal the shop owner\u2019s conflicted feelings about the new picture",
+          "To convey the shop owner\u2019s resentment of the person he got the new picture from",
           "To describe the items that the shop owner most highly prizes",
           "To explain differences between the new picture and other pictures in the shop"
         ],
@@ -141,7 +141,7 @@
           "Mary hides in the garden to avoid doing her chores.",
           "Mary is getting bored with pulling up so many weeds in the garden.",
           "Mary is clearing out the garden to create a space to play.",
-          "Mary feels very satisfied when she’s taking care of the garden."
+          "Mary feels very satisfied when she\u2019s taking care of the garden."
         ],
         "correct": 1
       },
@@ -156,7 +156,7 @@
         "choices": [
           "Buck has become less social since he began living with Thornton.",
           "Buck mistrusts humans and does his best to avoid them.",
-          "Buck has been especially well liked by most of Thornton’s friends.",
+          "Buck has been especially well liked by most of Thornton\u2019s friends.",
           "Buck holds Thornton in higher regard than any other person."
         ],
         "correct": 3
@@ -234,10 +234,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
         "choices": [
-          "people’s stories",
-          "peoples story’s",
+          "people\u2019s stories",
+          "peoples story\u2019s",
           "peoples stories",
-          "people’s story’s"
+          "people\u2019s story\u2019s"
         ],
         "correct": 2
       },
@@ -266,10 +266,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
         "choices": [
-          "ran—fast—during",
-          "ran—fast during",
-          "ran—fast, during",
-          "ran—fast. During"
+          "ran\u2014fast\u2014during",
+          "ran\u2014fast during",
+          "ran\u2014fast, during",
+          "ran\u2014fast. During"
         ],
         "correct": 0
       },
@@ -316,7 +316,7 @@
         "choices": [
           "Julian synthesized the alkaloid physostigmine in 1935; it",
           "in 1935 Julian synthesized the alkaloid physostigmine, which",
-          "Julian’s 1935 synthesis of the alkaloid physostigmine",
+          "Julian\u2019s 1935 synthesis of the alkaloid physostigmine",
           "the alkaloid physostigmine was synthesized by Julian in 1935 and"
         ],
         "correct": 3
@@ -442,9 +442,9 @@
         "skill": "Official SAT Question",
         "text": "The student wants to describe Unwoven Light to an audience unfamiliar with Soo Sunny Park. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "Park’s 2013 installation Unwoven Light, which included a chain-link fence and iridescent tiles made from plexiglass, featured light as its primary medium of expression.",
+          "Park\u2019s 2013 installation Unwoven Light, which included a chain-link fence and iridescent tiles made from plexiglass, featured light as its primary medium of expression.",
           "Korean American light artist Soo Sunny Park created Unwoven Light in 2013.",
-          "The chain-link fence in Soo Sunny Park’s Unwoven Light was fitted with tiles made from iridescent plexiglass.",
+          "The chain-link fence in Soo Sunny Park\u2019s Unwoven Light was fitted with tiles made from iridescent plexiglass.",
           "In Unwoven Light, a 2013 work by Korean American artist Soo Sunny Park, light formed colorful prisms as it passed through a fence Park had fitted with iridescent tiles."
         ],
         "correct": 3
@@ -456,12 +456,12 @@
         "questionNumber": 29,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "The student wants to present Tan’s research to an audience unfamiliar with Angkor Wat. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "text": "The student wants to present Tan\u2019s research to an audience unfamiliar with Angkor Wat. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "Tan photographed Angkor Wat’s plaster walls and then applied decorrelation stretch analysis to the photographs.",
+          "Tan photographed Angkor Wat\u2019s plaster walls and then applied decorrelation stretch analysis to the photographs.",
           "Decorrelation stretch analysis is a novel digital imaging technique that Tan used to enhance the contrast between colors in a photograph.",
           "Using a novel digital imaging technique, Tan revealed hundreds of images hidden on the walls of Angkor Wat, a Cambodian temple.",
-          "Built to honor a Hindu god before becoming a Buddhist temple, Cambodia’s Angkor Wat concealed hundreds of images on its plaster walls."
+          "Built to honor a Hindu god before becoming a Buddhist temple, Cambodia\u2019s Angkor Wat concealed hundreds of images on its plaster walls."
         ],
         "correct": 0
       },
@@ -682,8 +682,8 @@
         "skill": "Official SAT Question",
         "text": "Which choice most logically completes the text?",
         "choices": [
-          "it can’t be concluded that the impact that made the crater was connected to the beginning of the Younger Dryas.",
-          "it can’t be determined whether a comet fragment could make a crater as large as 19 miles wide.",
+          "it can\u2019t be concluded that the impact that made the crater was connected to the beginning of the Younger Dryas.",
+          "it can\u2019t be determined whether a comet fragment could make a crater as large as 19 miles wide.",
           "scientists have ignored the possibility that something other than a comet fragment could have made the crater.",
           "the scientists who believe an impact caused the Younger Dryas have made incorrect assumptions about when the period began."
         ],
@@ -712,9 +712,9 @@
         "questionNumber": 14,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "Which choice most logically completes the text? the Aztecs would have disputed the idea that the morality of an individual’s actions can be assessed by appealing to standards of behavior that are independent of the individual’s social circumstances. actions by members of Aztec society who contributed a great deal to their community could be judged as morally good even if those actions were inconsistent with behaviors the Aztecs regarded as good in all contexts. Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "text": "Which choice most logically completes the text? the Aztecs would have disputed the idea that the morality of an individual\u2019s actions can be assessed by appealing to standards of behavior that are independent of the individual\u2019s social circumstances. actions by members of Aztec society who contributed a great deal to their community could be judged as morally good even if those actions were inconsistent with behaviors the Aztecs regarded as good in all contexts. Which choice completes the text so that it conforms to the conventions of Standard English?",
         "choices": [
-          "the Aztecs would not have accepted the notion that the morality of an individual’s actions can be fairly evaluated by people who do not live in the same society as that individual.",
+          "the Aztecs would not have accepted the notion that the morality of an individual\u2019s actions can be fairly evaluated by people who do not live in the same society as that individual.",
           "similar actions performed by people in different social roles in Aztec society would have been regarded as morally equivalent unless those actions led to different outcomes for the community.",
           "appoint a Vietnamese leader.",
           "these"
@@ -778,10 +778,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice completes the text with the most logical transition?",
         "choices": [
-          "hand’s between the two antenna’s,",
+          "hand\u2019s between the two antenna\u2019s,",
           "hands between the two antennas,",
-          "hands’ between the two antennas’,",
-          "hands’ between the two antennas,"
+          "hands\u2019 between the two antennas\u2019,",
+          "hands\u2019 between the two antennas,"
         ],
         "correct": 1
       },
@@ -794,7 +794,7 @@
         "skill": "Official SAT Question",
         "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
         "choices": [
-          "artist—",
+          "artist\u2014",
           "artist",
           "artist:",
           "artist,"
@@ -811,8 +811,8 @@
         "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
         "choices": [
           "described, from hair to grass to sculptures",
-          "described, from hair to grass to sculptures—",
-          "described—from hair to grass to sculptures,",
+          "described, from hair to grass to sculptures\u2014",
+          "described\u2014from hair to grass to sculptures,",
           "described: from hair to grass to sculptures"
         ],
         "correct": 2
@@ -891,8 +891,8 @@
         "text": "The student wants to identify the real author of Adam Bede. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "The real author of Adam Bede was Mary Ann Evans, who published the novel using the pseudonym George Eliot.",
-          "George Eliot, which Adam Bede’s title page indicated was the name of the novel’s author, was widely assumed to be a pseudonym.",
-          "The title page of the novel Adam Bede indicated that the author’s name was George Eliot.",
+          "George Eliot, which Adam Bede\u2019s title page indicated was the name of the novel\u2019s author, was widely assumed to be a pseudonym.",
+          "The title page of the novel Adam Bede indicated that the author\u2019s name was George Eliot.",
           "A woman who had used a pseudonym to conceal her identity later revealed herself as the real author of Adam Bede."
         ],
         "correct": 1
@@ -920,7 +920,7 @@
         "questionNumber": 27,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "red-legged frog’s FWS classification category. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "text": "red-legged frog\u2019s FWS classification category. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "Species on the FWS list, which includes the California red-legged frog (Rana draytonii), are classified as either endangered or threatened.",
           "The California red-legged frog (Rana draytonii) appears on the FWS list of at-risk species.",
@@ -1002,8 +1002,8 @@
         "skill": "Official SAT Question",
         "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
         "choices": [
-          "It indicates the reason for Harris’s eagerness to resume traveling.",
-          "It hints at Harris’s feeling that during an earlier boat trip, others didn’t include him in activities.",
+          "It indicates the reason for Harris\u2019s eagerness to resume traveling.",
+          "It hints at Harris\u2019s feeling that during an earlier boat trip, others didn\u2019t include him in activities.",
           "It emphasizes that Harris always boasts about his own constitution when speaking of a previous boat trip.",
           "It reveals that although Harris claims to prefer solitary activities when traveling, he actually enjoys having company."
         ],
@@ -1082,10 +1082,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
         "choices": [
-          "It elaborates on the previous sentence’s statement about a transitional moment in Johnson’s artistic career.",
-          "It provides information about Johnson’s travels in support of a claim about his artistic influences, which is advanced in the following sentence.",
-          "It recounts a moment in Johnson’s personal life that enabled the success of his subsequent career, which is summarized in the following sentence.",
-          "It presents evidence that calls into question the previous sentence’s characterization of Johnson’s artistic development."
+          "It elaborates on the previous sentence\u2019s statement about a transitional moment in Johnson\u2019s artistic career.",
+          "It provides information about Johnson\u2019s travels in support of a claim about his artistic influences, which is advanced in the following sentence.",
+          "It recounts a moment in Johnson\u2019s personal life that enabled the success of his subsequent career, which is summarized in the following sentence.",
+          "It presents evidence that calls into question the previous sentence\u2019s characterization of Johnson\u2019s artistic development."
         ],
         "correct": 3
       },
@@ -1099,9 +1099,9 @@
         "text": "Which choice best states the main purpose of the text?",
         "choices": [
           "To provide details about how Argerich identifies which pieces of music she will perform",
-          "To assert that Argerich’s performances look effortless because of how she prepares for them",
+          "To assert that Argerich\u2019s performances look effortless because of how she prepares for them",
           "To discuss the kinds of music Argerich feels most comfortable encountering for the first time",
-          "To describe the unique way that Argerich approaches music she hasn’t performed before"
+          "To describe the unique way that Argerich approaches music she hasn\u2019t performed before"
         ],
         "correct": 0
       },
@@ -1131,7 +1131,7 @@
         "text": "Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?",
         "choices": [
           "By questioning the idea that the story of The Nutcracker is stuck in the past and by rejecting the suggestion that contemporary audiences would enjoy an updated version",
-          "By agreeing that contemporary audiences have largely stopped going to see performances of The Nutcracker because it’s so old-fashioned",
+          "By agreeing that contemporary audiences have largely stopped going to see performances of The Nutcracker because it\u2019s so old-fashioned",
           "By pointing out that most dance companies could increase their incomes by offering modernized versions of The Nutcracker",
           "By suggesting that dance companies should consider offering revised versions of The Nutcracker instead of completely rejecting the show"
         ],
@@ -1146,7 +1146,7 @@
         "skill": "Official SAT Question",
         "text": "Which choice best states the main idea of the text?",
         "choices": [
-          "Medina-Alcaide and her team’s study demonstrated that fireplaces were essential to the creators of Paleolithic cave art.",
+          "Medina-Alcaide and her team\u2019s study demonstrated that fireplaces were essential to the creators of Paleolithic cave art.",
           "Medina-Alcaide and her team discovered that Paleolithic cave artists in Spain used animal-fat lamps more often than they used torches.",
           "Medina-Alcaide and her team were reluctant to draw many conclusions from their study because of the difficulty they had replicating light sources based on known artifacts.",
           "Medina-Alcaide and her team tested Paleolithic light sources and learned some details about how Paleolithic artists traveled within dark caves."
@@ -1180,7 +1180,7 @@
         "choices": [
           "most lizard species use about the same percentage of their maximal speed when escaping predation as they do when pursuing prey.",
           "multiple lizard species move at an average of less than 90% of their maximal speed while escaping predation.",
-          "more lizard species use, on average, 90%–100% of their maximal speed while escaping predation than use any other percentage of their maximal speed.",
+          "more lizard species use, on average, 90%\u2013100% of their maximal speed while escaping predation than use any other percentage of their maximal speed.",
           "at least 4 lizard species use, on average, less than 100% of their maximal speed while pursuing prey."
         ],
         "correct": 0
@@ -1192,7 +1192,7 @@
         "questionNumber": 13,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "The Cretaceous pterosaur Tupandactylus navigans is known for having an anomalously oversized head crest. Until an almost complete fossil skeleton was found in Brazil, paleontologists had been able to study only skull specimens from T. navigans, though it was presumed that, like other pterosaurs, the species’s primary form of locomotion was powered flight. Examining the fuller skeleton in 2016, Victor Beccari and his team determined that T. navigans had long hind legs, short wings, and an unusually long neck—characteristics that, combined with the creature’s large-crested head, would have made sustained flight difficult and walking upright relatively comfortable. Based on these findings the team suggests that T. navigans likely Which choice most logically completes the text?",
+        "text": "The Cretaceous pterosaur Tupandactylus navigans is known for having an anomalously oversized head crest. Until an almost complete fossil skeleton was found in Brazil, paleontologists had been able to study only skull specimens from T. navigans, though it was presumed that, like other pterosaurs, the species\u2019s primary form of locomotion was powered flight. Examining the fuller skeleton in 2016, Victor Beccari and his team determined that T. navigans had long hind legs, short wings, and an unusually long neck\u2014characteristics that, combined with the creature\u2019s large-crested head, would have made sustained flight difficult and walking upright relatively comfortable. Based on these findings the team suggests that T. navigans likely Which choice most logically completes the text?",
         "choices": [
           "flew for longer distances than did other pterosaur species that had oversized head crests.",
           "had longer wings than other pterosaur species considered to have been comfortable walking.",
@@ -1213,7 +1213,7 @@
           "the phone is less appealing to ethical consumers in their twenties than other similar phones on the market are.",
           "ethical consumers in their twenties are less likely to purchase the phone than ethical consumers in other age groups are.",
           "there is not a meaningful difference in the likelihood of purchasing the phone among ethical consumers in different age groups.",
-          "ethical consumers in their twenties are more likely than ethical consumers in other age groups to consider a phone’s social and ecological effects when deciding whether to purchase that phone."
+          "ethical consumers in their twenties are more likely than ethical consumers in other age groups to consider a phone\u2019s social and ecological effects when deciding whether to purchase that phone."
         ],
         "correct": 2
       },
@@ -1308,8 +1308,8 @@
         "choices": [
           "works because",
           "works. Because",
-          "works, it’s because",
-          "works: it’s because"
+          "works, it\u2019s because",
+          "works: it\u2019s because"
         ],
         "correct": 2
       },
@@ -1416,9 +1416,9 @@
         "questionNumber": 27,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "The student wants to emphasize Janaki Ammal’s achievement. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "text": "The student wants to emphasize Janaki Ammal\u2019s achievement. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "By crossbreeding the imported sugarcane species Saccharum officinarum with grasses native to India, Ammal succeeded in creating sugarcane hybrids well suited to India’s climate.",
+          "By crossbreeding the imported sugarcane species Saccharum officinarum with grasses native to India, Ammal succeeded in creating sugarcane hybrids well suited to India\u2019s climate.",
           "In the 1930s, the Imperial Sugar Cane Institute, which enlisted Ammal, sought to limit dependence on imported sugarcane.",
           "Ammal was enlisted by the Imperial Sugar Cane Institute at a time when a local variety of sugarcane needed to be produced.",
           "As part of efforts to breed a local variety of sugarcane, an imported sugarcane species called Saccharum officinarum was crossbred with grasses native to India."
@@ -1434,7 +1434,7 @@
         "skill": "Official SAT Question",
         "text": "The student wants to emphasize a similarity between the two sculptures. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "Catlett’s Students Aspire depicts two figures supporting each other in the pursuit of equality.",
+          "Catlett\u2019s Students Aspire depicts two figures supporting each other in the pursuit of equality.",
           "Recognition and Students Aspire both show African American figures in poses that symbolize supportive relationships.",
           "Catlett completed Recognition in 1970 and Students Aspire in 1978.",
           "The figures in Recognition have features that are rounded and indistinct, while the figures in Students Aspire have sharply defined features."
@@ -1570,22 +1570,6 @@
         "correct": 2
       },
       {
-        "id": "test8_r1_q7",
-        "test": "Practice Test 8",
-        "module": 1,
-        "questionNumber": 7,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "Based on the information in the table, at what depth",
-        "choices": [
-          "does the southern stoplight loosejaw live?",
-          "A) More than 2,000 meters below the surface",
-          "B) 150 to 400 meters below the surface",
-          "C) 500 to 2,000 meters below the surface"
-        ],
-        "correct": 3
-      },
-      {
         "id": "test8_r1_q8",
         "test": "Practice Test 8",
         "module": 1,
@@ -1597,7 +1581,7 @@
           "A) identify molecular components similar to EBF",
           "that target the activation of Or31 receptors.",
           "Which finding, if true, would most directly support",
-          "the researchers’ hypothesis?"
+          "the researchers\u2019 hypothesis?"
         ],
         "correct": 0
       },
@@ -1643,8 +1627,8 @@
         "text": "Which choice completes the text so that it conforms",
         "choices": [
           "to the conventions of Standard English?",
-          "D) a male tanager’s appearance may function as",
-          "a dishonest signal of the individual’s overall",
+          "D) a male tanager\u2019s appearance may function as",
+          "a dishonest signal of the individual\u2019s overall",
           "fitness."
         ],
         "correct": 1
@@ -1707,27 +1691,11 @@
         "text": "Which choice completes the text with the most",
         "choices": [
           "logical transition?",
-          "• In 2008, he analyzed data from the Japanese",
+          "\u2022 In 2008, he analyzed data from the Japanese",
           "satellite Kaguya.",
           "A) Second,"
         ],
         "correct": 0
-      },
-      {
-        "id": "test8_r1_q18",
-        "test": "Practice Test 8",
-        "module": 1,
-        "questionNumber": 18,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "• Based on the Kaguya data, Terada confirmed his",
-        "choices": [
-          "suspicion that Earth is sending oxygen to the",
-          "Moon.",
-          "D) Nevertheless,",
-          "30"
-        ],
-        "correct": 3
       },
       {
         "id": "test8_r1_q19",
@@ -1778,22 +1746,6 @@
         "correct": 1
       },
       {
-        "id": "test8_r1_q22",
-        "test": "Practice Test 8",
-        "module": 1,
-        "questionNumber": 22,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "A) Based on statistical analysis, Glickman, Brown,",
-        "choices": [
-          "and Song claim that John Lennon wrote the",
-          "verse of “In My Life.”",
-          "• Many Lennon-McCartney songs were actually",
-          "written by either Lennon or McCartney, not by"
-        ],
-        "correct": 0
-      },
-      {
         "id": "test8_r1_q23",
         "test": "Practice Test 8",
         "module": 1,
@@ -1842,22 +1794,6 @@
         "correct": 2
       },
       {
-        "id": "test8_r1_q26",
-        "test": "Practice Test 8",
-        "module": 1,
-        "questionNumber": 26,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "Based on that finding, von Ahn invented a simple",
-        "choices": [
-          "security test to keep automated “bots” out of",
-          "websites. The first version of the reCAPTCHA test",
-          "asked users to type one known word and one of the",
-          "many words scanners couldn’t recognize. Correct"
-        ],
-        "correct": 3
-      },
-      {
         "id": "test8_r1_q27",
         "test": "Practice Test 8",
         "module": 1,
@@ -1884,7 +1820,7 @@
         "choices": [
           "text?",
           "D) intricate",
-          "A) To discuss von Ahn’s invention of reCAPTCHA",
+          "A) To discuss von Ahn\u2019s invention of reCAPTCHA",
           "B) To explain how digital scanners work"
         ],
         "correct": 1
@@ -1931,27 +1867,11 @@
         "text": "Which choice best states the main purpose of the",
         "choices": [
           "text?",
-          "A) To offer Tom’s assurance that the play will be",
+          "A) To offer Tom\u2019s assurance that the play will be",
           "inoffensive and involve only a small number of",
           "people"
         ],
         "correct": 2
-      },
-      {
-        "id": "test8_r1_q32",
-        "test": "Practice Test 8",
-        "module": 1,
-        "questionNumber": 32,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "Based on the texts, how would Behrenfeld and",
-        "choices": [
-          "colleagues (Text 2) most likely respond to the",
-          "“conventional wisdom” discussed in Text 1?",
-          "C) To elaborate on the idea that the people around",
-          "Tom lack the skills to successfully stage a play"
-        ],
-        "correct": 0
       },
       {
         "id": "test8_r1_q33",
@@ -2077,9 +1997,9 @@
         "text": "Which choice most effectively uses a quotation from",
         "choices": [
           "King Lear to illustrate the claim?",
-          "says of himself, “I am a man / more sinned against than sinning.”",
-          "says during a growing storm, “This tempest will not give me leave to ponder / On things would hurt me more.”",
-          "says to himself while striking his head, “Beat at this gate that let thy folly in / And thy dear judgement out!”"
+          "says of himself, \u201cI am a man / more sinned against than sinning.\u201d",
+          "says during a growing storm, \u201cThis tempest will not give me leave to ponder / On things would hurt me more.\u201d",
+          "says to himself while striking his head, \u201cBeat at this gate that let thy folly in / And thy dear judgement out!\u201d"
         ],
         "correct": 0
       },
@@ -2092,10 +2012,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice most logically completes the text?",
         "choices": [
-          "many theatergoers and readers today are likely to find Shakespeare’s history plays less engaging than the tragedies.",
-          "some of Shakespeare’s tragedies are more relevant to today’s audiences than twentieth-century plays.",
-          "Romeo and Juliet is the most thematically accessible of all Shakespeare’s tragedies.",
-          "experts in English history tend to prefer Shakespeare’s history plays to his other works."
+          "many theatergoers and readers today are likely to find Shakespeare\u2019s history plays less engaging than the tragedies.",
+          "some of Shakespeare\u2019s tragedies are more relevant to today\u2019s audiences than twentieth-century plays.",
+          "Romeo and Juliet is the most thematically accessible of all Shakespeare\u2019s tragedies.",
+          "experts in English history tend to prefer Shakespeare\u2019s history plays to his other works."
         ],
         "correct": 2
       },
@@ -2140,10 +2060,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
         "choices": [
-          "story’s of the South Asian immigrants",
-          "story’s of the South Asian immigrants’",
+          "story\u2019s of the South Asian immigrants",
+          "story\u2019s of the South Asian immigrants\u2019",
           "stories of the South Asian immigrants",
-          "stories’ of the South Asian immigrant’s"
+          "stories\u2019 of the South Asian immigrant\u2019s"
         ],
         "correct": 0
       },
@@ -2158,7 +2078,7 @@
         "choices": [
           "of",
           "of,",
-          "of—",
+          "of\u2014",
           "of:"
         ],
         "correct": 1
@@ -2254,7 +2174,7 @@
         "choices": [
           "the mitigation of both street flooding and the resulting pollution of nearby waterways has been achieved by bioswales.",
           "the bioswales have mitigated both street flooding and the resulting pollution of nearby waterways.",
-          "the bioswales’ mitigation of both street flooding and the resulting pollution of nearby waterways has been achieved.",
+          "the bioswales\u2019 mitigation of both street flooding and the resulting pollution of nearby waterways has been achieved.",
           "both street flooding and the resulting pollution of nearby waterways have been mitigated by bioswales."
         ],
         "correct": 3
@@ -2333,9 +2253,9 @@
         "text": "The student wants to emphasize how hot the Sun is relative to nearby stars. Which choice most",
         "choices": [
           "effectively uses relevant information from the notes to accomplish this goal?",
-          "At around 9,800°F, which classifies it as a G star, the Sun is hotter than most but not all of the stars within 10 parsecs of it.",
-          "Astronomer Todd Henry determined that the Sun, at around 9,800°F, is a G star, and several other stars within a 10-parsec range are A or F stars.",
-          "Of the 357 stars within ten parsecs of the Sun, 327 are classified as K or M stars, with surface temperatures under 8,900°F."
+          "At around 9,800\u00b0F, which classifies it as a G star, the Sun is hotter than most but not all of the stars within 10 parsecs of it.",
+          "Astronomer Todd Henry determined that the Sun, at around 9,800\u00b0F, is a G star, and several other stars within a 10-parsec range are A or F stars.",
+          "Of the 357 stars within ten parsecs of the Sun, 327 are classified as K or M stars, with surface temperatures under 8,900\u00b0F."
         ],
         "correct": 3
       },
@@ -2346,11 +2266,11 @@
         "questionNumber": 24,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "The student wants to introduce Cathryn Halverson’s book to an audience already familiar with the Atlantic Monthly. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+        "text": "The student wants to introduce Cathryn Halverson\u2019s book to an audience already familiar with the Atlantic Monthly. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "Cathryn Halverson’s Faraway Women and the “Atlantic Monthly” discusses female authors whose autobiographies appeared in the magazine in the early 1900s.",
-          "A magazine called the Atlantic Monthly, referred to in Cathryn Halverson’s book title, was first published in 1857.",
-          "Faraway Women and the “Atlantic Monthly” features contributors to the Atlantic Monthly, first published in 1857 as a magazine focusing on politics, art, and literature.",
+          "Cathryn Halverson\u2019s Faraway Women and the \u201cAtlantic Monthly\u201d discusses female authors whose autobiographies appeared in the magazine in the early 1900s.",
+          "A magazine called the Atlantic Monthly, referred to in Cathryn Halverson\u2019s book title, was first published in 1857.",
+          "Faraway Women and the \u201cAtlantic Monthly\u201d features contributors to the Atlantic Monthly, first published in 1857 as a magazine focusing on politics, art, and literature.",
           "An author discussed by Cathryn Halverson is Juanita Harrison, whose autobiography appeared in the Atlantic Monthly in the early 1900s."
         ],
         "correct": 0
@@ -2365,25 +2285,9 @@
         "text": "The student wants to emphasize a similarity between the two ways a magnificent frigatebird acquires food. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "A magnificent frigatebird never dives into the water, instead using its hook-tipped bill to snatch prey from the surface.",
-          "Neither of a magnificent frigatebird’s two ways of acquiring food requires the bird to dive into the water.",
-          "Of the magnificent frigatebird’s two ways of acquiring food, only one is known as kleptoparasitism.",
+          "Neither of a magnificent frigatebird\u2019s two ways of acquiring food requires the bird to dive into the water.",
+          "Of the magnificent frigatebird\u2019s two ways of acquiring food, only one is known as kleptoparasitism.",
           "In addition to snatching prey from the water with its hook-tipped bill, a magnificent frigatebird takes food from other birds by force."
-        ],
-        "correct": 1
-      },
-      {
-        "id": "test4_r2_q26",
-        "test": "Practice Test 4",
-        "module": 2,
-        "questionNumber": 26,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is a solution to the given equation?",
-        "choices": [
-          "6",
-          "30",
-          "450",
-          "900"
         ],
         "correct": 1
       },
@@ -2404,52 +2308,20 @@
         "correct": 0
       },
       {
-        "id": "test4_r2_q28",
-        "test": "Practice Test 4",
-        "module": 2,
-        "questionNumber": 28,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "3 more than 8 times a number x is equal to 83. Which equation represents this situation?",
-        "choices": [
-          "(3)(8) x = 83",
-          "8x = 83 + 3",
-          "3x + 8 = 83",
-          "8x + 3 = 83"
-        ],
-        "correct": 0
-      },
-      {
         "id": "test4_r2_q29",
         "test": "Practice Test 4",
         "module": 2,
         "questionNumber": 29,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "Hana deposited a fixed amount into her bank account each month. The function f (t) = 100 + 25t gives the amount, in dollars, in Hana’s bank account after t monthly deposits. What is the best interpretation of 25 in this context?",
+        "text": "Hana deposited a fixed amount into her bank account each month. The function f (t) = 100 + 25t gives the amount, in dollars, in Hana\u2019s bank account after t monthly deposits. What is the best interpretation of 25 in this context?",
         "choices": [
-          "With each monthly deposit, the amount in Hana’s bank account increased by $25.",
+          "With each monthly deposit, the amount in Hana\u2019s bank account increased by $25.",
           "Before Hana made any monthly deposits, the amount in her bank account was $25.",
-          "After 1 monthly deposit, the amount in Hana’s bank account was $25.",
+          "After 1 monthly deposit, the amount in Hana\u2019s bank account was $25.",
           "Hana made a total of 25 monthly deposits."
         ],
         "correct": 2
-      },
-      {
-        "id": "test4_r2_q32",
-        "test": "Practice Test 4",
-        "module": 2,
-        "questionNumber": 32,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is an equation of the graph shown?",
-        "choices": [
-          "y = −2x − 8",
-          "y = x − 8",
-          "y = −x − 8",
-          "y = 2x − 8"
-        ],
-        "correct": 0
       },
       {
         "id": "test5_r2_q1",
@@ -2462,8 +2334,8 @@
         "choices": [
           "Lutie is observing the appearance of the street at a particular time of day and the events occurring on it.",
           "Lutie is annoyed by the noise of children playing games on her street.",
-          "Lutie is puzzled by the rules of certain children’s games.",
-          "Lutie is spending time alone in her apartment because she doesn’t want to interact with her neighbors."
+          "Lutie is puzzled by the rules of certain children\u2019s games.",
+          "Lutie is spending time alone in her apartment because she doesn\u2019t want to interact with her neighbors."
         ],
         "correct": 2
       },
@@ -2492,10 +2364,10 @@
         "skill": "Official SAT Question",
         "text": "Which choice most logically completes the text?",
         "choices": [
-          "the English dialects spoken in the Upland South acquired their emphasis on the “r” sound from dialects spoken in Scotland.",
-          "emphasis on the “r” sound will eventually spread from English dialects spoken in the Upland South to dialects spoken elsewhere.",
+          "the English dialects spoken in the Upland South acquired their emphasis on the \u201cr\u201d sound from dialects spoken in Scotland.",
+          "emphasis on the \u201cr\u201d sound will eventually spread from English dialects spoken in the Upland South to dialects spoken elsewhere.",
           "the English dialects spoken in Scotland were influenced by dialects spoken in the Upland South.",
-          "people from Scotland abandoned their emphasis on the “r” sound after relocating to the Upland South."
+          "people from Scotland abandoned their emphasis on the \u201cr\u201d sound after relocating to the Upland South."
         ],
         "correct": 2
       },
@@ -2526,7 +2398,7 @@
         "choices": [
           "instrument:",
           "instrument",
-          "instrument—",
+          "instrument\u2014",
           "instrument,"
         ],
         "correct": 0
@@ -2701,9 +2573,9 @@
         "text": "The student wants to specify when al-Biruni published his landmass theory. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "In 1037 CE, al-Biruni published his theory that a large landmass existed west of Europe and east of Asia.",
-          "Al-Biruni, who studied Earth’s physical features, published a theory about a large landmass.",
-          "Al-Biruni was an Iranian scholar who studied Earth’s physical features.",
-          "An Iranian scholar who studied Earth’s physical features, al-Biruni theorized that a large landmass existed west of Europe and east"
+          "Al-Biruni, who studied Earth\u2019s physical features, published a theory about a large landmass.",
+          "Al-Biruni was an Iranian scholar who studied Earth\u2019s physical features.",
+          "An Iranian scholar who studied Earth\u2019s physical features, al-Biruni theorized that a large landmass existed west of Europe and east"
         ],
         "correct": 1
       },
@@ -2748,28 +2620,12 @@
         "skill": "Official SAT Question",
         "text": "The student wants to emphasize a similarity between P waves and S waves. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "P waves and S waves both travel beneath Earth’s surface, causing the ground to move.",
-          "P waves travel away from an earthquake’s starting point at a higher rate of speed than do S waves.",
+          "P waves and S waves both travel beneath Earth\u2019s surface, causing the ground to move.",
+          "P waves travel away from an earthquake\u2019s starting point at a higher rate of speed than do S waves.",
           "Spreading out from the focus of an earthquake, P waves move the ground backward and forward.",
           "Although P waves and S waves start at the same point, they behave very differently."
         ],
         "correct": 1
-      },
-      {
-        "id": "test5_r2_q24",
-        "test": "Practice Test 5",
-        "module": 2,
-        "questionNumber": 24,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the solution (r, s) to the given system of equations?",
-        "choices": [
-          "(6, 3)",
-          "(3, 6)",
-          "(3, 27)",
-          "(27, 3)"
-        ],
-        "correct": 2
       },
       {
         "id": "test5_r2_q27",
@@ -2781,43 +2637,11 @@
         "text": "A solution to the given system of equations is (x, y), where x > 0. What is the value of x ? 22 centimeters and a height of 6 centimeters. What is the volume, in cubic centimeters, of the cylinder?",
         "choices": [
           "A right circular cylinder has a base diameter of",
-          "132π",
-          "264π",
-          "726π"
+          "132\u03c0",
+          "264\u03c0",
+          "726\u03c0"
         ],
         "correct": 2
-      },
-      {
-        "id": "test5_r2_q29",
-        "test": "Practice Test 5",
-        "module": 2,
-        "questionNumber": 29,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the best interpretation of 6 in this context?",
-        "choices": [
-          "Kaylani made 6 suits.",
-          "Kaylani purchased a total of 6 yards of fabric.",
-          "Kaylani used a total of 6 yards of fabric to make the suits.",
-          "Kaylani purchased 6 yards more fabric than she used to make the suits."
-        ],
-        "correct": 3
-      },
-      {
-        "id": "test5_r2_q31",
-        "test": "Practice Test 5",
-        "module": 2,
-        "questionNumber": 31,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "60. What is the value of x ?",
-        "choices": [
-          "12",
-          "15",
-          "240",
-          "340"
-        ],
-        "correct": 3
       },
       {
         "id": "test6_r2_q1",
@@ -2844,9 +2668,9 @@
         "skill": "Official SAT Question",
         "text": "Which choice best states the main purpose of the text?",
         "choices": [
-          "To illustrate Francie’s enjoyment of an unusual topic",
+          "To illustrate Francie\u2019s enjoyment of an unusual topic",
           "To explain why Francie prefers reading over other activities",
-          "To portray Francie’s determination to meet a goal",
+          "To portray Francie\u2019s determination to meet a goal",
           "To describe a book that Francie greatly admires"
         ],
         "correct": 3
@@ -2877,7 +2701,7 @@
         "text": "Which choice best describes the function of the underlined portion?",
         "choices": [
           "It asserts that in medieval Europe steam baths were more popular in rural areas than in urban ones.",
-          "It describes a limitation of earlier historians’ studies of medieval European bathing habits.",
+          "It describes a limitation of earlier historians\u2019 studies of medieval European bathing habits.",
           "It concedes that not all people in medieval Europe had access to public bathhouses.",
           "It explains why Janega decided to study the popularity of public bathhouses in medieval Europe."
         ],
@@ -2892,9 +2716,9 @@
         "skill": "Official SAT Question",
         "text": "Which choice best describes the function of the underlined portion in the text as a whole?",
         "choices": [
-          "It presents a trend in scholarship on the Chicano movement that the text claims has been reevaluated by researchers in light of Herrera’s work on the movement’s participants.",
+          "It presents a trend in scholarship on the Chicano movement that the text claims has been reevaluated by researchers in light of Herrera\u2019s work on the movement\u2019s participants.",
           "It identifies an aspect of the Chicano movement that the text implies was overemphasized by scholars due to their own political orientations.",
-          "It describes a common approach to studying the Chicano movement that, according to the text, obscures the ideological diversity of the movement’s participants.",
+          "It describes a common approach to studying the Chicano movement that, according to the text, obscures the ideological diversity of the movement\u2019s participants.",
           "It summarizes the conventional method for analyzing the Chicano movement, which the text suggests creates a misleading impression of the effectiveness of neighborhood institutions and projects."
         ],
         "correct": 1
@@ -2909,8 +2733,8 @@
         "text": "Based on the text, Huang, Seager, and colleagues would most likely agree with which statement about atmospheric NH3?",
         "choices": [
           "Its presence is more likely to indicate that a planet is a mini-Neptune than that the planet is a rocky planet that could support life.",
-          "Its absence from a planet that’s not a",
-          "mini-Neptune indicates that the planet probably doesn’t have life.",
+          "Its absence from a planet that\u2019s not a",
+          "mini-Neptune indicates that the planet probably doesn\u2019t have life.",
           "It should be treated as a biosignature gas if detected in the atmosphere of a rocky planet but not if detected in the atmosphere of a"
         ],
         "correct": 3
@@ -3165,8 +2989,8 @@
         "text": "The student wants to emphasize a similarity between the Choctaw Code Talkers and the Navajo Code Talkers. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "US soldiers who were members of the Choctaw Nation in Oklahoma used their native language to relay coded information.",
-          "In World War II, one group of Navajo (Diné) soldiers was known as the Navajo Code Talkers.",
-          "Both the Choctaw Code Talkers and the Navajo Code Talkers transmitted coded military messages in the soldiers’ native languages.",
+          "In World War II, one group of Navajo (Din\u00e9) soldiers was known as the Navajo Code Talkers.",
+          "Both the Choctaw Code Talkers and the Navajo Code Talkers transmitted coded military messages in the soldiers\u2019 native languages.",
           "The Choctaw Code Talkers, not the Navajo Code Talkers, served in World War I."
         ],
         "correct": 1
@@ -3196,10 +3020,10 @@
         "skill": "Official SAT Question",
         "text": "The student wants to emphasize the sample collected from Serra de Itatiaia. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
-          "Doña María do Carmo Bandeira was a botanist notable for collecting approximately 800 botanical samples between 1924 and 1941.",
-          "Among the many botanical samples Doña María do Carmo Bandeira collected was Polytrichum juniperinum, a species of moss she collected from Serra de Itatiaia in 1925.",
-          "Between 1924 and 1941, Doña María do Carmo Bandeira collected many botanical samples, such as Polytrichum juniperinum from Serra de Itatiaia and Sphagnum gracilescen from Ponte do Inferno.",
-          "Between 1924 and 1941, Doña María do Carmo Bandeira collected samples of Polytrichum juniperinum and Sphagnum gracilescen, both species of moss."
+          "Do\u00f1a Mar\u00eda do Carmo Bandeira was a botanist notable for collecting approximately 800 botanical samples between 1924 and 1941.",
+          "Among the many botanical samples Do\u00f1a Mar\u00eda do Carmo Bandeira collected was Polytrichum juniperinum, a species of moss she collected from Serra de Itatiaia in 1925.",
+          "Between 1924 and 1941, Do\u00f1a Mar\u00eda do Carmo Bandeira collected many botanical samples, such as Polytrichum juniperinum from Serra de Itatiaia and Sphagnum gracilescen from Ponte do Inferno.",
+          "Between 1924 and 1941, Do\u00f1a Mar\u00eda do Carmo Bandeira collected samples of Polytrichum juniperinum and Sphagnum gracilescen, both species of moss."
         ],
         "correct": 3
       },
@@ -3213,27 +3037,11 @@
         "text": "The student wants to indicate which category most routine diplomatic correspondence belongs in, based on how sensitive information is classified. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "According to the US government, which classifies such sensitive information as routine diplomatic correspondence, Confidential information could damage national security if disclosed.",
-          "Most routine diplomatic correspondence is classified according to the degree to which disclosure could affect the nation’s security.",
+          "Most routine diplomatic correspondence is classified according to the degree to which disclosure could affect the nation\u2019s security.",
           "Having the potential to damage national security if disclosed, most routine diplomatic correspondence is classified as Confidential.",
-          "If disclosed, communication with both allies and adversaries could affect the nation’s security."
+          "If disclosed, communication with both allies and adversaries could affect the nation\u2019s security."
         ],
         "correct": 1
-      },
-      {
-        "id": "test6_r2_q27",
-        "test": "Practice Test 6",
-        "module": 2,
-        "questionNumber": 27,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the positive solution to the given equation?",
-        "choices": [
-          "144",
-          "72",
-          "38",
-          "12"
-        ],
-        "correct": 3
       },
       {
         "id": "test6_r2_q31",
@@ -3242,7 +3050,7 @@
         "questionNumber": 31,
         "category": "Reading and Writing",
         "skill": "Official SAT Question",
-        "text": "A manager is responsible for ordering supplies for a shaved ice shop. The shop’s inventory starts with 4,500 paper cups, and the manager estimates that 70 of these paper cups are used each day. Based on this estimate, in how many days will the supply of paper cups reach 1,700?",
+        "text": "A manager is responsible for ordering supplies for a shaved ice shop. The shop\u2019s inventory starts with 4,500 paper cups, and the manager estimates that 70 of these paper cups are used each day. Based on this estimate, in how many days will the supply of paper cups reach 1,700?",
         "choices": [
           "20",
           "40",
@@ -3276,7 +3084,7 @@
         "skill": "Official SAT Question",
         "text": "Which choice best describes data from the table that",
         "choices": [
-          "support the researchers’ claim?",
+          "support the researchers\u2019 claim?",
           "A) Among the five languages in the table, Thai and",
           "Hungarian have the lowest rates of speech and",
           "the lowest rates of information conveyed."
@@ -3292,7 +3100,7 @@
         "skill": "Official SAT Question",
         "text": "Which choice best describes data from the table that support Barrett",
         "choices": [
-          "and Rayfield’s suggestion?",
+          "and Rayfield\u2019s suggestion?",
           "A) The study by Meers used body-mass scaling and produced the",
           "lowest estimated maximum bite force, while the study by Cost et al.",
           "used muscular and skeletal modeling and produced the highest"
@@ -3438,314 +3246,10 @@
         "choices": [
           "information from the notes to accomplish this goal?",
           "A) To remove carvings from sandstone arches in",
-          "Utah’s Arches National Park, power grinding is",
+          "Utah\u2019s Arches National Park, power grinding is",
           "not always feasible."
         ],
         "correct": 1
-      },
-      {
-        "id": "test8_r2_q15",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 15,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the y-intercept of the graph shown?",
-        "choices": [
-          "A) (−8, 0)",
-          "B) (−6, 0)",
-          "C) (0, 6)",
-          "D) (0, 8)"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test8_r2_q16",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 16,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the probability of selecting a bead that has a",
-        "choices": [
-          "defect?",
-          "1",
-          "A)",
-          "B)"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q17",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 17,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "and f(7) = 28. What is the value of b ?",
-        "choices": [
-          "A) 0",
-          "B) 1",
-          "C) 4",
-          "D) 7"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test8_r2_q18",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 18,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "has a measure of 53°. What is the measure of",
-        "choices": [
-          "angle Q ?",
-          "6",
-          "A) 37°",
-          "B) 53°"
-        ],
-        "correct": 3
-      },
-      {
-        "id": "test8_r2_q19",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 19,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "How many of these seeds sprouted? What is the equation of the line that passes through",
-        "choices": [
-          "10",
-          "the point (0, 5) and is parallel to the graph of",
-          "y = 7x + 4 in the xy-plane?",
-          "A) y = 5x"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q20",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 20,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "(a, b). What is the value of b ? ry4(15y − 9), where r is a constant. What is the value",
-        "choices": [
-          "14",
-          "The expression 90y5 − 54y4 is equivalent to",
-          "of r ?",
-          "Which of the following equations is the most"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "test8_r2_q21",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 21,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "numbers p, k, and j. Which equation correctly",
-        "choices": [
-          "expresses 4j + 9 in terms of p and k ?",
-          "k",
-          "A) 4j + 9 =",
-          "p"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test8_r2_q22",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 22,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "angle R. What is the measure of angle T, in degrees?",
-        "choices": [
-          "A) 75",
-          "B) 120",
-          "C) 195",
-          "D) 390"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q23",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 23,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "exactly one point. What is the value of c?",
-        "choices": [
-          "C) The mean of the new data set is less than the",
-          "mean of the original data set, and the median of",
-          "the new data set is less than the median of the",
-          "original data set."
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test8_r2_q24",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 24,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "centimeters. What is the value of w ?",
-        "choices": [
-          "I. f(x) = 18(1.25) + 41",
-          "II. g(x) = 9(0.73)",
-          "A) I only",
-          "B) II only"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q25",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 25,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the y-intercept of the line graphed?",
-        "choices": [
-          "In the figure, line m is parallel to line n, and line t",
-          "A) (−5, 0)",
-          "B) (0, 0)",
-          "C) (0, 5)"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "test8_r2_q26",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 26,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "intersects both lines. What is the value of x ?",
-        "choices": [
-          "A) 33",
-          "B) 57",
-          "C) 123",
-          "D) 147"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q27",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 27,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "onetime insurance fee of $10. Which equation",
-        "choices": [
-          "represents the total cost c, in dollars, to rent the tent",
-          "with insurance for d days?",
-          "213",
-          "130"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q28",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 28,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "Based on the table, how much greater was the",
-        "choices": [
-          "average number of store employees in warehouse",
-          "stores than in supermarkets?",
-          "A) 83",
-          "B) 152"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test8_r2_q29",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 29,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "long. Which equation represents this situation,",
-        "choices": [
-          "where x represents the number of 1-minute",
-          "segments and y represents the number of 3-minute",
-          "segments?",
-          "6"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test8_r2_q30",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 30,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "The function f is defined by f (x) = 8x3 + 4. What is",
-        "choices": [
-          "the value of f (2) ?",
-          "Unauthorized copying or reuse of any part of this page is illegal.",
-          "43",
-          "CONTINUE"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "test8_r2_q31",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 31,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "is (x, y). What is the value of x ?",
-        "choices": [
-          "A) 1",
-          "B) 5",
-          "C) 15",
-          "D) 45"
-        ],
-        "correct": 3
-      },
-      {
-        "id": "test8_r2_q32",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 32,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the area, in square centimeters, of a rectangle",
-        "choices": [
-          "with a length of 34 centimeters (cm) and a width of",
-          "29 cm?",
-          "Unauthorized copying or reuse of any part of this page is illegal.",
-          "44"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "test8_r2_q33",
-        "test": "Practice Test 8",
-        "module": 2,
-        "questionNumber": 33,
-        "category": "Reading and Writing",
-        "skill": "Official SAT Question",
-        "text": "What is the measure of ∠RSO, in degrees?",
-        "choices": [
-          "(Disregard the degree symbol when entering your",
-          "answer.)",
-          "Unauthorized copying or reuse of any part of this page is illegal.",
-          "46"
-        ],
-        "correct": 3
       }
     ],
     "hard": []
