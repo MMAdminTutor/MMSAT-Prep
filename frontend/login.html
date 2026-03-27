@@ -279,11 +279,19 @@
                     return;
                 }
                 
+                // Set localStorage
                 localStorage.setItem('userType', 'tutor');
                 localStorage.setItem('tutorId', code);
                 localStorage.setItem('tutorName', tutor.name);
                 localStorage.setItem('tutorEmail', tutor.email);
                 localStorage.setItem('assignedStudents', JSON.stringify(tutor.assignedStudents));
+                
+                // Set sessionStorage for tutor portal compatibility
+                sessionStorage.setItem('mathmeg_session', 'active');
+                sessionStorage.setItem('mathmeg_user_type', 'tutor');
+                sessionStorage.setItem('mathmeg_user_name', tutor.name);
+                sessionStorage.setItem('mathmeg_tutor_id', code);
+                sessionStorage.setItem('mathmeg_tutor_email', tutor.email);
                 
                 window.location.href = 'tutor-portal.html';
             } else {
