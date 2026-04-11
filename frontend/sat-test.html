@@ -3374,6 +3374,109 @@
             displayCategoryBreakdown(scores.categories);
             saveTestHistory(scores);
             saveTestToBackend(scores);
+            
+            // IMPORTANT: Also save in format for tutor portal
+            saveForTutorPortal(scores);
+        }
+        
+        // Save test results for tutor portal viewing
+        function saveForTutorPortal(scores) {
+            const userName = sessionStorage.getItem('mathmeg_user_name');
+            
+            if (!userName) {
+                console.log('No student name - test won\'t appear in tutor portal');
+                return;
+            }
+            
+            // Create detailed answer arrays for tutor portal
+            const readingAnswers = [];
+            const mathAnswers = [];
+            
+            // Collect reading answers if applicable
+            if (testState.testType === 'reading' || testState.testType === 'full') {
+                ['reading_module1', 'reading_module2'].forEach(moduleKey => {
+                    const module = testState.modules[moduleKey];
+                    if (module && module.questions) {
+                        module.answers.forEach((studentAnswer, index) => {
+                            const question = module.questions[index];
+                            const isGridIn = question.questionType === 'grid-in' || !question.choices;
+                            
+                            let isCorrect = false;
+                            if (studentAnswer !== null && studentAnswer !== '') {
+                                if (isGridIn) {
+                                    isCorrect = checkGridInAnswer(studentAnswer, question.correctAnswer);
+                                } else {
+                                    isCorrect = (question.correct === studentAnswer);
+                                }
+                            }
+                            
+                            readingAnswers.push({
+                                correct: isCorrect,
+                                studentAnswer: studentAnswer,
+                                correctAnswer: isGridIn ? question.correctAnswer : question.correct,
+                                skill: question.skill || question.category || 'Reading',
+                                category: question.category || 'Reading and Writing'
+                            });
+                        });
+                    }
+                });
+            }
+            
+            // Collect math answers if applicable
+            if (testState.testType === 'math' || testState.testType === 'full') {
+                ['math_module1', 'math_module2'].forEach(moduleKey => {
+                    const module = testState.modules[moduleKey];
+                    if (module && module.questions) {
+                        module.answers.forEach((studentAnswer, index) => {
+                            const question = module.questions[index];
+                            const isGridIn = question.questionType === 'grid-in' || !question.choices;
+                            
+                            let isCorrect = false;
+                            if (studentAnswer !== null && studentAnswer !== '') {
+                                if (isGridIn) {
+                                    isCorrect = checkGridInAnswer(studentAnswer, question.correctAnswer);
+                                } else {
+                                    isCorrect = (question.correct === studentAnswer);
+                                }
+                            }
+                            
+                            mathAnswers.push({
+                                correct: isCorrect,
+                                studentAnswer: studentAnswer,
+                                correctAnswer: isGridIn ? question.correctAnswer : question.correct,
+                                skill: question.skill || question.category || 'Math',
+                                category: question.category || 'Math'
+                            });
+                        });
+                    }
+                });
+            }
+            
+            // Create test record in tutor portal format
+            const testId = 'test_' + Date.now();
+            const testRecord = {
+                id: testId,
+                studentName: userName,
+                date: new Date().toISOString(),
+                totalScore: scores.total,
+                readingScore: scores.reading,
+                rwScore: scores.reading,
+                mathScore: scores.math,
+                duration: Math.floor((Date.now() - testState.startTime) / 1000), // seconds
+                expired: false,
+                testType: testState.testType,
+                readingAnswers: readingAnswers,
+                mathAnswers: mathAnswers
+            };
+            
+            // Save with key format tutor portal expects
+            localStorage.setItem('mathmeg_test_' + testId, JSON.stringify(testRecord));
+            
+            console.log('✅ Test saved for tutor portal:', testId);
+            console.log('   Student:', userName);
+            console.log('   Total Score:', scores.total);
+            console.log('   Reading:', readingAnswers.length, 'questions');
+            console.log('   Math:', mathAnswers.length, 'questions');
         }
 
 // Auto-save test to backend
