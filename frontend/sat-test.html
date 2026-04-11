@@ -3416,7 +3416,8 @@
                                 correctAnswer: isGridIn ? question.correctAnswer : question.correct,
                                 skill: question.skill || question.category || 'Reading',
                                 category: question.category || 'Reading and Writing',
-                                questionText: question.text ? question.text.substring(0, 150) + (question.text.length > 150 ? '...' : '') : 'Question text not available'
+                                questionText: question.text ? question.text.substring(0, 150) + (question.text.length > 150 ? '...' : '') : 'Question text not available',
+                                choices: question.choices || []  // Add all answer choices
                             });
                         });
                     }
@@ -3447,7 +3448,8 @@
                                 correctAnswer: isGridIn ? question.correctAnswer : question.correct,
                                 skill: question.skill || question.category || 'Math',
                                 category: question.category || 'Math',
-                                questionText: question.text ? question.text.substring(0, 150) + (question.text.length > 150 ? '...' : '') : 'Question text not available'
+                                questionText: question.text ? question.text.substring(0, 150) + (question.text.length > 150 ? '...' : '') : 'Question text not available',
+                                choices: question.choices || []  // Add all answer choices
                             });
                         });
                     }
