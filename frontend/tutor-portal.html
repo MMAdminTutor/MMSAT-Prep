@@ -397,6 +397,15 @@
     <div class="container">
         <!-- Student Results Tab -->
         <div id="studentsTab" class="tab-content active">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div>
+                    <h2 style="color: #2d3748; font-size: 20px; margin-bottom: 5px;">📊 Student Test Results</h2>
+                    <p style="color: #718096; font-size: 14px;">View and analyze student SAT practice test performance</p>
+                </div>
+                <button onclick="loadStudentResults()" class="btn btn-primary" style="font-size: 13px; padding: 10px 20px;">
+                    🔄 Refresh Results
+                </button>
+            </div>
             <div id="studentsContainer" class="student-grid"></div>
         </div>
 
@@ -600,7 +609,9 @@
             document.getElementById(tabName + 'Tab').classList.add('active');
 
             // Load data for the active tab
-            if (tabName === 'questionbank') {
+            if (tabName === 'students') {
+                loadStudentResults();
+            } else if (tabName === 'questionbank') {
                 loadQuestionBankStats();
             }
         }
@@ -692,72 +703,116 @@
         function saveQuestion(event) {
             event.preventDefault();
             
+            console.log('Saving question...');
+            
             const section = document.getElementById('questionSection').value;
             const difficulty = document.getElementById('questionDifficulty').value;
             const type = document.getElementById('questionType').value;
             
-            // Generate unique question ID
-            const timestamp = Date.now();
-            const sectionPrefix = section === 'reading' ? 'r' : 'm';
-            const questionId = `custom_${sectionPrefix}_${difficulty}_${timestamp}`;
-            
-            // Build question object
-            const question = {
-                id: questionId,
-                test: "Custom Question",
-                section: section === 'reading' ? 'Reading and Writing' : 'Math',
-                module: difficulty === 'easy' ? 1 : 2,
-                questionNumber: 0, // Will be assigned when used in test
-                category: section === 'reading' ? 'Reading and Writing' : 'Math',
-                skill: document.getElementById('questionSkill').value || 'General',
-                text: document.getElementById('questionText').value,
-                questionType: type,
-                hasImage: type === 'image',
-                isPassageBased: type === 'passage',
-                explanation: document.getElementById('questionExplanation').value || ''
-            };
-            
-            // Add passage if applicable
-            if (type === 'passage') {
-                question.passage = document.getElementById('passageText').value;
+            // Validate required fields
+            const questionText = document.getElementById('questionText').value.trim();
+            if (!questionText) {
+                alert('Please enter the question text');
+                return;
             }
             
-            // Add image if applicable
-            if (type === 'image' && currentImageData) {
-                question.imageData = currentImageData;
-                question.imageDescription = document.getElementById('imageDescription').value || '';
-            }
-            
-            // Add answers
-            if (type === 'gridin') {
-                question.correctAnswer = document.getElementById('gridInAnswer').value;
-            } else {
-                question.choices = [
-                    document.getElementById('choiceA').value,
-                    document.getElementById('choiceB').value,
-                    document.getElementById('choiceC').value,
-                    document.getElementById('choiceD').value
+            // Validate answer choices for MC questions
+            if (type !== 'gridin') {
+                const choices = [
+                    document.getElementById('choiceA').value.trim(),
+                    document.getElementById('choiceB').value.trim(),
+                    document.getElementById('choiceC').value.trim(),
+                    document.getElementById('choiceD').value.trim()
                 ];
-                question.correct = parseInt(document.querySelector('input[name="correctAnswer"]:checked').value);
+                
+                if (choices.some(c => !c)) {
+                    alert('Please fill in all answer choices (A, B, C, D)');
+                    return;
+                }
+                
+                const correctAnswer = document.querySelector('input[name="correctAnswer"]:checked');
+                if (!correctAnswer) {
+                    alert('Please select the correct answer');
+                    return;
+                }
+            } else {
+                const gridInAnswer = document.getElementById('gridInAnswer').value.trim();
+                if (!gridInAnswer) {
+                    alert('Please enter the correct numeric answer');
+                    return;
+                }
             }
             
-            // Add to question bank
-            const targetSection = section === 'reading' ? 'standalone_reading' : 'math';
-            questionBankData[targetSection][difficulty].push(question);
-            
-            // Save to localStorage (in production, this would be saved to server)
-            localStorage.setItem('custom_questions', JSON.stringify(questionBankData));
-            
-            // Show success message
-            const successMsg = document.getElementById('successMessage');
-            successMsg.classList.add('show');
-            setTimeout(() => successMsg.classList.remove('show'), 3000);
-            
-            // Reset form
-            resetForm();
-            
-            // Update stats
-            loadQuestionBankStats();
+            try {
+                // Generate unique question ID
+                const timestamp = Date.now();
+                const sectionPrefix = section === 'reading' ? 'r' : 'm';
+                const questionId = `custom_${sectionPrefix}_${difficulty}_${timestamp}`;
+                
+                // Build question object
+                const question = {
+                    id: questionId,
+                    test: "Custom Question",
+                    section: section === 'reading' ? 'Reading and Writing' : 'Math',
+                    module: difficulty === 'easy' ? 1 : 2,
+                    questionNumber: 0, // Will be assigned when used in test
+                    category: section === 'reading' ? 'Reading and Writing' : 'Math',
+                    skill: document.getElementById('questionSkill').value || 'General',
+                    text: questionText,
+                    questionType: type,
+                    hasImage: type === 'image',
+                    isPassageBased: type === 'passage',
+                    explanation: document.getElementById('questionExplanation').value || ''
+                };
+                
+                // Add passage if applicable
+                if (type === 'passage') {
+                    question.passage = document.getElementById('passageText').value;
+                }
+                
+                // Add image if applicable
+                if (type === 'image' && currentImageData) {
+                    question.imageData = currentImageData;
+                    question.imageDescription = document.getElementById('imageDescription').value || '';
+                }
+                
+                // Add answers
+                if (type === 'gridin') {
+                    question.correctAnswer = document.getElementById('gridInAnswer').value;
+                } else {
+                    question.choices = [
+                        document.getElementById('choiceA').value,
+                        document.getElementById('choiceB').value,
+                        document.getElementById('choiceC').value,
+                        document.getElementById('choiceD').value
+                    ];
+                    question.correct = parseInt(document.querySelector('input[name="correctAnswer"]:checked').value);
+                }
+                
+                // Add to question bank
+                const targetSection = section === 'reading' ? 'standalone_reading' : 'math';
+                questionBankData[targetSection][difficulty].push(question);
+                
+                // Save to localStorage (in production, this would be saved to server)
+                localStorage.setItem('custom_questions', JSON.stringify(questionBankData));
+                
+                console.log('Question saved:', questionId);
+                
+                // Show success message
+                const successMsg = document.getElementById('successMessage');
+                successMsg.classList.add('show');
+                setTimeout(() => successMsg.classList.remove('show'), 3000);
+                
+                // Reset form
+                resetForm();
+                
+                // Update stats
+                loadQuestionBankStats();
+                
+            } catch (error) {
+                console.error('Error saving question:', error);
+                alert('Failed to save question. Please check the console for details.');
+            }
         }
 
         function resetForm() {
@@ -776,6 +831,16 @@
             const tutorName = sessionStorage.getItem('mathmeg_user_name');
             const studentsContainer = document.getElementById('studentsContainer');
             
+            // Show loading state
+            studentsContainer.innerHTML = `
+                <div style="text-align: center; padding: 60px 20px; color: #718096;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">⏳</div>
+                    <p style="font-size: 16px;">Loading student results...</p>
+                </div>
+            `;
+            
+            console.log('Loading student results...');
+            
             // Get all test history
             const allTests = [];
             for (let i = 0; i < localStorage.length; i++) {
@@ -785,10 +850,15 @@
                         const test = JSON.parse(localStorage.getItem(key));
                         if (test && !test.expired && test.studentName) {
                             allTests.push(test);
+                            console.log('Found test for:', test.studentName);
                         }
-                    } catch (e) {}
+                    } catch (e) {
+                        console.error('Error parsing test:', key, e);
+                    }
                 }
             }
+            
+            console.log('Total tests found:', allTests.length);
             
             // Group by student
             const studentGroups = {};
@@ -799,8 +869,39 @@
                 studentGroups[test.studentName].push(test);
             });
             
-            // Display students
+            // Clear container
             studentsContainer.innerHTML = '';
+            
+            // Show empty state if no students
+            if (Object.keys(studentGroups).length === 0) {
+                studentsContainer.innerHTML = `
+                    <div style="text-align: center; padding: 80px 20px; background: white; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <div style="font-size: 72px; margin-bottom: 24px;">📊</div>
+                        <h2 style="color: #2d3748; font-size: 24px; margin-bottom: 12px; font-weight: 700;">No Student Results Yet</h2>
+                        <p style="color: #718096; margin-bottom: 8px; font-size: 15px;">
+                            Student test results will appear here once students complete SAT practice tests.
+                        </p>
+                        <p style="color: #a0aec0; font-size: 13px; margin-bottom: 24px;">
+                            Students can access practice tests at <strong style="color: #667eea;">sat-test.html</strong>
+                        </p>
+                        <div style="background: #f7fafc; padding: 20px; border-radius: 12px; margin: 0 auto; max-width: 500px; border: 2px dashed #cbd5e0;">
+                            <p style="color: #4a5568; font-size: 13px; margin-bottom: 12px; font-weight: 600;">For students to appear here, they need to:</p>
+                            <ul style="text-align: left; color: #718096; font-size: 13px; line-height: 1.8;">
+                                <li>Login with their student access code</li>
+                                <li>Enter their name when prompted</li>
+                                <li>Complete at least one practice test</li>
+                                <li>Submit their test results</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                console.log('No student results to display');
+                return;
+            }
+            
+            console.log('Displaying results for', Object.keys(studentGroups).length, 'students');
+            
+            // Display students
             Object.keys(studentGroups).sort().forEach(studentName => {
                 const tests = studentGroups[studentName].sort((a, b) => new Date(b.date) - new Date(a.date));
                 
@@ -839,8 +940,14 @@
         }
 
         function viewTest(testId) {
+            console.log('Loading test:', testId);
             const test = JSON.parse(localStorage.getItem('mathmeg_test_' + testId));
-            if (!test) return;
+            
+            if (!test) {
+                alert('Test not found. It may have been deleted.');
+                console.error('Test not found:', testId);
+                return;
+            }
 
             // ── helper: build a per-section breakdown table ──────────────
             function sectionBreakdown(answers, sectionLabel) {
