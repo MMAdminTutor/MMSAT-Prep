@@ -815,20 +815,20 @@
                                     <div style="font-size: 12px; color: #718096;">Total Score</div>
                                 </div>
                                 <div style="position: relative; display: inline-block; width: 100%;">
-                                    <button class="btn btn-primary" onclick="togglePDFOptions('${test.id}'); event.stopPropagation();" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                        <span>📄 Download PDF Report</span>
+                                    <button class="btn btn-primary" onclick="event.stopPropagation(); togglePDFMenu('${test.id}');" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                        <span>📄 Download PDF</span>
                                         <span style="font-size: 10px;">▼</span>
                                     </button>
-                                    <div id="pdf-options-${test.id}" class="pdf-dropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 4px; z-index: 1000;">
-                                        <button onclick="downloadPDF('${test.id}', 'full'); event.stopPropagation();" class="pdf-option" style="width: 100%; padding: 12px; border: none; background: none; text-align: left; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; color: #2d3748; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px;">
+                                    <div id="pdf-menu-${test.id}" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-top: 4px; z-index: 1000; overflow: hidden;">
+                                        <button onclick="event.stopPropagation(); generatePDF('${test.id}', 'full');" style="width: 100%; padding: 12px 16px; border: none; background: white; text-align: left; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; color: #2d3748; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#f7fafc'" onmouseout="this.style.background='white'">
                                             <span style="font-size: 18px;">📊</span>
                                             <span>Full Test Report</span>
                                         </button>
-                                        <button onclick="downloadPDF('${test.id}', 'reading'); event.stopPropagation();" class="pdf-option" style="width: 100%; padding: 12px; border: none; background: none; text-align: left; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; color: #2d3748; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px;">
+                                        <button onclick="event.stopPropagation(); generatePDF('${test.id}', 'reading');" style="width: 100%; padding: 12px 16px; border: none; background: white; text-align: left; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; color: #2d3748; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#f7fafc'" onmouseout="this.style.background='white'">
                                             <span style="font-size: 18px;">📖</span>
                                             <span>Reading & Writing Only</span>
                                         </button>
-                                        <button onclick="downloadPDF('${test.id}', 'math'); event.stopPropagation();" class="pdf-option" style="width: 100%; padding: 12px; border: none; background: none; text-align: left; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; color: #2d3748; display: flex; align-items: center; gap: 8px;">
+                                        <button onclick="event.stopPropagation(); generatePDF('${test.id}', 'math');" style="width: 100%; padding: 12px 16px; border: none; background: white; text-align: left; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; color: #2d3748; display: flex; align-items: center; gap: 10px; transition: background 0.2s;" onmouseover="this.style.background='#f7fafc'" onmouseout="this.style.background='white'">
                                             <span style="font-size: 18px;">🔢</span>
                                             <span>Math Only</span>
                                         </button>
@@ -840,10 +840,8 @@
                 `;
                 
                 card.onclick = (e) => {
-                    // Don't toggle if clicking on PDF button or dropdown
-                    if (e.target.closest('.btn-primary') || 
-                        e.target.closest('.pdf-dropdown') || 
-                        e.target.closest('.pdf-option')) {
+                    // Don't toggle if clicking on PDF button or menu
+                    if (e.target.closest('.btn-primary') || e.target.closest('[id^="pdf-menu-"]')) {
                         return;
                     }
                     const testList = card.querySelector('.test-list');
@@ -854,63 +852,66 @@
             });
         }
 
-        // Toggle PDF download options dropdown
-        function togglePDFOptions(testId) {
-            // Close all other dropdowns
-            document.querySelectorAll('.pdf-dropdown').forEach(dropdown => {
-                if (dropdown.id !== `pdf-options-${testId}`) {
-                    dropdown.style.display = 'none';
-                }
+        // ========================================
+        // PDF DOWNLOAD SYSTEM
+        // ========================================
+
+        // Toggle PDF menu
+        function togglePDFMenu(testId) {
+            const menu = document.getElementById(`pdf-menu-${testId}`);
+            const isVisible = menu.style.display === 'block';
+            
+            // Close all other menus
+            document.querySelectorAll('[id^="pdf-menu-"]').forEach(m => {
+                m.style.display = 'none';
             });
             
-            // Toggle this dropdown
-            const dropdown = document.getElementById(`pdf-options-${testId}`);
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+            // Toggle this menu
+            menu.style.display = isVisible ? 'none' : 'block';
         }
 
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.btn-primary') && !event.target.closest('.pdf-dropdown')) {
-                document.querySelectorAll('.pdf-dropdown').forEach(dropdown => {
-                    dropdown.style.display = 'none';
+        // Close menus when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.btn-primary') && !e.target.closest('[id^="pdf-menu-"]')) {
+                document.querySelectorAll('[id^="pdf-menu-"]').forEach(menu => {
+                    menu.style.display = 'none';
                 });
             }
         });
 
-        // Add hover effects for PDF options
-        document.addEventListener('mouseover', function(event) {
-            if (event.target.closest('.pdf-option')) {
-                event.target.closest('.pdf-option').style.background = '#f7fafc';
-            }
-        });
-        document.addEventListener('mouseout', function(event) {
-            if (event.target.closest('.pdf-option')) {
-                event.target.closest('.pdf-option').style.background = 'none';
-            }
-        });
-
-        // Download PDF Report
-        function downloadPDF(testId, reportType) {
+        // Generate and download PDF
+        function generatePDF(testId, reportType) {
+            console.log('Generating PDF:', testId, reportType);
+            
+            // Close menu
+            const menu = document.getElementById(`pdf-menu-${testId}`);
+            if (menu) menu.style.display = 'none';
+            
+            // Get test data
             const test = JSON.parse(localStorage.getItem('mathmeg_test_' + testId));
             if (!test) {
-                alert('Test not found.');
+                alert('Test data not found. Please ensure the test was completed successfully.');
+                console.error('Test not found:', testId);
                 return;
             }
-
-            // Close dropdown
-            document.getElementById(`pdf-options-${testId}`).style.display = 'none';
-
-            // Get answer data
+            
+            console.log('Test data loaded:', test);
+            
+            // Get answers
             const rwAnswers = test.readingAnswers || test.rwAnswers || test.reading_answers || [];
             const mathAnswers = test.mathAnswers || test.math_answers || [];
-            const rwAll = Array.isArray(rwAnswers[0]) ? [...rwAnswers[0], ...(rwAnswers[1] || [])] : rwAnswers;
-            const mathAll = Array.isArray(mathAnswers[0]) ? [...mathAnswers[0], ...(mathAnswers[1] || [])] : mathAnswers;
-
+            
+            // Flatten if nested (module 1 + module 2)
+            const rwAll = Array.isArray(rwAnswers[0]) ? [...(rwAnswers[0] || []), ...(rwAnswers[1] || [])] : rwAnswers;
+            const mathAll = Array.isArray(mathAnswers[0]) ? [...(mathAnswers[0] || []), ...(mathAnswers[1] || [])] : mathAnswers;
+            
+            console.log('Reading answers:', rwAll.length, 'Math answers:', mathAll.length);
+            
             // Determine what to include
             let includeReading = false;
             let includeMath = false;
             let reportTitle = '';
-
+            
             if (reportType === 'full') {
                 includeReading = rwAll.length > 0;
                 includeMath = mathAll.length > 0;
@@ -922,230 +923,420 @@
                 includeMath = mathAll.length > 0;
                 reportTitle = 'Math Report';
             }
-
-            // Generate PDF content
-            const pdfContent = generatePDFContent(test, rwAll, mathAll, includeReading, includeMath, reportTitle);
-
-            // Create and download PDF
-            const printWindow = window.open('', '', 'width=800,height=600');
-            printWindow.document.write(pdfContent);
-            printWindow.document.close();
-            printWindow.focus();
             
-            setTimeout(() => {
-                printWindow.print();
-                // Note: Window closes automatically after print dialog in most browsers
-            }, 250);
+            if (!includeReading && !includeMath) {
+                alert('No test data available for the selected report type.');
+                return;
+            }
+            
+            console.log('Report config:', {includeReading, includeMath, reportTitle});
+            
+            // Build PDF HTML
+            const pdfHTML = buildPDFHTML(test, rwAll, mathAll, includeReading, includeMath, reportTitle);
+            
+            // Open in new window and print
+            try {
+                const printWindow = window.open('', '_blank', 'width=900,height=700');
+                if (!printWindow) {
+                    alert('Please allow popups for this site to download PDF reports.');
+                    return;
+                }
+                
+                printWindow.document.open();
+                printWindow.document.write(pdfHTML);
+                printWindow.document.close();
+                
+                // Wait for content to load, then print
+                printWindow.onload = function() {
+                    setTimeout(() => {
+                        printWindow.focus();
+                        printWindow.print();
+                    }, 500);
+                };
+                
+                console.log('PDF window opened successfully');
+            } catch (error) {
+                console.error('Error opening PDF window:', error);
+                alert('Error generating PDF. Please check browser console for details.');
+            }
         }
 
-        // Generate PDF HTML content
-        function generatePDFContent(test, rwAll, mathAll, includeReading, includeMath, reportTitle) {
+        // Build complete PDF HTML
+        function buildPDFHTML(test, rwAll, mathAll, includeReading, includeMath, reportTitle) {
             const rwScore = test.readingScore || test.rwScore || 0;
             const mathScore = test.mathScore || 0;
             const total = test.totalScore || (rwScore + mathScore) || 0;
-            const dateStr = test.date ? new Date(test.date).toLocaleString() : '—';
-            const duration = test.duration ? `${Math.round(test.duration / 60)} min` : '—';
-
-            // Helper: Convert answer index to letter
-            const answerToLetter = (answer) => {
+            const dateStr = test.date ? new Date(test.date).toLocaleString() : 'N/A';
+            const duration = test.duration ? Math.round(test.duration / 60) + ' min' : 'N/A';
+            const studentName = test.studentName || 'Student';
+            
+            // Convert answer index to letter
+            function answerToLetter(answer) {
                 if (answer === null || answer === undefined || answer === '') return '—';
-                if (typeof answer === 'number') {
-                    return ['A', 'B', 'C', 'D'][answer] || answer.toString();
-                }
+                if (typeof answer === 'number') return ['A', 'B', 'C', 'D'][answer] || answer.toString();
                 return answer.toString();
-            };
-
-            // Helper: Generate question table
-            const generateQuestionTable = (answers, sectionName) => {
-                if (!answers || answers.length === 0) return '';
-
+            }
+            
+            // Generate question table
+            function questionTable(answers, sectionName) {
+                if (!answers || answers.length === 0) return '<p>No questions available.</p>';
+                
                 const correct = answers.filter(a => a.correct).length;
-                const total = answers.length;
-                const pct = Math.round((correct / total) * 100);
-
+                const totalQ = answers.length;
+                const pct = Math.round((correct / totalQ) * 100);
+                
                 const rows = answers.map((a, i) => {
-                    const studentAnswer = answerToLetter(a.studentAnswer);
-                    const correctAnswer = answerToLetter(a.correctAnswer);
-                    const skill = a.skill || a.category || '—';
-                    const questionText = a.questionText || 'Question text not available';
+                    const studentAns = answerToLetter(a.studentAnswer);
+                    const correctAns = answerToLetter(a.correctAnswer);
+                    const skill = a.skill || a.category || 'General';
+                    const qText = a.questionText || 'Question ' + (i + 1);
                     const choices = a.choices || [];
-
+                    
                     let choicesHTML = '';
                     if (choices.length === 4) {
-                        choicesHTML = `
-                            <div style="margin-top: 8px; padding: 8px; background: #f9fafb; border-radius: 4px; font-size: 11px;">
-                                ${choices.map((choice, idx) => {
-                                    const letter = ['A', 'B', 'C', 'D'][idx];
-                                    const isCorrect = correctAnswer === letter;
-                                    const isStudent = studentAnswer === letter;
-                                    let style = 'padding: 4px; margin: 2px 0;';
-                                    let badge = '';
-
-                                    if (isCorrect && isStudent) {
-                                        style += ' font-weight: bold; color: #059669;';
-                                        badge = ' ✓';
-                                    } else if (isCorrect) {
-                                        style += ' font-weight: bold; text-decoration: underline;';
-                                        badge = ' (Correct)';
-                                    } else if (isStudent) {
-                                        style += ' color: #dc2626;';
-                                        badge = ' ✗';
-                                    }
-
-                                    return `<div style="${style}"><strong>${letter}.</strong> ${choice}${badge}</div>`;
-                                }).join('')}
-                            </div>`;
+                        choicesHTML = `<div style="margin-top: 8px; padding: 8px; background: #f9fafb; border-radius: 4px;">`;
+                        choices.forEach((choice, idx) => {
+                            const letter = ['A', 'B', 'C', 'D'][idx];
+                            const isCorrect = correctAns === letter;
+                            const isStudent = studentAns === letter;
+                            let style = 'padding: 4px; margin: 2px 0; font-size: 11px;';
+                            let badge = '';
+                            
+                            if (isCorrect && isStudent) {
+                                style += ' font-weight: bold; color: #059669;';
+                                badge = ' ✓';
+                            } else if (isCorrect) {
+                                style += ' font-weight: bold; text-decoration: underline;';
+                                badge = ' (Correct)';
+                            } else if (isStudent) {
+                                style += ' color: #dc2626;';
+                                badge = ' ✗';
+                            }
+                            
+                            choicesHTML += `<div style="${style}"><strong>${letter}.</strong> ${choice}${badge}</div>`;
+                        });
+                        choicesHTML += `</div>`;
                     }
-
+                    
                     return `
                         <tr style="border-bottom: 1px solid #e5e7eb; page-break-inside: avoid;">
                             <td colspan="5" style="padding: 12px 8px;">
-                                <div style="display: grid; grid-template-columns: 40px 100px 1fr 80px 80px; gap: 8px; align-items: start; margin-bottom: 6px;">
+                                <div style="display: grid; grid-template-columns: 40px 100px 1fr 80px 80px; gap: 8px; margin-bottom: 6px;">
                                     <div style="font-weight: 700; color: #6b7280;">#${i + 1}</div>
                                     <div style="font-size: 11px; color: #667eea; background: #ede9fe; padding: 3px 6px; border-radius: 3px; font-weight: 600;">${skill}</div>
-                                    <div style="font-size: 12px; color: #374151; line-height: 1.4;"><strong>Q:</strong> ${questionText}</div>
-                                    <div style="text-align: center; font-size: 12px; ${a.correct ? 'color: #059669; font-weight: 700;' : 'color: #dc2626; font-weight: 700;'}">${studentAnswer}</div>
-                                    <div style="text-align: center; font-size: 12px; font-weight: 700;">${correctAnswer}</div>
+                                    <div style="font-size: 12px; color: #374151;"><strong>Q:</strong> ${qText}</div>
+                                    <div style="text-align: center; font-size: 12px; ${a.correct ? 'color: #059669; font-weight: 700;' : 'color: #dc2626; font-weight: 700;'}">${studentAns}</div>
+                                    <div style="text-align: center; font-size: 12px; font-weight: 700;">${correctAns}</div>
                                 </div>
                                 ${choicesHTML}
                             </td>
                         </tr>`;
                 }).join('');
-
+                
                 return `
-                    <div style="margin-bottom: 30px; page-break-inside: avoid;">
+                    <div style="margin-bottom: 30px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #667eea;">
-                            <h2 style="font-size: 16px; color: #1f2937; margin: 0; font-weight: 700;">${sectionName}</h2>
-                            <span style="background: #667eea; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
-                                ${correct} / ${total} (${pct}%)
+                            <h2 style="font-size: 16px; color: #1f2937; margin: 0;">${sectionName}</h2>
+                            <span style="background: #667eea; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px;">
+                                ${correct} / ${totalQ} (${pct}%)
                             </span>
                         </div>
-                        <table style="width: 100%; border-collapse: collapse; font-family: 'Arial', sans-serif;">
+                        <table style="width: 100%; border-collapse: collapse;">
                             <thead>
                                 <tr style="background: #f3f4f6;">
-                                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; width: 40px;">#</th>
-                                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: #6b7280; font-weight: 700; width: 100px;">Skill</th>
-                                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: #6b7280; font-weight: 700;">Question & Answers</th>
-                                    <th style="padding: 10px 8px; text-align: center; font-size: 11px; color: #6b7280; font-weight: 700; width: 80px;">Student</th>
-                                    <th style="padding: 10px 8px; text-align: center; font-size: 11px; color: #6b7280; font-weight: 700; width: 80px;">Correct</th>
+                                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: #6b7280; width: 40px;">#</th>
+                                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: #6b7280; width: 100px;">Skill</th>
+                                    <th style="padding: 10px 8px; text-align: left; font-size: 11px; color: #6b7280;">Question & Answers</th>
+                                    <th style="padding: 10px 8px; text-align: center; font-size: 11px; color: #6b7280; width: 80px;">Student</th>
+                                    <th style="padding: 10px 8px; text-align: center; font-size: 11px; color: #6b7280; width: 80px;">Correct</th>
                                 </tr>
                             </thead>
                             <tbody>${rows}</tbody>
                         </table>
                     </div>`;
-            };
-
+            }
+            
             // Skills breakdown
-            const missedBySkill = (answers, sectionName) => {
+            function skillsBreakdown(answers, sectionName) {
                 const map = {};
                 answers.filter(a => !a.correct).forEach(a => {
                     const s = a.skill || a.category || 'Other';
                     map[s] = (map[s] || 0) + 1;
                 });
-                if (Object.keys(map).length === 0) return `<p style="color: #059669; font-size: 13px;">✓ Perfect score - no missed questions!</p>`;
+                
+                if (Object.keys(map).length === 0) {
+                    return `<p style="color: #059669; font-size: 13px;">✓ Perfect score - no missed questions!</p>`;
+                }
                 
                 const items = Object.entries(map)
                     .sort((a, b) => b[1] - a[1])
                     .map(([skill, count]) => `
                         <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #e5e7eb; font-size: 12px;">
-                            <span style="color: #374151;">${skill}</span>
+                            <span>${skill}</span>
                             <span style="color: #dc2626; font-weight: 700;">${count} missed</span>
                         </div>`).join('');
                 
                 return `
                     <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
-                        <h4 style="font-size: 13px; color: #991b1b; margin: 0 0 8px 0; font-weight: 700;">⚠️ ${sectionName} - Areas Needing Improvement</h4>
+                        <h4 style="font-size: 13px; color: #991b1b; margin: 0 0 8px 0;">⚠️ ${sectionName} - Areas Needing Improvement</h4>
                         ${items}
                     </div>`;
-            };
+            }
+            
+            // Build complete HTML
+            return `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${studentName} - ${reportTitle}</title>
+    <style>
+        @page { margin: 0.5in; size: letter; }
+        body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; color: #1f2937; margin: 0; padding: 20px; }
+        .page-break { page-break-after: always; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #667eea;">
+        <h1 style="font-size: 24px; color: #1f2937; margin: 0 0 8px 0;">SAT Test Report</h1>
+        <h2 style="font-size: 18px; color: #667eea; margin: 0 0 12px 0;">${reportTitle}</h2>
+        <div style="font-size: 14px; color: #6b7280;">
+            <strong>Student:</strong> ${studentName} &nbsp;|&nbsp; 
+            <strong>Date:</strong> ${dateStr} &nbsp;|&nbsp; 
+            <strong>Duration:</strong> ${duration}
+        </div>
+    </div>
 
-            return `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <meta charset="UTF-8">
-                    <title>${test.studentName} - ${reportTitle}</title>
-                    <style>
-                        @page {
-                            margin: 0.5in;
-                            size: letter;
-                        }
-                        body {
-                            font-family: Arial, sans-serif;
-                            font-size: 12px;
-                            line-height: 1.4;
-                            color: #1f2937;
-                            margin: 0;
-                            padding: 20px;
-                        }
-                        .page-break {
-                            page-break-after: always;
-                        }
-                        @media print {
-                            .no-print {
-                                display: none;
-                            }
-                        }
-                    </style>
-                </head>
-                <body>
-                    <!-- Header -->
-                    <div style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 3px solid #667eea;">
-                        <h1 style="font-size: 24px; color: #1f2937; margin: 0 0 8px 0; font-weight: 700;">SAT Test Report</h1>
-                        <h2 style="font-size: 18px; color: #667eea; margin: 0 0 12px 0; font-weight: 600;">${reportTitle}</h2>
-                        <div style="font-size: 14px; color: #6b7280;">
-                            <strong>Student:</strong> ${test.studentName || 'N/A'} &nbsp;|&nbsp; 
-                            <strong>Date:</strong> ${dateStr} &nbsp;|&nbsp; 
-                            <strong>Duration:</strong> ${duration}
+    <!-- Score Summary -->
+    <div style="display: grid; grid-template-columns: repeat(${includeReading && includeMath ? '3' : '2'}, 1fr); gap: 16px; margin-bottom: 30px;">
+        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 10px; padding: 20px; text-align: center;">
+            <div style="font-size: 36px; font-weight: 700;">${total}</div>
+            <div style="font-size: 12px; margin-top: 4px;">Total Score</div>
+        </div>
+        ${includeReading ? `
+            <div style="background: #dbeafe; border: 2px solid #60a5fa; border-radius: 10px; padding: 20px; text-align: center;">
+                <div style="font-size: 36px; font-weight: 700; color: #1e40af;">${rwScore}</div>
+                <div style="font-size: 12px; color: #1e40af; margin-top: 4px;">Reading & Writing</div>
+            </div>
+        ` : ''}
+        ${includeMath ? `
+            <div style="background: #dcfce7; border: 2px solid #4ade80; border-radius: 10px; padding: 20px; text-align: center;">
+                <div style="font-size: 36px; font-weight: 700; color: #166534;">${mathScore}</div>
+                <div style="font-size: 12px; color: #166534; margin-top: 4px;">Math</div>
+            </div>
+        ` : ''}
+    </div>
+
+    <!-- Skills Summary -->
+    ${includeReading && includeMath ? `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px;">
+            <div>${skillsBreakdown(rwAll, 'Reading & Writing')}</div>
+            <div>${skillsBreakdown(mathAll, 'Math')}</div>
+        </div>
+    ` : includeReading ? `
+        <div style="margin-bottom: 30px;">${skillsBreakdown(rwAll, 'Reading & Writing')}</div>
+    ` : includeMath ? `
+        <div style="margin-bottom: 30px;">${skillsBreakdown(mathAll, 'Math')}</div>
+    ` : ''}
+
+    <div class="page-break"></div>
+
+    <!-- Detailed Questions -->
+    ${includeReading ? questionTable(rwAll, '📖 Reading & Writing - Detailed Review') : ''}
+    ${includeReading && includeMath ? '<div class="page-break"></div>' : ''}
+    ${includeMath ? questionTable(mathAll, '🔢 Math - Detailed Review') : ''}
+
+    <!-- Footer -->
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 11px;">
+        <p>Generated on ${new Date().toLocaleString()} | MathMeg SAT Tutor Portal</p>
+    </div>
+</body>
+</html>`;
+        }
+
+        // Initialize
+        if (checkAuthentication()) {
+            loadStudentResults();
+            loadQuestionBankStats();
+        }
+    </script>
+</body>
+</html>
+            if (!test) return;
+
+            // ── helper: build a per-section breakdown table ──────────────
+            function sectionBreakdown(answers, sectionLabel) {
+                if (!answers || answers.length === 0) return '';
+                const correct  = answers.filter(a => a.correct).length;
+                const total    = answers.length;
+                const pct      = Math.round((correct / total) * 100);
+
+                const rows = answers.map((a, i) => {
+                    const status   = a.correct
+                        ? `<span style="color:#38a169;font-weight:700;">✓ Correct</span>`
+                        : `<span style="color:#e53e3e;font-weight:700;">✗ Wrong</span>`;
+                    const student  = a.studentAnswer !== undefined && a.studentAnswer !== null
+                        ? `<strong>${a.studentAnswer}</strong>`
+                        : `<em style="color:#a0aec0;">—</em>`;
+                    const correct_ = a.correctAnswer !== undefined ? `<strong>${a.correctAnswer}</strong>` : '—';
+                    const skill    = a.skill || a.category || '—';
+
+                    return `
+                        <tr style="border-bottom:1px solid #e2e8f0; ${a.correct ? '' : 'background:#fff5f5;'}">
+                            <td style="padding:10px 12px; color:#718096; font-size:13px;">${i + 1}</td>
+                            <td style="padding:10px 12px; font-size:13px;">${skill}</td>
+                            <td style="padding:10px 12px; font-size:13px;">${student}</td>
+                            <td style="padding:10px 12px; font-size:13px;">${correct_}</td>
+                            <td style="padding:10px 12px; font-size:13px;">${status}</td>
+                        </tr>`;
+                }).join('');
+
+                return `
+                    <div style="margin-bottom:32px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                            <h3 style="font-size:17px; color:#2d3748;">${sectionLabel}</h3>
+                            <span style="background:#667eea; color:white; padding:4px 14px; border-radius:20px; font-size:13px; font-weight:600;">
+                                ${correct} / ${total} &nbsp;(${pct}%)
+                            </span>
                         </div>
-                    </div>
-
-                    <!-- Score Summary -->
-                    <div style="display: grid; grid-template-columns: repeat(${reportType === 'full' ? '3' : '2'}, 1fr); gap: 16px; margin-bottom: 30px;">
-                        <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 10px; padding: 20px; text-align: center;">
-                            <div style="font-size: 36px; font-weight: 700;">${total}</div>
-                            <div style="font-size: 12px; opacity: 0.9; margin-top: 4px;">Total Score</div>
+                        <div style="overflow-x:auto;">
+                            <table style="width:100%; border-collapse:collapse; font-family:'Poppins',sans-serif;">
+                                <thead>
+                                    <tr style="background:#f7fafc;">
+                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">#</th>
+                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Skill</th>
+                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Student Answer</th>
+                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Correct Answer</th>
+                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Result</th>
+                                    </tr>
+                                </thead>
+                                <tbody>${rows}</tbody>
+                            </table>
                         </div>
-                        ${includeReading ? `
-                            <div style="background: #dbeafe; border: 2px solid #60a5fa; border-radius: 10px; padding: 20px; text-align: center;">
-                                <div style="font-size: 36px; font-weight: 700; color: #1e40af;">${rwScore}</div>
-                                <div style="font-size: 12px; color: #1e40af; margin-top: 4px;">Reading & Writing</div>
-                            </div>
-                        ` : ''}
-                        ${includeMath ? `
-                            <div style="background: #dcfce7; border: 2px solid #4ade80; border-radius: 10px; padding: 20px; text-align: center;">
-                                <div style="font-size: 36px; font-weight: 700; color: #166534;">${mathScore}</div>
-                                <div style="font-size: 12px; color: #166534; margin-top: 4px;">Math</div>
-                            </div>
-                        ` : ''}
+                    </div>`;
+            }
+
+            // ── resolve answer arrays from test object ────────────────────
+            // Different versions of the test app store answers under different keys
+            const rwAnswers   = test.readingAnswers   || test.rwAnswers   || test.reading_answers   || [];
+            const mathAnswers = test.mathAnswers       || test.math_answers                           || [];
+
+            // Flatten module 1 + module 2 if stored separately
+            const rwAll   = Array.isArray(rwAnswers[0])   ? [...rwAnswers[0],   ...(rwAnswers[1]   || [])] : rwAnswers;
+            const mathAll = Array.isArray(mathAnswers[0]) ? [...mathAnswers[0], ...(mathAnswers[1] || [])] : mathAnswers;
+
+            // ── score summary cards ───────────────────────────────────────
+            const rwScore   = test.readingScore   || test.rwScore   || 0;
+            const mathScore = test.mathScore       || 0;
+            const total     = test.totalScore      || (rwScore + mathScore) || 0;
+            const dateStr   = test.date ? new Date(test.date).toLocaleString() : '—';
+            const duration  = test.duration ? `${Math.round(test.duration / 60)} min` : '—';
+
+            // ── skill-level breakdown (missed questions by skill) ─────────
+            function missedBySkill(answers) {
+                const map = {};
+                answers.filter(a => !a.correct).forEach(a => {
+                    const s = a.skill || a.category || 'Other';
+                    map[s] = (map[s] || 0) + 1;
+                });
+                if (Object.keys(map).length === 0) return '';
+                const items = Object.entries(map)
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([skill, count]) => `
+                        <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #f0f0f0; font-size:13px;">
+                            <span style="color:#4a5568;">${skill}</span>
+                            <span style="color:#e53e3e; font-weight:600;">${count} missed</span>
+                        </div>`).join('');
+                return `
+                    <div style="background:#fff5f5; border-radius:10px; padding:16px; margin-bottom:24px;">
+                        <h4 style="font-size:14px; color:#c53030; margin-bottom:10px;">Areas needing improvement</h4>
+                        ${items}
+                    </div>`;
+            }
+
+            // ── build full modal HTML ─────────────────────────────────────
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <!-- Header -->
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:28px; flex-wrap:wrap; gap:12px;">
+                    <div>
+                        <h2 style="font-size:22px; color:#2d3748; margin-bottom:4px;">${test.studentName || 'Student'} — Test Results</h2>
+                        <p style="color:#718096; font-size:14px;">Taken on ${dateStr}${duration !== '—' ? ' &nbsp;·&nbsp; Duration: ' + duration : ''}</p>
                     </div>
+                    <button onclick="printTestResults()" class="btn btn-primary" style="font-size:13px; padding:10px 20px;">🖨 Print / Save PDF</button>
+                </div>
 
-                    <!-- Skills Summary -->
-                    ${includeReading && includeMath ? `
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px;">
-                            <div>${missedBySkill(rwAll, 'Reading & Writing')}</div>
-                            <div>${missedBySkill(mathAll, 'Math')}</div>
-                        </div>
-                    ` : includeReading ? `
-                        <div style="margin-bottom: 30px;">${missedBySkill(rwAll, 'Reading & Writing')}</div>
-                    ` : includeMath ? `
-                        <div style="margin-bottom: 30px;">${missedBySkill(mathAll, 'Math')}</div>
-                    ` : ''}
-
-                    <div class="page-break"></div>
-
-                    <!-- Detailed Questions -->
-                    ${includeReading ? generateQuestionTable(rwAll, '📖 Reading & Writing - Detailed Review') : ''}
-                    ${includeReading && includeMath ? '<div class="page-break"></div>' : ''}
-                    ${includeMath ? generateQuestionTable(mathAll, '🔢 Math - Detailed Review') : ''}
-
-                    <!-- Footer -->
-                    <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center; color: #6b7280; font-size: 11px;">
-                        <p>Generated on ${new Date().toLocaleString()} | MathMeg SAT Tutor Portal</p>
+                <!-- Score summary cards -->
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:16px; margin-bottom:28px;">
+                    <div style="background:linear-gradient(135deg,#667eea,#764ba2); color:white; border-radius:12px; padding:20px; text-align:center;">
+                        <div style="font-size:38px; font-weight:700;">${total}</div>
+                        <div style="font-size:13px; opacity:.85; margin-top:4px;">Total Score</div>
                     </div>
-                </body>
-                </html>
+                    <div style="background:#ebf8ff; border-radius:12px; padding:20px; text-align:center;">
+                        <div style="font-size:38px; font-weight:700; color:#2b6cb0;">${rwScore}</div>
+                        <div style="font-size:13px; color:#2b6cb0; margin-top:4px;">Reading & Writing</div>
+                    </div>
+                    <div style="background:#f0fff4; border-radius:12px; padding:20px; text-align:center;">
+                        <div style="font-size:38px; font-weight:700; color:#276749;">${mathScore}</div>
+                        <div style="font-size:13px; color:#276749; margin-top:4px;">Math</div>
+                    </div>
+                    <div style="background:#f7fafc; border-radius:12px; padding:20px; text-align:center;">
+                        <div style="font-size:38px; font-weight:700; color:#4a5568;">${rwAll.length + mathAll.length}</div>
+                        <div style="font-size:13px; color:#718096; margin-top:4px;">Questions Answered</div>
+                    </div>
+                </div>
+
+                <!-- Missed skills summaries -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:28px; flex-wrap:wrap;">
+                    <div>
+                        <h4 style="font-size:14px; color:#2d3748; margin-bottom:8px;">Reading & Writing</h4>
+                        ${missedBySkill(rwAll) || '<p style="font-size:13px;color:#718096;">No missed questions 🎉</p>'}
+                    </div>
+                    <div>
+                        <h4 style="font-size:14px; color:#2d3748; margin-bottom:8px;">Math</h4>
+                        ${missedBySkill(mathAll) || '<p style="font-size:13px;color:#718096;">No missed questions 🎉</p>'}
+                    </div>
+                </div>
+
+                <hr style="border:none; border-top:2px solid #e2e8f0; margin-bottom:28px;">
+
+                <!-- Detailed per-question breakdowns -->
+                ${sectionBreakdown(rwAll,   'Reading & Writing — Question by Question')}
+                ${sectionBreakdown(mathAll, 'Math — Question by Question')}
+
+                ${(rwAll.length + mathAll.length === 0)
+                    ? `<div style="text-align:center; padding:40px; color:#a0aec0; font-size:15px;">
+                           No detailed answer data found for this test.<br>
+                           <small>The test may have been saved before per-question tracking was enabled.</small>
+                       </div>`
+                    : ''}
             `;
+
+            document.getElementById('testModal').classList.add('active');
+        }
+
+        function printTestResults() {
+            const content = document.getElementById('modalBody').innerHTML;
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <html><head>
+                    <title>Test Results</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Poppins', sans-serif; padding: 30px; color: #2d3748; }
+                        table { width: 100%; border-collapse: collapse; }
+                        th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 13px; }
+                        button { display: none; }
+                        @media print { button { display: none !important; } }
+                    </style>
+                </head><body>${content}</body></html>`);
+            win.document.close();
+            setTimeout(() => win.print(), 500);
+        }
+
+        function closeModal() {
+            document.getElementById('testModal').classList.remove('active');
         }
 
         // Initialize
