@@ -939,7 +939,18 @@
             });
         }
 
-        function viewTest(testId) {
+// ============================================================================
+// ULTIMATE VIEW DETAILS ENHANCEMENT
+// Add this code to your tutor-portal.html to replace the viewTest function
+// ============================================================================
+
+// This enhanced version includes:
+// 1. All answer choices (A, B, C, D) displayed
+// 2. Subject tabs (Overview, Reading & Writing, Math)
+// 3. Color-coded answer choices
+// 4. Visual indicators for correct/wrong/student's choice
+
+function viewTest(testId) {
     console.log('Loading test:', testId);
     const test = JSON.parse(localStorage.getItem('mathmeg_test_' + testId));
     
@@ -1233,7 +1244,6 @@ function switchDetailTab(event, tabName) {
     });
     document.getElementById(tabName + 'Tab').style.display = 'block';
 }
-
 
             // ── resolve answer arrays from test object ────────────────────
             // Different versions of the test app store answers under different keys
