@@ -2727,14 +2727,14 @@
 
         function selectModule2Questions(module1Performance) {
             const module = testState.currentSection === 'reading' ? 'reading_module2' : 'math_module2';
-            const questionCount = testState.currentSection === 'reading' ? 33 : 27;
+            const questionCount = testState.currentSection === 'reading' ? 27 : 22;
             
             let selectedQuestions = [];
             
             if (testState.currentSection === 'reading') {
                 // Adaptive passage and standalone selection
-                const passagesNeeded = Math.floor(questionCount * 0.6);
-                const standaloneNeeded = questionCount - passagesNeeded;
+                const passagesNeeded = Math.floor(questionCount * 0.6); // ~16 from passages
+                const standaloneNeeded = questionCount - passagesNeeded; // ~11 standalone
                 
                 let difficultyFilter;
                 let standaloneDifficulties;
@@ -2766,29 +2766,50 @@
                     if (questionCountFromPassages >= passagesNeeded) break;
                     
                     passage.questions.forEach(q => {
-                        selectedPassageQuestions.push({
-                            ...q,
-                            passageId: passage.id,
-                            passageTitle: passage.title,
-                            passageText: passage.text,
-                            passageSource: passage.source
-                        });
+                        if (questionCountFromPassages < passagesNeeded) {
+                            selectedPassageQuestions.push({
+                                ...q,
+                                passageId: passage.id,
+                                passageTitle: passage.title,
+                                passageText: passage.text,
+                                passageSource: passage.source
+                            });
+                            questionCountFromPassages++;
+                        }
                     });
-                    questionCountFromPassages += passage.questions.length;
                 }
-                
-                selectedPassageQuestions.splice(passagesNeeded);
                 
                 // Add standalone questions based on performance
                 const standaloneQuestions = [];
                 Object.entries(standaloneDifficulties).forEach(([diff, ratio]) => {
-                    const count = Math.floor(standaloneNeeded * ratio);
+                    const count = Math.ceil(standaloneNeeded * ratio);
+                    const available = questionBank.standalone_reading[diff] || [];
                     standaloneQuestions.push(
-                        ...shuffleArray(questionBank.standalone_reading[diff]).slice(0, count)
+                        ...shuffleArray(available).slice(0, count)
                     );
                 });
                 
-                selectedQuestions = shuffleArray([...selectedPassageQuestions, ...standaloneQuestions]);
+                // Ensure we have exactly the right number
+                const combinedQuestions = [...selectedPassageQuestions, ...standaloneQuestions];
+                selectedQuestions = shuffleArray(combinedQuestions.slice(0, questionCount));
+                
+                // If we're short, add more random questions
+                while (selectedQuestions.length < questionCount) {
+                    const allAvailable = [
+                        ...questionBank.passages.flatMap(p => p.questions.map(q => ({
+                            ...q,
+                            passageId: p.id,
+                            passageTitle: p.title,
+                            passageText: p.text,
+                            passageSource: p.source
+                        }))),
+                        ...Object.values(questionBank.standalone_reading).flat()
+                    ];
+                    const remaining = shuffleArray(allAvailable.filter(q => 
+                        !selectedQuestions.some(sq => sq.id === q.id)
+                    ));
+                    selectedQuestions.push(remaining[0]);
+                }
                 
             } else {
                 // Math adaptive selection (no passages)

@@ -815,7 +815,7 @@
                                     <div style="font-size: 12px; color: #718096;">Total Score</div>
                                 </div>
                                 <div style="position: relative; display: inline-block; width: 100%;">
-                                    <button class="btn btn-primary" onclick="togglePDFOptions('${test.id}')" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                    <button class="btn btn-primary" onclick="togglePDFOptions('${test.id}'); event.stopPropagation();" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
                                         <span>📄 Download PDF Report</span>
                                         <span style="font-size: 10px;">▼</span>
                                     </button>
@@ -840,10 +840,14 @@
                 `;
                 
                 card.onclick = (e) => {
-                    if (!e.target.classList.contains('btn-view')) {
-                        const testList = card.querySelector('.test-list');
-                        testList.classList.toggle('open');
+                    // Don't toggle if clicking on PDF button or dropdown
+                    if (e.target.closest('.btn-primary') || 
+                        e.target.closest('.pdf-dropdown') || 
+                        e.target.closest('.pdf-option')) {
+                        return;
                     }
+                    const testList = card.querySelector('.test-list');
+                    testList.classList.toggle('open');
                 };
                 
                 studentsContainer.appendChild(card);
