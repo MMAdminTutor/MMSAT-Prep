@@ -957,22 +957,41 @@
                 const pct      = Math.round((correct / total) * 100);
 
                 const rows = answers.map((a, i) => {
-                    const status   = a.correct
+                    const status = a.correct
                         ? `<span style="color:#38a169;font-weight:700;">✓ Correct</span>`
                         : `<span style="color:#e53e3e;font-weight:700;">✗ Wrong</span>`;
-                    const student  = a.studentAnswer !== undefined && a.studentAnswer !== null
-                        ? `<strong>${a.studentAnswer}</strong>`
-                        : `<em style="color:#a0aec0;">—</em>`;
-                    const correct_ = a.correctAnswer !== undefined ? `<strong>${a.correctAnswer}</strong>` : '—';
-                    const skill    = a.skill || a.category || '—';
+                    
+                    // Convert answer indices to letters (0=A, 1=B, 2=C, 3=D)
+                    const answerToLetter = (answer) => {
+                        if (answer === null || answer === undefined || answer === '') return '—';
+                        if (typeof answer === 'number') {
+                            return ['A', 'B', 'C', 'D'][answer] || answer.toString();
+                        }
+                        return answer.toString();
+                    };
+                    
+                    const studentAnswer = answerToLetter(a.studentAnswer);
+                    const correctAnswer = answerToLetter(a.correctAnswer);
+                    const skill = a.skill || a.category || '—';
+                    const questionText = a.questionText || '—';
+
+                    // Highlight student's answer
+                    const studentDisplay = a.correct 
+                        ? `<strong style="color:#38a169;">${studentAnswer}</strong>`
+                        : `<strong style="color:#e53e3e;">${studentAnswer}</strong>`;
+                    
+                    const studentAnswerCell = studentAnswer === '—' 
+                        ? `<em style="color:#a0aec0;">Skipped</em>`
+                        : studentDisplay;
 
                     return `
                         <tr style="border-bottom:1px solid #e2e8f0; ${a.correct ? '' : 'background:#fff5f5;'}">
-                            <td style="padding:10px 12px; color:#718096; font-size:13px;">${i + 1}</td>
-                            <td style="padding:10px 12px; font-size:13px;">${skill}</td>
-                            <td style="padding:10px 12px; font-size:13px;">${student}</td>
-                            <td style="padding:10px 12px; font-size:13px;">${correct_}</td>
-                            <td style="padding:10px 12px; font-size:13px;">${status}</td>
+                            <td style="padding:12px; color:#718096; font-size:13px; font-weight:600;">${i + 1}</td>
+                            <td style="padding:12px; font-size:13px; color:#4a5568;">${skill}</td>
+                            <td style="padding:12px; font-size:13px;">${questionText}</td>
+                            <td style="padding:12px; font-size:13px; text-align:center;">${studentAnswerCell}</td>
+                            <td style="padding:12px; font-size:13px; text-align:center;"><strong style="color:#2d3748;">${correctAnswer}</strong></td>
+                            <td style="padding:12px; font-size:13px;">${status}</td>
                         </tr>`;
                 }).join('');
 
@@ -988,11 +1007,12 @@
                             <table style="width:100%; border-collapse:collapse; font-family:'Poppins',sans-serif;">
                                 <thead>
                                     <tr style="background:#f7fafc;">
-                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">#</th>
-                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Skill</th>
-                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Student Answer</th>
-                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Correct Answer</th>
-                                        <th style="padding:10px 12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Result</th>
+                                        <th style="padding:12px; text-align:left; font-size:12px; color:#718096; font-weight:600; width:50px;">#</th>
+                                        <th style="padding:12px; text-align:left; font-size:12px; color:#718096; font-weight:600; width:120px;">Skill</th>
+                                        <th style="padding:12px; text-align:left; font-size:12px; color:#718096; font-weight:600;">Question</th>
+                                        <th style="padding:12px; text-align:center; font-size:12px; color:#718096; font-weight:600; width:100px;">Student's<br>Answer</th>
+                                        <th style="padding:12px; text-align:center; font-size:12px; color:#718096; font-weight:600; width:100px;">Correct<br>Answer</th>
+                                        <th style="padding:12px; text-align:left; font-size:12px; color:#718096; font-weight:600; width:100px;">Result</th>
                                     </tr>
                                 </thead>
                                 <tbody>${rows}</tbody>
