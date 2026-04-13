@@ -1642,6 +1642,380 @@
           "value but"
         ],
         "correct": 3
+      },
+      {
+        "id": "test4_m1_q1",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "In addition,",
+          "Actually,",
+          "However,",
+          "Regardless,"
+        ],
+        "correct": 0,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 1
+      },
+      {
+        "id": "test4_m1_q2",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "Therefore,",
+          "Alternately,",
+          "Nevertheless,",
+          "Likewise,"
+        ],
+        "correct": 0,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 2
+      },
+      {
+        "id": "test4_m1_q6",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "produced",
+          "denied",
+          "worried",
+          "predicted"
+        ],
+        "correct": 1,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 6
+      },
+      {
+        "id": "test4_m1_q7",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "conceptualize",
+          "neglect",
+          "illustrate",
+          "overcome"
+        ],
+        "correct": 3,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 7
+      },
+      {
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "Subsequently,",
+          "Conversely,",
+          "For instance,",
+          "In other words,"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q1",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 1,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "That being said,",
+          "However,",
+          "For instance,",
+          "Hence,"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q2",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 2,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "occupy",
+          "hoard",
+          "reserve",
+          "obtain"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q6",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 6,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "reduced",
+          "evaluated",
+          "determined",
+          "acquired"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q7",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 7,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "invented",
+          "adjusted",
+          "featured",
+          "recommended"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q4",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 4,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "complimented by",
+          "uncertain about",
+          "unbothered by",
+          "inspired by"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q5",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 5,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "intriguing",
+          "obvious",
+          "accidental",
+          "observable"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q6",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 6,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "easy"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "permanent",
+          "tentative",
+          "warranted",
+          "prominent"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q7",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 7,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "easy"
+      },
+      {
+        "id": "test8_m1_q1",
+        "test": "SAT Practice Test 8",
+        "module": 1,
+        "questionNumber": 1,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "\u2212c",
+          "\u2212c\u00b2 \u2212 39\u00b2",
+          "\u2212 39\u00b2 \u2212 c\u00b2",
+          "\u2212 c\u00b2 + 39\u00b2"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "test9_m1_q1",
+        "test": "SAT Practice Test 9",
+        "module": 1,
+        "questionNumber": 1,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "They\u2019re",
+          "It\u2019s",
+          "Their",
+          "Its"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "test9_m1_q2",
+        "test": "SAT Practice Test 9",
+        "module": 1,
+        "questionNumber": 2,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English? B) told C) is telling D) to tell",
+        "choices": [
+          "Gingerbread\u2014",
+          "Gingerbread,",
+          "Gingerbread",
+          "Gingerbread:"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "test9_m1_q3",
+        "test": "SAT Practice Test 9",
+        "module": 1,
+        "questionNumber": 3,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "content, in that era",
+          "content; in that era,",
+          "content in that era,",
+          "content, in that era,"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "test9_m1_q4",
+        "test": "SAT Practice Test 9",
+        "module": 1,
+        "questionNumber": 4,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "conservation, though,",
+          "conservation; though",
+          "conservation, though;",
+          "conservation, though"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "test9_m1_q5",
+        "test": "SAT Practice Test 9",
+        "module": 1,
+        "questionNumber": 5,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text with the most logical transition? D) Both the Seikan Tunnel, which is located in Japan, and the Channel Tunnel, which is located in Europe, are examples of rail tunnels.",
+        "choices": [
+          "Decreasing exponential",
+          "Decreasing linear",
+          "Increasing exponential",
+          "Increasing linear"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "test10_m1_q1",
+        "test": "SAT Practice Test 10",
+        "module": 1,
+        "questionNumber": 1,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "are",
+          "have been",
+          "are being",
+          "is"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "test10_m1_q2",
+        "test": "SAT Practice Test 10",
+        "module": 1,
+        "questionNumber": 2,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "Specifically,",
+          "Next,",
+          "However,",
+          "In other words,"
+        ],
+        "correct": 3
+      },
+      {
+        "id": "test10_m1_q3",
+        "test": "SAT Practice Test 10",
+        "module": 1,
+        "questionNumber": 3,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text with the most logical transition?",
+        "choices": [
+          "Similarly,",
+          "Finally,",
+          "Therefore,",
+          "Specifically,"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "test10_m1_q4",
+        "test": "SAT Practice Test 10",
+        "module": 1,
+        "questionNumber": 4,
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "easy",
+        "text": "Which choice completes the text with the most logical transition? \u2022 In 2018, he published Tales from the Inner City, a book of twenty-five short stories.",
+        "choices": [
+          "0",
+          "1",
+          "10",
+          "23"
+        ],
+        "correct": 1
       }
     ],
     "medium": [
@@ -2294,40 +2668,6 @@
         "difficulty": "medium"
       },
       {
-        "text": "Hana deposited a fixed amount into her bank account each month. The function f (t) = 100 + 25t gives the amount, in dollars, in Hana\u2019s bank account after t monthly deposits. What is the best interpretation of 25 in this context?",
-        "choices": [
-          "With each monthly deposit, the amount in Hana\u2019s bank account increased by $25.",
-          "Before Hana made any monthly deposits, the amount in her bank account was $25.",
-          "After 1 monthly deposit, the amount in Hana\u2019s bank account was $25.",
-          "Hana made a total of 25 monthly deposits."
-        ],
-        "category": "Reading and Writing",
-        "id": "test4_r2_q17",
-        "test": "SAT Practice Test 4",
-        "module": 2,
-        "questionNumber": 17,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "medium"
-      },
-      {
-        "text": "(x, y). What is the value of y ? Line t in the xy-plane has a slope of \u2212 \u00b9 and passes 3 through the point (9, 10). Which equation defines line t ?",
-        "choices": [
-          "y = 13x \u2212 \u00b9 3 For a certain rectangular region, the ratio of its length to its width is 35 to 10. If the width of the rectangular region increases by 7 units, how must the length change to maintain this ratio?",
-          "It must decrease by 24.5 units.",
-          "It must increase by 24.5 units.",
-          "It must decrease by 7 units."
-        ],
-        "category": "Reading and Writing",
-        "id": "test4_r2_q18",
-        "test": "SAT Practice Test 4",
-        "module": 2,
-        "questionNumber": 18,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "medium"
-      },
-      {
         "text": "Which choice completes the text with the most logical transition?",
         "choices": [
           "In other words,",
@@ -2413,57 +2753,6 @@
         "difficulty": "medium"
       },
       {
-        "text": "y = f (x). What is the y-intercept of the graph of f ?",
-        "choices": [
-          "(0, 0)",
-          "(0, 4)",
-          "(4, 5)",
-          "(5, 0)"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q15",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 15,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "medium"
-      },
-      {
-        "text": "What is the solution (r, s) to the given system of equations?",
-        "choices": [
-          "(6, 3)",
-          "(3, 6)",
-          "(3, 27)",
-          "(27, 3)"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q16",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 16,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "medium"
-      },
-      {
-        "text": "The graph of a system of linear equations is shown. The solution to the system is (x, y). What is the value of x ? The table shows selected values from function f. Which of the following is the best description of function f ?",
-        "choices": [
-          "Decreasing linear",
-          "Increasing linear",
-          "Decreasing exponential",
-          "Increasing exponential"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q17",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 17,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "medium"
-      },
-      {
         "text": "What is the range of the 7 scores shown? [] In the figure, line m is parallel to line n, and line k intersects both lines. Which of the following statements is true?",
         "choices": [
           "[][][][]The value of x is less than 145.",
@@ -2515,40 +2804,6 @@
         "difficulty": "medium"
       },
       {
-        "text": "What is the positive solution to the given equation?",
-        "choices": [
-          "144",
-          "72",
-          "38",
-          "12"
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q12",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 12,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "medium"
-      },
-      {
-        "text": "The function P gives the estimated number of marine mammals in a certain area, where t is the number of years since a study began. What is the best interpretation of P(0) = 1,800 in this context?",
-        "choices": [
-          "The estimated number of marine mammals in the area was 102 when the study began.",
-          "The estimated number of marine mammals in the area was 1,800 when the study began.",
-          "The estimated number of marine mammals in the area increased by 102 each year during the study.",
-          "The estimated number of marine mammals in the area increased by 1,800 each year during the study."
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q13",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 13,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "medium"
-      },
-      {
         "text": "A manager is responsible for ordering supplies for a shaved ice shop. The shop\u2019s inventory starts with 4,500 paper cups, and the manager estimates that 70 of these paper cups are used each day. Based on this estimate, in how many days will the supply of paper cups reach 1,700?",
         "choices": [
           "20",
@@ -2580,57 +2835,6 @@
         "questionNumber": 15,
         "skill": "Official SAT Question",
         "correct": 3,
-        "difficulty": "medium"
-      },
-      {
-        "text": "What is the y-coordinate of the y-intercept of the In 2008, Zinah earned 14% more than in 2007, and in 2009 Zinah earned 4% more than in 2008. If Zinah 3x 5y earned y times as much in 2009 as in 2007, what is graph of 7 = \u2212 9 + 21 in the xy-plane? the value of y ?",
-        "choices": [
-          "0.5600",
-          "1.0056",
-          "1.1800",
-          "1.1856"
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q16",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 16,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "medium"
-      },
-      {
-        "text": "and f is a linear function. What is the y-intercept of the graph of y = f (x) in the xy-plane?",
-        "choices": [
-          "(0, 36)",
-          "(0, 12)",
-          "(0, 4)",
-          "(0, \u22129)"
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q17",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 17,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "medium"
-      },
-      {
-        "text": "In right triangle ABC, angle C is the right angle and BC = 162. Point D on side AB is connected by a line segment with point E on side AC such that line segment DE is parallel to side BC and CE = 2AE. What is the length of line segment DE ? STOP If you finish before time is called, you may check your work on this module only. Do not turn to any other module in the test. Unauthorized copying or reuse of any part of this page is illegal. 40 No Test Material On This Page [] [] The function f is defined by f (x) = 8x. For what value of x does f (x) = 72 ?",
-        "choices": [
-          "8",
-          "9",
-          "64",
-          "80"
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q18",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 18,
-        "skill": "Official SAT Question",
-        "correct": 2,
         "difficulty": "medium"
       },
       {
@@ -3244,6 +3448,329 @@
           "outstrip"
         ],
         "correct": 0
+      },
+      {
+        "id": "test4_m1_q8",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "selecting",
+          "inspecting",
+          "creating",
+          "deciding"
+        ],
+        "correct": 1,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 8
+      },
+      {
+        "id": "test4_m1_q9",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "infallible",
+          "atypical",
+          "lucrative",
+          "tedious"
+        ],
+        "correct": 1,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 9
+      },
+      {
+        "id": "test4_m1_q10",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "surpassed by",
+          "comparable to",
+          "independent of",
+          "obtained from"
+        ],
+        "correct": 2,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 10
+      },
+      {
+        "id": "test4_m1_q11",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "validated",
+          "created",
+          "challenged",
+          "restored"
+        ],
+        "correct": 1,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 11
+      },
+      {
+        "id": "test4_m1_q12",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "proponent of",
+          "supplement to",
+          "beneficiary of",
+          "distraction for"
+        ],
+        "correct": 2,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 12
+      },
+      {
+        "id": "test4_m1_q13",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "reciprocate",
+          "annotate",
+          "buttress",
+          "disengage"
+        ],
+        "correct": 1,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 13
+      },
+      {
+        "id": "test4_m1_q14",
+        "category": "Reading and Writing",
+        "skill": "Official SAT Question",
+        "difficulty": "medium",
+        "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+        "choices": [
+          "It introduces a physical feature of female cuckoos that is described later in the text.",
+          "It describes the appearance of the cuckoo nests mentioned earlier in the text.",
+          "It offers a detail about how female cuckoos carry out the behavior discussed in the text.",
+          "It explains how other birds react to the female cuckoo behavior discussed in the text."
+        ],
+        "correct": 1,
+        "test": "SAT Practice Test 4",
+        "module": 1,
+        "questionNumber": 14
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "imagine",
+          "summarize",
+          "defend",
+          "adjust"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q8",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 8,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "a tenuous",
+          "an enduring",
+          "a contentious",
+          "a conspicuous"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q9",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 9,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+        "choices": [
+          "It indicates the reason for Harris\u2019s eagerness to resume traveling.",
+          "It hints at Harris\u2019s feeling that during an earlier boat trip, others didn\u2019t include him in activities.",
+          "It emphasizes that Harris always boasts about his own constitution when speaking of a previous boat trip.",
+          "It reveals that although Harris claims to prefer solitary activities when traveling, he actually enjoys having company."
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q10",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 10,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+        "choices": [
+          "It explains a discrepancy between what has been observed in study settings and what has been observed in real-world settings that the text goes on to assert is attributable to the studies not using real-world data.",
+          "It identifies a conflict between research findings and recent events that the text goes on to suggest is a consequence of a complicating factor in the data used to generate those findings.",
+          "It presents a long-standing divergence in research findings that the text goes on to say is due to different groups of researchers using data that derive from different electoral circumstances.",
+          "It describes a recent exception to a general pattern in research findings that the text goes on to explain is a result of researchers underestimating the significance of inconsistencies in the data they\u2019ve analyzed."
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q11",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 11,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best describes what is happening in the text?",
+        "choices": [
+          "Lutie is observing the appearance of the street at a particular time of day and the events occurring on it.",
+          "Lutie is annoyed by the noise of children playing games on her street.",
+          "Lutie is puzzled by the rules of certain children\u2019s games.",
+          "Lutie is spending time alone in her apartment because she doesn\u2019t want to interact with her neighbors."
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q13",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 13,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best states the main idea of the text?",
+        "choices": [
+          "Literary theorist Mikhail Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives.",
+          "Literary theorist Mikhail Bakhtin claimed that meaning is not inherent in a narrative but is created when an audience encounters a narrative so that narratives are interpreted differently by different people.",
+          "The storytelling methods used in The Godfather Part II may seem unusually complicated, but they can be easily understood when two concepts from literary theory are utilized.",
+          "Narratives that are told out of chronological order are more difficult for audiences to understand than are narratives presented chronologically."
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q15",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 15,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice completes the text with the most logical and precise word or phrase?",
+        "choices": [
+          "insensible to",
+          "manifest in",
+          "scrutinized by",
+          "complicated by"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q8",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 8,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best states the main purpose of the text?",
+        "choices": [
+          "To illustrate Francie\u2019s enjoyment of an unusual topic",
+          "To explain why Francie prefers reading over other activities",
+          "To portray Francie\u2019s determination to meet a goal",
+          "To describe a book that Francie greatly admires"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q9",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 9,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best states the main purpose of the text?",
+        "choices": [
+          "To argue for the significance of new findings amid an ongoing debate among researchers",
+          "To discuss the advantages and disadvantages of the method used in an experiment",
+          "To summarize two competing hypotheses and a major finding associated with each one",
+          "To describe an experiment whose results cast doubt on an established hypothesis"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q10",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 10,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best describes the function of the underlined portion?",
+        "choices": [
+          "It asserts that in medieval Europe steam baths were more popular in rural areas than in urban ones.",
+          "It describes a limitation of earlier historians\u2019 studies of medieval European bathing habits.",
+          "It concedes that not all people in medieval Europe had access to public bathhouses.",
+          "It explains why Janega decided to study the popularity of public bathhouses in medieval Europe."
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q11",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 11,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best describes the function of the underlined portion in the text as a whole?",
+        "choices": [
+          "It presents a trend in scholarship on the Chicano movement that the text claims has been reevaluated by researchers in light of Herrera\u2019s work on the movement\u2019s participants.",
+          "It identifies an aspect of the Chicano movement that the text implies was overemphasized by scholars due to their own political orientations.",
+          "It describes a common approach to studying the Chicano movement that, according to the text, obscures the ideological diversity of the movement\u2019s participants.",
+          "It summarizes the conventional method for analyzing the Chicano movement, which the text suggests creates a misleading impression of the effectiveness of neighborhood institutions and projects."
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q12",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 12,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "text": "Which choice best states the main idea of the text?",
+        "choices": [
+          "Although it may seem surprising that foreign investment declines in developing countries as natural-resource extraction makes up a larger share of those countries\u2019 economies, that decline happens because resource extraction requires initial investments too large for foreign investors to supply.",
+          "Although developing countries tend to become less dependent on foreign investment as natural-resource industries make up a larger share of their economies, this change may not occur if the boom-bust cycle of those industries destabilizes local currencies or increases countries\u2019 vulnerability to external shocks.",
+          "Although one might expect that foreign investment would increase as natural-resource extraction makes up a larger share of developing countries\u2019 economies, the opposite happens because heavy reliance on natural resources can lead to unattractive conditions for investors.",
+          "Although foreign investors tend to avoid initial investments in natural-resource industries in developing countries, foreign investment may increase significantly as those industries stabilize and the risks associated with them decline."
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q13",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 13,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "medium"
       }
     ],
     "hard": [
@@ -3797,23 +4324,6 @@
         "difficulty": "hard"
       },
       {
-        "text": "In the given system of equations, a is a constant. The graphs of the equations in the given system intersect at exactly one point, (x, y), in the xy-plane. What is the value of x ?",
-        "choices": [
-          "\u22128",
-          "\u22126",
-          "6",
-          "8"
-        ],
-        "category": "Reading and Writing",
-        "id": "test4_r2_q21",
-        "test": "SAT Practice Test 4",
-        "module": 2,
-        "questionNumber": 21,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "hard"
-      },
-      {
         "text": "An isosceles right triangle has a hypotenuse of length 58 inches. What is the perimeter, in inches, of this triangle?",
         "choices": [
           "29[]",
@@ -3845,57 +4355,6 @@
         "questionNumber": 23,
         "skill": "Official SAT Question",
         "correct": 0,
-        "difficulty": "hard"
-      },
-      {
-        "text": "What is the solution (x, y) to the given system of equations?",
-        "choices": [
-          "(15, 3)",
-          "(16, 2)",
-          "(17, 1)",
-          "(18, 0)"
-        ],
-        "category": "Reading and Writing",
-        "id": "test4_r2_q24",
-        "test": "SAT Practice Test 4",
-        "module": 2,
-        "questionNumber": 24,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "hard"
-      },
-      {
-        "text": "The function gives the total number of people on a company retreat with x managers. What is the total number of people on a company retreat with 7 managers? h(x) = x\u00b2 \u2212 3 Which table gives three values of x and their corresponding values of h(x) for the given function h? +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   4            |   5            |   6             | +-----------------+----------------+----------------+-----------------+",
-        "choices": [
-          " +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   \u22122           |   1            |   6             | +-----------------+----------------+----------------+-----------------+",
-          " +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   \u22121           |   1            |   3             | +-----------------+----------------+----------------+-----------------+",
-          " +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   \u22122           |   1            |   3             | +-----------------+----------------+----------------+-----------------+",
-          ""
-        ],
-        "category": "Reading and Writing",
-        "id": "test4_r2_q25",
-        "test": "SAT Practice Test 4",
-        "module": 2,
-        "questionNumber": 25,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "hard"
-      },
-      {
-        "text": "The function f is defined by f (x) = 270(0.1)^(x) . What is the value of f (0) ?",
-        "choices": [
-          "0",
-          "1",
-          "27",
-          "270"
-        ],
-        "category": "Reading and Writing",
-        "id": "test4_r2_q26",
-        "test": "SAT Practice Test 4",
-        "module": 2,
-        "questionNumber": 26,
-        "skill": "Official SAT Question",
-        "correct": 3,
         "difficulty": "hard"
       },
       {
@@ -3950,23 +4409,6 @@
         "difficulty": "hard"
       },
       {
-        "text": "What is the value of tan 3 ?",
-        "choices": [
-          "[]\u2212 []3",
-          "\u2212 3 []3",
-          "3",
-          "[]"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q21",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 21,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "hard"
-      },
-      {
         "text": "What is the best interpretation of 6 in this context?",
         "choices": [
           "Kaylani made 6 suits.",
@@ -3979,74 +4421,6 @@
         "test": "SAT Practice Test 5",
         "module": 2,
         "questionNumber": 22,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "hard"
-      },
-      {
-        "text": "The function g is defined by g(x) = (x + 14)(t \u2212 x), where t is a constant. In the xy-plane, the graph of y = g(x) passes through the point (24, 0). What is the value of g(0) ? A right rectangular prism has a height of 9 inches. The length of the prism\u2019s base is x inches, which is 7 inches more than the width of the prism\u2019s base. Which function V gives the volume of the prism, in cubic inches, in terms of the length of the prism\u2019s base?",
-        "choices": [
-          "V(x) = x(x + 9)(x + 7)",
-          "V(x) = x(x + 9)(x \u2212 7)",
-          "V(x) = 9x(x + 7)",
-          "V(x) = 9x(x \u2212 7)"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q23",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 23,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "hard"
-      },
-      {
-        "text": "60. What is the value of x ?",
-        "choices": [
-          "12",
-          "15",
-          "240",
-          "340"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q24",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 24,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "hard"
-      },
-      {
-        "text": "What is the sum of all possible values of w ? The function f is defined by f (x) = ax2 + bx + c, where a, b, and c are constants. The graph of y = f (x) in the xy-plane passes through the points (7, 0) and (\u22123, 0). If a is an integer greater than 1, which of the following could be the value of a + b ?",
-        "choices": [
-          "\u22126",
-          "\u22123",
-          "4",
-          "5"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q25",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 25,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "hard"
-      },
-      {
-        "text": "The function f is defined by f (x) = 4x \u2212 3. What is the value of f (10) ?",
-        "choices": [
-          "\u221230",
-          "37",
-          "40",
-          "43"
-        ],
-        "category": "Reading and Writing",
-        "id": "test5_r2_q26",
-        "test": "SAT Practice Test 5",
-        "module": 2,
-        "questionNumber": 26,
         "skill": "Official SAT Question",
         "correct": 3,
         "difficulty": "hard"
@@ -4083,40 +4457,6 @@
         "questionNumber": 19,
         "skill": "Official SAT Question",
         "correct": 3,
-        "difficulty": "hard"
-      },
-      {
-        "text": "y = f (x). What is the y-intercept of the graph?",
-        "choices": [
-          "(0, \u22121)",
-          "(0, \u22124)",
-          "(0, 1)",
-          "(0, 4)"
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q20",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 20,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "hard"
-      },
-      {
-        "text": "(x, y). What is the value of y ? The ratio of the length of line segment XY to the length of line segment ZV is 6 to 1. If the length of line segment XY is 102 inches, what is the length, in inches, of line segment ZV ?",
-        "choices": [
-          "17",
-          "96",
-          "102",
-          "612"
-        ],
-        "category": "Reading and Writing",
-        "id": "test6_r2_q21",
-        "test": "SAT Practice Test 6",
-        "module": 2,
-        "questionNumber": 21,
-        "skill": "Official SAT Question",
-        "correct": 1,
         "difficulty": "hard"
       },
       {
@@ -4747,6 +5087,91 @@
           "in addition,"
         ],
         "correct": 1
+      },
+      {
+        "text": "[]Which choice best describes data from the graph that support Ib\u00e1\u00f1ez and colleagues\u2019 conclusion?",
+        "choices": [
+          "[][][][]Growth with nitrogen under the current climate exceeded growth with nitrogen under moderate change, but the latter exceeded growth without nitrogen under extreme change.",
+          "[][]Growth without nitrogen under the current climate exceeded growth without nitrogen under moderate change, but the latter exceeded growth with nitrogen under extreme change. []",
+          "Growth with nitrogen under moderate change exceeded growth without nitrogen under moderate change, but the latter exceeded growth without nitrogen under extreme change.",
+          "[]Growth with nitrogen under moderate change exceeded growth without nitrogen under the current climate, but the latter exceeded growth with nitrogen under extreme change."
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q18",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 18,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "hard"
+      },
+      {
+        "text": "Which choice best describes data from the table that support Persad and her colleagues\u2019 conclusion?",
+        "choices": [
+          "If baseline precipitation is somewhat concentrated, the amount of water being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater, whereas the amount of water entering aquifers will increase 11.0% if baseline precipitation is evenly distributed.",
+          "If baseline precipitation is somewhat concentrated, water use for irrigation will increase only slightly, whereas it will increase 9.0% for surface water and 7.9% for groundwater if baseline precipitation is evenly distributed.",
+          "If baseline precipitation is somewhat concentrated, the amount of water entering aquifers will increase 4.9%, while the amount being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater.",
+          "If baseline precipitation is somewhat concentrated, water use for irrigation will decline by a small amount, whereas it will increase 11.0% for surface water and 9.0% for groundwater if baseline precipitation is evenly distributed."
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q20",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 20,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "hard"
+      },
+      {
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "published",
+          "publishing",
+          "having published",
+          "to publish"
+        ],
+        "category": "Reading and Writing",
+        "id": "test5_m1_q22",
+        "test": "SAT Practice Test 5",
+        "module": 1,
+        "questionNumber": 22,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "hard"
+      },
+      {
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "do they affect our weather.",
+          "they do affect our weather.",
+          "do they affect our weather?",
+          "they do affect our weather?"
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q21",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 21,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "hard"
+      },
+      {
+        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+        "choices": [
+          "Matthew Henson made several treks across Greenland between 1891 and 1909.",
+          "1891 and 1909 were the years between which Matthew Henson made several treks across Greenland.",
+          "Greenland was where Matthew Henson made several treks between 1891 and 1909.",
+          "several treks across Greenland were made by Matthew Henson between 1891 and 1909."
+        ],
+        "category": "Reading and Writing",
+        "id": "test6_m1_q22",
+        "test": "SAT Practice Test 6",
+        "module": 1,
+        "questionNumber": 22,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "hard"
       }
     ]
   },
@@ -5011,40 +5436,6 @@
         "correct": 1
       },
       {
-        "id": "test4_m1_q1",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "In addition,",
-          "Actually,",
-          "However,",
-          "Regardless,"
-        ],
-        "correct": 0,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 1
-      },
-      {
-        "id": "test4_m1_q2",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "Therefore,",
-          "Alternately,",
-          "Nevertheless,",
-          "Likewise,"
-        ],
-        "correct": 0,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 2
-      },
-      {
         "id": "test4_m1_q3",
         "category": "Math",
         "skill": "Official SAT Question",
@@ -5094,74 +5485,6 @@
         "test": "SAT Practice Test 4",
         "module": 1,
         "questionNumber": 5
-      },
-      {
-        "id": "test4_m1_q6",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "produced",
-          "denied",
-          "worried",
-          "predicted"
-        ],
-        "correct": 1,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 6
-      },
-      {
-        "id": "test4_m1_q7",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "conceptualize",
-          "neglect",
-          "illustrate",
-          "overcome"
-        ],
-        "correct": 3,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 7
-      },
-      {
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "Subsequently,",
-          "Conversely,",
-          "For instance,",
-          "In other words,"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q1",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 1,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "easy"
-      },
-      {
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "That being said,",
-          "However,",
-          "For instance,",
-          "Hence,"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q2",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 2,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "easy"
       },
       {
         "text": "The student wants to identify the real author of Adam Bede. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
@@ -5215,40 +5538,6 @@
         "difficulty": "easy"
       },
       {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "occupy",
-          "hoard",
-          "reserve",
-          "obtain"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q6",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 6,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "easy"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "reduced",
-          "evaluated",
-          "determined",
-          "acquired"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q7",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 7,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "easy"
-      },
-      {
         "text": "The student wants to emphasize Janaki Ammal\u2019s achievement. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
         "choices": [
           "By crossbreeding the imported sugarcane species Saccharum officinarum with grasses native to India, Ammal succeeded in creating sugarcane hybrids well suited to India\u2019s climate.",
@@ -5295,74 +5584,6 @@
         "test": "SAT Practice Test 6",
         "module": 1,
         "questionNumber": 3,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "easy"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "invented",
-          "adjusted",
-          "featured",
-          "recommended"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q4",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 4,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "easy"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "complimented by",
-          "uncertain about",
-          "unbothered by",
-          "inspired by"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q5",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 5,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "easy"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "intriguing",
-          "obvious",
-          "accidental",
-          "observable"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q6",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 6,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "easy"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "permanent",
-          "tentative",
-          "warranted",
-          "prominent"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q7",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 7,
         "skill": "Official SAT Question",
         "correct": 3,
         "difficulty": "easy"
@@ -5538,108 +5759,6 @@
         "difficulty": "easy"
       },
       {
-        "id": "test8_m1_q1",
-        "test": "SAT Practice Test 8",
-        "module": 1,
-        "questionNumber": 1,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "\u2212c",
-          "\u2212c\u00b2 \u2212 39\u00b2",
-          "\u2212 39\u00b2 \u2212 c\u00b2",
-          "\u2212 c\u00b2 + 39\u00b2"
-        ],
-        "correct": 3
-      },
-      {
-        "id": "test9_m1_q1",
-        "test": "SAT Practice Test 9",
-        "module": 1,
-        "questionNumber": 1,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "They\u2019re",
-          "It\u2019s",
-          "Their",
-          "Its"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "test9_m1_q2",
-        "test": "SAT Practice Test 9",
-        "module": 1,
-        "questionNumber": 2,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English? B) told C) is telling D) to tell",
-        "choices": [
-          "Gingerbread\u2014",
-          "Gingerbread,",
-          "Gingerbread",
-          "Gingerbread:"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test9_m1_q3",
-        "test": "SAT Practice Test 9",
-        "module": 1,
-        "questionNumber": 3,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "content, in that era",
-          "content; in that era,",
-          "content in that era,",
-          "content, in that era,"
-        ],
-        "correct": 3
-      },
-      {
-        "id": "test9_m1_q4",
-        "test": "SAT Practice Test 9",
-        "module": 1,
-        "questionNumber": 4,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "conservation, though,",
-          "conservation; though",
-          "conservation, though;",
-          "conservation, though"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test9_m1_q5",
-        "test": "SAT Practice Test 9",
-        "module": 1,
-        "questionNumber": 5,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text with the most logical transition? D) Both the Seikan Tunnel, which is located in Japan, and the Channel Tunnel, which is located in Europe, are examples of rail tunnels.",
-        "choices": [
-          "Decreasing exponential",
-          "Decreasing linear",
-          "Increasing exponential",
-          "Increasing linear"
-        ],
-        "correct": 1
-      },
-      {
         "id": "test9_m1_q6",
         "test": "SAT Practice Test 9",
         "module": 1,
@@ -5655,77 +5774,179 @@
           "Neither I nor II"
         ],
         "correct": 2
-      },
-      {
-        "id": "test10_m1_q1",
-        "test": "SAT Practice Test 10",
-        "module": 1,
-        "questionNumber": 1,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "are",
-          "have been",
-          "are being",
-          "is"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "test10_m1_q2",
-        "test": "SAT Practice Test 10",
-        "module": 1,
-        "questionNumber": 2,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "Specifically,",
-          "Next,",
-          "However,",
-          "In other words,"
-        ],
-        "correct": 3
-      },
-      {
-        "id": "test10_m1_q3",
-        "test": "SAT Practice Test 10",
-        "module": 1,
-        "questionNumber": 3,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text with the most logical transition?",
-        "choices": [
-          "Similarly,",
-          "Finally,",
-          "Therefore,",
-          "Specifically,"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "test10_m1_q4",
-        "test": "SAT Practice Test 10",
-        "module": 1,
-        "questionNumber": 4,
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "easy",
-        "text": "Which choice completes the text with the most logical transition? \u2022 In 2018, he published Tales from the Inner City, a book of twenty-five short stories.",
-        "choices": [
-          "0",
-          "1",
-          "10",
-          "23"
-        ],
-        "correct": 1
       }
     ],
     "medium": [
+      {
+        "text": "Hana deposited a fixed amount into her bank account each month. The function f (t) = 100 + 25t gives the amount, in dollars, in Hana\u2019s bank account after t monthly deposits. What is the best interpretation of 25 in this context?",
+        "choices": [
+          "With each monthly deposit, the amount in Hana\u2019s bank account increased by $25.",
+          "Before Hana made any monthly deposits, the amount in her bank account was $25.",
+          "After 1 monthly deposit, the amount in Hana\u2019s bank account was $25.",
+          "Hana made a total of 25 monthly deposits."
+        ],
+        "category": "Math",
+        "id": "test4_r2_q17",
+        "test": "SAT Practice Test 4",
+        "module": 2,
+        "questionNumber": 17,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "text": "(x, y). What is the value of y ? Line t in the xy-plane has a slope of \u2212 \u00b9 and passes 3 through the point (9, 10). Which equation defines line t ?",
+        "choices": [
+          "y = 13x \u2212 \u00b9 3 For a certain rectangular region, the ratio of its length to its width is 35 to 10. If the width of the rectangular region increases by 7 units, how must the length change to maintain this ratio?",
+          "It must decrease by 24.5 units.",
+          "It must increase by 24.5 units.",
+          "It must decrease by 7 units."
+        ],
+        "category": "Math",
+        "id": "test4_r2_q18",
+        "test": "SAT Practice Test 4",
+        "module": 2,
+        "questionNumber": 18,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "medium"
+      },
+      {
+        "text": "y = f (x). What is the y-intercept of the graph of f ?",
+        "choices": [
+          "(0, 0)",
+          "(0, 4)",
+          "(4, 5)",
+          "(5, 0)"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q15",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 15,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "text": "What is the solution (r, s) to the given system of equations?",
+        "choices": [
+          "(6, 3)",
+          "(3, 6)",
+          "(3, 27)",
+          "(27, 3)"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q16",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 16,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "medium"
+      },
+      {
+        "text": "The graph of a system of linear equations is shown. The solution to the system is (x, y). What is the value of x ? The table shows selected values from function f. Which of the following is the best description of function f ?",
+        "choices": [
+          "Decreasing linear",
+          "Increasing linear",
+          "Decreasing exponential",
+          "Increasing exponential"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q17",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 17,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
+      {
+        "text": "What is the positive solution to the given equation?",
+        "choices": [
+          "144",
+          "72",
+          "38",
+          "12"
+        ],
+        "category": "Math",
+        "id": "test6_r2_q12",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 12,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "text": "The function P gives the estimated number of marine mammals in a certain area, where t is the number of years since a study began. What is the best interpretation of P(0) = 1,800 in this context?",
+        "choices": [
+          "The estimated number of marine mammals in the area was 102 when the study began.",
+          "The estimated number of marine mammals in the area was 1,800 when the study began.",
+          "The estimated number of marine mammals in the area increased by 102 each year during the study.",
+          "The estimated number of marine mammals in the area increased by 1,800 each year during the study."
+        ],
+        "category": "Math",
+        "id": "test6_r2_q13",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 13,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "medium"
+      },
+      {
+        "text": "What is the y-coordinate of the y-intercept of the In 2008, Zinah earned 14% more than in 2007, and in 2009 Zinah earned 4% more than in 2008. If Zinah 3x 5y earned y times as much in 2009 as in 2007, what is graph of 7 = \u2212 9 + 21 in the xy-plane? the value of y ?",
+        "choices": [
+          "0.5600",
+          "1.0056",
+          "1.1800",
+          "1.1856"
+        ],
+        "category": "Math",
+        "id": "test6_r2_q16",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 16,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "medium"
+      },
+      {
+        "text": "and f is a linear function. What is the y-intercept of the graph of y = f (x) in the xy-plane?",
+        "choices": [
+          "(0, 36)",
+          "(0, 12)",
+          "(0, 4)",
+          "(0, \u22129)"
+        ],
+        "category": "Math",
+        "id": "test6_r2_q17",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 17,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "medium"
+      },
+      {
+        "text": "In right triangle ABC, angle C is the right angle and BC = 162. Point D on side AB is connected by a line segment with point E on side AC such that line segment DE is parallel to side BC and CE = 2AE. What is the length of line segment DE ? STOP If you finish before time is called, you may check your work on this module only. Do not turn to any other module in the test. Unauthorized copying or reuse of any part of this page is illegal. 40 No Test Material On This Page [] [] The function f is defined by f (x) = 8x. For what value of x does f (x) = 72 ?",
+        "choices": [
+          "8",
+          "9",
+          "64",
+          "80"
+        ],
+        "category": "Math",
+        "id": "test6_r2_q18",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 18,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "medium"
+      },
       {
         "id": "math_algebra_m1",
         "category": "Math",
@@ -5825,125 +6046,6 @@
         "correct": 0
       },
       {
-        "id": "test4_m1_q8",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "selecting",
-          "inspecting",
-          "creating",
-          "deciding"
-        ],
-        "correct": 1,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 8
-      },
-      {
-        "id": "test4_m1_q9",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "infallible",
-          "atypical",
-          "lucrative",
-          "tedious"
-        ],
-        "correct": 1,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 9
-      },
-      {
-        "id": "test4_m1_q10",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "surpassed by",
-          "comparable to",
-          "independent of",
-          "obtained from"
-        ],
-        "correct": 2,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 10
-      },
-      {
-        "id": "test4_m1_q11",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "validated",
-          "created",
-          "challenged",
-          "restored"
-        ],
-        "correct": 1,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 11
-      },
-      {
-        "id": "test4_m1_q12",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "proponent of",
-          "supplement to",
-          "beneficiary of",
-          "distraction for"
-        ],
-        "correct": 2,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 12
-      },
-      {
-        "id": "test4_m1_q13",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "reciprocate",
-          "annotate",
-          "buttress",
-          "disengage"
-        ],
-        "correct": 1,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 13
-      },
-      {
-        "id": "test4_m1_q14",
-        "category": "Math",
-        "skill": "Official SAT Question",
-        "difficulty": "medium",
-        "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
-        "choices": [
-          "It introduces a physical feature of female cuckoos that is described later in the text.",
-          "It describes the appearance of the cuckoo nests mentioned earlier in the text.",
-          "It offers a detail about how female cuckoos carry out the behavior discussed in the text.",
-          "It explains how other birds react to the female cuckoo behavior discussed in the text."
-        ],
-        "correct": 1,
-        "test": "SAT Practice Test 4",
-        "module": 1,
-        "questionNumber": 14
-      },
-      {
         "id": "test4_m1_q15",
         "category": "Math",
         "skill": "Official SAT Question",
@@ -5959,74 +6061,6 @@
         "test": "SAT Practice Test 4",
         "module": 1,
         "questionNumber": 15
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "imagine",
-          "summarize",
-          "defend",
-          "adjust"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q8",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 8,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "a tenuous",
-          "an enduring",
-          "a contentious",
-          "a conspicuous"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q9",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 9,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
-        "choices": [
-          "It indicates the reason for Harris\u2019s eagerness to resume traveling.",
-          "It hints at Harris\u2019s feeling that during an earlier boat trip, others didn\u2019t include him in activities.",
-          "It emphasizes that Harris always boasts about his own constitution when speaking of a previous boat trip.",
-          "It reveals that although Harris claims to prefer solitary activities when traveling, he actually enjoys having company."
-        ],
-        "category": "Math",
-        "id": "test5_m1_q10",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 10,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best describes the function of the underlined sentence in the text as a whole?",
-        "choices": [
-          "It explains a discrepancy between what has been observed in study settings and what has been observed in real-world settings that the text goes on to assert is attributable to the studies not using real-world data.",
-          "It identifies a conflict between research findings and recent events that the text goes on to suggest is a consequence of a complicating factor in the data used to generate those findings.",
-          "It presents a long-standing divergence in research findings that the text goes on to say is due to different groups of researchers using data that derive from different electoral circumstances.",
-          "It describes a recent exception to a general pattern in research findings that the text goes on to explain is a result of researchers underestimating the significance of inconsistencies in the data they\u2019ve analyzed."
-        ],
-        "category": "Math",
-        "id": "test5_m1_q11",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 11,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "medium"
       },
       {
         "text": "Based on the texts, how would the author of Text 2 most likely respond to the overall argument presented in Text 1?",
@@ -6046,23 +6080,6 @@
         "difficulty": "medium"
       },
       {
-        "text": "Which choice best describes what is happening in the text?",
-        "choices": [
-          "Lutie is observing the appearance of the street at a particular time of day and the events occurring on it.",
-          "Lutie is annoyed by the noise of children playing games on her street.",
-          "Lutie is puzzled by the rules of certain children\u2019s games.",
-          "Lutie is spending time alone in her apartment because she doesn\u2019t want to interact with her neighbors."
-        ],
-        "category": "Math",
-        "id": "test5_m1_q13",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 13,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "medium"
-      },
-      {
         "text": "According to the text, why are some critics skeptical of the concept behind Bosco Verticale?",
         "choices": [
           "Some essential aspects of Bosco Verticale\u2019s design are difficult to adapt to locations other than Milan.",
@@ -6077,125 +6094,6 @@
         "questionNumber": 14,
         "skill": "Official SAT Question",
         "correct": 3,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best states the main idea of the text?",
-        "choices": [
-          "Literary theorist Mikhail Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives.",
-          "Literary theorist Mikhail Bakhtin claimed that meaning is not inherent in a narrative but is created when an audience encounters a narrative so that narratives are interpreted differently by different people.",
-          "The storytelling methods used in The Godfather Part II may seem unusually complicated, but they can be easily understood when two concepts from literary theory are utilized.",
-          "Narratives that are told out of chronological order are more difficult for audiences to understand than are narratives presented chronologically."
-        ],
-        "category": "Math",
-        "id": "test5_m1_q15",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 15,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice completes the text with the most logical and precise word or phrase?",
-        "choices": [
-          "insensible to",
-          "manifest in",
-          "scrutinized by",
-          "complicated by"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q8",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 8,
-        "skill": "Official SAT Question",
-        "correct": 1,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best states the main purpose of the text?",
-        "choices": [
-          "To illustrate Francie\u2019s enjoyment of an unusual topic",
-          "To explain why Francie prefers reading over other activities",
-          "To portray Francie\u2019s determination to meet a goal",
-          "To describe a book that Francie greatly admires"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q9",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 9,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best states the main purpose of the text?",
-        "choices": [
-          "To argue for the significance of new findings amid an ongoing debate among researchers",
-          "To discuss the advantages and disadvantages of the method used in an experiment",
-          "To summarize two competing hypotheses and a major finding associated with each one",
-          "To describe an experiment whose results cast doubt on an established hypothesis"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q10",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 10,
-        "skill": "Official SAT Question",
-        "correct": 0,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best describes the function of the underlined portion?",
-        "choices": [
-          "It asserts that in medieval Europe steam baths were more popular in rural areas than in urban ones.",
-          "It describes a limitation of earlier historians\u2019 studies of medieval European bathing habits.",
-          "It concedes that not all people in medieval Europe had access to public bathhouses.",
-          "It explains why Janega decided to study the popularity of public bathhouses in medieval Europe."
-        ],
-        "category": "Math",
-        "id": "test6_m1_q11",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 11,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best describes the function of the underlined portion in the text as a whole?",
-        "choices": [
-          "It presents a trend in scholarship on the Chicano movement that the text claims has been reevaluated by researchers in light of Herrera\u2019s work on the movement\u2019s participants.",
-          "It identifies an aspect of the Chicano movement that the text implies was overemphasized by scholars due to their own political orientations.",
-          "It describes a common approach to studying the Chicano movement that, according to the text, obscures the ideological diversity of the movement\u2019s participants.",
-          "It summarizes the conventional method for analyzing the Chicano movement, which the text suggests creates a misleading impression of the effectiveness of neighborhood institutions and projects."
-        ],
-        "category": "Math",
-        "id": "test6_m1_q12",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 12,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "medium"
-      },
-      {
-        "text": "Which choice best states the main idea of the text?",
-        "choices": [
-          "Although it may seem surprising that foreign investment declines in developing countries as natural-resource extraction makes up a larger share of those countries\u2019 economies, that decline happens because resource extraction requires initial investments too large for foreign investors to supply.",
-          "Although developing countries tend to become less dependent on foreign investment as natural-resource industries make up a larger share of their economies, this change may not occur if the boom-bust cycle of those industries destabilizes local currencies or increases countries\u2019 vulnerability to external shocks.",
-          "Although one might expect that foreign investment would increase as natural-resource extraction makes up a larger share of developing countries\u2019 economies, the opposite happens because heavy reliance on natural resources can lead to unattractive conditions for investors.",
-          "Although foreign investors tend to avoid initial investments in natural-resource industries in developing countries, foreign investment may increase significantly as those industries stabilize and the risks associated with them decline."
-        ],
-        "category": "Math",
-        "id": "test6_m1_q13",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 13,
-        "skill": "Official SAT Question",
-        "correct": 0,
         "difficulty": "medium"
       },
       {
@@ -6268,6 +6166,193 @@
       }
     ],
     "hard": [
+      {
+        "text": "In the given system of equations, a is a constant. The graphs of the equations in the given system intersect at exactly one point, (x, y), in the xy-plane. What is the value of x ?",
+        "choices": [
+          "\u22128",
+          "\u22126",
+          "6",
+          "8"
+        ],
+        "category": "Math",
+        "id": "test4_r2_q21",
+        "test": "SAT Practice Test 4",
+        "module": 2,
+        "questionNumber": 21,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "hard"
+      },
+      {
+        "text": "What is the solution (x, y) to the given system of equations?",
+        "choices": [
+          "(15, 3)",
+          "(16, 2)",
+          "(17, 1)",
+          "(18, 0)"
+        ],
+        "category": "Math",
+        "id": "test4_r2_q24",
+        "test": "SAT Practice Test 4",
+        "module": 2,
+        "questionNumber": 24,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "hard"
+      },
+      {
+        "text": "The function gives the total number of people on a company retreat with x managers. What is the total number of people on a company retreat with 7 managers? h(x) = x\u00b2 \u2212 3 Which table gives three values of x and their corresponding values of h(x) for the given function h? +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   4            |   5            |   6             | +-----------------+----------------+----------------+-----------------+",
+        "choices": [
+          " +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   \u22122           |   1            |   6             | +-----------------+----------------+----------------+-----------------+",
+          " +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   \u22121           |   1            |   3             | +-----------------+----------------+----------------+-----------------+",
+          " +-----------------+----------------+----------------+-----------------+ |   x             |   1            |   2            |   3             | +=================+================+================+=================+ |   h(x)          |   \u22122           |   1            |   3             | +-----------------+----------------+----------------+-----------------+",
+          ""
+        ],
+        "category": "Math",
+        "id": "test4_r2_q25",
+        "test": "SAT Practice Test 4",
+        "module": 2,
+        "questionNumber": 25,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "hard"
+      },
+      {
+        "text": "The function f is defined by f (x) = 270(0.1)^(x) . What is the value of f (0) ?",
+        "choices": [
+          "0",
+          "1",
+          "27",
+          "270"
+        ],
+        "category": "Math",
+        "id": "test4_r2_q26",
+        "test": "SAT Practice Test 4",
+        "module": 2,
+        "questionNumber": 26,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "hard"
+      },
+      {
+        "text": "What is the value of tan 3 ?",
+        "choices": [
+          "[]\u2212 []3",
+          "\u2212 3 []3",
+          "3",
+          "[]"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q21",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 21,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "hard"
+      },
+      {
+        "text": "The function g is defined by g(x) = (x + 14)(t \u2212 x), where t is a constant. In the xy-plane, the graph of y = g(x) passes through the point (24, 0). What is the value of g(0) ? A right rectangular prism has a height of 9 inches. The length of the prism\u2019s base is x inches, which is 7 inches more than the width of the prism\u2019s base. Which function V gives the volume of the prism, in cubic inches, in terms of the length of the prism\u2019s base?",
+        "choices": [
+          "V(x) = x(x + 9)(x + 7)",
+          "V(x) = x(x + 9)(x \u2212 7)",
+          "V(x) = 9x(x + 7)",
+          "V(x) = 9x(x \u2212 7)"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q23",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 23,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "hard"
+      },
+      {
+        "text": "60. What is the value of x ?",
+        "choices": [
+          "12",
+          "15",
+          "240",
+          "340"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q24",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 24,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "hard"
+      },
+      {
+        "text": "What is the sum of all possible values of w ? The function f is defined by f (x) = ax2 + bx + c, where a, b, and c are constants. The graph of y = f (x) in the xy-plane passes through the points (7, 0) and (\u22123, 0). If a is an integer greater than 1, which of the following could be the value of a + b ?",
+        "choices": [
+          "\u22126",
+          "\u22123",
+          "4",
+          "5"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q25",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 25,
+        "skill": "Official SAT Question",
+        "correct": 2,
+        "difficulty": "hard"
+      },
+      {
+        "text": "The function f is defined by f (x) = 4x \u2212 3. What is the value of f (10) ?",
+        "choices": [
+          "\u221230",
+          "37",
+          "40",
+          "43"
+        ],
+        "category": "Math",
+        "id": "test5_r2_q26",
+        "test": "SAT Practice Test 5",
+        "module": 2,
+        "questionNumber": 26,
+        "skill": "Official SAT Question",
+        "correct": 3,
+        "difficulty": "hard"
+      },
+      {
+        "text": "y = f (x). What is the y-intercept of the graph?",
+        "choices": [
+          "(0, \u22121)",
+          "(0, \u22124)",
+          "(0, 1)",
+          "(0, 4)"
+        ],
+        "category": "Math",
+        "id": "test6_r2_q20",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 20,
+        "skill": "Official SAT Question",
+        "correct": 0,
+        "difficulty": "hard"
+      },
+      {
+        "text": "(x, y). What is the value of y ? The ratio of the length of line segment XY to the length of line segment ZV is 6 to 1. If the length of line segment XY is 102 inches, what is the length, in inches, of line segment ZV ?",
+        "choices": [
+          "17",
+          "96",
+          "102",
+          "612"
+        ],
+        "category": "Math",
+        "id": "test6_r2_q21",
+        "test": "SAT Practice Test 6",
+        "module": 2,
+        "questionNumber": 21,
+        "skill": "Official SAT Question",
+        "correct": 1,
+        "difficulty": "hard"
+      },
       {
         "id": "math_algebra_h1",
         "category": "Math",
@@ -6506,23 +6591,6 @@
         "difficulty": "hard"
       },
       {
-        "text": "[]Which choice best describes data from the graph that support Ib\u00e1\u00f1ez and colleagues\u2019 conclusion?",
-        "choices": [
-          "[][][][]Growth with nitrogen under the current climate exceeded growth with nitrogen under moderate change, but the latter exceeded growth without nitrogen under extreme change.",
-          "[][]Growth without nitrogen under the current climate exceeded growth without nitrogen under moderate change, but the latter exceeded growth with nitrogen under extreme change. []",
-          "Growth with nitrogen under moderate change exceeded growth without nitrogen under moderate change, but the latter exceeded growth without nitrogen under extreme change.",
-          "[]Growth with nitrogen under moderate change exceeded growth without nitrogen under the current climate, but the latter exceeded growth with nitrogen under extreme change."
-        ],
-        "category": "Math",
-        "id": "test5_m1_q18",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 18,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "hard"
-      },
-      {
         "text": "Which quotation from \u201cPoetry\u201d most effectively illustrates the claim?",
         "choices": [
           "\u201cnor is it valid / to discriminate against \u2018business documents and / school-books\u2019; all these phenomena are important.\u201d",
@@ -6540,23 +6608,6 @@
         "difficulty": "hard"
       },
       {
-        "text": "Which choice best describes data from the table that support Persad and her colleagues\u2019 conclusion?",
-        "choices": [
-          "If baseline precipitation is somewhat concentrated, the amount of water being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater, whereas the amount of water entering aquifers will increase 11.0% if baseline precipitation is evenly distributed.",
-          "If baseline precipitation is somewhat concentrated, water use for irrigation will increase only slightly, whereas it will increase 9.0% for surface water and 7.9% for groundwater if baseline precipitation is evenly distributed.",
-          "If baseline precipitation is somewhat concentrated, the amount of water entering aquifers will increase 4.9%, while the amount being used for irrigation will increase 0.4% for surface water and 0.9% for groundwater.",
-          "If baseline precipitation is somewhat concentrated, water use for irrigation will decline by a small amount, whereas it will increase 11.0% for surface water and 9.0% for groundwater if baseline precipitation is evenly distributed."
-        ],
-        "category": "Math",
-        "id": "test5_m1_q20",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 20,
-        "skill": "Official SAT Question",
-        "correct": 3,
-        "difficulty": "hard"
-      },
-      {
         "text": "Which choice most logically completes the text?",
         "choices": [
           "the English dialects spoken in the Upland South acquired their emphasis on the \u201cr\u201d sound from dialects spoken in Scotland.",
@@ -6571,23 +6622,6 @@
         "questionNumber": 21,
         "skill": "Official SAT Question",
         "correct": 0,
-        "difficulty": "hard"
-      },
-      {
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "published",
-          "publishing",
-          "having published",
-          "to publish"
-        ],
-        "category": "Math",
-        "id": "test5_m1_q22",
-        "test": "SAT Practice Test 5",
-        "module": 1,
-        "questionNumber": 22,
-        "skill": "Official SAT Question",
-        "correct": 1,
         "difficulty": "hard"
       },
       {
@@ -6673,40 +6707,6 @@
         "questionNumber": 20,
         "skill": "Official SAT Question",
         "correct": 1,
-        "difficulty": "hard"
-      },
-      {
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "do they affect our weather.",
-          "they do affect our weather.",
-          "do they affect our weather?",
-          "they do affect our weather?"
-        ],
-        "category": "Math",
-        "id": "test6_m1_q21",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 21,
-        "skill": "Official SAT Question",
-        "correct": 2,
-        "difficulty": "hard"
-      },
-      {
-        "text": "Which choice completes the text so that it conforms to the conventions of Standard English?",
-        "choices": [
-          "Matthew Henson made several treks across Greenland between 1891 and 1909.",
-          "1891 and 1909 were the years between which Matthew Henson made several treks across Greenland.",
-          "Greenland was where Matthew Henson made several treks between 1891 and 1909.",
-          "several treks across Greenland were made by Matthew Henson between 1891 and 1909."
-        ],
-        "category": "Math",
-        "id": "test6_m1_q22",
-        "test": "SAT Practice Test 6",
-        "module": 1,
-        "questionNumber": 22,
-        "skill": "Official SAT Question",
-        "correct": 0,
         "difficulty": "hard"
       }
     ]
