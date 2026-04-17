@@ -10,6 +10,7 @@
     <!-- jsPDF library for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
+    <script src="google-drive-integration-minimal.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -2368,90 +2369,11 @@
         // QUESTION LOADING
         // ==========================================
 
-
-        // ============================================
-        // GOOGLE DRIVE INTEGRATION - AUTO REAL-TIME SYNC
-        // ============================================
-        // ⚙️ ADD YOUR GOOGLE CREDENTIALS HERE:
-        const GOOGLE_DRIVE_API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
-        const GOOGLE_DRIVE_CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
-        
-        const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
-        let gapiLoaded = false;
-        
-        // Initialize Google Drive API (runs automatically)
-        async function initGoogleDrive() {
-            return new Promise((resolve) => {
-                gapi.load('client', async () => {
-                    try {
-                        await gapi.client.init({
-                            apiKey: GOOGLE_DRIVE_API_KEY,
-                            discoveryDocs: [DISCOVERY_DOC],
-                        });
-                        gapiLoaded = true;
-                        console.log('✅ Google Drive ready - will load questions from Drive');
-                        resolve(true);
-                    } catch (error) {
-                        console.log('ℹ️  Google Drive not configured - using local questions file');
-                        resolve(false);
-                    }
-                });
-            });
-        }
-        
-        // Try to load questions from Google Drive
-        async function tryLoadFromDrive() {
-            if (!gapiLoaded) return null;
-            
-            try {
-                const response = await gapi.client.drive.files.list({
-                    q: "name='questions-adaptive.json' and trashed=false",
-                    spaces: 'drive',
-                    fields: 'files(id, name)',
-                    pageSize: 1
-                });
-                
-                const files = response.result.files;
-                if (files && files.length > 0) {
-                    const fileResponse = await gapi.client.drive.files.get({
-                        fileId: files[0].id,
-                        alt: 'media'
-                    });
-                    
-                    console.log('✅ Loaded questions from Google Drive (real-time)');
-                    return JSON.parse(fileResponse.body);
-                }
-            } catch (error) {
-                console.log('ℹ️  Using local questions file');
-            }
-            
-            return null;
-        }
-        
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', async () => {
-            await initGoogleDrive();
-        });
-        
         async function loadQuestions() {
             const loadingScreen = document.getElementById('loadingScreen');
             loadingScreen.classList.remove('hidden');
 
             try {
-                // STEP 1: Try Google Drive first (if tutor added questions)
-                const driveData = await tryLoadFromDrive();
-                
-                if (driveData) {
-                    // Success! Using questions from Google Drive
-                    if (driveData.passages) {
-                        questionBank.passages = driveData.passages || [];
-                        questionBank.standalone_reading = driveData.standalone_reading || { easy: [], medium: [], hard: [] };
-                        questionBank.math = driveData.math || { easy: [], medium: [], hard: [] };
-                        questionBank.math_gridin = driveData.math_gridin || { easy: [], medium: [], hard: [] };
-                    }
-                    // Skip to the end (after question loading logic)
-                } else {
-                // STEP 2: Fall back to local files (if Drive unavailable)
                 // Try to load from separate files first (preferred method)
                 // This allows for better organization and maintenance
                 
@@ -2517,7 +2439,6 @@
                         questionBank.passages = [];
                     }
                 }
-                } // End of else block (Drive fallback)
                 
 //                console.log('Question bank loaded');
 //                console.log('Passages:', questionBank.passages.length);
