@@ -9,19 +9,6 @@
     <title>SAT Practice Simulator | MathMeg</title>
     <!-- jsPDF library for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
-        <script src="google-drive-integration.js"></script>
-    
-    <!-- Your existing test code -->
-    <script>
-        window.addEventListener('DOMContentLoaded', async () => {
-            // Load questions from Google Drive
-            const questions = await initializeSATTest();
-            
-            // Start your test
-            startTest(questions);
-        });
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -2707,7 +2694,7 @@
 
         function selectModule1Questions() {
             const module = testState.currentSection === 'reading' ? 'reading_module1' : 'math_module1';
-            const questionCount = testState.currentSection === 'reading' ? 27 : 22;
+            const questionCount = testState.currentSection === 'reading' ? 33 : 27;
             
             let selectedQuestions = [];
             
