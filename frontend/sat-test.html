@@ -2373,8 +2373,8 @@
         // GOOGLE DRIVE INTEGRATION - AUTO REAL-TIME SYNC
         // ============================================
         // ⚙️ ADD YOUR GOOGLE CREDENTIALS HERE:
-        const GOOGLE_DRIVE_API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
-        const GOOGLE_DRIVE_CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
+        const GOOGLE_DRIVE_API_KEY = 'YOUR_API_KEY_HERE';
+        const GOOGLE_DRIVE_CLIENT_ID = 'YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
         
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
         let gapiLoaded = false;
@@ -2436,73 +2436,48 @@
         let resultsFileId = null;
         
         // Submit test results to Google Drive
-        async function submitResultsToDrive(scores, testData) {
-            if (!gapiLoaded) {
-                console.log('ℹ️  Google Drive not available - results saved locally only');
-                return false;
+        // Save results to localStorage (tutor portal will sync to Drive)
+        function submitResultsToDrive(scores, testData) {
+            console.log('💾 Saving test results...');
+            
+            // Create result object
+            const newResult = {
+                id: 'result_' + Date.now(),
+                studentName: testData.studentName,
+                testName: testData.testType === 'full' ? 'Full SAT Practice' : 
+                          testData.testType === 'reading' ? 'Reading & Writing Only' : 'Math Only',
+                score: Math.round((testData.correctCount / testData.totalQuestions) * 100),
+                readingScore: scores.reading,
+                mathScore: scores.math,
+                date: new Date().toISOString(),
+                timeSpent: Math.floor((Date.now() - testState.startTime) / 60000) + ' min',
+                totalQuestions: testData.totalQuestions,
+                correctCount: testData.correctCount,
+                answers: testData.answers
+            };
+            
+            // Get existing results from localStorage
+            let allResults = [];
+            try {
+                const stored = localStorage.getItem('mathmeg_student_results');
+                if (stored) {
+                    allResults = JSON.parse(stored);
+                }
+            } catch (e) {
+                console.error('Error loading results:', e);
             }
             
-            try {
-                console.log('📤 Submitting results to Google Drive...');
-                
-                // Find student-results.json file
-                const response = await gapi.client.drive.files.list({
-                    q: "name='student-results.json' and trashed=false",
-                    spaces: 'drive',
-                    fields: 'files(id, name)',
-                    pageSize: 1
-                });
-                
-                const files = response.result.files;
-                let existingResults = [];
-                
-                if (files && files.length > 0) {
-                    resultsFileId = files[0].id;
-                    const fileResponse = await gapi.client.drive.files.get({
-                        fileId: resultsFileId,
-                        alt: 'media'
-                    });
-                    existingResults = JSON.parse(fileResponse.body);
-                } else {
-                    console.log('ℹ️  Results file not found - tutor needs to connect Drive first');
-                    return false;
-                }
-                
-                // Add new result
-                const newResult = {
-                    id: 'result_' + Date.now(),
-                    studentName: testData.studentName,
-                    testName: testData.testType === 'full' ? 'Full SAT Practice' : testData.testType === 'reading' ? 'Reading & Writing Only' : 'Math Only',
-                    score: Math.round((scores.total / (scores.reading + scores.math)) * 100),
-                    readingScore: scores.reading,
-                    mathScore: scores.math,
-                    date: new Date().toISOString(),
-                    timeSpent: Math.floor((Date.now() - testState.startTime) / 60000) + ' min',
-                    totalQuestions: testData.totalQuestions,
-                    correctCount: testData.correctCount,
-                    answers: testData.answers
-                };
-                
-                existingResults.push(newResult);
-                
-                // Update file in Google Drive
-                const updatedContent = JSON.stringify(existingResults, null, 2);
-                await fetch(`https://www.googleapis.com/upload/drive/v3/files/${resultsFileId}?uploadType=media`, {
-                    method: 'PATCH',
-                    headers: new Headers({
-                        'Authorization': 'Bearer ' + gapi.client.getToken().access_token,
-                        'Content-Type': 'application/json'
-                    }),
-                    body: updatedContent
-                });
-                
-                console.log('✅ Results submitted to Google Drive!');
-                console.log('📊 Score:', newResult.score + '%');
-                return true;
-            } catch (error) {
-                console.error('❌ Error submitting to Drive:', error);
-                return false;
-            }
+            // Add new result
+            allResults.push(newResult);
+            
+            // Save back to localStorage
+            localStorage.setItem('mathmeg_student_results', JSON.stringify(allResults));
+            
+            console.log('✅ Results saved successfully!');
+            console.log('📊 Score:', newResult.score + '%');
+            console.log('ℹ️  Tutor can view results in the portal');
+            
+            return true;
         }
         
         // Initialize on page load

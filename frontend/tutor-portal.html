@@ -387,13 +387,21 @@
     <!-- Header -->
     <div class="header">
         <div class="header-content">
-            <div>
-                <h1>🎓 Enhanced Tutor Portal</h1>
-                <p>Manage questions & track student results in real-time</p>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://i.ibb.co/qkF7VHy/mathmeg-logo.png" alt="MathMeg" style="height: 50px; width: auto; display: block;">
+                <div>
+                    <h1>MathMeg Tutor Portal</h1>
+                    <p>Manage questions & track student results in real-time</p>
+                </div>
             </div>
-            <div class="drive-badge">
-                <div class="status-dot" id="driveStatus"></div>
-                <span id="driveText">Not Connected</span>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="drive-badge">
+                    <div class="status-dot" id="driveStatus"></div>
+                    <span id="driveText">Not Connected</span>
+                </div>
+                <button onclick="logout()" style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.3s; display: inline-block;">
+                    🚪 Logout
+                </button>
             </div>
         </div>
     </div>
@@ -441,7 +449,7 @@
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <button class="btn btn-primary" onclick="switchTab('questions')">➕ Add Question</button>
                 <button class="btn btn-primary" onclick="switchTab('results')">📊 View Results</button>
-                <button class="btn btn-success" onclick="connectGoogleDrive()">☁️ Connect Google Drive</button>
+                <!-- Auto-connecting to Google Drive on login -->
                 <button class="btn btn-secondary" onclick="exportResults()">📥 Export Results</button>
             </div>
         </div>
@@ -474,6 +482,7 @@
                     <option value="month">This Month</option>
                 </select>
                 <button class="btn btn-primary" onclick="loadResults()">🔄 Refresh</button>
+                <button class="btn btn-success" onclick="downloadResultPDF()">📄 Download PDF</button>
             </div>
             
             <!-- Results Table -->
@@ -669,8 +678,8 @@
         // ============================================
         // ⚙️ CONFIGURATION - REPLACE WITH YOUR CREDENTIALS
         // ============================================
-        const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
-        const API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
+        const CLIENT_ID = 'YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
+        const API_KEY = 'YOUR_API_KEY_HERE';
         
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
         const SCOPES = 'https://www.googleapis.com/auth/drive.file';
@@ -688,6 +697,64 @@
             math_gridin: { easy: [], medium: [], hard: [] }
         };
         let studentResults = [];
+        
+        // Load student results from localStorage on page load
+        function loadStudentResultsFromStorage() {
+            let results = [];
+            
+            // Load from new format (mathmeg_student_results)
+            const stored = localStorage.getItem('mathmeg_student_results');
+            if (stored) {
+                try {
+                    results = JSON.parse(stored);
+                    console.log('✅ Loaded', results.length, 'student results from storage');
+                } catch (e) {
+                    console.error('Error loading results:', e);
+                }
+            }
+            
+            // Also load from old format (individual test records)
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('mathmeg_test_')) {
+                    try {
+                        const test = JSON.parse(localStorage.getItem(key));
+                        // Convert old format to new format
+                        const converted = {
+                            id: test.id || key,
+                            studentName: test.studentName || 'Unknown',
+                            testName: test.testType === 'full' ? 'Full SAT Practice' : 
+                                     test.testType === 'reading' ? 'Reading & Writing Only' : 'Math Only',
+                            score: Math.round(((test.readingAnswers || []).filter(a => a.correct).length + 
+                                              (test.mathAnswers || []).filter(a => a.correct).length) / 
+                                             ((test.readingAnswers || []).length + (test.mathAnswers || []).length) * 100) || 0,
+                            readingScore: test.rwScore || test.readingScore || 0,
+                            mathScore: test.mathScore || 0,
+                            date: test.date || new Date().toISOString(),
+                            timeSpent: Math.floor((test.duration || 0) / 60) + ' min',
+                            totalQuestions: (test.readingAnswers || []).length + (test.mathAnswers || []).length,
+                            correctCount: (test.readingAnswers || []).filter(a => a.correct).length + 
+                                        (test.mathAnswers || []).filter(a => a.correct).length,
+                            answers: [...(test.readingAnswers || []), ...(test.mathAnswers || [])]
+                        };
+                        
+                        // Add if not already in results
+                        if (!results.find(r => r.id === converted.id)) {
+                            results.push(converted);
+                        }
+                    } catch (e) {
+                        // Skip invalid entries
+                    }
+                }
+            }
+            
+            studentResults = results;
+            console.log('📊 Total results loaded:', studentResults.length);
+            return studentResults;
+        }
+        
+        // Load results on page load
+        loadStudentResultsFromStorage();
         let currentQuestionType = null;
         let driveFileId = null;
         let resultsFileId = null;
@@ -714,6 +781,7 @@
             
             // Load data for specific tabs
             if (tabName === 'results') {
+                loadStudentResultsFromStorage(); // Refresh from storage
                 loadResults();
             } else if (tabName === 'dashboard') {
                 loadDashboard();
@@ -1228,6 +1296,67 @@
             loadDashboard();
             updateQuestionStats();
         });
+    
+        
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear session
+                sessionStorage.clear();
+                localStorage.removeItem('mathmeg_user_name');
+                localStorage.removeItem('mathmeg_user_role');
+                
+                // Redirect to login
+                window.location.href = 'login.html';
+            }
+        }
+        
+
+        // Download individual student result as PDF
+        function downloadResultPDF() {
+            if (studentResults.length === 0) {
+                alert('No results to download!');
+                return;
+            }
+            
+            // For now, download all results as JSON
+            // In production, you'd use jsPDF library
+            const dataStr = JSON.stringify(studentResults, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `student-results-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            URL.revokeObjectURL(url);
+            
+            alert('Results downloaded! (In production, this would be a PDF)');
+        }
+        
+        // View individual result and download as PDF
+        function viewResult(resultId) {
+            const result = studentResults.find(r => r.id === resultId);
+            if (!result) {
+                alert('Result not found!');
+                return;
+            }
+            
+            // Show result details
+            alert(`Student: ${result.studentName}\nTest: ${result.testName}\nScore: ${result.score}%\nReading: ${result.readingScore}\nMath: ${result.mathScore}\nDate: ${new Date(result.date).toLocaleDateString()}`);
+            
+            // Optionally download this result
+            if (confirm('Download this result as PDF?')) {
+                const dataStr = JSON.stringify(result, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `${result.studentName}-${result.testName}-${new Date(result.date).toISOString().split('T')[0]}.json`;
+                link.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
     </script>
 </body>
 </html>
