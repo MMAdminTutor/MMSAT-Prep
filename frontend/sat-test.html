@@ -2428,6 +2428,83 @@
             return null;
         }
         
+
+        // ============================================
+        // STUDENT RESULTS SUBMISSION TO GOOGLE DRIVE
+        // ============================================
+        
+        let resultsFileId = null;
+        
+        // Submit test results to Google Drive
+        async function submitResultsToDrive(scores, testData) {
+            if (!gapiLoaded) {
+                console.log('ℹ️  Google Drive not available - results saved locally only');
+                return false;
+            }
+            
+            try {
+                console.log('📤 Submitting results to Google Drive...');
+                
+                // Find student-results.json file
+                const response = await gapi.client.drive.files.list({
+                    q: "name='student-results.json' and trashed=false",
+                    spaces: 'drive',
+                    fields: 'files(id, name)',
+                    pageSize: 1
+                });
+                
+                const files = response.result.files;
+                let existingResults = [];
+                
+                if (files && files.length > 0) {
+                    resultsFileId = files[0].id;
+                    const fileResponse = await gapi.client.drive.files.get({
+                        fileId: resultsFileId,
+                        alt: 'media'
+                    });
+                    existingResults = JSON.parse(fileResponse.body);
+                } else {
+                    console.log('ℹ️  Results file not found - tutor needs to connect Drive first');
+                    return false;
+                }
+                
+                // Add new result
+                const newResult = {
+                    id: 'result_' + Date.now(),
+                    studentName: testData.studentName,
+                    testName: testData.testType === 'full' ? 'Full SAT Practice' : testData.testType === 'reading' ? 'Reading & Writing Only' : 'Math Only',
+                    score: Math.round((scores.total / (scores.reading + scores.math)) * 100),
+                    readingScore: scores.reading,
+                    mathScore: scores.math,
+                    date: new Date().toISOString(),
+                    timeSpent: Math.floor((Date.now() - testState.startTime) / 60000) + ' min',
+                    totalQuestions: testData.totalQuestions,
+                    correctCount: testData.correctCount,
+                    answers: testData.answers
+                };
+                
+                existingResults.push(newResult);
+                
+                // Update file in Google Drive
+                const updatedContent = JSON.stringify(existingResults, null, 2);
+                await fetch(`https://www.googleapis.com/upload/drive/v3/files/${resultsFileId}?uploadType=media`, {
+                    method: 'PATCH',
+                    headers: new Headers({
+                        'Authorization': 'Bearer ' + gapi.client.getToken().access_token,
+                        'Content-Type': 'application/json'
+                    }),
+                    body: updatedContent
+                });
+                
+                console.log('✅ Results submitted to Google Drive!');
+                console.log('📊 Score:', newResult.score + '%');
+                return true;
+            } catch (error) {
+                console.error('❌ Error submitting to Drive:', error);
+                return false;
+            }
+        }
+        
         // Initialize on page load
         window.addEventListener('DOMContentLoaded', async () => {
             await initGoogleDrive();
@@ -3578,11 +3655,20 @@
             // Save with key format tutor portal expects
             localStorage.setItem('mathmeg_test_' + testId, JSON.stringify(testRecord));
             
-            console.log('✅ Test saved for tutor portal:', testId);
-            console.log('   Student:', userName);
-            console.log('   Total Score:', scores.total);
-            console.log('   Reading:', readingAnswers.length, 'questions');
-            console.log('   Math:', mathAnswers.length, 'questions');
+            console.log('✅ Test saved locally:', testId);
+            
+            // Calculate submission data
+            const totalQuestions = readingAnswers.length + mathAnswers.length;
+            const correctCount = readingAnswers.filter(a => a.correct).length + mathAnswers.filter(a => a.correct).length;
+            
+            // Also submit to Google Drive
+            submitResultsToDrive(scores, {
+                studentName: userName,
+                testType: testState.testType,
+                totalQuestions: totalQuestions,
+                correctCount: correctCount,
+                answers: [...readingAnswers, ...mathAnswers]
+            });
         }
 
 // Auto-save test to backend

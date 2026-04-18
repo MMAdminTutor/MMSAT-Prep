@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Tutor Portal - SAT Question Bank & Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 { font-size: 28px; font-weight: 700; }
+        .header p { opacity: 0.9; font-size: 14px; margin-top: 5px; }
+        
+        .drive-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f56565;
+        }
+        
+        .status-dot.connected {
+            background: #48bb78;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            padding: 0 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .nav-tabs-list {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+        }
+        
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #718096;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav-tab:hover {
+            color: #667eea;
+            background: #f7fafc;
+        }
+        
+        .nav-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: #f7fafc;
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        
+        .card h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover:not(:disabled) {
+            background: #5a67d8;
+            transform: translateY(-1px);
+        }
+        
+        .btn-success {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #38a169;
+        }
+        
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+        
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+        
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+        
+        /* Forms */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        /* Results Table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .results-table th,
+        .results-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .results-table th {
+            background: #f7fafc;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        
+        .results-table tr:hover {
+            background: #f7fafc;
+        }
+        
+        .score-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .score-excellent { background: #c6f6d5; color: #22543d; }
+        .score-good { background: #bee3f8; color: #2c5282; }
+        .score-average { background: #feebc8; color: #744210; }
+        .score-poor { background: #fed7d7; color: #742a2a; }
+        
+        /* Alerts */
+        .alert {
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideIn 0.3s;
+        }
+        
+        .alert.show { display: block; }
+        .alert-success { background: #c6f6d5; color: #22543d; border-left: 4px solid #48bb78; }
+        .alert-error { background: #fed7d7; color: #742a2a; border-left: 4px solid #f56565; }
+        .alert-info { background: #bee3f8; color: #2c5282; border-left: 4px solid #4299e1; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Type Cards */
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .type-card {
+            border: 3px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .type-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .type-card.active {
+            border-color: #667eea;
+            background: #f7fafc;
+        }
+        
+        .type-icon { font-size: 42px; margin-bottom: 15px; }
+        .type-title { font-weight: 600; color: #2d3748; margin-bottom: 8px; }
+        .type-desc { color: #718096; font-size: 13px; }
+        
+        /* Choices */
+        .choice-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .choice-row input[type="radio"] { width: 20px; height: 20px; cursor: pointer; }
+        .choice-label { font-weight: 700; color: #667eea; min-width: 25px; }
+        .choice-row input[type="text"] { flex: 1; }
+        
+        .hidden { display: none !important; }
+        
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-bar input,
+        .filter-bar select {
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+        
+        .filter-bar input:focus,
+        .filter-bar select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #718096;
+        }
+        
+        .empty-state-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .type-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <h1>🎓 Enhanced Tutor Portal</h1>
+                <p>Manage questions & track student results in real-time</p>
+            </div>
+            <div class="drive-badge">
+                <div class="status-dot" id="driveStatus"></div>
+                <span id="driveText">Not Connected</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <ul class="nav-tabs-list">
+            <li class="nav-tab active" onclick="switchTab('dashboard')">📊 Dashboard</li>
+            <li class="nav-tab" onclick="switchTab('results')">📈 Student Results</li>
+            <li class="nav-tab" onclick="switchTab('questions')">📚 Question Bank</li>
+            <li class="nav-tab" onclick="switchTab('settings')">⚙️ Settings</li>
+        </ul>
+    </div>
+    
+    <!-- Dashboard Tab -->
+    <div id="dashboardTab" class="tab-content active">
+        <!-- Alerts -->
+        <div id="alertSuccess" class="alert alert-success"></div>
+        <div id="alertError" class="alert alert-error"></div>
+        <div id="alertInfo" class="alert alert-info"></div>
+        
+        <!-- Overview Stats -->
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value" id="totalStudents">0</div>
+                <div class="stat-label">Total Students</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="totalTests">0</div>
+                <div class="stat-label">Tests Taken</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="avgScore">0%</div>
+                <div class="stat-label">Average Score</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="totalQuestions">0</div>
+                <div class="stat-label">Questions</div>
+            </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="card">
+            <h2>🚀 Quick Actions</h2>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="switchTab('questions')">➕ Add Question</button>
+                <button class="btn btn-primary" onclick="switchTab('results')">📊 View Results</button>
+                <button class="btn btn-success" onclick="connectGoogleDrive()">☁️ Connect Google Drive</button>
+                <button class="btn btn-secondary" onclick="exportResults()">📥 Export Results</button>
+            </div>
+        </div>
+        
+        <!-- Recent Results -->
+        <div class="card">
+            <h2>📋 Recent Test Results</h2>
+            <div id="recentResultsContainer"></div>
+        </div>
+    </div>
+    
+    <!-- Student Results Tab -->
+    <div id="resultsTab" class="tab-content">
+        <div class="card">
+            <h2>📈 Student Test Results</h2>
+            
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <input type="text" id="searchStudent" placeholder="🔍 Search student..." style="flex: 1;">
+                <select id="filterTest">
+                    <option value="">All Tests</option>
+                    <option value="practice1">Practice Test 1</option>
+                    <option value="practice2">Practice Test 2</option>
+                    <option value="practice3">Practice Test 3</option>
+                </select>
+                <select id="filterDate">
+                    <option value="">All Dates</option>
+                    <option value="today">Today</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                </select>
+                <button class="btn btn-primary" onclick="loadResults()">🔄 Refresh</button>
+            </div>
+            
+            <!-- Results Table -->
+            <div id="resultsTableContainer">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Test</th>
+                            <th>Score</th>
+                            <th>Reading</th>
+                            <th>Math</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Results loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Question Bank Tab -->
+    <div id="questionsTab" class="tab-content">
+        <!-- Question Stats -->
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value" id="qTotalQuestions">0</div>
+                <div class="stat-label">Total Questions</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="qReadingQuestions">0</div>
+                <div class="stat-label">Reading</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="qMathQuestions">0</div>
+                <div class="stat-label">Math MC</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="qGridinQuestions">0</div>
+                <div class="stat-label">Grid-In</div>
+            </div>
+        </div>
+        
+        <!-- Add Question Section -->
+        <div class="card">
+            <h2>➕ Add New Question</h2>
+            
+            <div class="type-grid">
+                <div class="type-card" onclick="selectQuestionType('general')">
+                    <div class="type-icon">📝</div>
+                    <div class="type-title">General Question</div>
+                    <div class="type-desc">Standard multiple choice</div>
+                </div>
+                <div class="type-card" onclick="selectQuestionType('passage')">
+                    <div class="type-icon">📖</div>
+                    <div class="type-title">Passage Question</div>
+                    <div class="type-desc">Reading comprehension</div>
+                </div>
+                <div class="type-card" onclick="selectQuestionType('gridin')">
+                    <div class="type-icon">🔢</div>
+                    <div class="type-title">Grid-In Question</div>
+                    <div class="type-desc">Math numeric answer</div>
+                </div>
+            </div>
+            
+            <!-- Question Form -->
+            <form id="questionForm" class="hidden" onsubmit="saveQuestion(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="reading">Reading & Writing</option>
+                            <option value="math">Math</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Difficulty *</label>
+                        <select id="difficulty" required>
+                            <option value="">Select Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Skill/Topic</label>
+                        <input type="text" id="skill" placeholder="e.g., Algebra, Vocabulary">
+                    </div>
+                </div>
+                
+                <!-- Passage Section -->
+                <div id="passageSection" class="hidden">
+                    <div class="form-group">
+                        <label>Passage Title</label>
+                        <input type="text" id="passageTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>Passage Text *</label>
+                        <textarea id="passageText" rows="6"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Question Text *</label>
+                    <textarea id="questionText" required rows="3"></textarea>
+                </div>
+                
+                <!-- Multiple Choice -->
+                <div id="mcSection">
+                    <div class="choice-row">
+                        <input type="radio" name="correct" value="0" required>
+                        <span class="choice-label">A:</span>
+                        <input type="text" id="choiceA" required>
+                    </div>
+                    <div class="choice-row">
+                        <input type="radio" name="correct" value="1">
+                        <span class="choice-label">B:</span>
+                        <input type="text" id="choiceB" required>
+                    </div>
+                    <div class="choice-row">
+                        <input type="radio" name="correct" value="2">
+                        <span class="choice-label">C:</span>
+                        <input type="text" id="choiceC" required>
+                    </div>
+                    <div class="choice-row">
+                        <input type="radio" name="correct" value="3">
+                        <span class="choice-label">D:</span>
+                        <input type="text" id="choiceD" required>
+                    </div>
+                </div>
+                
+                <!-- Grid-In -->
+                <div id="gridinSection" class="hidden">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Correct Answer *</label>
+                            <input type="number" id="gridinAnswer" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label>Min Value</label>
+                            <input type="number" id="gridinMin" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Max Value</label>
+                            <input type="number" id="gridinMax" value="9999">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; justify-content: flex-end; margin-top: 20px;">
+                    <button type="button" class="btn btn-secondary" onclick="cancelQuestionForm()">Cancel</button>
+                    <button type="submit" class="btn btn-success">☁️ Save & Sync to Drive</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Settings Tab -->
+    <div id="settingsTab" class="tab-content">
+        <div class="card">
+            <h2>⚙️ Google Drive Settings</h2>
+            
+            <div id="notConnectedSection">
+                <p style="color: #718096; margin-bottom: 20px;">Connect to Google Drive to enable real-time sync for questions and student results.</p>
+                <button class="btn btn-primary" onclick="connectGoogleDrive()">
+                    🔐 Connect Google Drive
+                </button>
+            </div>
+            
+            <div id="connectedSection" class="hidden">
+                <p style="color: #48bb78; margin-bottom: 20px;">✅ Connected to Google Drive</p>
+                <button class="btn btn-secondary" onclick="disconnectGoogleDrive()">
+                    🚪 Disconnect
+                </button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📥 Export Data</h2>
+            <div style="display: flex; gap: 15px;">
+                <button class="btn btn-primary" onclick="exportResults()">📊 Export Student Results</button>
+                <button class="btn btn-primary" onclick="exportQuestions()">📚 Export Questions</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ============================================
+        // ⚙️ CONFIGURATION - REPLACE WITH YOUR CREDENTIALS
+        // ============================================
+        const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
+        const API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
+        
+        const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+        const SCOPES = 'https://www.googleapis.com/auth/drive.file';
+        
+        // ============================================
+        // Global Variables
+        // ============================================
+        let tokenClient;
+        let gapiInited = false;
+        let gisInited = false;
+        let questionBank = {
+            standalone_reading: { easy: [], medium: [], hard: [] },
+            passages: [],
+            math: { easy: [], medium: [], hard: [] },
+            math_gridin: { easy: [], medium: [], hard: [] }
+        };
+        let studentResults = [];
+        let currentQuestionType = null;
+        let driveFileId = null;
+        let resultsFileId = null;
+        
+        // ============================================
+        // Tab Navigation
+        // ============================================
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active from all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + 'Tab').classList.add('active');
+            
+            // Mark nav tab as active
+            event.currentTarget.classList.add('active');
+            
+            // Load data for specific tabs
+            if (tabName === 'results') {
+                loadResults();
+            } else if (tabName === 'dashboard') {
+                loadDashboard();
+            } else if (tabName === 'questions') {
+                updateQuestionStats();
+            }
+        }
+        
+        // ============================================
+        // Google API Initialization
+        // ============================================
+        function gapiLoaded() {
+            gapi.load('client', initGapiClient);
+        }
+        
+        async function initGapiClient() {
+            await gapi.client.init({
+                apiKey: API_KEY,
+                discoveryDocs: [DISCOVERY_DOC],
+            });
+            gapiInited = true;
+            maybeEnableButtons();
+        }
+        
+        function gisLoaded() {
+            tokenClient = google.accounts.oauth2.initTokenClient({
+                client_id: CLIENT_ID,
+                scope: SCOPES,
+                callback: '',
+            });
+            gisInited = true;
+            maybeEnableButtons();
+        }
+        
+        function maybeEnableButtons() {
+            if (gapiInited && gisInited) {
+                console.log('✅ Google APIs ready');
+            }
+        }
+        
+        // ============================================
+        // Google Drive Connection
+        // ============================================
+        function connectGoogleDrive() {
+            tokenClient.callback = async (resp) => {
+                if (resp.error !== undefined) {
+                    showAlert('error', '❌ Connection failed: ' + resp.error);
+                    return;
+                }
+                
+                document.getElementById('driveStatus').classList.add('connected');
+                document.getElementById('driveText').textContent = 'Connected';
+                document.getElementById('notConnectedSection').classList.add('hidden');
+                document.getElementById('connectedSection').classList.remove('hidden');
+                
+                await loadFromDrive();
+                showAlert('success', '✅ Connected to Google Drive successfully!');
+            };
+            
+            if (gapi.client.getToken() === null) {
+                tokenClient.requestAccessToken({prompt: 'consent'});
+            } else {
+                tokenClient.requestAccessToken({prompt: ''});
+            }
+        }
+        
+        function disconnectGoogleDrive() {
+            const token = gapi.client.getToken();
+            if (token !== null) {
+                google.accounts.oauth2.revoke(token.access_token);
+                gapi.client.setToken('');
+                
+                document.getElementById('driveStatus').classList.remove('connected');
+                document.getElementById('driveText').textContent = 'Not Connected';
+                document.getElementById('notConnectedSection').classList.remove('hidden');
+                document.getElementById('connectedSection').classList.add('hidden');
+                
+                showAlert('info', 'ℹ️ Disconnected from Google Drive');
+            }
+        }
+        
+        // ============================================
+        // Load Data from Google Drive
+        // ============================================
+        async function loadFromDrive() {
+            try {
+                // Load question bank
+                await loadQuestionBankFromDrive();
+                
+                // Load student results
+                await loadResultsFromDrive();
+                
+                updateQuestionStats();
+                loadDashboard();
+                
+            } catch (error) {
+                console.error('Load error:', error);
+                showAlert('error', '❌ Error loading data: ' + error.message);
+            }
+        }
+        
+        async function loadQuestionBankFromDrive() {
+            try {
+                const response = await gapi.client.drive.files.list({
+                    q: "name='questions-adaptive.json' and trashed=false",
+                    spaces: 'drive',
+                    fields: 'files(id, name)',
+                });
+                
+                const files = response.result.files;
+                
+                if (files && files.length > 0) {
+                    driveFileId = files[0].id;
+                    
+                    const file = await gapi.client.drive.files.get({
+                        fileId: driveFileId,
+                        alt: 'media'
+                    });
+                    
+                    questionBank = JSON.parse(file.body);
+                    console.log('✅ Loaded question bank');
+                } else {
+                    await createQuestionBankInDrive();
+                    console.log('📝 Created new question bank');
+                }
+                
+            } catch (error) {
+                console.error('Error loading questions:', error);
+            }
+        }
+        
+        async function loadResultsFromDrive() {
+            try {
+                const response = await gapi.client.drive.files.list({
+                    q: "name='student-results.json' and trashed=false",
+                    spaces: 'drive',
+                    fields: 'files(id, name)',
+                });
+                
+                const files = response.result.files;
+                
+                if (files && files.length > 0) {
+                    resultsFileId = files[0].id;
+                    
+                    const file = await gapi.client.drive.files.get({
+                        fileId: resultsFileId,
+                        alt: 'media'
+                    });
+                    
+                    studentResults = JSON.parse(file.body);
+                    console.log('✅ Loaded student results');
+                } else {
+                    await createResultsFileInDrive();
+                    console.log('📝 Created new results file');
+                }
+                
+            } catch (error) {
+                console.error('Error loading results:', error);
+            }
+        }
+        
+        // ============================================
+        // Create Files in Google Drive
+        // ============================================
+        async function createQuestionBankInDrive() {
+            try {
+                const metadata = {
+                    name: 'questions-adaptive.json',
+                    mimeType: 'application/json'
+                };
+                
+                const content = JSON.stringify(questionBank, null, 2);
+                const blob = new Blob([content], { type: 'application/json' });
+                
+                const form = new FormData();
+                form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+                form.append('file', blob);
+                
+                const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+                    method: 'POST',
+                    headers: new Headers({ 'Authorization': 'Bearer ' + gapi.client.getToken().access_token }),
+                    body: form
+                });
+                
+                const data = await response.json();
+                driveFileId = data.id;
+                
+            } catch (error) {
+                console.error('Error creating question bank:', error);
+            }
+        }
+        
+        async function createResultsFileInDrive() {
+            try {
+                const metadata = {
+                    name: 'student-results.json',
+                    mimeType: 'application/json'
+                };
+                
+                const content = JSON.stringify(studentResults, null, 2);
+                const blob = new Blob([content], { type: 'application/json' });
+                
+                const form = new FormData();
+                form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
+                form.append('file', blob);
+                
+                const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+                    method: 'POST',
+                    headers: new Headers({ 'Authorization': 'Bearer ' + gapi.client.getToken().access_token }),
+                    body: form
+                });
+                
+                const data = await response.json();
+                resultsFileId = data.id;
+                
+            } catch (error) {
+                console.error('Error creating results file:', error);
+            }
+        }
+        
+        // ============================================
+        // Update Files in Google Drive
+        // ============================================
+        async function updateQuestionBankInDrive() {
+            try {
+                const content = JSON.stringify(questionBank, null, 2);
+                
+                await fetch(`https://www.googleapis.com/upload/drive/v3/files/${driveFileId}?uploadType=media`, {
+                    method: 'PATCH',
+                    headers: new Headers({
+                        'Authorization': 'Bearer ' + gapi.client.getToken().access_token,
+                        'Content-Type': 'application/json'
+                    }),
+                    body: content
+                });
+                
+                showAlert('success', '☁️ Questions synced to Drive!');
+                
+            } catch (error) {
+                console.error('Error updating questions:', error);
+                showAlert('error', '❌ Error syncing to Drive');
+            }
+        }
+        
+        // ============================================
+        // Question Management
+        // ============================================
+        function selectQuestionType(type) {
+            currentQuestionType = type;
+            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            const form = document.getElementById('questionForm');
+            const passage = document.getElementById('passageSection');
+            const mc = document.getElementById('mcSection');
+            const gridin = document.getElementById('gridinSection');
+            const cat = document.getElementById('category');
+            
+            form.classList.remove('hidden');
+            
+            if (type === 'passage') {
+                passage.classList.remove('hidden');
+                mc.classList.remove('hidden');
+                gridin.classList.add('hidden');
+                cat.value = 'reading';
+                cat.disabled = true;
+            } else if (type === 'gridin') {
+                passage.classList.add('hidden');
+                mc.classList.add('hidden');
+                gridin.classList.remove('hidden');
+                cat.value = 'math';
+                cat.disabled = true;
+            } else {
+                passage.classList.add('hidden');
+                mc.classList.remove('hidden');
+                gridin.classList.add('hidden');
+                cat.disabled = false;
+            }
+        }
+        
+        async function saveQuestion(e) {
+            e.preventDefault();
+            
+            const cat = document.getElementById('category').value;
+            const diff = document.getElementById('difficulty').value;
+            const text = document.getElementById('questionText').value;
+            const skill = document.getElementById('skill').value || 'Official SAT Question';
+            
+            let q = {
+                id: `custom_${Date.now()}`,
+                category: cat === 'reading' ? 'Reading and Writing' : 'Math',
+                skill,
+                difficulty: diff,
+                text
+            };
+            
+            if (currentQuestionType === 'passage') {
+                const passage = {
+                    id: `passage_${Date.now()}`,
+                    title: document.getElementById('passageTitle').value || 'Untitled',
+                    text: document.getElementById('passageText').value,
+                    source: '',
+                    difficulty: diff,
+                    questions: [{
+                        ...q,
+                        choices: [
+                            document.getElementById('choiceA').value,
+                            document.getElementById('choiceB').value,
+                            document.getElementById('choiceC').value,
+                            document.getElementById('choiceD').value
+                        ],
+                        correct: parseInt(document.querySelector('input[name="correct"]:checked')?.value || 0)
+                    }]
+                };
+                questionBank.passages.push(passage);
+                
+            } else if (currentQuestionType === 'gridin') {
+                q.type = 'grid-in';
+                q.answer = parseFloat(document.getElementById('gridinAnswer').value);
+                q.min = parseInt(document.getElementById('gridinMin').value);
+                q.max = parseInt(document.getElementById('gridinMax').value);
+                
+                if (!questionBank.math_gridin) {
+                    questionBank.math_gridin = { easy: [], medium: [], hard: [] };
+                }
+                questionBank.math_gridin[diff].push(q);
+                
+            } else {
+                q.choices = [
+                    document.getElementById('choiceA').value,
+                    document.getElementById('choiceB').value,
+                    document.getElementById('choiceC').value,
+                    document.getElementById('choiceD').value
+                ];
+                q.correct = parseInt(document.querySelector('input[name="correct"]:checked')?.value || 0);
+                
+                if (cat === 'reading') {
+                    questionBank.standalone_reading[diff].push(q);
+                } else {
+                    questionBank.math[diff].push(q);
+                }
+            }
+            
+            await updateQuestionBankInDrive();
+            cancelQuestionForm();
+            updateQuestionStats();
+        }
+        
+        function cancelQuestionForm() {
+            document.getElementById('questionForm').reset();
+            document.getElementById('questionForm').classList.add('hidden');
+            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('active'));
+            currentQuestionType = null;
+        }
+        
+        function updateQuestionStats() {
+            const r = Object.values(questionBank.standalone_reading).reduce((a, b) => a + b.length, 0);
+            const m = Object.values(questionBank.math).reduce((a, b) => a + b.length, 0);
+            const g = Object.values(questionBank.math_gridin || {}).reduce((a, b) => a + b.length, 0);
+            const p = questionBank.passages.reduce((s, p) => s + p.questions.length, 0);
+            
+            document.getElementById('qTotalQuestions').textContent = r + m + g + p;
+            document.getElementById('qReadingQuestions').textContent = r + p;
+            document.getElementById('qMathQuestions').textContent = m;
+            document.getElementById('qGridinQuestions').textContent = g;
+            document.getElementById('totalQuestions').textContent = r + m + g + p;
+        }
+        
+        // ============================================
+        // Results Management
+        // ============================================
+        function loadResults() {
+            const tbody = document.getElementById('resultsTableBody');
+            tbody.innerHTML = '';
+            
+            if (studentResults.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" style="text-align: center; padding: 40px; color: #718096;">
+                            <div class="empty-state-icon">📊</div>
+                            <div>No student results yet. Results will appear here when students complete tests.</div>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            studentResults.forEach(result => {
+                const score = result.score || 0;
+                const scoreClass = score >= 90 ? 'score-excellent' : 
+                                   score >= 75 ? 'score-good' : 
+                                   score >= 60 ? 'score-average' : 'score-poor';
+                
+                const row = `
+                    <tr>
+                        <td><strong>${result.studentName}</strong></td>
+                        <td>${result.testName}</td>
+                        <td><span class="score-badge ${scoreClass}">${score}%</span></td>
+                        <td>${result.readingScore || 'N/A'}%</td>
+                        <td>${result.mathScore || 'N/A'}%</td>
+                        <td>${new Date(result.date).toLocaleDateString()}</td>
+                        <td>${result.timeSpent || 'N/A'}</td>
+                        <td>
+                            <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="viewResult('${result.id}')">View</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+        
+        function loadDashboard() {
+            // Update dashboard stats
+            const uniqueStudents = [...new Set(studentResults.map(r => r.studentName))].length;
+            const totalTests = studentResults.length;
+            const avgScore = studentResults.length > 0 
+                ? Math.round(studentResults.reduce((sum, r) => sum + (r.score || 0), 0) / studentResults.length)
+                : 0;
+            
+            document.getElementById('totalStudents').textContent = uniqueStudents;
+            document.getElementById('totalTests').textContent = totalTests;
+            document.getElementById('avgScore').textContent = avgScore + '%';
+            
+            // Load recent results
+            const recentContainer = document.getElementById('recentResultsContainer');
+            const recent = studentResults.slice(-5).reverse();
+            
+            if (recent.length === 0) {
+                recentContainer.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📊</div>
+                        <p>No test results yet. Results will appear here when students complete tests.</p>
+                    </div>
+                `;
+            } else {
+                recentContainer.innerHTML = '<table class="results-table"><thead><tr><th>Student</th><th>Test</th><th>Score</th><th>Date</th></tr></thead><tbody>' +
+                    recent.map(r => {
+                        const scoreClass = r.score >= 90 ? 'score-excellent' : 
+                                           r.score >= 75 ? 'score-good' : 
+                                           r.score >= 60 ? 'score-average' : 'score-poor';
+                        return `<tr>
+                            <td>${r.studentName}</td>
+                            <td>${r.testName}</td>
+                            <td><span class="score-badge ${scoreClass}">${r.score}%</span></td>
+                            <td>${new Date(r.date).toLocaleDateString()}</td>
+                        </tr>`;
+                    }).join('') +
+                    '</tbody></table>';
+            }
+        }
+        
+        function viewResult(id) {
+            const result = studentResults.find(r => r.id === id);
+            if (result) {
+                alert(`Student: ${result.studentName}\nTest: ${result.testName}\nScore: ${result.score}%\nReading: ${result.readingScore}%\nMath: ${result.mathScore}%`);
+            }
+        }
+        
+        // ============================================
+        // Export Functions
+        // ============================================
+        function exportResults() {
+            const dataStr = JSON.stringify(studentResults, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `student-results-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showAlert('success', '✅ Results exported!');
+        }
+        
+        function exportQuestions() {
+            const dataStr = JSON.stringify(questionBank, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `questions-adaptive-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showAlert('success', '✅ Questions exported!');
+        }
+        
+        // ============================================
+        // Alert System
+        // ============================================
+        function showAlert(type, msg) {
+            const alertTypes = { success: 'alertSuccess', error: 'alertError', info: 'alertInfo' };
+            const alert = document.getElementById(alertTypes[type]);
+            alert.textContent = msg;
+            alert.classList.add('show');
+            setTimeout(() => alert.classList.remove('show'), 5000);
+        }
+        
+        // ============================================
+        // Initialize on Load
+        // ============================================
+        window.addEventListener('load', () => {
+            const script1 = document.createElement('script');
+            script1.src = 'https://apis.google.com/js/api.js';
+            script1.onload = gapiLoaded;
+            document.body.appendChild(script1);
+            
+            const script2 = document.createElement('script');
+            script2.src = 'https://accounts.google.com/gsi/client';
+            script2.onload = gisLoaded;
+            document.body.appendChild(script2);
+            
+            // Load dashboard on start
+            loadDashboard();
+            updateQuestionStats();
+        });
+    </script>
+</body>
+</html>
