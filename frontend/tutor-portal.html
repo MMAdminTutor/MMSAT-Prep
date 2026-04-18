@@ -388,7 +388,7 @@
     <div class="header">
         <div class="header-content">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <img src="https://i.ibb.co/qkF7VHy/mathmeg-logo.png" alt="MathMeg" style="height: 50px; width: auto; display: block;">
+                <img src="https://via.placeholder.com/200x50/FF6B35/FFFFFF?text=MathMeg" alt="MathMeg" style="height: 50px; width: auto; display: block;">
                 <div>
                     <h1>MathMeg Tutor Portal</h1>
                     <p>Manage questions & track student results in real-time</p>
@@ -468,7 +468,7 @@
             
             <!-- Filter Bar -->
             <div class="filter-bar">
-                <input type="text" id="searchStudent" placeholder="🔍 Search student..." style="flex: 1;">
+                <input type="text" id="searchStudent" placeholder="🔍 Search student..." style="flex: 1;" onkeyup="filterResults()">
                 <select id="filterTest">
                     <option value="">All Tests</option>
                     <option value="practice1">Practice Test 1</option>
@@ -678,8 +678,8 @@
         // ============================================
         // ⚙️ CONFIGURATION - REPLACE WITH YOUR CREDENTIALS
         // ============================================
-        const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
-        const API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
+        const CLIENT_ID = 'YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
+        const API_KEY = 'YOUR_API_KEY_HERE';
         
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
         const SCOPES = 'https://www.googleapis.com/auth/drive.file';
@@ -1312,25 +1312,66 @@
         }
         
 
-        // Download individual student result as PDF
+        // Download detailed PDF of all student results
         function downloadResultPDF() {
             if (studentResults.length === 0) {
                 alert('No results to download!');
                 return;
             }
             
-            // For now, download all results as JSON
-            // In production, you'd use jsPDF library
-            const dataStr = JSON.stringify(studentResults, null, 2);
-            const dataBlob = new Blob([dataStr], {type: 'application/json'});
-            const url = URL.createObjectURL(dataBlob);
+            // Generate detailed text report (will be converted to PDF in production)
+            let report = 'STUDENT TEST RESULTS - DETAILED REPORT\n';
+            report += '='.repeat(80) + '\n\n';
+            report += `Generated: ${new Date().toLocaleString()}\n`;
+            report += `Total Students: ${new Set(studentResults.map(r => r.studentName)).size}\n`;
+            report += `Total Tests: ${studentResults.length}\n\n`;
+            report += '='.repeat(80) + '\n\n';
+            
+            studentResults.forEach((result, index) => {
+                report += `TEST ${index + 1}\n`;
+                report += '-'.repeat(80) + '\n';
+                report += `Student: ${result.studentName}\n`;
+                report += `Test: ${result.testName}\n`;
+                report += `Date: ${new Date(result.date).toLocaleString()}\n`;
+                report += `Time Spent: ${result.timeSpent}\n`;
+                report += `Overall Score: ${result.score}%\n`;
+                report += `Reading Score: ${result.readingScore}\n`;
+                report += `Math Score: ${result.mathScore}\n`;
+                report += `Questions: ${result.totalQuestions} | Correct: ${result.correctCount}\n\n`;
+                
+                // Add detailed answers
+                report += 'DETAILED ANSWERS:\n';
+                report += '-'.repeat(80) + '\n';
+                
+                if (result.answers && result.answers.length > 0) {
+                    result.answers.forEach((answer, i) => {
+                        report += `Q${i+1}: ${answer.questionText || 'Question text not available'}\n`;
+                        report += `   Category: ${answer.category || 'N/A'}\n`;
+                        report += `   Student Answer: ${answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped'}\n`;
+                        report += `   Correct Answer: ${answer.correctAnswer}\n`;
+                        report += `   Result: ${answer.correct ? '✓ CORRECT' : '✗ INCORRECT'}\n`;
+                        if (answer.choices && answer.choices.length > 0) {
+                            report += `   Choices: ${answer.choices.join(', ')}\n`;
+                        }
+                        report += '\n';
+                    });
+                } else {
+                    report += 'No detailed answers available\n';
+                }
+                
+                report += '\n' + '='.repeat(80) + '\n\n';
+            });
+            
+            // Download as text file (can be converted to PDF using online tools)
+            const blob = new Blob([report], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = `student-results-${new Date().toISOString().split('T')[0]}.json`;
+            link.download = `detailed-results-${new Date().toISOString().split('T')[0]}.txt`;
             link.click();
             URL.revokeObjectURL(url);
             
-            alert('Results downloaded! (In production, this would be a PDF)');
+            alert('Detailed results downloaded!\n\nNote: This is a text file. For PDF, use an online converter or add jsPDF library.');
         }
         
         // View individual result and download as PDF
@@ -1356,6 +1397,51 @@
                 URL.revokeObjectURL(url);
             }
         }
+
+
+        // Search and filter results
+        function filterResults() {
+            const searchText = document.getElementById('searchStudent').value.toLowerCase();
+            const testFilter = document.getElementById('filterTest').value;
+            
+            const tbody = document.getElementById('resultsTableBody');
+            const rows = tbody.getElementsByTagName('tr');
+            
+            for (let row of rows) {
+                const studentName = row.cells[0]?.textContent.toLowerCase() || '';
+                const testName = row.cells[1]?.textContent.toLowerCase() || '';
+                
+                const matchesSearch = studentName.includes(searchText);
+                const matchesFilter = testFilter === 'all' || testName.includes(testFilter.toLowerCase());
+                
+                if (matchesSearch && matchesFilter) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        }
+
+        // ============================================
+        // AUTO-CONNECT GOOGLE DRIVE ON PAGE LOAD
+        // ============================================
+        window.addEventListener('DOMContentLoaded', async () => {
+            console.log('Page loaded - auto-connecting to Google Drive...');
+            
+            // Load student results first
+            loadStudentResultsFromStorage();
+            loadDashboard();
+            
+            // Auto-connect to Google Drive after 500ms
+            setTimeout(async () => {
+                try {
+                    await connectGoogleDrive();
+                    console.log('✅ Auto-connected to Google Drive');
+                } catch (error) {
+                    console.log('ℹ️  Google Drive auto-connect failed, manual connection available');
+                }
+            }, 500);
+        });
 
     </script>
 </body>
