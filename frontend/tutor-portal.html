@@ -469,17 +469,11 @@
             <!-- Filter Bar -->
             <div class="filter-bar">
                 <input type="text" id="searchStudent" placeholder="🔍 Search student..." style="flex: 1;" onkeyup="filterResults()">
-                <select id="filterTest">
-                    <option value="">All Tests</option>
-                    <option value="practice1">Practice Test 1</option>
-                    <option value="practice2">Practice Test 2</option>
-                    <option value="practice3">Practice Test 3</option>
-                </select>
-                <select id="filterDate">
-                    <option value="">All Dates</option>
-                    <option value="today">Today</option>
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
+                <select id="filterTest" onchange="filterResults()">
+                    <option value="all">All Tests</option>
+                    <option value="full">Full Test</option>
+                    <option value="reading">Reading & Writing</option>
+                    <option value="math">Math</option>
                 </select>
                 <button class="btn btn-primary" onclick="loadResults()">🔄 Refresh</button>
                 <button class="btn btn-success" onclick="downloadResultPDF()">📄 Download PDF</button>
