@@ -480,7 +480,6 @@
                     <option value="math">Math</option>
                 </select>
                 <button class="btn btn-primary" onclick="loadResults()">🔄 Refresh</button>
-                <button class="btn btn-success" onclick="downloadResultPDF()">📄 Download PDF</button>
             </div>
             
             <!-- Results Table -->
@@ -676,8 +675,8 @@
         // ============================================
         // ⚙️ CONFIGURATION - REPLACE WITH YOUR CREDENTIALS
         // ============================================
-const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
-        const API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
+        const CLIENT_ID = 'YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
+        const API_KEY = 'YOUR_API_KEY_HERE';
         
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
         const SCOPES = 'https://www.googleapis.com/auth/drive.file';
@@ -1472,24 +1471,164 @@ const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleuser
                 return;
             }
             
-            // Show result details
-            alert(`Student: ${result.studentName}\nTest: ${result.testName}\nScore: ${result.score}%\nReading: ${result.readingScore}\nMath: ${result.mathScore}\nDate: ${new Date(result.date).toLocaleDateString()}`);
-            
-            // Optionally download this result
-            if (confirm('Download this result as PDF?')) {
-                const dataStr = JSON.stringify(result, null, 2);
-                const dataBlob = new Blob([dataStr], {type: 'application/json'});
-                const url = URL.createObjectURL(dataBlob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `${result.studentName}-${result.testName}-${new Date(result.date).toISOString().split('T')[0]}.json`;
-                link.click();
-                URL.revokeObjectURL(url);
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                // Title
+                doc.setFontSize(20);
+                doc.setFont('helvetica', 'bold');
+                doc.text('Student Test Results', 105, 20, { align: 'center' });
+                
+                doc.setFontSize(12);
+                doc.setFont('helvetica', 'normal');
+                doc.text('Detailed Report', 105, 28, { align: 'center' });
+                
+                // Student info
+                let y = 40;
+                doc.setFontSize(14);
+                doc.setFont('helvetica', 'bold');
+                doc.text(`Student: ${result.studentName}`, 20, y);
+                y += 10;
+                
+                // Test summary box
+                doc.setFontSize(10);
+                doc.setFont('helvetica', 'normal');
+                doc.setDrawColor(100, 100, 100);
+                doc.setFillColor(240, 240, 240);
+                doc.roundedRect(20, y, 170, 30, 3, 3, 'FD');
+                
+                y += 8;
+                doc.text(`Test: ${result.testName}`, 25, y);
+                y += 6;
+                doc.text(`Date: ${new Date(result.date).toLocaleString()}`, 25, y);
+                y += 6;
+                doc.text(`Time Spent: ${result.timeSpent}`, 25, y);
+                y += 6;
+                doc.text(`Overall Score: ${result.score}%`, 25, y);
+                y += 6;
+                doc.text(`Reading: ${result.readingScore} | Math: ${result.mathScore}`, 25, y);
+                
+                y += 15;
+                
+                // Questions summary
+                if (result.answers && result.answers.length > 0) {
+                    const correct = result.answers.filter(a => a.correct).length;
+                    const incorrect = result.answers.length - correct;
+                    
+                    doc.setFontSize(12);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Performance Summary', 20, y);
+                    y += 8;
+                    
+                    doc.setFontSize(10);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(`Total Questions: ${result.answers.length}`, 25, y);
+                    y += 6;
+                    
+                    doc.setTextColor(34, 139, 34);
+                    doc.text(`Correct: ${correct}`, 25, y);
+                    doc.setTextColor(0, 0, 0);
+                    y += 6;
+                    
+                    doc.setTextColor(220, 38, 38);
+                    doc.text(`Incorrect: ${incorrect}`, 25, y);
+                    doc.setTextColor(0, 0, 0);
+                    y += 10;
+                    
+                    // Detailed answers
+                    doc.setFontSize(12);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text('Detailed Answers', 20, y);
+                    y += 8;
+                    
+                    doc.setFontSize(9);
+                    doc.setFont('helvetica', 'normal');
+                    
+                    result.answers.forEach((answer, i) => {
+                        // Check if we need new page
+                        if (y > 260) {
+                            doc.addPage();
+                            y = 20;
+                        }
+                        
+                        // Question number and status
+                        doc.setFillColor(248, 249, 250);
+                        doc.roundedRect(20, y - 3, 170, 8, 2, 2, 'F');
+                        
+                        doc.setFont('helvetica', 'bold');
+                        doc.setTextColor(0, 0, 0);
+                        doc.text(`Question ${i + 1}`, 25, y + 2);
+                        
+                        // Status indicator
+                        if (answer.correct) {
+                            doc.setTextColor(34, 139, 34);
+                            doc.text('✓ CORRECT', 165, y + 2, { align: 'right' });
+                        } else {
+                            doc.setTextColor(220, 38, 38);
+                            doc.text('✗ INCORRECT', 165, y + 2, { align: 'right' });
+                        }
+                        
+                        y += 10;
+                        
+                        // Question text
+                        doc.setFont('helvetica', 'normal');
+                        doc.setTextColor(0, 0, 0);
+                        const questionText = (answer.questionText || 'Question text not available').substring(0, 200);
+                        const wrappedText = doc.splitTextToSize(questionText, 165);
+                        doc.text(wrappedText, 25, y);
+                        y += wrappedText.length * 4 + 3;
+                        
+                        // Answer info
+                        doc.setFontSize(8);
+                        doc.setFont('helvetica', 'italic');
+                        doc.setTextColor(100, 100, 100);
+                        doc.text(`Category: ${answer.category || 'N/A'}`, 25, y);
+                        y += 4;
+                        
+                        doc.setFont('helvetica', 'normal');
+                        doc.setTextColor(0, 0, 0);
+                        doc.text(`Student Answer: ${answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped'}`, 25, y);
+                        y += 4;
+                        doc.text(`Correct Answer: ${answer.correctAnswer}`, 25, y);
+                        y += 4;
+                        
+                        // Choices if available
+                        if (answer.choices && answer.choices.length > 0) {
+                            doc.text(`Choices: ${answer.choices.join(', ')}`, 25, y);
+                            y += 4;
+                        }
+                        
+                        y += 6;
+                        
+                        doc.setFontSize(9);
+                    });
+                } else {
+                    doc.text('No detailed answers available', 25, y);
+                }
+                
+                // Footer on all pages
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(8);
+                    doc.setTextColor(128, 128, 128);
+                    doc.text(`MathMeg Tutoring - ${result.studentName} - Page ${i} of ${pageCount}`, 105, 285, { align: 'center' });
+                }
+                
+                // Save PDF
+                const filename = `${result.studentName.replace(/\s+/g, '_')}_${result.testName.replace(/\s+/g, '_')}_${new Date(result.date).toISOString().split('T')[0]}.pdf`;
+                doc.save(filename);
+                
+                console.log('✅ Downloaded individual student result PDF');
+                
+            } catch (error) {
+                console.error('PDF Error:', error);
+                alert('Error generating PDF. Please check console.');
             }
         }
-
-
-        // Search and filter results
+        
+        
         function filterResults() {
             const searchText = document.getElementById('searchStudent').value.toLowerCase();
             const testFilter = document.getElementById('filterTest').value;
