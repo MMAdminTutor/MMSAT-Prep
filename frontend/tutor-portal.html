@@ -1319,25 +1319,40 @@
                 return;
             }
             
-            // Generate detailed text report (will be converted to PDF in production)
-            let report = 'STUDENT TEST RESULTS - DETAILED REPORT\n';
+            // Filter to show only last 15 days
+            const fifteenDaysAgo = new Date();
+            fifteenDaysAgo.setDate(fifteenDaysAgo.getDate() - 15);
+            
+            const recentResults = studentResults.filter(r => {
+                const resultDate = new Date(r.date);
+                return resultDate >= fifteenDaysAgo;
+            });
+            
+            if (recentResults.length === 0) {
+                alert('No results from the last 15 days to download!');
+                return;
+            }
+            
+            // Generate detailed text report
+            let report = 'STUDENT TEST RESULTS - DETAILED REPORT (Last 15 Days)\n';
             report += '='.repeat(80) + '\n\n';
-            report += `Generated: ${new Date().toLocaleString()}\n`;
-            report += `Total Students: ${new Set(studentResults.map(r => r.studentName)).size}\n`;
-            report += `Total Tests: ${studentResults.length}\n\n`;
+            report += 'Generated: ' + new Date().toLocaleString() + '\n';
+            report += 'Total Students: ' + new Set(recentResults.map(r => r.studentName)).size + '\n';
+            report += 'Total Tests: ' + recentResults.length + '\n';
+            report += 'Date Range: ' + fifteenDaysAgo.toLocaleDateString() + ' - ' + new Date().toLocaleDateString() + '\n\n';
             report += '='.repeat(80) + '\n\n';
             
-            studentResults.forEach((result, index) => {
-                report += `TEST ${index + 1}\n`;
+            recentResults.forEach((result, index) => {
+                report += 'TEST ' + (index + 1) + '\n';
                 report += '-'.repeat(80) + '\n';
-                report += `Student: ${result.studentName}\n`;
-                report += `Test: ${result.testName}\n`;
-                report += `Date: ${new Date(result.date).toLocaleString()}\n`;
-                report += `Time Spent: ${result.timeSpent}\n`;
-                report += `Overall Score: ${result.score}%\n`;
-                report += `Reading Score: ${result.readingScore}\n`;
-                report += `Math Score: ${result.mathScore}\n`;
-                report += `Questions: ${result.totalQuestions} | Correct: ${result.correctCount}\n\n`;
+                report += 'Student: ' + result.studentName + '\n';
+                report += 'Test: ' + result.testName + '\n';
+                report += 'Date: ' + new Date(result.date).toLocaleString() + '\n';
+                report += 'Time Spent: ' + result.timeSpent + '\n';
+                report += 'Overall Score: ' + result.score + '%\n';
+                report += 'Reading Score: ' + result.readingScore + '\n';
+                report += 'Math Score: ' + result.mathScore + '\n';
+                report += 'Questions: ' + result.totalQuestions + ' | Correct: ' + result.correctCount + '\n\n';
                 
                 // Add detailed answers
                 report += 'DETAILED ANSWERS:\n';
@@ -1345,13 +1360,13 @@
                 
                 if (result.answers && result.answers.length > 0) {
                     result.answers.forEach((answer, i) => {
-                        report += `Q${i+1}: ${answer.questionText || 'Question text not available'}\n`;
-                        report += `   Category: ${answer.category || 'N/A'}\n`;
-                        report += `   Student Answer: ${answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped'}\n`;
-                        report += `   Correct Answer: ${answer.correctAnswer}\n`;
-                        report += `   Result: ${answer.correct ? '✓ CORRECT' : '✗ INCORRECT'}\n`;
+                        report += 'Q' + (i+1) + ': ' + (answer.questionText || 'Question text not available') + '\n';
+                        report += '   Category: ' + (answer.category || 'N/A') + '\n';
+                        report += '   Student Answer: ' + (answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped') + '\n';
+                        report += '   Correct Answer: ' + answer.correctAnswer + '\n';
+                        report += '   Result: ' + (answer.correct ? 'CORRECT' : 'INCORRECT') + '\n';
                         if (answer.choices && answer.choices.length > 0) {
-                            report += `   Choices: ${answer.choices.join(', ')}\n`;
+                            report += '   Choices: ' + answer.choices.join(', ') + '\n';
                         }
                         report += '\n';
                     });
@@ -1362,19 +1377,18 @@
                 report += '\n' + '='.repeat(80) + '\n\n';
             });
             
-            // Download as text file (can be converted to PDF using online tools)
-            const blob = new Blob([report], {type: 'text/plain'});
+            // Download as text file
+            const blob = new Blob([report], {type: 'text/plain;charset=utf-8'});
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = `detailed-results-${new Date().toISOString().split('T')[0]}.txt`;
+            link.download = 'Student_Results_Last_15_Days_' + new Date().toISOString().split('T')[0] + '.txt';
             link.click();
             URL.revokeObjectURL(url);
             
-            alert('Detailed results downloaded!\n\nNote: This is a text file. For PDF, use an online converter or add jsPDF library.');
+            alert('Downloaded ' + recentResults.length + ' test results from the last 15 days!\n\nTo convert to PDF: Use any text-to-PDF converter (e.g., txt2pdf.com)');
         }
         
-        // View individual result and download as PDF
         function viewResult(resultId) {
             const result = studentResults.find(r => r.id === resultId);
             if (!result) {
