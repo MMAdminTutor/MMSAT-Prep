@@ -2373,8 +2373,8 @@
         // GOOGLE DRIVE INTEGRATION - AUTO REAL-TIME SYNC
         // ============================================
         // ⚙️ ADD YOUR GOOGLE CREDENTIALS HERE:
-        const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
-        const API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
+        const GOOGLE_DRIVE_API_KEY = 'YOUR_API_KEY_HERE';
+        const GOOGLE_DRIVE_CLIENT_ID = 'YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
         
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
         let gapiLoaded = false;
@@ -4134,6 +4134,15 @@ async function saveTestToBackend(scores) {
         // DOWNLOAD RESULTS
         // ==========================================
 
+
+        // Sanitize text for PDF (remove HTML entities)
+        function sanitizeForPDF(text) {
+            if (!text) return '';
+            const textarea = document.createElement('textarea');
+            textarea.innerHTML = text;
+            return textarea.value;
+        }
+
         function downloadResults() {
             const userName = sessionStorage.getItem('mathmeg_user_name');
             const testDate = new Date().toLocaleDateString();
@@ -4431,13 +4440,13 @@ async function saveTestToBackend(scores) {
                         // Result indicator
                         if (answer === null || answer === '') {
                             doc.setTextColor(150, 150, 150);
-                            doc.text('○ Skipped', 165, y + 2, { align: 'right' });
+                            doc.text(sanitizeForPDF('○ Skipped'), 165, y + 2, { align: 'right' });
                         } else if (isCorrect) {
                             doc.setTextColor(34, 139, 34);
-                            doc.text('✓ Correct', 165, y + 2, { align: 'right' });
+                            doc.text(sanitizeForPDF('✓ Correct'), 165, y + 2, { align: 'right' });
                         } else {
                             doc.setTextColor(220, 38, 38);
-                            doc.text('✗ Incorrect', 165, y + 2, { align: 'right' });
+                            doc.text(sanitizeForPDF('✗ Incorrect'), 165, y + 2, { align: 'right' });
                         }
                         
                         y += 10;
@@ -4492,11 +4501,11 @@ async function saveTestToBackend(scores) {
                                 } else if (isCorrectAnswer) {
                                     doc.setTextColor(34, 139, 34);
                                     doc.setFont('helvetica', 'bold');
-                                    doc.text('✓ Correct', 188, y, { align: 'right' });
+                                    doc.text(sanitizeForPDF('✓ Correct'), 188, y, { align: 'right' });
                                 } else if (isStudentAnswer) {
                                     doc.setTextColor(220, 38, 38);
                                     doc.setFont('helvetica', 'bold');
-                                    doc.text('✗ Selected', 188, y, { align: 'right' });
+                                    doc.text(sanitizeForPDF('✗ Selected'), 188, y, { align: 'right' });
                                 }
                                 
                                 y += Math.max(wrappedChoice.length * 3.5, 5);
