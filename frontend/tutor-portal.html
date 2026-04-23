@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Tutor Portal - SAT Question Bank & Results</title>
+        <!-- jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -672,8 +676,8 @@
         // ============================================
         // ⚙️ CONFIGURATION - REPLACE WITH YOUR CREDENTIALS
         // ============================================
-        const CLIENT_ID = 'YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
-        const API_KEY = 'YOUR_API_KEY_HERE';
+const CLIENT_ID = '970642492682-9k1oocejep3ovdj08apg6jhmjrd7vrrv.apps.googleusercontent.com';
+        const API_KEY = 'AIzaSyD_EJqCpoifPI3JAjofiovRi0Y8JGjGoSw';
         
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
         const SCOPES = 'https://www.googleapis.com/auth/drive.file';
@@ -1313,75 +1317,153 @@
                 return;
             }
             
-            // Filter to show only last 15 days
-            const fifteenDaysAgo = new Date();
-            fifteenDaysAgo.setDate(fifteenDaysAgo.getDate() - 15);
-            
-            const recentResults = studentResults.filter(r => {
-                const resultDate = new Date(r.date);
-                return resultDate >= fifteenDaysAgo;
-            });
-            
-            if (recentResults.length === 0) {
-                alert('No results from the last 15 days to download!');
-                return;
-            }
-            
-            // Generate detailed text report
-            let report = 'STUDENT TEST RESULTS - DETAILED REPORT (Last 15 Days)\n';
-            report += '='.repeat(80) + '\n\n';
-            report += 'Generated: ' + new Date().toLocaleString() + '\n';
-            report += 'Total Students: ' + new Set(recentResults.map(r => r.studentName)).size + '\n';
-            report += 'Total Tests: ' + recentResults.length + '\n';
-            report += 'Date Range: ' + fifteenDaysAgo.toLocaleDateString() + ' - ' + new Date().toLocaleDateString() + '\n\n';
-            report += '='.repeat(80) + '\n\n';
-            
-            recentResults.forEach((result, index) => {
-                report += 'TEST ' + (index + 1) + '\n';
-                report += '-'.repeat(80) + '\n';
-                report += 'Student: ' + result.studentName + '\n';
-                report += 'Test: ' + result.testName + '\n';
-                report += 'Date: ' + new Date(result.date).toLocaleString() + '\n';
-                report += 'Time Spent: ' + result.timeSpent + '\n';
-                report += 'Overall Score: ' + result.score + '%\n';
-                report += 'Reading Score: ' + result.readingScore + '\n';
-                report += 'Math Score: ' + result.mathScore + '\n';
-                report += 'Questions: ' + result.totalQuestions + ' | Correct: ' + result.correctCount + '\n\n';
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
                 
-                // Add detailed answers
-                report += 'DETAILED ANSWERS:\n';
-                report += '-'.repeat(80) + '\n';
+                // Filter to last 15 days
+                const fifteenDaysAgo = new Date();
+                fifteenDaysAgo.setDate(fifteenDaysAgo.getDate() - 15);
                 
-                if (result.answers && result.answers.length > 0) {
-                    result.answers.forEach((answer, i) => {
-                        report += 'Q' + (i+1) + ': ' + (answer.questionText || 'Question text not available') + '\n';
-                        report += '   Category: ' + (answer.category || 'N/A') + '\n';
-                        report += '   Student Answer: ' + (answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped') + '\n';
-                        report += '   Correct Answer: ' + answer.correctAnswer + '\n';
-                        report += '   Result: ' + (answer.correct ? 'CORRECT' : 'INCORRECT') + '\n';
-                        if (answer.choices && answer.choices.length > 0) {
-                            report += '   Choices: ' + answer.choices.join(', ') + '\n';
-                        }
-                        report += '\n';
-                    });
-                } else {
-                    report += 'No detailed answers available\n';
+                const recentResults = studentResults.filter(r => {
+                    const resultDate = new Date(r.date);
+                    return resultDate >= fifteenDaysAgo;
+                });
+                
+                if (recentResults.length === 0) {
+                    alert('No results from the last 15 days!');
+                    return;
                 }
                 
-                report += '\n' + '='.repeat(80) + '\n\n';
-            });
-            
-            // Download as text file
-            const blob = new Blob([report], {type: 'text/plain;charset=utf-8'});
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'Student_Results_Last_15_Days_' + new Date().toISOString().split('T')[0] + '.txt';
-            link.click();
-            URL.revokeObjectURL(url);
-            
-            alert('Downloaded ' + recentResults.length + ' test results from the last 15 days!\n\nTo convert to PDF: Use any text-to-PDF converter (e.g., txt2pdf.com)');
+                // Title
+                doc.setFontSize(20);
+                doc.setFont('helvetica', 'bold');
+                doc.text('Student Test Results', 105, 20, { align: 'center' });
+                
+                doc.setFontSize(12);
+                doc.setFont('helvetica', 'normal');
+                doc.text('Last 15 Days Report', 105, 28, { align: 'center' });
+                
+                // Summary
+                let y = 40;
+                doc.setFontSize(10);
+                doc.text(`Generated: ${new Date().toLocaleString()}`, 20, y);
+                y += 6;
+                doc.text(`Total Students: ${new Set(recentResults.map(r => r.studentName)).size}`, 20, y);
+                y += 6;
+                doc.text(`Total Tests: ${recentResults.length}`, 20, y);
+                y += 6;
+                doc.text(`Date Range: ${fifteenDaysAgo.toLocaleDateString()} - ${new Date().toLocaleDateString()}`, 20, y);
+                y += 10;
+                
+                // Draw line
+                doc.setDrawColor(200, 200, 200);
+                doc.line(20, y, 190, y);
+                y += 10;
+                
+                // Results table
+                const tableData = recentResults.map(result => [
+                    result.studentName,
+                    result.testName,
+                    `${result.score}%`,
+                    result.readingScore || 'N/A',
+                    result.mathScore || 'N/A',
+                    new Date(result.date).toLocaleDateString(),
+                    result.timeSpent || 'N/A'
+                ]);
+                
+                doc.autoTable({
+                    startY: y,
+                    head: [['Student', 'Test', 'Score', 'Reading', 'Math', 'Date', 'Time']],
+                    body: tableData,
+                    theme: 'striped',
+                    headStyles: { fillColor: [102, 126, 234], fontStyle: 'bold' },
+                    styles: { fontSize: 9, cellPadding: 3 },
+                    columnStyles: {
+                        0: { cellWidth: 30 },
+                        1: { cellWidth: 40 },
+                        2: { cellWidth: 20 },
+                        3: { cellWidth: 25 },
+                        4: { cellWidth: 25 },
+                        5: { cellWidth: 25 },
+                        6: { cellWidth: 20 }
+                    }
+                });
+                
+                y = doc.lastAutoTable.finalY + 15;
+                
+                // Detailed answers for each test (if space allows)
+                recentResults.forEach((result, index) => {
+                    if (y > 250) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    
+                    doc.setFontSize(12);
+                    doc.setFont('helvetica', 'bold');
+                    doc.text(`Test ${index + 1}: ${result.studentName}`, 20, y);
+                    y += 6;
+                    
+                    doc.setFontSize(9);
+                    doc.setFont('helvetica', 'normal');
+                    doc.text(`Test: ${result.testName}`, 20, y);
+                    y += 5;
+                    doc.text(`Score: ${result.score}%  |  Reading: ${result.readingScore}  |  Math: ${result.mathScore}`, 20, y);
+                    y += 5;
+                    doc.text(`Date: ${new Date(result.date).toLocaleString()}  |  Time: ${result.timeSpent}`, 20, y);
+                    y += 8;
+                    
+                    // Answers summary
+                    if (result.answers && result.answers.length > 0) {
+                        const correct = result.answers.filter(a => a.correct).length;
+                        const incorrect = result.answers.length - correct;
+                        
+                        doc.setFontSize(8);
+                        doc.text(`Questions: ${result.answers.length}  |  Correct: ${correct}  |  Incorrect: ${incorrect}`, 20, y);
+                        y += 5;
+                        
+                        // Show first few wrong answers
+                        const wrongAnswers = result.answers.filter(a => !a.correct).slice(0, 3);
+                        if (wrongAnswers.length > 0) {
+                            doc.text('Sample Incorrect Answers:', 20, y);
+                            y += 4;
+                            
+                            wrongAnswers.forEach((answer, i) => {
+                                const questionText = (answer.questionText || 'Question text not available').substring(0, 60);
+                                doc.text(`  ${i+1}. ${questionText}...`, 25, y);
+                                y += 4;
+                                doc.text(`     Student: ${answer.studentAnswer}  |  Correct: ${answer.correctAnswer}`, 25, y);
+                                y += 4;
+                            });
+                        }
+                    }
+                    
+                    y += 5;
+                    doc.setDrawColor(220, 220, 220);
+                    doc.line(20, y, 190, y);
+                    y += 8;
+                });
+                
+                // Footer on last page
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(8);
+                    doc.setTextColor(128, 128, 128);
+                    doc.text(`MathMeg Tutoring - Page ${i} of ${pageCount}`, 105, 285, { align: 'center' });
+                }
+                
+                // Save PDF
+                doc.save(`Student_Results_Last_15_Days_${new Date().toISOString().split('T')[0]}.pdf`);
+                
+                alert(`✅ Downloaded ${recentResults.length} test results as PDF!`);
+                
+            } catch (error) {
+                console.error('PDF Error:', error);
+                alert('Error generating PDF. Please check console for details.');
+            }
         }
+        
         
         function viewResult(resultId) {
             const result = studentResults.find(r => r.id === resultId);
