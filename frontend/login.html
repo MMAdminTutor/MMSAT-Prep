@@ -196,7 +196,8 @@
     <div class="login-container">
         <div class="login-header">
             <div class="logo-container">
-<img src="mathmeg-logo.jpg" alt="MathMeg Logo" style="height: 45px; width: auto;">
+                <div class="logo">M</div>
+                <div class="logo-text">MathMeg</div>
             </div>
             <h1>SAT Practice Portal</h1>
             <p>Enter your access code to continue</p>
@@ -329,13 +330,15 @@
                 return;
             }
 
-            // Store user info in session
-            sessionStorage.setItem('userType', userInfo.type);
-            sessionStorage.setItem('userName', userInfo.name);
-            sessionStorage.setItem('accessCode', code);
+            // Store user info in session (using correct keys for sat-test.html)
+            sessionStorage.setItem('mathmeg_session', 'active');
+            sessionStorage.setItem('mathmeg_user_name', userInfo.name);
+            sessionStorage.setItem('mathmeg_user_type', userInfo.type);
+            sessionStorage.setItem('mathmeg_access_code', code);
             
             if (userInfo.type === 'student') {
-                sessionStorage.setItem('tutorName', Array.isArray(userInfo.tutor) ? userInfo.tutor[0] : userInfo.tutor);
+                const tutorName = Array.isArray(userInfo.tutor) ? userInfo.tutor[0] : userInfo.tutor;
+                sessionStorage.setItem('mathmeg_tutor_name', tutorName);
             }
 
             // Redirect based on type
