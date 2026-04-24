@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Code Diagnostic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .test-box {
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success { color: green; }
+        .error { color: red; }
+        .warning { color: orange; }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .code-list {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .code-item {
+            margin: 5px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Access Code Diagnostic Tool</h1>
+    
+    <div class="test-box">
+        <h2>Step 1: Check if access-codes.json loads</h2>
+        <div id="load-status">Loading...</div>
+        <div id="code-count"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>Step 2: Test a specific code</h2>
+        <input type="text" id="testCode" placeholder="Enter access code (e.g., X8FWQHA2)" maxlength="12">
+        <button onclick="testCode()">Test Code</button>
+        <div id="test-result"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>Step 3: View all available codes</h2>
+        <button onclick="showAllCodes()">Show All Codes</button>
+        <div id="all-codes" class="code-list" style="display:none;"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>Step 4: Sample valid codes to test</h2>
+        <div id="sample-codes"></div>
+    </div>
+
+    <script>
+        let accessCodes = {};
+        let loadError = null;
+
+        // Load access codes
+        async function loadAccessCodes() {
+            const statusDiv = document.getElementById('load-status');
+            const countDiv = document.getElementById('code-count');
+            
+            try {
+                const response = await fetch('access-codes.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                accessCodes = await response.json();
+                
+                statusDiv.innerHTML = '<span class="success">✅ Successfully loaded access-codes.json</span>';
+                countDiv.innerHTML = `<strong>Total codes loaded:</strong> ${Object.keys(accessCodes).length}`;
+                
+                // Show sample codes
+                showSampleCodes();
+                
+            } catch (error) {
+                loadError = error;
+                statusDiv.innerHTML = `<span class="error">❌ Failed to load access-codes.json</span><br>${error.message}`;
+                countDiv.innerHTML = `
+                    <div class="error">
+                        <strong>Common causes:</strong>
+                        <ul>
+                            <li>File not deployed to your site</li>
+                            <li>File not in the correct location</li>
+                            <li>CORS issue (if testing locally, use a local server)</li>
+                            <li>Typo in filename (should be exactly "access-codes.json")</li>
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+
+        // Test a specific code
+        function testCode() {
+            const code = document.getElementById('testCode').value.trim().toUpperCase();
+            const resultDiv = document.getElementById('test-result');
+            
+            if (!code) {
+                resultDiv.innerHTML = '<span class="warning">⚠️ Please enter a code</span>';
+                return;
+            }
+            
+            if (loadError) {
+                resultDiv.innerHTML = '<span class="error">❌ Cannot test - access codes not loaded</span>';
+                return;
+            }
+            
+            if (accessCodes[code]) {
+                const info = accessCodes[code];
+                const tutorInfo = Array.isArray(info.tutor) 
+                    ? info.tutor.join(', ') 
+                    : info.tutor;
+                
+                resultDiv.innerHTML = `
+                    <div class="success">
+                        <strong>✅ Code found!</strong><br>
+                        <strong>Type:</strong> ${info.type}<br>
+                        <strong>Name:</strong> ${info.name}<br>
+                        ${info.type === 'student' ? `<strong>Tutor:</strong> ${tutorInfo}<br>` : ''}
+                        <strong>Redirect to:</strong> ${info.type === 'student' ? 'sat-test.html' : 'tutor-portal.html'}
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <strong>❌ Code not found: ${code}</strong><br>
+                        This code does not exist in access-codes.json<br>
+                        <button onclick="showAllCodes()">Show all valid codes</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Show all codes
+        function showAllCodes() {
+            const div = document.getElementById('all-codes');
+            
+            if (loadError) {
+                div.innerHTML = '<span class="error">Cannot show codes - file not loaded</span>';
+                div.style.display = 'block';
+                return;
+            }
+            
+            const studentCodes = [];
+            const tutorCodes = [];
+            
+            for (const [code, info] of Object.entries(accessCodes)) {
+                if (info.type === 'student') {
+                    const tutorInfo = Array.isArray(info.tutor) 
+                        ? info.tutor.join(', ') 
+                        : info.tutor;
+                    studentCodes.push(`${code} → ${info.name} (Tutor: ${tutorInfo})`);
+                } else {
+                    tutorCodes.push(`${code} → ${info.name}`);
+                }
+            }
+            
+            let html = '<h3>Student Codes:</h3>';
+            studentCodes.forEach(item => {
+                html += `<div class="code-item">${item}</div>`;
+            });
+            
+            html += '<h3 style="margin-top: 20px;">Tutor Codes:</h3>';
+            tutorCodes.forEach(item => {
+                html += `<div class="code-item">${item}</div>`;
+            });
+            
+            div.innerHTML = html;
+            div.style.display = 'block';
+        }
+
+        // Show sample codes
+        function showSampleCodes() {
+            const div = document.getElementById('sample-codes');
+            
+            const samples = Object.entries(accessCodes)
+                .filter(([code, info]) => info.type === 'student')
+                .slice(0, 5);
+            
+            let html = '<strong>Try these student codes:</strong><ul>';
+            samples.forEach(([code, info]) => {
+                html += `<li><code>${code}</code> - ${info.name}</li>`;
+            });
+            html += '</ul>';
+            
+            const tutorSample = Object.entries(accessCodes)
+                .find(([code, info]) => info.type === 'tutor');
+            
+            if (tutorSample) {
+                html += '<strong>Try this tutor code:</strong><ul>';
+                html += `<li><code>${tutorSample[0]}</code> - ${tutorSample[1].name}</li>`;
+                html += '</ul>';
+            }
+            
+            div.innerHTML = html;
+        }
+
+        // Auto-uppercase input
+        document.getElementById('testCode').addEventListener('input', function(e) {
+            e.target.value = e.target.value.toUpperCase();
+        });
+
+        // Allow Enter key to test
+        document.getElementById('testCode').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                testCode();
+            }
+        });
+
+        // Load codes on page load
+        loadAccessCodes();
+    </script>
+</body>
+</html>
