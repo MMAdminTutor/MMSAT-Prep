@@ -1,25 +1,103 @@
 {
-  "students": {
-    "S9A4QMP7": {
-      "name": "Sharath",
-      "tutorId": "TUTOR-RM01",
-      "active": true,
-      "createdDate": "2024-04-01"
-    },
-    "DEMO-STU1": {
-      "name": "John Doe",
-      "tutorId": "TUTOR-RM01",
-      "active": true,
-      "createdDate": "2024-04-01"
-    }
+  "X8FWQHA2": {
+    "type": "student",
+    "name": "Karunya",
+    "tutor": "Syed"
   },
-  "tutors": {
-    "TUTOR-RM01": {
-      "name": "Mrs. Ramya",
-      "email": "ramya@mathmeg.com",
-      "active": true,
-      "assignedStudents": ["S9A4QMP7", "DEMO-STU1"],
-      "createdDate": "2024-04-01"
-    }
+  "H7M7PDNZ": {
+    "type": "student",
+    "name": "Ridhaan",
+    "tutor": "Syed"
+  },
+  "IVN4FENP": {
+    "type": "student",
+    "name": "Jey Patel",
+    "tutor": "Syed"
+  },
+  "7GPU0LHD": {
+    "type": "student",
+    "name": "Dhanvi",
+    "tutor": "Syed"
+  },
+  "IMRWM22V": {
+    "type": "student",
+    "name": "Harshavardhini",
+    "tutor": "Syed"
+  },
+  "WFYW68VI": {
+    "type": "student",
+    "name": "Adwita",
+    "tutor": "Syed"
+  },
+  "M5SGW1MK": {
+    "type": "student",
+    "name": "Karthik",
+    "tutor": "Syed"
+  },
+  "4SG1ZNTC": {
+    "type": "student",
+    "name": "Jiya Patel",
+    "tutor": "Syed"
+  },
+  "36XXCQC9": {
+    "type": "student",
+    "name": "Deeya",
+    "tutor": [
+      "Syed",
+      "Jisna"
+    ]
+  },
+  "P0BUSVBY": {
+    "type": "student",
+    "name": "Daya",
+    "tutor": "Syed"
+  },
+  "T9L6BL6N": {
+    "type": "student",
+    "name": "Areesha",
+    "tutor": "Syed"
+  },
+  "4Y1I5266": {
+    "type": "student",
+    "name": "Laura Noel",
+    "tutor": "Syed"
+  },
+  "XCCV0GWV": {
+    "type": "student",
+    "name": "Ria",
+    "tutor": "Jisna"
+  },
+  "7IX148QJ": {
+    "type": "student",
+    "name": "Tanvi",
+    "tutor": "Jisna"
+  },
+  "WPT8E6OM": {
+    "type": "student",
+    "name": "Akshara",
+    "tutor": "Jisna"
+  },
+  "Q2BYEW6G": {
+    "type": "student",
+    "name": "Sahana",
+    "tutor": "Jisna"
+  },
+  "ZR6Q03HW": {
+    "type": "student",
+    "name": "Aaradhana",
+    "tutor": "Jisna"
+  },
+  "OSZT9S3P": {
+    "type": "student",
+    "name": "Hrishaan Anjaria",
+    "tutor": "Jisna"
+  },
+  "TUTOR-JIS01": {
+    "type": "tutor",
+    "name": "Jisna"
+  },
+  "TUTOR-SYE01": {
+    "type": "tutor",
+    "name": "Syed"
   }
 }
