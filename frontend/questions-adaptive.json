@@ -1,1434 +1,1440 @@
 {
-  "standalone_reading": [
-    {
-      "id": "sat1_s2_vocab1",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "easy",
-      "text": "The advantages of Greek yogurt ________ the potential drawbacks of its production, especially considering the many health benefits of the food.",
-      "choices": [
-        "defeat",
-        "outperform",
-        "outweigh",
-        "surmount"
-      ],
-      "correct": 2
-    },
-    {
-      "id": "v_gen_1",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The scientist's results were ________, leading her to repeat the experiment multiple times to ensure accuracy.",
-      "choices": [
-        "inconclusive",
-        "indebted",
-        "infallible",
-        "inherent"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_2",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "easy",
-      "text": "The new park was designed to be ________, providing open spaces for all members of the community to enjoy.",
-      "choices": [
-        "exclusive",
-        "inclusive",
-        "elusive",
-        "delusive"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_3",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "Neither the manager nor the employees ________ aware of the changes to the schedule until this morning.",
-      "choices": [
-        "was",
-        "were",
-        "is",
-        "are"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_4",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "I hope you can join ________ and me for dinner on Friday.",
-      "choices": [
-        "he",
-        "him",
-        "they",
-        "them"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_5",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "Her ________ demeanor often masked her underlying anxiety, making it difficult for others to know how she truly felt.",
-      "choices": [
-        "cheerful",
-        "stoic",
-        "volatile",
-        "gregarious"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_6",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The team's performance was ________; they started strong but faded in the second half.",
-      "choices": [
-        "consistent",
-        "sporadic",
-        "exemplary",
-        "unwavering"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_7",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "hard",
-      "text": "Having ________ the report, the committee decided to proceed with the proposed plan.",
-      "choices": [
-        "finalizing",
-        "finalized",
-        "finalize",
-        "finalizes"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_8",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "easy",
-      "text": "The instructions were ________, so I was able to complete the project without any help.",
-      "choices": [
-        "vague",
-        "clear",
-        "complex",
-        "ambiguous"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_9",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The company decided to ________ its operations to include international markets.",
-      "choices": [
-        "expand",
-        "expend",
-        "suspend",
-        "compress"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_10",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "The dog wagged ________ tail when it saw its owner return home.",
-      "choices": [
-        "its",
-        "it's",
-        "their",
-        "they're"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_11",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The candidate's ________ response to the question left many voters feeling uncertain about his position.",
-      "choices": [
-        "equivocal",
-        "forthright",
-        "lucid",
-        "compelling"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_12",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "Each of the participants ________ required to sign a waiver before starting the activity.",
-      "choices": [
-        "is",
-        "are",
-        "have",
-        "were"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_13",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "easy",
-      "text": "The sun is ________ today, so make sure to wear sunscreen.",
-      "choices": [
-        "bright",
-        "dim",
-        "cloudy",
-        "rainy"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_14",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The novel was ________ historical facts and fictional characters.",
-      "choices": [
-        "composed of",
-        "composed with",
-        "comprised in",
-        "composed for"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_15",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "hard",
-      "text": "If I ________ you, I would take the job offer immediately.",
-      "choices": [
-        "was",
-        "were",
-        "am",
-        "be"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_16",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The student showed ________ improvement in his grades over the course of the semester.",
-      "choices": [
-        "negligible",
-        "significant",
-        "minimal",
-        "stagnant"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_17",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "easy",
-      "text": "The movie was so ________ that I fell asleep halfway through.",
-      "choices": [
-        "exciting",
-        "boring",
-        "interesting",
-        "thrilling"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_18",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The group of friends ________ planning a trip to the mountains next summer.",
-      "choices": [
-        "is",
-        "are",
-        "was",
-        "were"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_19",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The diplomat's ________ efforts helped to prevent a major conflict between the two nations.",
-      "choices": [
-        "conciliatory",
-        "adversarial",
-        "provocative",
-        "belligerent"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_20",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "Who is the ________ student in the class?",
-      "choices": [
-        "taller",
-        "tallest",
-        "more tall",
-        "most tallest"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_21",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The architect's design was ________, blending modern elements with traditional styles.",
-      "choices": [
-        "archaic",
-        "innovative",
-        "redundant",
-        "simplistic"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_22",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "She ________ a lot of books during her vacation last week.",
-      "choices": [
-        "read",
-        "reads",
-        "will read",
-        "reading"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_23",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The speaker's ________ tone alienated some members of the audience.",
-      "choices": [
-        "condescending",
-        "cordial",
-        "deferential",
-        "amiable"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_24",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "They have been working on the project ________ early this morning.",
-      "choices": [
-        "since",
-        "for",
-        "during",
-        "at"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_25",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The athlete's ________ was tested when he faced a series of setbacks.",
-      "choices": [
-        "resilience",
-        "fragility",
-        "indifference",
-        "complacency"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_26",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "Please bring me ________ of those apples from the basket.",
-      "choices": [
-        "any",
-        "some",
-        "none",
-        "each"
-      ],
-      "correct": 1
-    },
-    {
-      "id": "v_gen_27",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The mountain range is ________, stretching across several states.",
-      "choices": [
-        "vast",
-        "minute",
-        "peripheral",
-        "transient"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_28",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "Was it ________ who called you on the phone yesterday?",
-      "choices": [
-        "he",
-        "him",
-        "his",
-        "himself"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_29",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The new law is expected to ________ the problem of plastic waste.",
-      "choices": [
-        "alleviate",
-        "aggravate",
-        "perpetuate",
-        "neglect"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_30",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "He is much ________ than his brother.",
-      "choices": [
-        "older",
-        "oldest",
-        "more old",
-        "most oldest"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_31",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The scientist's theory was ________ by further research and experimentation.",
-      "choices": [
-        "corroborated",
-        "refuted",
-        "contested",
-        "debunked"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_32",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "If you ________ more time, you would be able to finish the task.",
-      "choices": [
-        "had",
-        "have",
-        "will have",
-        "would have"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_33",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The city's ________ skyline is dominated by several skyscrapers.",
-      "choices": [
-        "urban",
-        "rural",
-        "rustic",
-        "pastoral"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_34",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "The children ________ playing in the park when it started to rain.",
-      "choices": [
-        "were",
-        "was",
-        "are",
-        "is"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_35",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The politician's ________ speech failed to address the concerns of the voters.",
-      "choices": [
-        "vacuous",
-        "profound",
-        "insightful",
-        "eloquent"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_36",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "I can't find my keys ________ in the house.",
-      "choices": [
-        "anywhere",
-        "nowhere",
-        "somewhere",
-        "everywhere"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_37",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The museum's collection is ________, featuring works from many different eras.",
-      "choices": [
-        "eclectic",
-        "uniform",
-        "homogeneous",
-        "monotonous"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_38",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "She ________ her breakfast before leaving for work.",
-      "choices": [
-        "ate",
-        "eats",
-        "eating",
-        "will eat"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_39",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The weather was ________, with sudden changes from sun to rain.",
-      "choices": [
-        "capricious",
-        "predictable",
-        "stable",
-        "consistent"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_40",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "By the time we arrived, the movie ________ already started.",
-      "choices": [
-        "had",
-        "has",
-        "have",
-        "was"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_41",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The solution to the puzzle was ________, requiring careful thought.",
-      "choices": [
-        "intricate",
-        "simple",
-        "obvious",
-        "trivial"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_42",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "They ________ happy with the results of the competition.",
-      "choices": [
-        "were",
-        "was",
-        "is",
-        "be"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_43",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The author's ________ style is characterized by long, complex sentences.",
-      "choices": [
-        "convoluted",
-        "concise",
-        "direct",
-        "straightforward"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_44",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The book ________ I am reading is very interesting.",
-      "choices": [
-        "that",
-        "who",
-        "whom",
-        "whose"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_45",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The garden is ________ with many different types of flowers.",
-      "choices": [
-        "vibrant",
-        "drab",
-        "dull",
-        "muted"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_46",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "You ________ finish your homework before you can watch TV.",
-      "choices": [
-        "must",
-        "might",
-        "could",
-        "may"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_47",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The situation was ________, with many different factors involved.",
-      "choices": [
-        "multifaceted",
-        "singular",
-        "simple",
-        "straightforward"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_48",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "She is the person ________ won the award.",
-      "choices": [
-        "who",
-        "whom",
-        "which",
-        "that"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_49",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The project was ________ by a lack of funding.",
-      "choices": [
-        "hindered",
-        "facilitated",
-        "promoted",
-        "accelerated"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_50",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "There ________ many people at the party last night.",
-      "choices": [
-        "were",
-        "was",
-        "is",
-        "are"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_51",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The company's ________ was praised by its shareholders.",
-      "choices": [
-        "transparency",
-        "obscurity",
-        "ambiguity",
-        "secrecy"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_52",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "We ________ to the beach every weekend during the summer.",
-      "choices": [
-        "go",
-        "goes",
-        "going",
-        "gone"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_53",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The patient's condition was ________, necessitating immediate medical attention.",
-      "choices": [
-        "critical",
-        "stable",
-        "improving",
-        "minor"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_54",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "Neither of the options ________ acceptable to the committee.",
-      "choices": [
-        "is",
-        "are",
-        "were",
-        "be"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_55",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The new software is ________ with older operating systems.",
-      "choices": [
-        "compatible",
-        "clashing",
-        "discrepant",
-        "inconsistent"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_56",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "He ________ his homework right now.",
-      "choices": [
-        "is doing",
-        "does",
-        "did",
-        "was doing"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_57",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The task was ________, requiring several weeks of intensive labor.",
-      "choices": [
-        "arduous",
-        "facile",
-        "effortless",
-        "uncomplicated"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_58",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The data ________ analyzed by the team last week.",
-      "choices": [
-        "were",
-        "was",
-        "is",
-        "are"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_59",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The judge's ruling was ________, based on a careful review of the evidence.",
-      "choices": [
-        "impartial",
-        "biased",
-        "prejudiced",
-        "unfair"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_60",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "She ________ the violin since she was five years old.",
-      "choices": [
-        "has played",
-        "plays",
-        "played",
-        "was playing"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_61",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The atmosphere in the room was ________, with everyone waiting for the announcement.",
-      "choices": [
-        "electric",
-        "dull",
-        "calm",
-        "placid"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_62",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "I will call you as soon as I ________ home.",
-      "choices": [
-        "get",
-        "gets",
-        "got",
-        "will get"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_63",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The witness's testimony was ________, providing a clear account of the events.",
-      "choices": [
-        "compelling",
-        "doubtful",
-        "unreliable",
-        "biased"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_64",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "They ________ their dinner at a local restaurant last night.",
-      "choices": [
-        "had",
-        "have",
-        "has",
-        "are having"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_65",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The explorer's ________ journey took him through uncharted territories.",
-      "choices": [
-        "perilous",
-        "safe",
-        "secure",
-        "easy"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_66",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "Unless it ________ tomorrow, we will go for a hike.",
-      "choices": [
-        "rains",
-        "rain",
-        "will rain",
-        "rained"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_67",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The company's growth was ________, exceeding all expectations.",
-      "choices": [
-        "exponential",
-        "stagnant",
-        "minimal",
-        "gradual"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_68",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "This is the ________ book I have ever read.",
-      "choices": [
-        "best",
-        "better",
-        "good",
-        "well"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_69",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The detective used ________ methods to solve the mystery.",
-      "choices": [
-        "unconventional",
-        "traditional",
-        "standard",
-        "routine"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_70",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "I ________ for two hours when the power went out.",
-      "choices": [
-        "had been reading",
-        "was reading",
-        "read",
-        "have read"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_71",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The garden is ________ with many different types of birds.",
-      "choices": [
-        "teeming",
-        "devoid",
-        "lacking",
-        "empty"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_72",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "She ________ very well.",
-      "choices": [
-        "sings",
-        "sing",
-        "singing",
-        "is sing"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_73",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The debate was ________, with neither side willing to give in.",
-      "choices": [
-        "acrimonious",
-        "polite",
-        "friendly",
-        "amicable"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_74",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The man ________ I was talking to is my uncle.",
-      "choices": [
-        "whom",
-        "who",
-        "whose",
-        "which"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_75",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The forest was ________, with sunlight filtering through the trees.",
-      "choices": [
-        "enchanting",
-        "repulsive",
-        "ghastly",
-        "hideous"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_76",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "He ________ always late for meetings.",
-      "choices": [
-        "is",
-        "are",
-        "be",
-        "been"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_77",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The novel's plot was ________, with many unexpected twists.",
-      "choices": [
-        "labyrinthine",
-        "simple",
-        "linear",
-        "straightforward"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_78",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "By next month, I ________ here for a year.",
-      "choices": [
-        "will have lived",
-        "will live",
-        "have lived",
-        "am living"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_79",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The new policy was ________ to improve efficiency.",
-      "choices": [
-        "implemented",
-        "discarded",
-        "ignored",
-        "abandoned"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_80",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "This is ________ pen.",
-      "choices": [
-        "my",
-        "mine",
-        "me",
-        "I"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_81",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The mountain peak was ________, hidden behind a thick layer of clouds.",
-      "choices": [
-        "obscure",
-        "visible",
-        "apparent",
-        "obvious"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_82",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "I wish I ________ more time to travel.",
-      "choices": [
-        "had",
-        "have",
-        "will have",
-        "would have"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_83",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The athlete's ________ performance earned her a gold medal.",
-      "choices": [
-        "stellar",
-        "mediocre",
-        "ordinary",
-        "average"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_84",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "They ________ been working all day.",
-      "choices": [
-        "have",
-        "has",
-        "is",
-        "are"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_85",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The city's ________ past is evident in its many historic buildings.",
-      "choices": [
-        "storied",
-        "uneventful",
-        "monotonous",
-        "bland"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_86",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The problem ________ solved yesterday.",
-      "choices": [
-        "was",
-        "is",
-        "has been",
-        "had been"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_87",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The sunset was ________, casting long shadows across the landscape.",
-      "choices": [
-        "resplendent",
-        "dim",
-        "dull",
-        "faint"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_88",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "She ________ a new car last week.",
-      "choices": [
-        "bought",
-        "buys",
-        "buy",
-        "buying"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_89",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The scientist's ________ research led to a major breakthrough in the field.",
-      "choices": [
-        "pioneering",
-        "routine",
-        "standard",
-        "derivative"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_90",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "If it ________ rain, we would have gone to the game.",
-      "choices": [
-        "hadn't",
-        "didn't",
-        "wasn't",
-        "doesn't"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_91",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The house is ________, with plenty of room for everyone.",
-      "choices": [
-        "spacious",
-        "cramped",
-        "tiny",
-        "confined"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_92",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "They ________ going to the cinema tonight.",
-      "choices": [
-        "are",
-        "is",
-        "am",
-        "be"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_93",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The diplomat's ________ response defused the tension between the two leaders.",
-      "choices": [
-        "measured",
-        "impulsive",
-        "rash",
-        "hasty"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_94",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The teacher ________ told us about the exam yesterday was absent today.",
-      "choices": [
-        "who",
-        "whom",
-        "whose",
-        "which"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_95",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The film's ________ was praised for its originality.",
-      "choices": [
-        "cinematography",
-        "clich\u00e9",
-        "monotony",
-        "redundancy"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_96",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "Please ________ the door.",
-      "choices": [
-        "close",
-        "closes",
-        "closing",
-        "closed"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_97",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "hard",
-      "text": "The old castle is ________, having stood for centuries.",
-      "choices": [
-        "venerable",
-        "flimsy",
-        "fragile",
-        "shaky"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_98",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "medium",
-      "text": "The results ________ sent to you by Friday.",
-      "choices": [
-        "will be",
-        "are",
-        "have been",
-        "were"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_99",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The student showed ________ dedication to his studies.",
-      "choices": [
-        "unwavering",
-        "fickle",
-        "inconstant",
-        "erratic"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "v_gen_100",
-      "category": "Reading and Writing",
-      "skill": "Grammar",
-      "difficulty": "easy",
-      "text": "We ________ all very tired.",
-      "choices": [
-        "are",
-        "is",
-        "am",
-        "be"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "sat1_s2_vocab2",
-      "category": "Reading and Writing",
-      "skill": "Vocabulary",
-      "difficulty": "medium",
-      "text": "The furniture is not only more durable than traditional options but also more ________, as it can be easily reconfigured to suit different needs.",
-      "choices": [
-        "versatile",
-        "expensive",
-        "ornate",
-        "redundant"
-      ],
-      "correct": 0
-    }
-  ],
+  "standalone_reading": {
+    "easy": [
+      {
+        "id": "sat1_s2_vocab1",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "easy",
+        "text": "The advantages of Greek yogurt ________ the potential drawbacks of its production, especially considering the many health benefits of the food.",
+        "choices": [
+          "defeat",
+          "outperform",
+          "outweigh",
+          "surmount"
+        ],
+        "correct": 2
+      },
+      {
+        "id": "v_gen_2",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "easy",
+        "text": "The new park was designed to be ________, providing open spaces for all members of the community to enjoy.",
+        "choices": [
+          "exclusive",
+          "inclusive",
+          "elusive",
+          "delusive"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_4",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "I hope you can join ________ and me for dinner on Friday.",
+        "choices": [
+          "he",
+          "him",
+          "they",
+          "them"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_8",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "easy",
+        "text": "The instructions were ________, so I was able to complete the project without any help.",
+        "choices": [
+          "vague",
+          "clear",
+          "complex",
+          "ambiguous"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_10",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "The dog wagged ________ tail when it saw its owner return home.",
+        "choices": [
+          "its",
+          "it's",
+          "their",
+          "they're"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_13",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "easy",
+        "text": "The sun is ________ today, so make sure to wear sunscreen.",
+        "choices": [
+          "bright",
+          "dim",
+          "cloudy",
+          "rainy"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_17",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "easy",
+        "text": "The movie was so ________ that I fell asleep halfway through.",
+        "choices": [
+          "exciting",
+          "boring",
+          "interesting",
+          "thrilling"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_20",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "Who is the ________ student in the class?",
+        "choices": [
+          "taller",
+          "tallest",
+          "more tall",
+          "most tallest"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_22",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "She ________ a lot of books during her vacation last week.",
+        "choices": [
+          "read",
+          "reads",
+          "will read",
+          "reading"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_26",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "Please bring me ________ of those apples from the basket.",
+        "choices": [
+          "any",
+          "some",
+          "none",
+          "each"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_30",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "He is much ________ than his brother.",
+        "choices": [
+          "older",
+          "oldest",
+          "more old",
+          "most oldest"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_34",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "The children ________ playing in the park when it started to rain.",
+        "choices": [
+          "were",
+          "was",
+          "are",
+          "is"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_38",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "She ________ her breakfast before leaving for work.",
+        "choices": [
+          "ate",
+          "eats",
+          "eating",
+          "will eat"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_42",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "They ________ happy with the results of the competition.",
+        "choices": [
+          "were",
+          "was",
+          "is",
+          "be"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_46",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "You ________ finish your homework before you can watch TV.",
+        "choices": [
+          "must",
+          "might",
+          "could",
+          "may"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_50",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "There ________ many people at the party last night.",
+        "choices": [
+          "were",
+          "was",
+          "is",
+          "are"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_52",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "We ________ to the beach every weekend during the summer.",
+        "choices": [
+          "go",
+          "goes",
+          "going",
+          "gone"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_56",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "He ________ his homework right now.",
+        "choices": [
+          "is doing",
+          "does",
+          "did",
+          "was doing"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_60",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "She ________ the violin since she was five years old.",
+        "choices": [
+          "has played",
+          "plays",
+          "played",
+          "was playing"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_64",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "They ________ their dinner at a local restaurant last night.",
+        "choices": [
+          "had",
+          "have",
+          "has",
+          "are having"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_68",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "This is the ________ book I have ever read.",
+        "choices": [
+          "best",
+          "better",
+          "good",
+          "well"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_72",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "She ________ very well.",
+        "choices": [
+          "sings",
+          "sing",
+          "singing",
+          "is sing"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_76",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "He ________ always late for meetings.",
+        "choices": [
+          "is",
+          "are",
+          "be",
+          "been"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_80",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "This is ________ pen.",
+        "choices": [
+          "my",
+          "mine",
+          "me",
+          "I"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_84",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "They ________ been working all day.",
+        "choices": [
+          "have",
+          "has",
+          "is",
+          "are"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_88",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "She ________ a new car last week.",
+        "choices": [
+          "bought",
+          "buys",
+          "buy",
+          "buying"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_92",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "They ________ going to the cinema tonight.",
+        "choices": [
+          "are",
+          "is",
+          "am",
+          "be"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_96",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "Please ________ the door.",
+        "choices": [
+          "close",
+          "closes",
+          "closing",
+          "closed"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_100",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "easy",
+        "text": "We ________ all very tired.",
+        "choices": [
+          "are",
+          "is",
+          "am",
+          "be"
+        ],
+        "correct": 0
+      }
+    ],
+    "medium": [
+      {
+        "id": "v_gen_1",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The scientist's results were ________, leading her to repeat the experiment multiple times to ensure accuracy.",
+        "choices": [
+          "inconclusive",
+          "indebted",
+          "infallible",
+          "inherent"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_3",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "Neither the manager nor the employees ________ aware of the changes to the schedule until this morning.",
+        "choices": [
+          "was",
+          "were",
+          "is",
+          "are"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_6",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The team's performance was ________; they started strong but faded in the second half.",
+        "choices": [
+          "consistent",
+          "sporadic",
+          "exemplary",
+          "unwavering"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_9",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The company decided to ________ its operations to include international markets.",
+        "choices": [
+          "expand",
+          "expend",
+          "suspend",
+          "compress"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_12",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "Each of the participants ________ required to sign a waiver before starting the activity.",
+        "choices": [
+          "is",
+          "are",
+          "have",
+          "were"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_14",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The novel was ________ historical facts and fictional characters.",
+        "choices": [
+          "composed of",
+          "composed with",
+          "comprised in",
+          "composed for"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_16",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The student showed ________ improvement in his grades over the course of the semester.",
+        "choices": [
+          "negligible",
+          "significant",
+          "minimal",
+          "stagnant"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_18",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The group of friends ________ planning a trip to the mountains next summer.",
+        "choices": [
+          "is",
+          "are",
+          "was",
+          "were"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_21",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The architect's design was ________, blending modern elements with traditional styles.",
+        "choices": [
+          "archaic",
+          "innovative",
+          "redundant",
+          "simplistic"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_24",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "They have been working on the project ________ early this morning.",
+        "choices": [
+          "since",
+          "for",
+          "during",
+          "at"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_25",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The athlete's ________ was tested when he faced a series of setbacks.",
+        "choices": [
+          "resilience",
+          "fragility",
+          "indifference",
+          "complacency"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_28",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "Was it ________ who called you on the phone yesterday?",
+        "choices": [
+          "he",
+          "him",
+          "his",
+          "himself"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_29",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The new law is expected to ________ the problem of plastic waste.",
+        "choices": [
+          "alleviate",
+          "aggravate",
+          "perpetuate",
+          "neglect"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_32",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "If you ________ more time, you would be able to finish the task.",
+        "choices": [
+          "had",
+          "have",
+          "will have",
+          "would have"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_33",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The city's ________ skyline is dominated by several skyscrapers.",
+        "choices": [
+          "urban",
+          "rural",
+          "rustic",
+          "pastoral"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_36",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "I can't find my keys ________ in the house.",
+        "choices": [
+          "anywhere",
+          "nowhere",
+          "somewhere",
+          "everywhere"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_37",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The museum's collection is ________, featuring works from many different eras.",
+        "choices": [
+          "eclectic",
+          "uniform",
+          "homogeneous",
+          "monotonous"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_40",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "By the time we arrived, the movie ________ already started.",
+        "choices": [
+          "had",
+          "has",
+          "have",
+          "was"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_41",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The solution to the puzzle was ________, requiring careful thought.",
+        "choices": [
+          "intricate",
+          "simple",
+          "obvious",
+          "trivial"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_44",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The book ________ I am reading is very interesting.",
+        "choices": [
+          "that",
+          "who",
+          "whom",
+          "whose"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_45",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The garden is ________ with many different types of flowers.",
+        "choices": [
+          "vibrant",
+          "drab",
+          "dull",
+          "muted"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_48",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "She is the person ________ won the award.",
+        "choices": [
+          "who",
+          "whom",
+          "which",
+          "that"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_49",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The project was ________ by a lack of funding.",
+        "choices": [
+          "hindered",
+          "facilitated",
+          "promoted",
+          "accelerated"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_51",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The company's ________ was praised by its shareholders.",
+        "choices": [
+          "transparency",
+          "obscurity",
+          "ambiguity",
+          "secrecy"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_54",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "Neither of the options ________ acceptable to the committee.",
+        "choices": [
+          "is",
+          "are",
+          "were",
+          "be"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_55",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The new software is ________ with older operating systems.",
+        "choices": [
+          "compatible",
+          "clashing",
+          "discrepant",
+          "inconsistent"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_58",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The data ________ analyzed by the team last week.",
+        "choices": [
+          "were",
+          "was",
+          "is",
+          "are"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_59",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The judge's ruling was ________, based on a careful review of the evidence.",
+        "choices": [
+          "impartial",
+          "biased",
+          "prejudiced",
+          "unfair"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_62",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "I will call you as soon as I ________ home.",
+        "choices": [
+          "get",
+          "gets",
+          "got",
+          "will get"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_63",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The witness's testimony was ________, providing a clear account of the events.",
+        "choices": [
+          "compelling",
+          "doubtful",
+          "unreliable",
+          "biased"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_66",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "Unless it ________ tomorrow, we will go for a hike.",
+        "choices": [
+          "rains",
+          "rain",
+          "will rain",
+          "rained"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_67",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The company's growth was ________, exceeding all expectations.",
+        "choices": [
+          "exponential",
+          "stagnant",
+          "minimal",
+          "gradual"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_70",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "I ________ for two hours when the power went out.",
+        "choices": [
+          "had been reading",
+          "was reading",
+          "read",
+          "have read"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_71",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The garden is ________ with many different types of birds.",
+        "choices": [
+          "teeming",
+          "devoid",
+          "lacking",
+          "empty"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_74",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The man ________ I was talking to is my uncle.",
+        "choices": [
+          "whom",
+          "who",
+          "whose",
+          "which"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_75",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The forest was ________, with sunlight filtering through the trees.",
+        "choices": [
+          "enchanting",
+          "repulsive",
+          "ghastly",
+          "hideous"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_78",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "By next month, I ________ here for a year.",
+        "choices": [
+          "will have lived",
+          "will live",
+          "have lived",
+          "am living"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_79",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The new policy was ________ to improve efficiency.",
+        "choices": [
+          "implemented",
+          "discarded",
+          "ignored",
+          "abandoned"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_82",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "I wish I ________ more time to travel.",
+        "choices": [
+          "had",
+          "have",
+          "will have",
+          "would have"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_83",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The athlete's ________ performance earned her a gold medal.",
+        "choices": [
+          "stellar",
+          "mediocre",
+          "ordinary",
+          "average"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_86",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The problem ________ solved yesterday.",
+        "choices": [
+          "was",
+          "is",
+          "has been",
+          "had been"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_87",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The sunset was ________, casting long shadows across the landscape.",
+        "choices": [
+          "resplendent",
+          "dim",
+          "dull",
+          "faint"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_90",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "If it ________ rain, we would have gone to the game.",
+        "choices": [
+          "hadn't",
+          "didn't",
+          "wasn't",
+          "doesn't"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_91",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The house is ________, with plenty of room for everyone.",
+        "choices": [
+          "spacious",
+          "cramped",
+          "tiny",
+          "confined"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_94",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The teacher ________ told us about the exam yesterday was absent today.",
+        "choices": [
+          "who",
+          "whom",
+          "whose",
+          "which"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_95",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The film's ________ was praised for its originality.",
+        "choices": [
+          "cinematography",
+          "clich\u00e9",
+          "monotony",
+          "redundancy"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_98",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "medium",
+        "text": "The results ________ sent to you by Friday.",
+        "choices": [
+          "will be",
+          "are",
+          "have been",
+          "were"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_99",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The student showed ________ dedication to his studies.",
+        "choices": [
+          "unwavering",
+          "fickle",
+          "inconstant",
+          "erratic"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "sat1_s2_vocab2",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "medium",
+        "text": "The furniture is not only more durable than traditional options but also more ________, as it can be easily reconfigured to suit different needs.",
+        "choices": [
+          "versatile",
+          "expensive",
+          "ornate",
+          "redundant"
+        ],
+        "correct": 0
+      }
+    ],
+    "hard": [
+      {
+        "id": "v_gen_5",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "Her ________ demeanor often masked her underlying anxiety, making it difficult for others to know how she truly felt.",
+        "choices": [
+          "cheerful",
+          "stoic",
+          "volatile",
+          "gregarious"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_7",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "hard",
+        "text": "Having ________ the report, the committee decided to proceed with the proposed plan.",
+        "choices": [
+          "finalizing",
+          "finalized",
+          "finalize",
+          "finalizes"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_11",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The candidate's ________ response to the question left many voters feeling uncertain about his position.",
+        "choices": [
+          "equivocal",
+          "forthright",
+          "lucid",
+          "compelling"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_15",
+        "category": "Reading and Writing",
+        "skill": "Grammar",
+        "difficulty": "hard",
+        "text": "If I ________ you, I would take the job offer immediately.",
+        "choices": [
+          "was",
+          "were",
+          "am",
+          "be"
+        ],
+        "correct": 1
+      },
+      {
+        "id": "v_gen_19",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The diplomat's ________ efforts helped to prevent a major conflict between the two nations.",
+        "choices": [
+          "conciliatory",
+          "adversarial",
+          "provocative",
+          "belligerent"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_23",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The speaker's ________ tone alienated some members of the audience.",
+        "choices": [
+          "condescending",
+          "cordial",
+          "deferential",
+          "amiable"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_27",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The mountain range is ________, stretching across several states.",
+        "choices": [
+          "vast",
+          "minute",
+          "peripheral",
+          "transient"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_31",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The scientist's theory was ________ by further research and experimentation.",
+        "choices": [
+          "corroborated",
+          "refuted",
+          "contested",
+          "debunked"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_35",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The politician's ________ speech failed to address the concerns of the voters.",
+        "choices": [
+          "vacuous",
+          "profound",
+          "insightful",
+          "eloquent"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_39",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The weather was ________, with sudden changes from sun to rain.",
+        "choices": [
+          "capricious",
+          "predictable",
+          "stable",
+          "consistent"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_43",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The author's ________ style is characterized by long, complex sentences.",
+        "choices": [
+          "convoluted",
+          "concise",
+          "direct",
+          "straightforward"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_47",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The situation was ________, with many different factors involved.",
+        "choices": [
+          "multifaceted",
+          "singular",
+          "simple",
+          "straightforward"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_53",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The patient's condition was ________, necessitating immediate medical attention.",
+        "choices": [
+          "critical",
+          "stable",
+          "improving",
+          "minor"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_57",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The task was ________, requiring several weeks of intensive labor.",
+        "choices": [
+          "arduous",
+          "facile",
+          "effortless",
+          "uncomplicated"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_61",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The atmosphere in the room was ________, with everyone waiting for the announcement.",
+        "choices": [
+          "electric",
+          "dull",
+          "calm",
+          "placid"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_65",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The explorer's ________ journey took him through uncharted territories.",
+        "choices": [
+          "perilous",
+          "safe",
+          "secure",
+          "easy"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_69",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The detective used ________ methods to solve the mystery.",
+        "choices": [
+          "unconventional",
+          "traditional",
+          "standard",
+          "routine"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_73",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The debate was ________, with neither side willing to give in.",
+        "choices": [
+          "acrimonious",
+          "polite",
+          "friendly",
+          "amicable"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_77",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The novel's plot was ________, with many unexpected twists.",
+        "choices": [
+          "labyrinthine",
+          "simple",
+          "linear",
+          "straightforward"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_81",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The mountain peak was ________, hidden behind a thick layer of clouds.",
+        "choices": [
+          "obscure",
+          "visible",
+          "apparent",
+          "obvious"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_85",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The city's ________ past is evident in its many historic buildings.",
+        "choices": [
+          "storied",
+          "uneventful",
+          "monotonous",
+          "bland"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_89",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The scientist's ________ research led to a major breakthrough in the field.",
+        "choices": [
+          "pioneering",
+          "routine",
+          "standard",
+          "derivative"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_93",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The diplomat's ________ response defused the tension between the two leaders.",
+        "choices": [
+          "measured",
+          "impulsive",
+          "rash",
+          "hasty"
+        ],
+        "correct": 0
+      },
+      {
+        "id": "v_gen_97",
+        "category": "Reading and Writing",
+        "skill": "Vocabulary",
+        "difficulty": "hard",
+        "text": "The old castle is ________, having stood for centuries.",
+        "choices": [
+          "venerable",
+          "flimsy",
+          "fragile",
+          "shaky"
+        ],
+        "correct": 0
+      }
+    ]
+  },
   "passages": [
     {
       "id": "sat3_w1",
