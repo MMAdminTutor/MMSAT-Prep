@@ -7,7 +7,7 @@
   "H7M7PDNZ": {
     "type": "student",
     "name": "Ridhaan",
-    "tutor": "Syed"
+    "tutor": "Shobana"
   },
   "IVN4FENP": {
     "type": "student",
@@ -37,7 +37,7 @@
   "4SG1ZNTC": {
     "type": "student",
     "name": "Jiya Patel",
-    "tutor": "Syed"
+    "tutor": "Shobana"
   },
   "36XXCQC9": {
     "type": "student",
@@ -99,5 +99,9 @@
   "MM8QZ7A4": {
     "type": "tutor",
     "name": "Syed"
+  },
+  "MMQX8M4A": {
+    "type": "tutor",
+    "name": "Shobana"
   }
 }
