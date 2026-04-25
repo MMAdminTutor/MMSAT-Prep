@@ -1547,61 +1547,140 @@
                     
                     result.answers.forEach((answer, i) => {
                         // Check if we need new page
-                        if (y > 260) {
+                        if (y > 240) {
                             doc.addPage();
                             y = 20;
                         }
                         
-                        // Question number and status
-                        doc.setFillColor(248, 249, 250);
-                        doc.roundedRect(20, y - 3, 170, 8, 2, 2, 'F');
+                        // Question header with number and status
+                        doc.setFillColor(240, 240, 245);
+                        doc.roundedRect(20, y - 3, 170, 10, 2, 2, 'F');
                         
                         doc.setFont('helvetica', 'bold');
+                        doc.setFontSize(11);
                         doc.setTextColor(0, 0, 0);
-                        doc.text(`Question ${i + 1}`, 25, y + 2);
+                        doc.text(`Question ${i + 1}`, 25, y + 3);
                         
                         // Status indicator
                         if (answer.correct) {
                             doc.setTextColor(34, 139, 34);
-                            doc.text('✓ CORRECT', 165, y + 2, { align: 'right' });
+                            doc.text('✓ CORRECT', 165, y + 3, { align: 'right' });
                         } else {
                             doc.setTextColor(220, 38, 38);
-                            doc.text('✗ INCORRECT', 165, y + 2, { align: 'right' });
+                            doc.text('✗ INCORRECT', 165, y + 3, { align: 'right' });
                         }
                         
-                        y += 10;
+                        y += 13;
                         
                         // Question text
                         doc.setFont('helvetica', 'normal');
+                        doc.setFontSize(10);
                         doc.setTextColor(0, 0, 0);
-                        const questionText = (answer.questionText || 'Question text not available').substring(0, 200);
-                        const wrappedText = doc.splitTextToSize(questionText, 165);
-                        doc.text(wrappedText, 25, y);
-                        y += wrappedText.length * 4 + 3;
+                        const questionText = answer.questionText || 'Question text not available';
+                        const wrappedQuestion = doc.splitTextToSize(questionText, 165);
+                        doc.text(wrappedQuestion, 25, y);
+                        y += wrappedQuestion.length * 5 + 5;
                         
-                        // Answer info
+                        // Answer choices with highlighting
+                        if (answer.choices && answer.choices.length > 0) {
+                            doc.setFontSize(9);
+                            const choiceLabels = ['A', 'B', 'C', 'D'];
+                            
+                            answer.choices.forEach((choice, choiceIndex) => {
+                                // Check if need new page
+                                if (y > 270) {
+                                    doc.addPage();
+                                    y = 20;
+                                }
+                                
+                                const label = choiceLabels[choiceIndex];
+                                const isStudentAnswer = answer.studentAnswer === choiceIndex;
+                                const isCorrectAnswer = answer.correctAnswer === choiceIndex;
+                                
+                                // Background color for student's answer or correct answer
+                                if (isStudentAnswer && isCorrectAnswer) {
+                                    // Student got it right - green background
+                                    doc.setFillColor(220, 252, 231); // Light green
+                                    doc.roundedRect(25, y - 4, 160, 6, 1, 1, 'F');
+                                } else if (isStudentAnswer) {
+                                    // Student selected but wrong - red background
+                                    doc.setFillColor(254, 226, 226); // Light red
+                                    doc.roundedRect(25, y - 4, 160, 6, 1, 1, 'F');
+                                } else if (isCorrectAnswer) {
+                                    // Correct answer (not selected) - light green border
+                                    doc.setDrawColor(34, 139, 34);
+                                    doc.setLineWidth(0.5);
+                                    doc.roundedRect(25, y - 4, 160, 6, 1, 1, 'S');
+                                    doc.setDrawColor(0, 0, 0);
+                                    doc.setLineWidth(0.2);
+                                }
+                                
+                                // Choice label and text
+                                doc.setFont('helvetica', 'bold');
+                                if (isCorrectAnswer) {
+                                    doc.setTextColor(34, 139, 34); // Green for correct
+                                } else if (isStudentAnswer) {
+                                    doc.setTextColor(220, 38, 38); // Red for wrong
+                                } else {
+                                    doc.setTextColor(0, 0, 0);
+                                }
+                                
+                                doc.text(`${label}.`, 28, y);
+                                
+                                doc.setFont('helvetica', 'normal');
+                                const wrappedChoice = doc.splitTextToSize(choice, 150);
+                                doc.text(wrappedChoice, 35, y);
+                                
+                                // Add indicators
+                                doc.setFontSize(7);
+                                if (isStudentAnswer && isCorrectAnswer) {
+                                    doc.setTextColor(34, 139, 34);
+                                    doc.text('(Student - Correct)', 188, y, { align: 'right' });
+                                } else if (isStudentAnswer) {
+                                    doc.setTextColor(220, 38, 38);
+                                    doc.text('(Student Choice)', 188, y, { align: 'right' });
+                                } else if (isCorrectAnswer) {
+                                    doc.setTextColor(34, 139, 34);
+                                    doc.text('(Correct Answer)', 188, y, { align: 'right' });
+                                }
+                                
+                                doc.setFontSize(9);
+                                doc.setTextColor(0, 0, 0);
+                                
+                                y += Math.max(wrappedChoice.length * 4, 6) + 2;
+                            });
+                            
+                            y += 3;
+                        } else {
+                            // No choices available - show answers directly
+                            doc.setFontSize(9);
+                            doc.setFont('helvetica', 'bold');
+                            doc.setTextColor(220, 38, 38);
+                            doc.text(`Student Answer: ${answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped'}`, 30, y);
+                            y += 5;
+                            doc.setTextColor(34, 139, 34);
+                            doc.text(`Correct Answer: ${answer.correctAnswer}`, 30, y);
+                            y += 8;
+                            doc.setTextColor(0, 0, 0);
+                        }
+                        
+                        // Category and skill info
                         doc.setFontSize(8);
                         doc.setFont('helvetica', 'italic');
                         doc.setTextColor(100, 100, 100);
-                        doc.text(`Category: ${answer.category || 'N/A'}`, 25, y);
-                        y += 4;
+                        const categoryText = `Category: ${answer.category || 'N/A'} | Skill: ${answer.skill || 'N/A'}`;
+                        doc.text(categoryText, 25, y);
+                        y += 8;
                         
-                        doc.setFont('helvetica', 'normal');
-                        doc.setTextColor(0, 0, 0);
-                        doc.text(`Student Answer: ${answer.studentAnswer !== null ? answer.studentAnswer : 'Skipped'}`, 25, y);
-                        y += 4;
-                        doc.text(`Correct Answer: ${answer.correctAnswer}`, 25, y);
-                        y += 4;
-                        
-                        // Choices if available
-                        if (answer.choices && answer.choices.length > 0) {
-                            doc.text(`Choices: ${answer.choices.join(', ')}`, 25, y);
-                            y += 4;
-                        }
-                        
-                        y += 6;
+                        // Separator line
+                        doc.setDrawColor(200, 200, 200);
+                        doc.setLineWidth(0.3);
+                        doc.line(20, y, 190, y);
+                        y += 5;
                         
                         doc.setFontSize(9);
+                        doc.setTextColor(0, 0, 0);
+                        doc.setFont('helvetica', 'normal');
                     });
                 } else {
                     doc.text('No detailed answers available', 25, y);
